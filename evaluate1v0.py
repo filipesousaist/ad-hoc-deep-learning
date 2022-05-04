@@ -12,7 +12,7 @@ def main():
     os.system("LC_ALL=C ../HFO/bin/HFO {} 1 {} &".format(playersArg, displayArg))
 
     if args.agent == "drqn":
-        os.system("gnome-terminal -x python drqn-offense-agent-for-1v0.py")
+        os.system("gnome-terminal -x script -c 'python drqn-offense-agent-for-1v0.py' output/output.txt")
     
     while not input().lower().startswith('q'):
         pass
