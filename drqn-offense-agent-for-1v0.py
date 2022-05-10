@@ -11,6 +11,7 @@ sys.path.append("../ATPO-Policy")
 from agents import DRQNAgent
 from yaaf import Timestep
 import argparse
+import torch
 
 GOAL_COORDS = [1, 0]
 MAX_DISTANCE = 2 * sqrt(2)
@@ -36,7 +37,8 @@ def main():
     agent = DRQNAgent(num_features, len(ACTIONS), learning_rate=0.00025,
         initial_exploration_rate=1, final_exploration_rate=0.1,
         discount_factor=0.99, final_exploration_step=1000000,
-        target_network_update_frequency=75, num_layers=2)
+        target_network_update_frequency=75, num_layers=2,
+        cuda=torch.cuda.is_avaliable())
 
     test_output_file, train_output_file = openOutputFiles(args.load)
 
