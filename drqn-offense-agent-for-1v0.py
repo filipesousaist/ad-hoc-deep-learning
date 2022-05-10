@@ -10,15 +10,20 @@ from hfo import *
 sys.path.append("../ATPO-Policy")
 from agents import DRQNAgent
 from yaaf import Timestep
+import argparse
 
 GOAL_COORDS = [1, 0]
 MAX_DISTANCE = 2 * sqrt(2)
-VALIDATION_FEATURES = {SHOOT: 5, DRIBBLE: 5, MOVE: None}
+VALIDATION_FEATURES = {SHOOT: 5, DRIBBLE: 5, MOVE: None} #TODO: Replace MOVE with GO_TO_BALL and REORIENT and update validation features
 ACTIONS = [SHOOT, DRIBBLE, MOVE]
 NUM_TRAIN_EPISODES = 100
 NUM_TEST_EPISODES = 30
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-l", "--load", type=str)
+    args = parser.parse_args()
+
     # Create the HFO Environment
     hfo = HFOEnvironment()
     # Connect to the server with the specified
@@ -28,26 +33,51 @@ def main():
                         'localhost', 'base_left', False)
 
     num_features = 12 + 3 * hfo.getNumOpponents() + 6 * hfo.getNumTeammates()
-    agent = DRQNAgent(num_features, len(ACTIONS), learning_rate=0.001, initial_exploration_rate=0.8, final_exploration_rate=0.2, num_layers=2)
+    agent = DRQNAgent(num_features, len(ACTIONS), learning_rate=0.00025,
+        initial_exploration_rate=1, final_exploration_rate=0.1,
+        discount_factor=0.99, final_exploration_step=1000000,
+        target_network_update_frequency=75, num_layers=2)
 
-    testOutputFile = open("output/drqn-offense-agent-for-1v0-TEST-results.txt", "w")
-    testOutputFile.write("NUM_TEST_EPISODES = {}\n\n".format(NUM_TEST_EPISODES))
-    testOutputFile.flush()
+    test_output_file, train_output_file = openOutputFiles(args.load)
 
-    trainOutputFile = open("output/drqn-offense-agent-for-1v0-TRAIN-results.txt", "w")
-    trainOutputFile.writelines([
-        "NUM_TRAIN_EPISODES = {}\n\n".format(NUM_TRAIN_EPISODES),
-        "Episode\t\tAverage loss\n\n"
-    ])
-    trainOutputFile.flush()
+    episode = 0
+    resume = False
+    
+    if args.load:
+        agent.load(args.load)
+        episode = int(args.load.split("/")[-1].lstrip("after").rstrip("episodes"))
+        resume = True
 
-    for episode in itertools.count():
-        if episode % NUM_TRAIN_EPISODES == 0: # Test
-            runTestPhase(episode, hfo, agent, testOutputFile)
-            trainOutputFile.flush()
+    while True:
+        if episode % NUM_TRAIN_EPISODES == 0 and not resume: # Test
+            runTestPhase(episode, hfo, agent, test_output_file)
+            train_output_file.flush()
+
+        resume = False
 
         result = playEpisode(episode, hfo, agent, learn=True)
-        trainOutputFile.write("{}\t\t{}\n".format(episode, result["average_loss"]))
+        train_output_file.write("{}\t\t{}\n".format(episode, result["average_loss"]))
+
+        episode += 1
+
+
+def openOutputFiles(load):
+    open_mode = "a" if load else "w"
+
+    testOutputFile = open("output/drqn-offense-agent-for-1v0-TEST-results.txt", open_mode)
+    trainOutputFile = open("output/drqn-offense-agent-for-1v0-TRAIN-results.txt", open_mode)
+    
+    if not load:
+        testOutputFile.write("NUM_TEST_EPISODES = {}\n\n".format(NUM_TEST_EPISODES))
+        testOutputFile.flush()
+
+        trainOutputFile.writelines([
+            "NUM_TRAIN_EPISODES = {}\n\n".format(NUM_TRAIN_EPISODES),
+            "Episode\t\tAverage loss\n\n"
+        ])
+        trainOutputFile.flush()
+
+    return testOutputFile, trainOutputFile
 
 
 def playEpisode(episode, hfo, agent, learn=True):
@@ -96,9 +126,11 @@ def playEpisode(episode, hfo, agent, learn=True):
         "average_loss": episode_loss / num_timesteps if num_timesteps > 0 else None
     }
 
-
 def runTestPhase(currentTrainEpisode, hfo, agent, outputFile):
-    dirName = "./agent-state/after{}episodes".format(currentTrainEpisode)
+    BASE_NAME = "./agent-state"
+    if not os.path.exists(BASE_NAME):
+        os.mkdir(BASE_NAME)
+    dirName = BASE_NAME + "/after{}episodes".format(currentTrainEpisode)
     if not os.path.exists(dirName):
         os.mkdir(dirName)
     agent.save(dirName)
