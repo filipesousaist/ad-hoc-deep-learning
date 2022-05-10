@@ -38,7 +38,7 @@ def main():
         initial_exploration_rate=1, final_exploration_rate=0.1,
         discount_factor=0.99, final_exploration_step=1000000,
         target_network_update_frequency=75, num_layers=2,
-        cuda=torch.cuda.is_avaliable())
+        cuda=torch.cuda.is_available())
 
     test_output_file, train_output_file = openOutputFiles(args.load)
 
