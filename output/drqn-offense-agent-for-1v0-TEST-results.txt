@@ -1,3 +1,12 @@
 NUM_TEST_EPISODES = 30
 
 % goals after 0 train episodes: 0.0%
+% goals after 100 train episodes: 10.0%
+% goals after 200 train episodes: 0.0%
+% goals after 300 train episodes: 0.0%
+% goals after 400 train episodes: 10.0%
+% goals after 500 train episodes: 0.0%
+% goals after 600 train episodes: 0.0%
+% goals after 700 train episodes: 10.0%
+% goals after 800 train episodes: 0.0%
+% goals after 900 train episodes: 0.0%
