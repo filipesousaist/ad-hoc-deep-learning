@@ -1,0 +1,4 @@
+agent_state_path: ./agent-state
+current_train_episode: 200
+test_output_path: ./output/dqn-offense-agent-for-1v0-TEST-results.txt
+train_output_path: ./output/dqn-offense-agent-for-1v0-TRAIN-results.txt
