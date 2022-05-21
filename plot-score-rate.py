@@ -3,12 +3,11 @@
 
 from matplotlib import pyplot as plt
 import numpy as np
-import scipy.stats as st
 
 import argparse
 
 
-DEFAULT_INPUT_FILE_NAME = "./output/drqn-offense-agent-for-1v0-TEST-results.txt"
+DEFAULT_INPUT_FILE_NAME = "./output/TEST-results.txt"
 DEFAULT_GRANULARITY = 5
 
 parser = argparse.ArgumentParser()
