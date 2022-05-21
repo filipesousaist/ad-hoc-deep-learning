@@ -19,4 +19,4 @@ def writeTxt(path, keyValueDict):
 
     with open(path, "w") as file:
         for pair in keyValuePairs:
-            file.write(pair[0] + ": " + pair[1] + "\n")
+            file.write(str(pair[0]) + ": " + str(pair[1]) + "\n")
