@@ -1,4 +1,0 @@
-NUM_TRAIN_EPISODES = 100
-
-Episode		Average loss
-
