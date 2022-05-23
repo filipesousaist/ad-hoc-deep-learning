@@ -22,7 +22,8 @@ def run(num_episodes: int):
     env = gym.make(name)
     num_features = env.observation_space.shape[0]
     num_actions = env.action_space.n
-    agent = MLPDQNAgent(num_features, num_actions, cuda=args.cuda, layers=((1024, "relu"), (1024,"relu"),(1024,"relu")))
+    #agent = MLPDQNAgent(num_features, num_actions, cuda=args.cuda, layers=((1024, "relu"), (1024,"relu"),(1024,"relu")))
+    agent = DRQNAgent(num_features, num_actions, cuda=args.cuda, num_layers=3)
     t = time.time()
     for e in range(num_episodes):
         state = env.reset()

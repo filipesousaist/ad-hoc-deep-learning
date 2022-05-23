@@ -72,7 +72,7 @@ def main():
     agent = DRQNAgent(hfo_info["num_features"], hfo_info["num_actions"], learning_rate=0.00025,
         initial_exploration_rate=1, final_exploration_rate=0.1,
         discount_factor=0.99, final_exploration_step=1000000,
-        target_network_update_frequency=75, num_layers=2)
+        target_network_update_frequency=75, num_layers=2, cuda=False)
     #agent = MLPDQNAgent(hfo_info["num_features"], hfo_info["num_actions"], learning_rate=0.00025,
     #    initial_exploration_rate=1, final_exploration_rate=0.1, final_exploration_step=5000000,
     #    discount_factor=0.99, target_network_update_frequency=75)
