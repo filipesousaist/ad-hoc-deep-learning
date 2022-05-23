@@ -1,0 +1,112 @@
+Script started on 2022-05-23 04:15:31+01:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="80" LINES="24"]
+pygame 2.1.2 (SDL 2.0.16, Python 3.8.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+base_left: init ok.  unum: 11 side: l
+base_left 11:  KickTable created.
+base_left 11: [0, 1]  prepare see synch
+base_left 11: [0, 7]  see synch.
+Feature 1 Violated Feature Bounds: -32.9913 Expected min/max: [-5.25, 57.75]
+Feature 7 Violated Feature Bounds: 93.1372 Expected min/max: [0, 85.9084]
+Feature 1 Violated Feature Bounds: -32.9913 Expected min/max: [-5.25, 57.75]
+Feature 7 Violated Feature Bounds: 93.1372 Expected min/max: [0, 85.9084]
+[INFO] Output path: ./output
+None
+Test episode 0 ended with OutOfTime
+None
+Test episode 1 ended with OutOfTime
+None
+Test episode 2 ended with OutOfTime
+None
+Test episode 3 ended with OutOfTime
+None
+Test episode 4 ended with OutOfTime
+None
+Test episode 5 ended with OutOfTime
+None
+Test episode 6 ended with OutOfTime
+None
+Test episode 7 ended with OutOfTime
+None
+Test episode 8 ended with OutOfTime
+None
+Test episode 9 ended with OutOfTime
+None
+Test episode 10 ended with OutOfTime
+None
+Test episode 11 ended with OutOfTime
+None
+Test episode 12 ended with OutOfTime
+None
+Test episode 13 ended with OutOfTime
+None
+Test episode 14 ended with OutOfTime
+None
+Test episode 15 ended with OutOfTime
+None
+Test episode 16 ended with OutOfTime
+None
+Test episode 17 ended with OutOfTime
+None
+Test episode 18 ended with OutOfTime
+None
+Test episode 19 ended with OutOfTime
+None
+Test episode 20 ended with OutOfTime
+None
+Test episode 21 ended with OutOfTime
+None
+Test episode 22 ended with OutOfTime
+None
+Test episode 23 ended with OutOfTime
+None
+Test episode 24 ended with OutOfTime
+None
+Test episode 25 ended with OutOfTime
+None
+Test episode 26 ended with OutOfTime
+None
+Test episode 27 ended with OutOfTime
+None
+Test episode 28 ended with OutOfTime
+None
+Test episode 29 ended with OutOfTime
+{'Exploration rate': 0.9998, 'Replay Buffer Samples': 50}
+Train episode 0 ended with Goal
+^CTraceback (most recent call last):
+  File "drqn-offense-agent-for-1v0.py", line 298, in <module>
+    main()
+  File "drqn-offense-agent-for-1v0.py", line 112, in main
+    result = playEpisode(episode, hfo, agent, learn=True)
+  File "drqn-offense-agent-for-1v0.py", line 226, in playEpisode
+    info = agent.reinforcement(timestep)
+  File "/home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/Agent.py", line 68, in reinforcement
+    agent_info = self._reinforce(timestep) or {}
+  File "/home/filipe/Documents/GitHub/ad-hoc-deep-learning/../ATPO-Policy/agents.py", line 149, in _reinforce
+    loss, accuracy = self.experience_replay()
+  File "/home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/dqn/DQNAgent.py", line 69, in experience_replay
+    X, y = self._preprocess(replay_batch)
+  File "/home/filipe/Documents/GitHub/ad-hoc-deep-learning/../ATPO-Policy/agents.py", line 189, in _preprocess
+    target_q_values, current_hidden = target_q_fn(z, last_hidden)
+  File "/home/filipe/Documents/GitHub/ad-hoc-deep-learning/../ATPO-Policy/agents.py", line 174, in <lambda>
+    target_q_fn = lambda z, last_hidden: self.q_values(z, target) if last_hidden is None else self.q_values(z, target, last_hidden)
+  File "/home/filipe/Documents/GitHub/ad-hoc-deep-learning/../ATPO-Policy/agents.py", line 129, in q_values
+    q_values, hidden = network.predict(z) if last_hidden is None else network.predict(z, last_hidden)
+  File "/home/filipe/Documents/GitHub/ad-hoc-deep-learning/../ATPO-Policy/models.py", line 80, in predict
+    Z, H = self(X) if hidden_last is None else self(X, hidden_last)
+  File "/home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/filipe/Documents/GitHub/ad-hoc-deep-learning/../ATPO-Policy/models.py", line 61, in forward
+    hn_last_old, hidden = self._input_layer(X) if hidden_last is None else self._input_layer(X, hidden_last)
+  File "/home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/rnn.py", line 761, in forward
+    result = _VF.lstm(input, hx, self._flat_weights, self.bias, self.num_layers,
+KeyboardInterrupt
+
+Script done on 2022-05-23 04:15:46+01:00 [COMMAND_EXIT_CODE="130"]

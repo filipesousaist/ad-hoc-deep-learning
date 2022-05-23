@@ -62,14 +62,14 @@ def main():
     hfo_info = {
         "num_oppnonents": num_opponents,
         "num_teammates": num_teammates,
-        "num_features": 12 + 3 * num_opponents + 6 * num_teammates,
+        "num_features": 4,#12 + 3 * num_opponents + 6 * num_teammates,
         "num_actions": len(ACTIONS),
         "actions": [ACTION_STRINGS[action] for action in ACTIONS]
     }
 
     #TODO: Delete most of the agent-states of experiment 13 and 16+
 
-    agent = DRQNAgent(hfo_info["num_features"], hfo_info["num_actions"], learning_rate=0.00025,
+    agent = DRQNAgent(hfo_info["num_features"], hfo_info["num_actions"], learning_rate=0.001,
         initial_exploration_rate=1, final_exploration_rate=0.1,
         discount_factor=0.99, final_exploration_step=1000000,
         target_network_update_frequency=75, num_layers=2, cuda=False)
@@ -160,7 +160,7 @@ def loadOutputFiles(file_paths, agent, train_episode):
     train_output_file = open(file_paths["train-output"], "a")
 
     return test_output_file, train_output_file, episode
-        
+
 
 def loadAgent(agent, base_path, episode):
     agent_state_full_path = base_path + "/after{}episodes".format(episode)
@@ -199,11 +199,12 @@ def playEpisode(episode, hfo, agent, learn=True):
 
     status = IN_GAME
     observation = hfo.getState()
+    features = extractFeatures(observation)
 
     while status == IN_GAME:
         num_timesteps += 1
 
-        action = agent.action(observation)
+        action = agent.action(features)
 
         hfo_action = ACTIONS[action] if isActionValid(ACTIONS[action], observation) else NOOP
         
@@ -214,12 +215,13 @@ def playEpisode(episode, hfo, agent, learn=True):
         
         status = hfo.step()
         next_observation = hfo.getState()
+        next_features = extractFeatures(next_observation)
 
         reward =    0 if status == IN_GAME \
             else  100 if status == GOAL \
             else -100
 
-        timestep = Timestep(observation, action, reward, next_observation, status != IN_GAME, {}) 
+        timestep = Timestep(features, action, reward, next_features, status != IN_GAME, {}) 
 
         info = agent.reinforcement(timestep)
         
@@ -227,6 +229,7 @@ def playEpisode(episode, hfo, agent, learn=True):
             episode_loss += info["Loss"]      
         
         observation = next_observation
+        features = next_features
     
     print(info)
 
@@ -273,6 +276,23 @@ def isActionValid(action, observation):
 def distanceToGoal(observation):
     return sqrt((observation[3] - GOAL_COORDS[0])**2 + (observation[4] - GOAL_COORDS[1])**2) / MAX_DISTANCE
 
+
+def extractFeatures(observation):
+    # New features
+    # 0 Able to Kick
+    # 1 Goal center proximity
+    # 2 Goal center angle
+    # 3 Dangerous to shoot (if ball is too close to edge, but closer than agent)
+
+    return np.array([*observation[5:8], -1 if isDangerousToShoot(observation) else 1])
+
+
+def isDangerousToShoot(observation):
+    ball_to_edge_distance = distanceToNearestEdge(*observation[3:5])
+    return ball_to_edge_distance < 0.05 and ball_to_edge_distance < distanceToNearestEdge(*observation[0:2]) 
+
+def distanceToNearestEdge(x, y):
+    return min(1 - abs(x), 1 - abs(y))
 
 if __name__ == '__main__':
     main()
