@@ -1,8 +1,8 @@
-actions: ['Shoot', 'Dribble', 'Pass', 'Move', 'Reorient']
+actions: ['Shoot', 'Dribble', 'Go_To_Ball']
 current_train_episode: 0
-execution_time: 20.39139461517334
-execution_time_readable: 0d 0h 0m 20.391395s
-num_actions: 5
-num_features: 24
-num_oppnonents: 2
-num_teammates: 1
+execution_time: 6.470403432846069
+execution_time_readable: 0d 0h 0m 6.470403s
+num_actions: 3
+num_features: 12
+num_oppnonents: 0
+num_teammates: 0
