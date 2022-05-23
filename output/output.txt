@@ -1,4 +1,703 @@
-Script started on 2022-05-20 19:46:50+01:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="80" LINES="24"]
-Train episode can only be specified when loading agent from file.
+Script started on 2022-05-23 03:08:05+01:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="104" LINES="26"]
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+base_left: init ok.  unum: 11 side: l
+base_left 11:  KickTable created.
+base_left 11: [0, 1]  prepare see synch
+base_left 11: [0, 7]  see synch.
+Feature 1 Violated Feature Bounds: -32.9809 Expected min/max: [-5.25, 57.75]
+Feature 7 Violated Feature Bounds: 93.1443 Expected min/max: [0, 85.9084]
+Feature 1 Violated Feature Bounds: -32.9809 Expected min/max: [-5.25, 57.75]
+Feature 7 Violated Feature Bounds: 93.1443 Expected min/max: [0, 85.9084]
+[INFO] Output path: ./output
+Feature 1 Violated Feature Bounds: -32.9809 Expected min/max: [-5.25, 57.75]
+Feature 7 Violated Feature Bounds: 93.1443 Expected min/max: [0, 85.9084]
+None
+Test episode 0 ended with OutOfTime
+None
+Test episode 1 ended with OutOfTime
+None
+Test episode 2 ended with OutOfTime
+None
+Test episode 3 ended with OutOfTime
+None
+Test episode 4 ended with OutOfTime
+None
+Test episode 5 ended with OutOfTime
+None
+Test episode 6 ended with OutOfTime
+None
+Test episode 7 ended with OutOfTime
+None
+Test episode 8 ended with OutOfTime
+None
+Test episode 9 ended with OutOfTime
+None
+Test episode 10 ended with OutOfTime
+None
+Test episode 11 ended with OutOfTime
+None
+Test episode 12 ended with OutOfTime
+None
+Test episode 13 ended with OutOfTime
+None
+Test episode 14 ended with OutOfTime
+None
+Test episode 15 ended with OutOfTime
+None
+Test episode 16 ended with OutOfTime
+None
+Test episode 17 ended with OutOfTime
+None
+Test episode 18 ended with OutOfTime
+None
+Test episode 19 ended with OutOfTime
+None
+Test episode 20 ended with OutOfTime
+None
+Test episode 21 ended with OutOfTime
+None
+Test episode 22 ended with OutOfTime
+None
+Test episode 23 ended with OutOfTime
+None
+Test episode 24 ended with OutOfTime
+None
+Test episode 25 ended with OutOfTime
+None
+Test episode 26 ended with OutOfTime
+None
+Test episode 27 ended with OutOfTime
+None
+Test episode 28 ended with OutOfTime
+None
+Test episode 29 ended with OutOfTime
+{'Exploration rate': 0.9999, 'Replay Buffer Samples': 19}
+Train episode 0 ended with OutOfBounds
+{'Exploration rate': 0.9999, 'Replay Buffer Samples': 32, 'Loss': 26.019582748413086, 'Accuracy': 0}
+Train episode 1 ended with OutOfBounds
+{'Exploration rate': 0.9997, 'Replay Buffer Samples': 76, 'Loss': 25.183427810668945, 'Accuracy': 0}
+Train episode 2 ended with Goal
+Feature 4 Violated Feature Bounds: 58.4265 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9996, 'Replay Buffer Samples': 115}
+Train episode 3 ended with Goal
+{'Exploration rate': 0.9995, 'Replay Buffer Samples': 146}
+Train episode 4 ended with Goal
+{'Exploration rate': 0.9992, 'Replay Buffer Samples': 209}
+Train episode 5 ended with Goal
+{'Exploration rate': 0.9992, 'Replay Buffer Samples': 222}
+Train episode 6 ended with OutOfBounds
+{'Exploration rate': 0.9991, 'Replay Buffer Samples': 251}
+Train episode 7 ended with OutOfBounds
+{'Exploration rate': 0.999, 'Replay Buffer Samples': 291}
+Train episode 8 ended with Goal
+{'Exploration rate': 0.9987, 'Replay Buffer Samples': 362}
+Train episode 9 ended with Goal
+{'Exploration rate': 0.9986, 'Replay Buffer Samples': 397}
+Train episode 10 ended with OutOfBounds
+{'Exploration rate': 0.9984, 'Replay Buffer Samples': 444, 'Loss': 25.81251335144043, 'Accuracy': 0}
+Train episode 11 ended with Goal
+{'Exploration rate': 0.9982, 'Replay Buffer Samples': 495}
+Train episode 12 ended with Goal
+Feature 4 Violated Feature Bounds: 58.2939 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9981, 'Replay Buffer Samples': 527}
+Train episode 13 ended with OutOfBounds
+Feature 4 Violated Feature Bounds: -5.77692 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: -6.41952 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9978, 'Replay Buffer Samples': 617}
+Train episode 14 ended with OutOfBounds
+{'Exploration rate': 0.9977, 'Replay Buffer Samples': 650}
+Train episode 15 ended with Goal
+{'Exploration rate': 0.9975, 'Replay Buffer Samples': 681}
+Train episode 16 ended with Goal
+{'Exploration rate': 0.9975, 'Replay Buffer Samples': 701}
+Train episode 17 ended with OutOfBounds
+{'Exploration rate': 0.9974, 'Replay Buffer Samples': 718}
+Train episode 18 ended with OutOfBounds
+{'Exploration rate': 0.9973, 'Replay Buffer Samples': 752, 'Loss': 24.844465255737305, 'Accuracy': 0}
+Train episode 19 ended with Goal
+{'Exploration rate': 0.9971, 'Replay Buffer Samples': 798}
+Train episode 20 ended with Goal
+{'Exploration rate': 0.997, 'Replay Buffer Samples': 826}
+Train episode 21 ended with OutOfBounds
+{'Exploration rate': 0.9969, 'Replay Buffer Samples': 865}
+Train episode 22 ended with Goal
+{'Exploration rate': 0.9967, 'Replay Buffer Samples': 917}
+Train episode 23 ended with Goal
+{'Exploration rate': 0.9965, 'Replay Buffer Samples': 963}
+Train episode 24 ended with Goal
+{'Exploration rate': 0.9964, 'Replay Buffer Samples': 1010}
+Train episode 25 ended with Goal
+{'Exploration rate': 0.9962, 'Replay Buffer Samples': 1068, 'Loss': 0.9707992672920227, 'Accuracy': 0}
+Train episode 26 ended with Goal
+Feature 4 Violated Feature Bounds: 58.5606 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.996, 'Replay Buffer Samples': 1099}
+Train episode 27 ended with Goal
+{'Exploration rate': 0.9959, 'Replay Buffer Samples': 1137}
+Train episode 28 ended with Goal
+{'Exploration rate': 0.9958, 'Replay Buffer Samples': 1178}
+Train episode 29 ended with Goal
+{'Exploration rate': 0.9956, 'Replay Buffer Samples': 1214}
+Train episode 30 ended with OutOfBounds
+{'Exploration rate': 0.9955, 'Replay Buffer Samples': 1243}
+Train episode 31 ended with Goal
+{'Exploration rate': 0.9953, 'Replay Buffer Samples': 1291}
+Train episode 32 ended with Goal
+{'Exploration rate': 0.9952, 'Replay Buffer Samples': 1336, 'Loss': 1.6696882247924805, 'Accuracy': 0}
+Train episode 33 ended with Goal
+{'Exploration rate': 0.995, 'Replay Buffer Samples': 1393}
+Train episode 34 ended with Goal
+{'Exploration rate': 0.9949, 'Replay Buffer Samples': 1423}
+Train episode 35 ended with Goal
+{'Exploration rate': 0.9948, 'Replay Buffer Samples': 1457}
+Train episode 36 ended with Goal
+Feature 4 Violated Feature Bounds: 58.0523 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 58.0523 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 58.0523 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9945, 'Replay Buffer Samples': 1515}
+Train episode 37 ended with Goal
+{'Exploration rate': 0.9943, 'Replay Buffer Samples': 1586}
+Train episode 38 ended with Goal
+{'Exploration rate': 0.9941, 'Replay Buffer Samples': 1631}
+Train episode 39 ended with Goal
+{'Exploration rate': 0.994, 'Replay Buffer Samples': 1671}
+Train episode 40 ended with Goal
+{'Exploration rate': 0.9939, 'Replay Buffer Samples': 1704, 'Loss': 30.32940101623535, 'Accuracy': 0}
+Train episode 41 ended with Goal
+{'Exploration rate': 0.9937, 'Replay Buffer Samples': 1752, 'Loss': 0.838854968547821, 'Accuracy': 0}
+Train episode 42 ended with Goal
+{'Exploration rate': 0.9935, 'Replay Buffer Samples': 1817}
+Train episode 43 ended with Goal
+{'Exploration rate': 0.9933, 'Replay Buffer Samples': 1865}
+Train episode 44 ended with OutOfBounds
+{'Exploration rate': 0.993, 'Replay Buffer Samples': 1947}
+Train episode 45 ended with Goal
+Feature 4 Violated Feature Bounds: 58.1837 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 59.2358 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 59.2358 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 59.2358 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9928, 'Replay Buffer Samples': 1988, 'Loss': 0.7873147130012512, 'Accuracy': 0}
+Train episode 46 ended with Goal
+{'Exploration rate': 0.9927, 'Replay Buffer Samples': 2030}
+Train episode 47 ended with Goal
+{'Exploration rate': 0.9926, 'Replay Buffer Samples': 2065}
+Train episode 48 ended with Goal
+{'Exploration rate': 0.9923, 'Replay Buffer Samples': 2126}
+Train episode 49 ended with Goal
+{'Exploration rate': 0.9922, 'Replay Buffer Samples': 2155}
+Train episode 50 ended with Goal
+{'Exploration rate': 0.9921, 'Replay Buffer Samples': 2194}
+Train episode 51 ended with Goal
+{'Exploration rate': 0.992, 'Replay Buffer Samples': 2224, 'Loss': 0.3856663405895233, 'Accuracy': 0}
+Train episode 52 ended with Goal
+Feature 4 Violated Feature Bounds: 57.8221 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 57.8221 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 57.8221 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9918, 'Replay Buffer Samples': 2290}
+Train episode 53 ended with Goal
+{'Exploration rate': 0.9917, 'Replay Buffer Samples': 2305}
+Train episode 54 ended with OutOfBounds
+{'Exploration rate': 0.9916, 'Replay Buffer Samples': 2339}
+Train episode 55 ended with Goal
+{'Exploration rate': 0.9914, 'Replay Buffer Samples': 2382}
+Train episode 56 ended with Goal
+{'Exploration rate': 0.9914, 'Replay Buffer Samples': 2402}
+Train episode 57 ended with OutOfBounds
+{'Exploration rate': 0.9911, 'Replay Buffer Samples': 2478}
+Train episode 58 ended with Goal
+{'Exploration rate': 0.9911, 'Replay Buffer Samples': 2479}
+Train episode 59 ended with OutOfBounds
+{'Exploration rate': 0.991, 'Replay Buffer Samples': 2513}
+Train episode 60 ended with Goal
+Feature 4 Violated Feature Bounds: 58.9538 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9907, 'Replay Buffer Samples': 2575}
+Train episode 61 ended with Goal
+Feature 4 Violated Feature Bounds: 60.5896 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9906, 'Replay Buffer Samples': 2620, 'Loss': 38.137271881103516, 'Accuracy': 0}
+Train episode 62 ended with Goal
+{'Exploration rate': 0.9905, 'Replay Buffer Samples': 2651}
+Train episode 63 ended with Goal
+{'Exploration rate': 0.9904, 'Replay Buffer Samples': 2670}
+Train episode 64 ended with Goal
+Feature 4 Violated Feature Bounds: -13.2772 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: -12.6834 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9904, 'Replay Buffer Samples': 2674}
+Train episode 65 ended with OutOfBounds
+{'Exploration rate': 0.9902, 'Replay Buffer Samples': 2709}
+Train episode 66 ended with Goal
+{'Exploration rate': 0.9901, 'Replay Buffer Samples': 2760, 'Loss': 1.1031367778778076, 'Accuracy': 0}
+Train episode 67 ended with Goal
+{'Exploration rate': 0.99, 'Replay Buffer Samples': 2783}
+Train episode 68 ended with OutOfBounds
+{'Exploration rate': 0.9898, 'Replay Buffer Samples': 2837}
+Train episode 69 ended with Goal
+Feature 4 Violated Feature Bounds: 58.0217 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9896, 'Replay Buffer Samples': 2889}
+Train episode 70 ended with Goal
+Feature 4 Violated Feature Bounds: 59.1824 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 60.2735 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 61.2991 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9894, 'Replay Buffer Samples': 2943}
+Train episode 71 ended with Goal
+{'Exploration rate': 0.9892, 'Replay Buffer Samples': 2988, 'Loss': 36.51765441894531, 'Accuracy': 0}
+Train episode 72 ended with Goal
+{'Exploration rate': 0.9891, 'Replay Buffer Samples': 3024, 'Loss': 0.6815298199653625, 'Accuracy': 0}
+Train episode 73 ended with Goal
+{'Exploration rate': 0.989, 'Replay Buffer Samples': 3065}
+Train episode 74 ended with Goal
+{'Exploration rate': 0.9888, 'Replay Buffer Samples': 3115}
+Train episode 75 ended with Goal
+Feature 4 Violated Feature Bounds: 58.6655 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9888, 'Replay Buffer Samples': 3121}
+Train episode 76 ended with OutOfBounds
+{'Exploration rate': 0.9887, 'Replay Buffer Samples': 3151}
+Train episode 77 ended with OutOfBounds
+{'Exploration rate': 0.9884, 'Replay Buffer Samples': 3219}
+Train episode 78 ended with Goal
+Feature 4 Violated Feature Bounds: 58.1884 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9883, 'Replay Buffer Samples': 3261}
+Train episode 79 ended with Goal
+Feature 4 Violated Feature Bounds: -11.7099 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: -12.3806 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: -13.0111 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9882, 'Replay Buffer Samples': 3281}
+Train episode 80 ended with OutOfBounds
+{'Exploration rate': 0.988, 'Replay Buffer Samples': 3343}
+Train episode 81 ended with Goal
+{'Exploration rate': 0.9879, 'Replay Buffer Samples': 3367}
+Train episode 82 ended with Goal
+{'Exploration rate': 0.9877, 'Replay Buffer Samples': 3404, 'Loss': 1.0345005989074707, 'Accuracy': 0}
+Train episode 83 ended with Goal
+{'Exploration rate': 0.9875, 'Replay Buffer Samples': 3470}
+Train episode 84 ended with Goal
+{'Exploration rate': 0.9874, 'Replay Buffer Samples': 3511}
+Train episode 85 ended with Goal
+{'Exploration rate': 0.9872, 'Replay Buffer Samples': 3568, 'Loss': 0.9899014830589294, 'Accuracy': 0}
+Train episode 86 ended with Goal
+{'Exploration rate': 0.987, 'Replay Buffer Samples': 3611}
+Train episode 87 ended with Goal
+{'Exploration rate': 0.9869, 'Replay Buffer Samples': 3648, 'Loss': 1.0487117767333984, 'Accuracy': 0}
+Train episode 88 ended with Goal
+{'Exploration rate': 0.9866, 'Replay Buffer Samples': 3708, 'Loss': 14.594086647033691, 'Accuracy': 0}
+Train episode 89 ended with Goal
+{'Exploration rate': 0.9865, 'Replay Buffer Samples': 3757}
+Train episode 90 ended with Goal
+{'Exploration rate': 0.9864, 'Replay Buffer Samples': 3784, 'Loss': 1.2251524925231934, 'Accuracy': 0}
+Train episode 91 ended with Goal
+{'Exploration rate': 0.9863, 'Replay Buffer Samples': 3802}
+Train episode 92 ended with OutOfBounds
+{'Exploration rate': 0.986, 'Replay Buffer Samples': 3892, 'Loss': 13.843897819519043, 'Accuracy': 0}
+Train episode 93 ended with Goal
+{'Exploration rate': 0.9858, 'Replay Buffer Samples': 3942}
+Train episode 94 ended with Goal
+{'Exploration rate': 0.9857, 'Replay Buffer Samples': 3966}
+Train episode 95 ended with OutOfBounds
+{'Exploration rate': 0.9855, 'Replay Buffer Samples': 4028, 'Loss': 13.49034595489502, 'Accuracy': 0}
+Train episode 96 ended with Goal
+{'Exploration rate': 0.9853, 'Replay Buffer Samples': 4081}
+Train episode 97 ended with Goal
+{'Exploration rate': 0.9852, 'Replay Buffer Samples': 4108, 'Loss': 14.729373931884766, 'Accuracy': 0}
+Train episode 98 ended with Goal
+{'Exploration rate': 0.9851, 'Replay Buffer Samples': 4137}
+Train episode 99 ended with Goal
+None
+Test episode 0 ended with OutOfTime
+None
+Test episode 1 ended with OutOfTime
+None
+Test episode 2 ended with OutOfTime
+None
+Test episode 3 ended with OutOfTime
+None
+Test episode 4 ended with OutOfTime
+None
+Test episode 5 ended with OutOfTime
+None
+Test episode 6 ended with OutOfTime
+None
+Test episode 7 ended with OutOfTime
+None
+Test episode 8 ended with OutOfTime
+None
+Test episode 9 ended with OutOfTime
+None
+Test episode 10 ended with OutOfTime
+None
+Test episode 11 ended with OutOfTime
+None
+Test episode 12 ended with OutOfTime
+None
+Test episode 13 ended with OutOfTime
+None
+Test episode 14 ended with OutOfTime
+None
+Test episode 15 ended with OutOfTime
+None
+Test episode 16 ended with OutOfTime
+None
+Test episode 17 ended with OutOfTime
+None
+Test episode 18 ended with OutOfTime
+None
+Test episode 19 ended with OutOfTime
+None
+Test episode 20 ended with OutOfTime
+None
+Test episode 21 ended with OutOfTime
+None
+Test episode 22 ended with OutOfTime
+None
+Test episode 23 ended with OutOfTime
+None
+Test episode 24 ended with OutOfTime
+None
+Test episode 25 ended with OutOfTime
+None
+Test episode 26 ended with OutOfTime
+None
+Test episode 27 ended with OutOfTime
+None
+Test episode 28 ended with OutOfTime
+None
+Test episode 29 ended with OutOfTime
+{'Exploration rate': 0.9849, 'Replay Buffer Samples': 4193}
+Train episode 100 ended with Goal
+Feature 4 Violated Feature Bounds: -11.0501 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: -11.1321 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9848, 'Replay Buffer Samples': 4220, 'Loss': 11.471043586730957, 'Accuracy': 0}
+Train episode 101 ended with OutOfBounds
+{'Exploration rate': 0.9845, 'Replay Buffer Samples': 4317}
+Train episode 102 ended with Goal
+{'Exploration rate': 0.9843, 'Replay Buffer Samples': 4372, 'Loss': 35.22466278076172, 'Accuracy': 0}
+Train episode 103 ended with Goal
+{'Exploration rate': 0.9841, 'Replay Buffer Samples': 4410}
+Train episode 104 ended with Goal
+{'Exploration rate': 0.984, 'Replay Buffer Samples': 4451}
+Train episode 105 ended with Goal
+{'Exploration rate': 0.9838, 'Replay Buffer Samples': 4487}
+Train episode 106 ended with Goal
+{'Exploration rate': 0.9836, 'Replay Buffer Samples': 4553}
+Train episode 107 ended with Goal
+{'Exploration rate': 0.9836, 'Replay Buffer Samples': 4567}
+Train episode 108 ended with OutOfBounds
+{'Exploration rate': 0.9835, 'Replay Buffer Samples': 4590}
+Train episode 109 ended with OutOfBounds
+Feature 4 Violated Feature Bounds: 59.2711 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9833, 'Replay Buffer Samples': 4643}
+Train episode 110 ended with Goal
+Feature 4 Violated Feature Bounds: 60.7394 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9831, 'Replay Buffer Samples': 4708, 'Loss': 4.018771171569824, 'Accuracy': 0}
+Train episode 111 ended with Goal
+{'Exploration rate': 0.983, 'Replay Buffer Samples': 4730}
+Train episode 112 ended with Goal
+{'Exploration rate': 0.9827, 'Replay Buffer Samples': 4793}
+Train episode 113 ended with Goal
+{'Exploration rate': 0.9826, 'Replay Buffer Samples': 4839}
+Train episode 114 ended with Goal
+Feature 4 Violated Feature Bounds: 58.1322 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 59.083 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 59.9768 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 60.817 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 60.817 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 60.817 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 60.817 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 60.817 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 60.817 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9825, 'Replay Buffer Samples': 4861}
+Train episode 115 ended with OutOfBounds
+{'Exploration rate': 0.9823, 'Replay Buffer Samples': 4905}
+Train episode 116 ended with OutOfBounds
+{'Exploration rate': 0.9822, 'Replay Buffer Samples': 4939}
+Train episode 117 ended with Goal
+{'Exploration rate': 0.9821, 'Replay Buffer Samples': 4982}
+Train episode 118 ended with Goal
+{'Exploration rate': 0.9821, 'Replay Buffer Samples': 4984, 'Loss': 0.8669821619987488, 'Accuracy': 0}
+Train episode 119 ended with OutOfBounds
+{'Exploration rate': 0.9818, 'Replay Buffer Samples': 5059}
+Train episode 120 ended with Goal
+{'Exploration rate': 0.9816, 'Replay Buffer Samples': 5099}
+Train episode 121 ended with Goal
+{'Exploration rate': 0.9816, 'Replay Buffer Samples': 5125}
+Train episode 122 ended with Goal
+{'Exploration rate': 0.9813, 'Replay Buffer Samples': 5185}
+Train episode 123 ended with Goal
+Feature 4 Violated Feature Bounds: 58.509 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 58.509 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 58.509 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9812, 'Replay Buffer Samples': 5228, 'Loss': 1.1272286176681519, 'Accuracy': 0}
+Train episode 124 ended with OutOfBounds
+Feature 4 Violated Feature Bounds: -16.651 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: -17.2049 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: -17.7257 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9811, 'Replay Buffer Samples': 5247}
+Train episode 125 ended with OutOfBounds
+Feature 4 Violated Feature Bounds: -18.2152 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9809, 'Replay Buffer Samples': 5313}
+Train episode 126 ended with Goal
+{'Exploration rate': 0.9807, 'Replay Buffer Samples': 5369}
+Train episode 127 ended with Goal
+Feature 4 Violated Feature Bounds: 58.4416 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 59.3072 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 60.1208 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 60.8856 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 60.8856 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 60.8856 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9805, 'Replay Buffer Samples': 5419}
+Train episode 128 ended with Goal
+{'Exploration rate': 0.9803, 'Replay Buffer Samples': 5463}
+Train episode 129 ended with Goal
+{'Exploration rate': 0.9803, 'Replay Buffer Samples': 5477}
+Train episode 130 ended with OutOfBounds
+{'Exploration rate': 0.9802, 'Replay Buffer Samples': 5493}
+Train episode 131 ended with OutOfBounds
+{'Exploration rate': 0.9801, 'Replay Buffer Samples': 5529}
+Train episode 132 ended with Goal
+{'Exploration rate': 0.9799, 'Replay Buffer Samples': 5591}
+Train episode 133 ended with Goal
+{'Exploration rate': 0.9798, 'Replay Buffer Samples': 5604, 'Loss': 14.13756275177002, 'Accuracy': 0}
+Train episode 134 ended with OutOfBounds
+{'Exploration rate': 0.9797, 'Replay Buffer Samples': 5629}
+Train episode 135 ended with OutOfBounds
+{'Exploration rate': 0.9795, 'Replay Buffer Samples': 5681}
+Train episode 136 ended with Goal
+{'Exploration rate': 0.9793, 'Replay Buffer Samples': 5736, 'Loss': 1.0726560354232788, 'Accuracy': 0}
+Train episode 137 ended with Goal
+{'Exploration rate': 0.9791, 'Replay Buffer Samples': 5795}
+Train episode 138 ended with Goal
+Feature 4 Violated Feature Bounds: 57.9723 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 58.8375 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 59.6508 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9791, 'Replay Buffer Samples': 5813}
+Train episode 139 ended with OutOfBounds
+{'Exploration rate': 0.9789, 'Replay Buffer Samples': 5861}
+Train episode 140 ended with Goal
+{'Exploration rate': 0.9787, 'Replay Buffer Samples': 5907}
+Train episode 141 ended with Goal
+{'Exploration rate': 0.9785, 'Replay Buffer Samples': 5984, 'Loss': 26.602684020996094, 'Accuracy': 0}
+Train episode 142 ended with Goal
+{'Exploration rate': 0.9783, 'Replay Buffer Samples': 6028, 'Loss': 11.411250114440918, 'Accuracy': 0}
+Train episode 143 ended with Goal
+{'Exploration rate': 0.9781, 'Replay Buffer Samples': 6079}
+Train episode 144 ended with OutOfBounds
+{'Exploration rate': 0.9779, 'Replay Buffer Samples': 6150}
+Train episode 145 ended with Goal
+{'Exploration rate': 0.9776, 'Replay Buffer Samples': 6210}
+Train episode 146 ended with Goal
+{'Exploration rate': 0.9775, 'Replay Buffer Samples': 6258}
+Train episode 147 ended with Goal
+{'Exploration rate': 0.9774, 'Replay Buffer Samples': 6291}
+Train episode 148 ended with Goal
+{'Exploration rate': 0.9773, 'Replay Buffer Samples': 6297}
+Train episode 149 ended with OutOfBounds
+{'Exploration rate': 0.9772, 'Replay Buffer Samples': 6321}
+Train episode 150 ended with OutOfBounds
+{'Exploration rate': 0.9771, 'Replay Buffer Samples': 6351}
+Train episode 151 ended with Goal
+{'Exploration rate': 0.9769, 'Replay Buffer Samples': 6420, 'Loss': 27.52390480041504, 'Accuracy': 0}
+Train episode 152 ended with Goal
+{'Exploration rate': 0.9768, 'Replay Buffer Samples': 6444, 'Loss': 7.959104061126709, 'Accuracy': 0}
+Train episode 153 ended with Goal
+{'Exploration rate': 0.9767, 'Replay Buffer Samples': 6485}
+Train episode 154 ended with Goal
+{'Exploration rate': 0.9766, 'Replay Buffer Samples': 6498}
+Train episode 155 ended with OutOfBounds
+{'Exploration rate': 0.9766, 'Replay Buffer Samples': 6512, 'Loss': 8.192622184753418, 'Accuracy': 0}
+Train episode 156 ended with OutOfBounds
+Feature 4 Violated Feature Bounds: 59.5789 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 61.791 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9763, 'Replay Buffer Samples': 6586}
+Train episode 157 ended with Goal
+Feature 4 Violated Feature Bounds: 63.8705 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 65.8251 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9762, 'Replay Buffer Samples': 6621}
+Train episode 158 ended with Goal
+{'Exploration rate': 0.976, 'Replay Buffer Samples': 6655}
+Train episode 159 ended with Goal
+{'Exploration rate': 0.9759, 'Replay Buffer Samples': 6690}
+Train episode 160 ended with Goal
+{'Exploration rate': 0.9759, 'Replay Buffer Samples': 6699}
+Train episode 161 ended with OutOfBounds
+{'Exploration rate': 0.9758, 'Replay Buffer Samples': 6730}
+Train episode 162 ended with OutOfBounds
+{'Exploration rate': 0.9756, 'Replay Buffer Samples': 6774}
+Train episode 163 ended with Goal
+{'Exploration rate': 0.9754, 'Replay Buffer Samples': 6831}
+Train episode 164 ended with Goal
+{'Exploration rate': 0.9752, 'Replay Buffer Samples': 6877}
+Train episode 165 ended with Goal
+{'Exploration rate': 0.975, 'Replay Buffer Samples': 6935}
+Train episode 166 ended with Goal
+{'Exploration rate': 0.9748, 'Replay Buffer Samples': 6999}
+Train episode 167 ended with Goal
+Feature 4 Violated Feature Bounds: 58.2803 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 58.2803 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 58.2803 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9746, 'Replay Buffer Samples': 7053}
+Train episode 168 ended with Goal
+{'Exploration rate': 0.9744, 'Replay Buffer Samples': 7124, 'Loss': 2.1695685386657715, 'Accuracy': 0}
+Train episode 169 ended with Goal
+{'Exploration rate': 0.9743, 'Replay Buffer Samples': 7141}
+Train episode 170 ended with OutOfBounds
+{'Exploration rate': 0.9741, 'Replay Buffer Samples': 7183}
+Train episode 171 ended with Goal
+{'Exploration rate': 0.974, 'Replay Buffer Samples': 7231}
+Train episode 172 ended with Goal
+{'Exploration rate': 0.9738, 'Replay Buffer Samples': 7283}
+Train episode 173 ended with Goal
+{'Exploration rate': 0.9737, 'Replay Buffer Samples': 7313}
+Train episode 174 ended with Goal
+{'Exploration rate': 0.9736, 'Replay Buffer Samples': 7330}
+Train episode 175 ended with OutOfBounds
+{'Exploration rate': 0.9734, 'Replay Buffer Samples': 7383}
+Train episode 176 ended with Goal
+Feature 4 Violated Feature Bounds: 59.5863 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9732, 'Replay Buffer Samples': 7448, 'Loss': 8.991734504699707, 'Accuracy': 0}
+Train episode 177 ended with Goal
+Feature 4 Violated Feature Bounds: 61.4105 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 63.1252 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.973, 'Replay Buffer Samples': 7491}
+Train episode 178 ended with Goal
+{'Exploration rate': 0.9728, 'Replay Buffer Samples': 7556, 'Loss': 0.8867270350456238, 'Accuracy': 0}
+Train episode 179 ended with Goal
+Feature 4 Violated Feature Bounds: 58.3604 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 59.6396 Expected min/max: [-5.25, 57.75]
+{'Exploration rate': 0.9726, 'Replay Buffer Samples': 7601}
+Train episode 180 ended with OutOfBounds
+{'Exploration rate': 0.9726, 'Replay Buffer Samples': 7623}
+Train episode 181 ended with OutOfBounds
+{'Exploration rate': 0.9724, 'Replay Buffer Samples': 7657}
+Train episode 182 ended with Goal
+{'Exploration rate': 0.9723, 'Replay Buffer Samples': 7682}
+Train episode 183 ended with OutOfBounds
+{'Exploration rate': 0.9722, 'Replay Buffer Samples': 7722}
+Train episode 184 ended with Goal
+{'Exploration rate': 0.9721, 'Replay Buffer Samples': 7744, 'Loss': 25.416940689086914, 'Accuracy': 0}
+Train episode 185 ended with Goal
+{'Exploration rate': 0.9721, 'Replay Buffer Samples': 7762}
+Train episode 186 ended with OutOfBounds
+{'Exploration rate': 0.9719, 'Replay Buffer Samples': 7816, 'Loss': 7.573465347290039, 'Accuracy': 0}
+Train episode 187 ended with Goal
+{'Exploration rate': 0.9718, 'Replay Buffer Samples': 7845}
+Train episode 188 ended with Goal
+{'Exploration rate': 0.9716, 'Replay Buffer Samples': 7893}
+Train episode 189 ended with Goal
+{'Exploration rate': 0.9715, 'Replay Buffer Samples': 7922}
+Train episode 190 ended with Goal
+{'Exploration rate': 0.9714, 'Replay Buffer Samples': 7949}
+Train episode 191 ended with Goal
+{'Exploration rate': 0.9712, 'Replay Buffer Samples': 8002}
+Train episode 192 ended with Goal
+{'Exploration rate': 0.971, 'Replay Buffer Samples': 8052, 'Loss': 31.564023971557617, 'Accuracy': 0}
+Train episode 193 ended with Goal
+{'Exploration rate': 0.9708, 'Replay Buffer Samples': 8120, 'Loss': 10.63277530670166, 'Accuracy': 0}
+Train episode 194 ended with Goal
+{'Exploration rate': 0.9706, 'Replay Buffer Samples': 8159}
+Train episode 195 ended with OutOfBounds
+{'Exploration rate': 0.9706, 'Replay Buffer Samples': 8172, 'Loss': 11.666802406311035, 'Accuracy': 0}
+Train episode 196 ended with OutOfBounds
+{'Exploration rate': 0.9703, 'Replay Buffer Samples': 8252, 'Loss': 2.9997732639312744, 'Accuracy': 0}
+Train episode 197 ended with Goal
+{'Exploration rate': 0.9701, 'Replay Buffer Samples': 8297}
+Train episode 198 ended with Goal
+{'Exploration rate': 0.9701, 'Replay Buffer Samples': 8311}
+Train episode 199 ended with Goal
+None
+Test episode 0 ended with OutOfTime
+None
+Test episode 1 ended with OutOfTime
+None
+Test episode 2 ended with OutOfTime
+None
+Test episode 3 ended with OutOfTime
+None
+Test episode 4 ended with OutOfTime
+None
+Test episode 5 ended with OutOfTime
+None
+Test episode 6 ended with OutOfTime
+None
+Test episode 7 ended with OutOfTime
+None
+Test episode 8 ended with OutOfTime
+None
+Test episode 9 ended with OutOfTime
+None
+Test episode 10 ended with OutOfTime
+None
+Test episode 11 ended with OutOfTime
+None
+Test episode 12 ended with OutOfTime
+None
+Test episode 13 ended with OutOfTime
+None
+Test episode 14 ended with OutOfTime
+None
+Test episode 15 ended with OutOfTime
+None
+Test episode 16 ended with OutOfTime
+None
+Test episode 17 ended with OutOfTime
+None
+Test episode 18 ended with OutOfTime
+None
+Test episode 19 ended with OutOfTime
+None
+Test episode 20 ended with OutOfTime
+None
+Test episode 21 ended with OutOfTime
+None
+Test episode 22 ended with OutOfTime
+None
+Test episode 23 ended with OutOfTime
+None
+Test episode 24 ended with OutOfTime
+None
+Test episode 25 ended with OutOfTime
+None
+Test episode 26 ended with OutOfTime
+None
+Test episode 27 ended with OutOfTime
+None
+Test episode 28 ended with OutOfTime
+Feature 4 Violated Feature Bounds: -7.68773 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: -7.68773 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: -7.68773 Expected min/max: [-5.25, 57.75]
+None
+Test episode 29 ended with OutOfTime
+Feature 4 Violated Feature Bounds: -7.68773 Expected min/max: [-5.25, 57.75]
+^CTraceback (most recent call last):
+  File "/home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/drqn-offense-agent-for-1v0.py", line 278, in <module>
+    main()
+  File "/home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/drqn-offense-agent-for-1v0.py", line 112, in main
+    result = playEpisode(episode, hfo, agent, learn=True)
+  File "/home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/drqn-offense-agent-for-1v0.py", line 224, in playEpisode
+    info = agent.reinforcement(timestep)
+  File "/home/filipesousa/.local/lib/python3.9/site-packages/yaaf/agents/Agent.py", line 68, in reinforcement
+    agent_info = self._reinforce(timestep) or {}
+  File "/home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/../ATPO-Policy/agents.py", line 149, in _reinforce
+    loss, accuracy = self.experience_replay()
+  File "/home/filipesousa/.local/lib/python3.9/site-packages/yaaf/agents/dqn/DQNAgent.py", line 69, in experience_replay
+    X, y = self._preprocess(replay_batch)
+  File "/home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/../ATPO-Policy/agents.py", line 190, in _preprocess
+    next_target_q_values, _ = target_q_fn(z_next, current_hidden)
+  File "/home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/../ATPO-Policy/agents.py", line 174, in <lambda>
+    target_q_fn = lambda z, last_hidden: self.q_values(z, target) if last_hidden is None else self.q_values(z, target, last_hidden)
+  File "/home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/../ATPO-Policy/agents.py", line 129, in q_values
+    q_values, hidden = network.predict(z) if last_hidden is None else network.predict(z, last_hidden)
+  File "/home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/../ATPO-Policy/models.py", line 80, in predict
+    Z, H = self(X) if hidden_last is None else self(X, self.tuple_to_model(hidden_last, torch.float32))
+  File "/home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/../ATPO-Policy/models.py", line 61, in forward
+    hn_last_old, hidden = self._input_layer(X) if hidden_last is None else self._input_layer(X, hidden_last)
+  File "/home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py", line 761, in forward
+    result = _VF.lstm(input, hx, self._flat_weights, self.bias, self.num_layers,
+KeyboardInterrupt
 
-Script done on 2022-05-20 19:46:52+01:00 [COMMAND_EXIT_CODE="1"]
+Script done on 2022-05-23 03:23:13+01:00 [COMMAND_EXIT_CODE="130"]

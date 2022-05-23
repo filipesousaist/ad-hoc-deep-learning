@@ -1,3 +1,5 @@
-NUM_TEST_EPISODES = 1
+NUM_TEST_EPISODES = 30
 
 % goals after 0 train episodes: 0.0%
+% goals after 100 train episodes: 0.0%
+% goals after 200 train episodes: 0.0%
