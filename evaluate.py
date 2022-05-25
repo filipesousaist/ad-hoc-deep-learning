@@ -13,6 +13,7 @@ def main():
     parser.add_argument("-l", "--load", action="store_true")
     parser.add_argument("-e", "--train-episode", type=int)
     parser.add_argument("-t", "--test-only", action="store_true")
+    parser.add_argument("-f", "--custom-features", action="store_true")
     parser.add_argument("-O", "--output-path", type=str)
 
     parser.add_argument("-o", "--offense-players", type=int,
@@ -40,11 +41,13 @@ def main():
         load_arg = " --load" if args.load else ""
         train_episode_arg = " --train-episode {}".format(args.train_episode) if args.train_episode else ""
         test_only_arg = " --test-only" if args.test_only else ""
+        custom_features_arg = " --custom-features" if args.custom_features else ""
         output_path = (args.output_path or DEFAULT_OUTPUT_PATH).rstrip("/")
         output_path_arg = " --output-path " + output_path
 
-        os.system("{}script -c 'python drqn-offense-agent-for-1v0.py{}{}{}{}' {}/{}".format(
-            gnome_terminal_command, load_arg, train_episode_arg, test_only_arg, output_path_arg,
+        os.system("{}script -c 'python drqn-offense-agent-for-1v0.py{}{}{}{}{}' {}/{}".format(
+            gnome_terminal_command, load_arg, train_episode_arg,
+            test_only_arg, custom_features_arg, output_path_arg,
             output_path, OUTPUT_FILE_NAME))
     
     while not input().lower().startswith('q'):

@@ -14,7 +14,7 @@ from hfo import *
 
 sys.path.append("../ATPO-Policy")
 from agents import DRQNAgent
-#from yaaf.agents.dqn import MLPDQNAgent
+from yaaf.agents.dqn import MLPDQNAgent
 from yaaf import Timestep
 
 sys.path.append("./lib")
@@ -31,7 +31,7 @@ VALIDATION_FEATURES = {
     MOVE: (5, -1),
     GO_TO_BALL: (5, -1),
     REORIENT: (5, -1)}
-ACTIONS = [SHOOT, DRIBBLE, GO_TO_BALL]#PASS, MOVE, REORIENT]
+ACTIONS = [SHOOT, DRIBBLE, PASS, MOVE, REORIENT] # GO_TO_BALL
 NUM_TRAIN_EPISODES = 100
 NUM_TEST_EPISODES = 30
 
@@ -42,6 +42,7 @@ def main():
     parser.add_argument("-l", "--load", action="store_true")
     parser.add_argument("-e", "--train-episode", type=int)
     parser.add_argument("-t", "--test-only", action="store_true")
+    parser.add_argument("-f", "--custom-features", action="store_true")
     parser.add_argument("-o", "--output-path", type=str)
     args = parser.parse_args()
 
@@ -59,23 +60,25 @@ def main():
     num_opponents = hfo.getNumOpponents()
     num_teammates = hfo.getNumTeammates()
 
+    num_features = 12 + 3 * num_opponents + 6 * num_teammates
+    if args.custom_features:
+        num_features = len(extractFeatures(np.zeros(num_features)))
+
     hfo_info = {
         "num_oppnonents": num_opponents,
         "num_teammates": num_teammates,
-        "num_features": 4,#12 + 3 * num_opponents + 6 * num_teammates,
+        "num_features": num_features,
         "num_actions": len(ACTIONS),
         "actions": [ACTION_STRINGS[action] for action in ACTIONS]
     }
 
-    #TODO: Delete most of the agent-states of experiment 13 and 16+
-
-    agent = DRQNAgent(hfo_info["num_features"], hfo_info["num_actions"], learning_rate=0.001,
-        initial_exploration_rate=1, final_exploration_rate=0.1,
-        discount_factor=0.99, final_exploration_step=1000000,
-        target_network_update_frequency=75, num_layers=2, cuda=False)
-    #agent = MLPDQNAgent(hfo_info["num_features"], hfo_info["num_actions"], learning_rate=0.00025,
-    #    initial_exploration_rate=1, final_exploration_rate=0.1, final_exploration_step=5000000,
-    #    discount_factor=0.99, target_network_update_frequency=75)
+    #agent = DRQNAgent(hfo_info["num_features"], hfo_info["num_actions"], learning_rate=0.001,
+    #    initial_exploration_rate=1, final_exploration_rate=0.1,
+    #    discount_factor=0.99, final_exploration_step=500000,
+    #    target_network_update_frequency=75, num_layers=2, cuda=False)
+    agent = MLPDQNAgent(hfo_info["num_features"], hfo_info["num_actions"], learning_rate=0.00025,
+        initial_exploration_rate=1, final_exploration_rate=0.1, final_exploration_step=5000000,
+        discount_factor=0.99, target_network_update_frequency=75)
     
     output_path = args.output_path or DEFAULT_OUTPUT_PATH
     if not os.path.exists(output_path):
@@ -92,7 +95,7 @@ def main():
     if args.test_only:
         agent.eval()
         while True:
-            playEpisode(episode, hfo, agent, learn=False)
+            playEpisode(episode, hfo, agent, args.custom_features, learn=False)
             episode += 1
     else:
         resume = args.load
@@ -100,7 +103,7 @@ def main():
         last_time = time.time()
         while True:
             if episode % NUM_TRAIN_EPISODES == 0 and not resume: # Test
-                runTestPhase(episode, hfo, agent, test_output_file)
+                runTestPhase(episode, hfo, agent, test_output_file, args.custom_features)
                 train_output_file.flush()
 
                 current_time = time.time()
@@ -109,7 +112,7 @@ def main():
 
             resume = False
 
-            result = playEpisode(episode, hfo, agent, learn=True)
+            result = playEpisode(episode, hfo, agent, args.custom_features, learn=True)
             train_output_file.write("{}\t\t{}\n".format(episode, result["average_loss"]))
 
             episode += 1
@@ -188,7 +191,7 @@ def saveProgress(file_paths, agent, current_train_episode, elapsed_time):
     writeTxt(file_paths["save"], save_data)
 
 
-def playEpisode(episode, hfo, agent, learn=True): 
+def playEpisode(episode, hfo, agent, custom_features=False, learn=True): 
     # Maybe there is a better way to reset hidden state?
     agent._last_hidden = None
 
@@ -199,7 +202,7 @@ def playEpisode(episode, hfo, agent, learn=True):
 
     status = IN_GAME
     observation = hfo.getState()
-    features = extractFeatures(observation)
+    features = extractFeatures(observation) if custom_features else observation
 
     while status == IN_GAME:
         num_timesteps += 1
@@ -215,7 +218,7 @@ def playEpisode(episode, hfo, agent, learn=True):
         
         status = hfo.step()
         next_observation = hfo.getState()
-        next_features = extractFeatures(next_observation)
+        next_features = extractFeatures(next_observation) if custom_features else next_observation
 
         reward =    0 if status == IN_GAME \
             else  100 if status == GOAL \
@@ -247,12 +250,12 @@ def playEpisode(episode, hfo, agent, learn=True):
         "average_loss": episode_loss / num_timesteps if num_timesteps > 0 else None
     }
 
-def runTestPhase(current_train_episode, hfo, agent, output_file): 
+def runTestPhase(current_train_episode, hfo, agent, output_file, custom_features=False): 
     agent.eval()
 
     num_goals = 0
     for test_episode in range(NUM_TEST_EPISODES):
-        num_goals += int(playEpisode(test_episode, hfo, agent, learn=False)["goal"])
+        num_goals += int(playEpisode(test_episode, hfo, agent, custom_features, learn=False)["goal"])
     output_file.write("% goals after {} train episodes: {}%\n".format(current_train_episode, num_goals * 100 / NUM_TEST_EPISODES))
     output_file.flush()
 
@@ -282,9 +285,14 @@ def extractFeatures(observation):
     # 0 Able to Kick
     # 1 Goal center proximity
     # 2 Goal center angle
-    # 3 Dangerous to shoot (if ball is too close to edge, but closer than agent)
+    # 3 Distance from agent to nearest edge
+    # 4 Distance from ball to nearest edge
 
-    return np.array([*observation[5:8], -1 if isDangerousToShoot(observation) else 1])
+    return np.array([
+        *observation[5:8],
+        distanceToNearestEdge(*observation[0:2]),
+        distanceToNearestEdge(*observation[3:5])    
+    ])
 
 
 def isDangerousToShoot(observation):
