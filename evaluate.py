@@ -14,13 +14,14 @@ def main():
     parser.add_argument("-l", "--load", action="store_true")
     parser.add_argument("-e", "--train-episode", type=int)
     parser.add_argument("-t", "--test-only", action="store_true")
-    parser.add_argument("-f", "--custom-features", action="store_true")
+    parser.add_argument("-c", "--custom-features", action="store_true")
     parser.add_argument("-O", "--output-path", type=str)
 
     parser.add_argument("-o", "--offense-players", type=int,
         help="number of players in the offense team, including the agent to be evaluated")
     parser.add_argument("-d", "--defense-players", type=int,
         help="number of players in the defense team")
+    parser.add_argument("-f", "--fullstate", action="store_true")
 
     args = parser.parse_args()
 
@@ -32,9 +33,10 @@ def main():
     num_offense_npcs = num_offense_players - num_offense_agents
     num_defense_npcs = args.defense_players or 0 # All defense players are npcs
     
-    visualizer_arg = "--no-sync" if args.visualizer else "--headless"
-    os.system("LC_ALL=C ../HFO/bin/HFO --frames-per-trial 500 --untouched-time 200 {} --offense-agents {} --offense-npcs {} --defense-npcs {} &".format(
-        visualizer_arg, num_offense_agents, num_offense_npcs, num_defense_npcs))
+    visualizer_arg = " --no-sync" if args.visualizer else " --headless"
+    fullstate_arg = " --fullstate" if args.fullstate else ""
+    os.system("LC_ALL=C ../HFO/bin/HFO --frames-per-trial 500 --untouched-time 200{}{} --offense-agents {} --offense-npcs {} --defense-npcs {} &".format(
+        visualizer_arg, fullstate_arg, num_offense_agents, num_offense_npcs, num_defense_npcs))
 
     if args.agent == "drqn":
         gnome_terminal_command = "gnome-terminal -x " if args.gnome_terminal else ""
