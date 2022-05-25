@@ -9,6 +9,7 @@ def main():
     parser.add_argument("agent", choices=["npc", "drqn"], help = "the type of agent to evaluate")
     parser.add_argument("-v", "--visualizer", action="store_true", help="launch HFO visualizer")
     parser.add_argument("-g", "--gnome-terminal", action="store_true", help="lauch agent in an external terminal")
+    parser.add_argument("-n", "--no-output", action="store_true")
     
     parser.add_argument("-l", "--load", action="store_true")
     parser.add_argument("-e", "--train-episode", type=int)
@@ -45,10 +46,13 @@ def main():
         output_path = (args.output_path or DEFAULT_OUTPUT_PATH).rstrip("/")
         output_path_arg = " --output-path " + output_path
 
-        os.system("{}script -c 'python drqn-offense-agent-for-1v0.py{}{}{}{}{}' {}/{}".format(
+        script_command = "{}script -c 'python drqn-offense-agent-for-1v0.py{}{}{}{}{}'".format(
             gnome_terminal_command, load_arg, train_episode_arg,
-            test_only_arg, custom_features_arg, output_path_arg,
-            output_path, OUTPUT_FILE_NAME))
+            test_only_arg, custom_features_arg, output_path_arg
+        )
+        if not args.no_output:
+            script_command += " {}/{}".format(output_path, OUTPUT_FILE_NAME)
+        os.system(script_command)
     
     while not input().lower().startswith('q'):
         pass
