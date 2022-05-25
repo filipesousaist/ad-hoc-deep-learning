@@ -102,7 +102,7 @@ def main():
 
         last_time = time.time()
         while True:
-            if episode % NUM_TRAIN_EPISODES == 0 and not resume: # Test
+            if episode % NUM_TRAIN_EPISODES == 0 and not resume and NUM_TEST_EPISODES > 0: # Test
                 runTestPhase(episode, hfo, agent, test_output_file, args.custom_features)
                 train_output_file.flush()
 
@@ -220,7 +220,7 @@ def playEpisode(episode, hfo, agent, custom_features=False, learn=True):
         next_observation = hfo.getState()
         next_features = extractFeatures(next_observation) if custom_features else next_observation
 
-        reward =    0 if status == IN_GAME \
+        reward =    0 if (status == IN_GAME or status == CAPTURED_BY_DEFENSE) \
             else  100 if status == GOAL \
             else -100
 
