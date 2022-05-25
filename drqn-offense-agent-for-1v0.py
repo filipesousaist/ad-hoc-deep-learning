@@ -42,7 +42,7 @@ def main():
     parser.add_argument("-l", "--load", action="store_true")
     parser.add_argument("-e", "--train-episode", type=int)
     parser.add_argument("-t", "--test-only", action="store_true")
-    parser.add_argument("-f", "--custom-features", action="store_true")
+    parser.add_argument("-c", "--custom-features", action="store_true")
     parser.add_argument("-o", "--output-path", type=str)
     args = parser.parse_args()
 
