@@ -220,7 +220,7 @@ def playEpisode(episode, hfo, agent, custom_features=False, learn=True):
         next_observation = hfo.getState()
         next_features = extractFeatures(next_observation) if custom_features else next_observation
 
-        reward =    0 if (status == IN_GAME or status == CAPTURED_BY_DEFENSE) \
+        reward =    0 if status == IN_GAME \
             else  100 if status == GOAL \
             else -100
 
