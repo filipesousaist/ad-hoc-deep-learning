@@ -39,6 +39,7 @@ SAVE_FILE_NAME = "save.txt"
 
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument("agent", choices=["dqn", "drqn"])
     parser.add_argument("-l", "--load", action="store_true")
     parser.add_argument("-e", "--train-episode", type=int)
     parser.add_argument("-t", "--test-only", action="store_true")
@@ -72,13 +73,17 @@ def main():
         "actions": [ACTION_STRINGS[action] for action in ACTIONS]
     }
 
-    #agent = DRQNAgent(hfo_info["num_features"], hfo_info["num_actions"], learning_rate=0.001,
-    #    initial_exploration_rate=1, final_exploration_rate=0.1,
-    #    discount_factor=0.99, final_exploration_step=500000,
-    #    target_network_update_frequency=75, num_layers=2, cuda=False)
+    
     agent = MLPDQNAgent(hfo_info["num_features"], hfo_info["num_actions"], learning_rate=0.00025,
         initial_exploration_rate=1, final_exploration_rate=0.1, final_exploration_step=5000000,
-        discount_factor=0.99, target_network_update_frequency=75)
+        discount_factor=0.99, target_network_update_frequency=75) \
+            \
+            if args.agent == "dqn" else \
+            \
+            DRQNAgent(hfo_info["num_features"], hfo_info["num_actions"], learning_rate=0.001,
+        initial_exploration_rate=1, final_exploration_rate=0.1,
+        discount_factor=0.99, final_exploration_step=500000,
+        target_network_update_frequency=75, num_layers=2, cuda=False)
     
     output_path = args.output_path or DEFAULT_OUTPUT_PATH
     if not os.path.exists(output_path):

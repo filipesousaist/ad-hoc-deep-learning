@@ -6,7 +6,7 @@ OUTPUT_FILE_NAME = "output.txt"
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("agent", choices=["npc", "drqn"], help = "the type of agent to evaluate")
+    parser.add_argument("agent", choices=["npc", "dqn", "drqn"], help = "the type of agent to evaluate")
     parser.add_argument("-v", "--visualizer", action="store_true", help="launch HFO visualizer")
     parser.add_argument("-g", "--gnome-terminal", action="store_true", help="lauch agent in an external terminal")
     parser.add_argument("-n", "--no-output", action="store_true")
@@ -38,7 +38,7 @@ def main():
     os.system("LC_ALL=C ../HFO/bin/HFO --frames-per-trial 500 --untouched-time 200{}{} --offense-agents {} --offense-npcs {} --defense-npcs {} &".format(
         visualizer_arg, fullstate_arg, num_offense_agents, num_offense_npcs, num_defense_npcs))
 
-    if args.agent == "drqn":
+    if args.agent != "npc":
         gnome_terminal_command = "gnome-terminal -x " if args.gnome_terminal else ""
 
         load_arg = " --load" if args.load else ""
@@ -48,8 +48,8 @@ def main():
         output_path = (args.output_path or DEFAULT_OUTPUT_PATH).rstrip("/")
         output_path_arg = " --output-path " + output_path
 
-        script_command = "{}script -c 'python drqn-offense-agent-for-1v0.py{}{}{}{}{}'".format(
-            gnome_terminal_command, load_arg, train_episode_arg,
+        script_command = "{}script -c 'python offense-agent-for-1v0.py {}{}{}{}{}{}'".format(
+            gnome_terminal_command, args.agent, load_arg, train_episode_arg,
             test_only_arg, custom_features_arg, output_path_arg
         )
         if not args.no_output:
