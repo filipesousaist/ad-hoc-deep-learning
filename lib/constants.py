@@ -1,4 +1,0 @@
-DEFAULT_OUTPUT_PATH = "./output"
-TEST_OUTPUT_FILE_NAME = "TEST-results.txt"
-TRAIN_OUTPUT_FILE_NAME = "TRAIN-results.txt"
-AGENT_STATE_FILE_NAME = "agent-state"
