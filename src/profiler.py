@@ -1,17 +1,22 @@
-import os
+import os, sys
 import cProfile, pstats, io
 from pstats import SortKey
 
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument("command", type=str)
-args = parser.parse_args()
+parser.add_argument("module_path", type=str)
+args, _ = parser.parse_known_args()
+
+sys.argv = [sys.argv[0]] + sys.argv[2:]
 
 pr = cProfile.Profile()
+
+exec(f"from {args.module_path} import main")
+
 pr.enable()
 
-os.system(args.command)
+exec("main()")
 
 pr.disable()
 s = io.StringIO()

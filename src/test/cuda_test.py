@@ -11,6 +11,11 @@ from src.lib.time import getReadableTime
 
 import argparse
 
+
+def main():
+    run(num_episodes=10)
+
+
 def run(num_episodes: int):
     parser = argparse.ArgumentParser()
     parser.add_argument("-c", "--cuda", action="store_true")
@@ -38,5 +43,4 @@ def run(num_episodes: int):
 
 
 if __name__ == '__main__':
-
-    run(num_episodes=10)
+    main()

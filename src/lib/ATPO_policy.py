@@ -57,13 +57,20 @@ class DRQN(TorchModel):
         self._check_device()
         with torch.no_grad():
             X = self.data_to_model(X, torch.float32)
-            Z, H = self(X) if hidden_last is None else self(X, hidden_last)
+            Z, H = self(X) if hidden_last is None else self(X, self.tuple_to_model(hidden_last, torch.float32))
             Z = Z.detach().cpu()
             if isinstance(H, tuple):
                 H = H[0].detach().cpu(), H[1].detach().cpu()
             else:
                 H = H.detach().cpu()
             return Z, H
+    
+    def tuple_to_model(self, tup: tuple, dtype: torch.dtype):
+        new_tup = ()
+        for tensor in tup:
+            new_tup += (self.data_to_model(tensor, dtype),)
+        return new_tup
+
 
     def accuracy(self, X, y):
         """
