@@ -26,3 +26,7 @@ def getTeamUniformNumbers(observation: np.ndarray, num_teammates: int) -> list:
         uniform_numbers.append(unum)
     
     return uniform_numbers
+
+
+def ableToKick(observation: np.ndarray) -> bool:
+    return observation[5] == 1

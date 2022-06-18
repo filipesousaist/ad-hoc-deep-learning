@@ -3,8 +3,8 @@ import itertools
 
 from src.lib.io import logOutput
 from src.lib.paths import DEFAULT_DIRECTORY, DEFAULT_PORT, getPath
+from src.lib.input import readInputData
 
-from src.hfo_agents.input import readInputData
 from src.hfo_agents.agentForHFOFactory import getAgentForHFOFactory
 
 def main():

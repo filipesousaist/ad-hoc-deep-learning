@@ -11,8 +11,8 @@ from src.lib.paths import DEFAULT_DIRECTORY, DEFAULT_PORT, getPath
 from src.lib.io import logOutput, flushOutput, readTxt, writeTxt
 from src.lib.time import getReadableTime
 from src.lib.threads import WaitForQuitThread, TeammateThread, OpponentThread
+from src.lib.input import readInputData
 
-from src.hfo_agents.input import readInputData
 from src.hfo_agents.agentForHFOFactory import getAgentForHFOFactory
 from src.hfo_agents.LearningAgentForHFO import LearningAgentForHFO
 
@@ -138,10 +138,10 @@ def createOutputFiles(directory: str) -> None:
         train_output_file.write("Episode\t\tAverage loss\n\n")
 
     writeTxt(getPath(directory, "save"), {
-        "current_episode": 0,
-        "current_test_episode": 0,
+        "next_episode": 0,
+        "next_test_episode": 0,
         "current_test_rollout_goals": 0,
-        "current_train_episode": 0,
+        "next_train_episode": 0,
         "execution_time": 0,
         "execution_time_readable": getReadableTime(0)
     })
@@ -160,7 +160,7 @@ def getEpisodeAndTrainEpisode(directory: str, load: bool, test_from_episode: int
 
 def loadEpisodeAndTrainEpisode(directory: str) -> tuple:
     save_data = readTxt(getPath(directory, "save"))
-    return int(save_data["current_episode"]), int(save_data["current_train_episode"])
+    return int(save_data["next_episode"]), int(save_data["next_train_episode"])
 
 
 def loadAgent(agent: Type[LearningAgentForHFO], directory: str, train_episode: int,
@@ -246,7 +246,7 @@ def saveData(directory: str, agent: Type[LearningAgentForHFO], is_training: bool
     save_path = getPath(directory, "save")
     
     save_data = readTxt(save_path)
-    save_data["current_episode"] = episode
+    save_data["next_episode"] = episode + 1
     save_data["execution_time"] = float(save_data["execution_time"]) + delta_time
     save_data["execution_time_readable"] = getReadableTime(save_data["execution_time"])
     
@@ -261,7 +261,7 @@ def saveData(directory: str, agent: Type[LearningAgentForHFO], is_training: bool
 def saveTrainData(save_data: dict, directory: str, train_episode: int,
         average_loss: float) -> None:
     save_data["current_test_rollout_goals"] = 0
-    save_data["current_train_episode"] = train_episode
+    save_data["next_train_episode"] = train_episode + 1
     
     with open(getPath(directory, "train-output"), "a") as file:
         file.write("{}\t\t{}\n".format(train_episode, average_loss))
@@ -271,7 +271,7 @@ def saveTestData(save_data: dict, directory: str, num_episodes: dict, test_episo
         rollout: int, status: int) -> None:
     save_data["current_test_rollout_goals"] = \
         int(save_data["current_test_rollout_goals"]) + int(status == GOAL)
-    save_data["current_test_episode"] = test_episode
+    save_data["next_test_episode"] = test_episode + 1
     
     if test_episode % num_episodes["test"] == num_episodes["test"] - 1:
         with open(getPath(directory, "test-output"), "a") as file:
