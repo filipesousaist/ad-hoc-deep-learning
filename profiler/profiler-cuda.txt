@@ -1,0 +1,924 @@
+Episode 0: 3.31092s
+Episode 1: 11.1919s
+Episode 2: 19.8075s
+Episode 3: 27.6878s
+Episode 4: 35.88s
+         4956584 function calls (4830750 primitive calls) in 37.703 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     28/1    0.000    0.000   37.703   37.703 {built-in method builtins.exec}
+        1    0.000    0.000   37.703   37.703 <string>:1(<module>)
+        1    0.002    0.002   37.703   37.703 /home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/src/test/cuda_test.py:15(main)
+        1    0.005    0.005   37.700   37.700 /home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/src/test/cuda_test.py:19(run)
+     1000    0.003    0.000   35.160    0.035 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/agents/Agent.py:53(reinforcement)
+     1000    0.004    0.000   35.152    0.035 /home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/src/lib/ATPO_policy.py:142(_reinforce)
+      220    0.005    0.000   35.131    0.160 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/agents/dqn/DQNAgent.py:67(experience_replay)
+      220    1.359    0.006   33.952    0.154 /home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/src/lib/ATPO_policy.py:175(_preprocess)
+    57320    0.279    0.000   32.773    0.001 /home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/src/lib/ATPO_policy.py:134(q_values)
+    56320    0.078    0.000   32.355    0.001 /home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/src/lib/ATPO_policy.py:183(<lambda>)
+    57320    0.967    0.000   32.006    0.001 /home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/src/lib/ATPO_policy.py:55(predict)
+172840/57760    0.490    0.000   23.300    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1104(_call_impl)
+    57540    0.309    0.000   22.964    0.000 /home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/src/lib/ATPO_policy.py:40(forward)
+    57540    0.570    0.000   19.532    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py:713(forward)
+    57540   18.120    0.000   18.120    0.000 {built-in method lstm}
+   157834    4.580    0.000    4.581    0.000 {method 'to' of 'torch._C._TensorBase' objects}
+   171960    3.398    0.000    3.398    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+   157820    0.309    0.000    3.310    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/models/TorchModel.py:186(data_to_model)
+    57540    0.112    0.000    2.569    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/linear.py:102(forward)
+    57540    2.420    0.000    2.420    0.000 {built-in method torch._C._nn.linear}
+    50030    0.128    0.000    1.933    0.000 /home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/src/lib/ATPO_policy.py:68(tuple_to_model)
+   215361    0.037    0.000    1.824    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/models/TorchModel.py:149(_check_device)
+        1    0.000    0.000    1.800    1.800 /home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/src/lib/ATPO_policy.py:103(__init__)
+        1    0.000    0.000    1.797    1.797 /home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/src/lib/ATPO_policy.py:15(__init__)
+        1    0.000    0.000    1.788    1.788 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/models/TorchModel.py:145(check_initialization)
+        1    0.000    0.000    1.787    1.787 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/models/TorchModel.py:159(_deploy_to_device)
+        1    0.000    0.000    1.775    1.775 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:803(to)
+      3/1    0.000    0.000    1.775    1.775 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:576(_apply)
+        1    0.000    0.000    1.775    1.775 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py:181(_apply)
+       14    0.000    0.000    1.772    0.127 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:901(convert)
+      220    0.006    0.000    1.062    0.005 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/models/TorchModel.py:34(fit_and_validate)
+      220    0.004    0.000    1.009    0.005 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/models/TorchModel.py:55(<listcomp>)
+      220    0.004    0.000    0.927    0.004 /home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/src/lib/ATPO_policy.py:45(_fit_batch)
+     1000    0.005    0.000    0.641    0.001 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/agents/Agent.py:31(action)
+     1000    0.003    0.000    0.569    0.001 /home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/src/lib/ATPO_policy.py:128(policy)
+   113640    0.486    0.000    0.486    0.000 {method 'reshape' of 'torch._C._TensorBase' objects}
+   175260    0.485    0.000    0.485    0.000 {method 'detach' of 'torch._C._TensorBase' objects}
+      220    0.002    0.000    0.465    0.002 /home/filipesousa/.local/lib/python3.9/site-packages/torch/_tensor.py:307(backward)
+      220    0.002    0.000    0.463    0.002 /home/filipesousa/.local/lib/python3.9/site-packages/torch/autograd/__init__.py:85(backward)
+      220    0.456    0.002    0.456    0.002 {method 'run_backward' of 'torch._C._EngineBase' objects}
+    57540    0.128    0.000    0.417    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py:679(check_forward_args)
+      220    0.002    0.000    0.282    0.001 /home/filipesousa/.local/lib/python3.9/site-packages/torch/optim/optimizer.py:83(wrapper)
+      220    0.001    0.000    0.272    0.001 /home/filipesousa/.local/lib/python3.9/site-packages/torch/autograd/grad_mode.py:24(decorate_context)
+      220    0.010    0.000    0.268    0.001 /home/filipesousa/.local/lib/python3.9/site-packages/torch/optim/adam.py:89(step)
+      220    0.062    0.000    0.248    0.001 /home/filipesousa/.local/lib/python3.9/site-packages/torch/optim/_functional.py:64(adam)
+    60649    0.106    0.000    0.234    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/autograd/grad_mode.py:130(__exit__)
+    16340    0.228    0.000    0.228    0.000 {built-in method zeros}
+   173940    0.224    0.000    0.224    0.000 {built-in method torch._C._get_tracing_state}
+   230477    0.199    0.000    0.199    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1172(__getattr__)
+   121298    0.137    0.000    0.195    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/autograd/grad_mode.py:215(__init__)
+   158260    0.130    0.000    0.168    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/models/utils.py:75(assure_tensor)
+    28064    0.160    0.000    0.160    0.000 {method 'max' of 'torch._C._TensorBase' objects}
+    60649    0.069    0.000    0.154    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/autograd/grad_mode.py:126(__enter__)
+    60649    0.146    0.000    0.154    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/autograd/grad_mode.py:121(__init__)
+   345684    0.148    0.000    0.148    0.000 {method 'size' of 'torch._C._TensorBase' objects}
+   115080    0.050    0.000    0.097    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py:223(check_hidden_size)
+      220    0.001    0.000    0.084    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1440(load_state_dict)
+  880/220    0.002    0.000    0.083    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1475(load)
+    57540    0.049    0.000    0.081    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py:198(check_input)
+   350488    0.078    0.000    0.081    0.000 {built-in method builtins.isinstance}
+      880    0.027    0.000    0.080    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1346(_load_from_state_dict)
+      440    0.003    0.000    0.078    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/dataloader.py:526(__next__)
+    56320    0.076    0.000    0.076    0.000 {built-in method from_numpy}
+     1000    0.002    0.000    0.073    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/wrappers/time_limit.py:16(step)
+     1000    0.001    0.000    0.071    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/wrappers/order_enforcing.py:11(step)
+     1000    0.014    0.000    0.069    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/classic_control/mountain_car.py:117(step)
+9315/3662    0.008    0.000    0.067    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+    57540    0.055    0.000    0.067    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py:209(get_expected_hidden_size)
+     1000    0.002    0.000    0.065    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/policies/__init__.py:9(action_from_policy)
+      440    0.003    0.000    0.063    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/dataloader.py:568(_next_data)
+     1000    0.054    0.000    0.063    0.000 {method 'choice' of 'numpy.random.mtrand.RandomState' objects}
+     6160    0.058    0.000    0.058    0.000 {method 'mul_' of 'torch._C._TensorBase' objects}
+     1000    0.002    0.000    0.052    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/policies/__init__.py:63(epsilon_greedy_policy)
+    57760    0.033    0.000    0.052    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/_VF.py:25(__getattr__)
+     6160    0.050    0.000    0.050    0.000 {method 'add_' of 'torch._C._TensorBase' objects}
+   181947    0.048    0.000    0.048    0.000 {built-in method torch._C.is_grad_enabled}
+   216244    0.047    0.000    0.047    0.000 {method 'dim' of 'torch._C._TensorBase' objects}
+     2000    0.002    0.000    0.047    0.000 <__array_function__ internals>:177(clip)
+     3100    0.003    0.000    0.045    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/fromnumeric.py:51(_wrapfunc)
+    57540    0.031    0.000    0.044    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py:667(get_expected_cell_size)
+     2000    0.002    0.000    0.041    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/fromnumeric.py:2083(clip)
+      220    0.001    0.000    0.037    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py:47(fetch)
+     2000    0.004    0.000    0.037    0.000 {method 'clip' of 'numpy.generic' objects}
+      220    0.008    0.000    0.036    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/optim/optimizer.py:189(zero_grad)
+      550    0.007    0.000    0.034    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/policies/__init__.py:48(greedy_policy)
+     2000    0.005    0.000    0.033    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/_methods.py:125(_clip)
+     3080    0.030    0.000    0.030    0.000 {method 'copy_' of 'torch._C._TensorBase' objects}
+   121298    0.027    0.000    0.027    0.000 {built-in method torch._C._set_grad_enabled}
+     3080    0.027    0.000    0.027    0.000 {method 'addcdiv_' of 'torch._C._TensorBase' objects}
+     2000    0.006    0.000    0.026    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/agents/dqn/DQNAgent.py:98(exploration_rate)
+     3080    0.026    0.000    0.026    0.000 {method 'sqrt' of 'torch._C._TensorBase' objects}
+   107570    0.025    0.000    0.025    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py:691(permute_hidden)
+     3080    0.024    0.000    0.024    0.000 {method 'addcmul_' of 'torch._C._TensorBase' objects}
+     55/4    0.000    0.000    0.023    0.006 <frozen importlib._bootstrap>:1002(_find_and_load)
+     55/4    0.000    0.000    0.023    0.006 <frozen importlib._bootstrap>:967(_find_and_load_unlocked)
+      440    0.001    0.000    0.023    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/dataloader.py:520(_next_index)
+     53/4    0.000    0.000    0.023    0.006 <frozen importlib._bootstrap>:659(_load_unlocked)
+     25/4    0.000    0.000    0.023    0.006 <frozen importlib._bootstrap_external>:844(exec_module)
+      668    0.000    0.000    0.022    0.000 {built-in method builtins.next}
+     83/4    0.000    0.000    0.022    0.006 <frozen importlib._bootstrap>:220(_call_with_frames_removed)
+      440    0.004    0.000    0.022    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/sampler.py:224(__iter__)
+     1220    0.022    0.000    0.022    0.000 {built-in method tensor}
+     4000    0.011    0.000    0.021    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/_methods.py:91(_clip_dep_is_scalar_nan)
+    63911    0.021    0.000    0.021    0.000 {built-in method builtins.getattr}
+  660/220    0.006    0.000    0.020    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/_utils/collate.py:84(default_collate)
+        1    0.000    0.000    0.020    0.020 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/registration.py:675(make)
+        1    0.000    0.000    0.020    0.020 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/registration.py:479(make)
+        1    0.000    0.000    0.019    0.019 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/registration.py:126(make)
+        1    0.000    0.000    0.019    0.019 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/registration.py:53(load)
+        1    0.000    0.000    0.019    0.019 /usr/lib/python3.9/importlib/__init__.py:109(import_module)
+        1    0.000    0.000    0.019    0.019 <frozen importlib._bootstrap>:1018(_gcd_import)
+        1    0.000    0.000    0.019    0.019 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/classic_control/__init__.py:1(<module>)
+        1    0.000    0.000    0.017    0.017 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/classic_control/cartpole.py:1(<module>)
+     7260    0.005    0.000    0.017    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/sampler.py:107(__iter__)
+ 1768/442    0.004    0.000    0.017    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1713(train)
+      220    0.002    0.000    0.017    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py:49(<listcomp>)
+        1    0.000    0.000    0.017    0.017 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/__init__.py:21(<module>)
+     3066    0.016    0.000    0.016    0.000 {method 'zero_' of 'torch._C._TensorBase' objects}
+      220    0.001    0.000    0.015    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/loss.py:528(forward)
+     7040    0.015    0.000    0.015    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/models/utils.py:129(__getitem__)
+      220    0.002    0.000    0.014    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/functional.py:3234(mse_loss)
+    53/50    0.000    0.000    0.013    0.000 <frozen importlib._bootstrap>:558(module_from_spec)
+    28/26    0.000    0.000    0.013    0.000 <frozen importlib._bootstrap_external>:1171(create_module)
+      220    0.001    0.000    0.012    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/memory/ExperienceReplayBuffer.py:17(sample)
+    12217    0.008    0.000    0.012    0.000 <string>:2(getvalue)
+  880/220    0.004    0.000    0.012    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1294(state_dict)
+    28/26    0.011    0.000    0.012    0.000 {built-in method _imp.create_dynamic}
+        9    0.000    0.000    0.012    0.001 /home/filipesousa/.local/lib/python3.9/site-packages/torch/cuda/__init__.py:76(is_available)
+       14    0.012    0.001    0.012    0.001 {built-in method torch._C._cuda_getDeviceCount}
+     1000    0.012    0.000    0.012    0.000 {method 'uniform' of 'numpy.random.mtrand.RandomState' objects}
+      220    0.004    0.000    0.012    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/dataloader.py:166(__init__)
+      550    0.001    0.000    0.012    0.000 <__array_function__ internals>:177(argwhere)
+      880    0.003    0.000    0.012    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/autograd/profiler.py:435(__enter__)
+      220    0.005    0.000    0.011    0.000 /usr/lib/python3.9/random.py:374(sample)
+     4551    0.003    0.000    0.011    0.000 <__array_function__ internals>:177(ndim)
+      550    0.001    0.000    0.011    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/numeric.py:571(argwhere)
+37176/36074    0.006    0.000    0.011    0.000 {built-in method builtins.len}
+    21532    0.009    0.000    0.011    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/_tensor.py:1092(grad)
+     2000    0.003    0.000    0.010    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/policies/__init__.py:87(linear_annealing)
+      220    0.000    0.000    0.010    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/_utils/collate.py:172(<listcomp>)
+      554    0.001    0.000    0.010    0.000 <__array_function__ internals>:177(amax)
+      220    0.000    0.000    0.010    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/dataloader.py:355(__iter__)
+     6000    0.003    0.000    0.010    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/agents/Agent.py:124(trainable)
+      220    0.000    0.000    0.010    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/dataloader.py:309(_get_iterator)
+        1    0.000    0.000    0.010    0.010 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py:664(__init__)
+        1    0.000    0.000    0.010    0.010 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py:39(__init__)
+      220    0.010    0.000    0.010    0.000 {built-in method torch._C._nn.mse_loss}
+      220    0.001    0.000    0.009    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/dataloader.py:560(__init__)
+        1    0.000    0.000    0.009    0.009 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py:193(reset_parameters)
+       13    0.000    0.000    0.009    0.001 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/init.py:122(uniform_)
+       13    0.000    0.000    0.009    0.001 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/init.py:12(_no_grad_uniform_)
+       14    0.009    0.001    0.009    0.001 {method 'uniform_' of 'torch._C._TensorBase' objects}
+      880    0.009    0.000    0.009    0.000 {built-in method torch._ops.profiler._record_function_enter}
+      440    0.008    0.000    0.008    0.000 {built-in method stack}
+      880    0.004    0.000    0.008    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1257(_save_to_state_dict)
+      554    0.001    0.000    0.008    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/fromnumeric.py:2675(amax)
+    60654    0.008    0.000    0.008    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/_jit_internal.py:957(is_scripting)
+      880    0.001    0.000    0.008    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/autograd/profiler.py:426(__init__)
+      222    0.000    0.000    0.008    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1735(eval)
+      220    0.003    0.000    0.007    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/dataloader.py:494(__init__)
+      561    0.002    0.000    0.007    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/fromnumeric.py:69(_wrapreduction)
+     1845    0.005    0.000    0.006    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1188(__setattr__)
+     5217    0.002    0.000    0.006    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/agents/Agent.py:131(total_training_timesteps)
+      880    0.006    0.000    0.006    0.000 {method 'item' of 'torch._C._TensorBase' objects}
+     2000    0.006    0.000    0.006    0.000 {built-in method builtins.round}
+      220    0.002    0.000    0.006    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/models/utils.py:100(__init__)
+     4551    0.004    0.000    0.006    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/fromnumeric.py:3164(ndim)
+      550    0.000    0.000    0.006    0.000 <__array_function__ internals>:177(transpose)
+      220    0.006    0.000    0.006    0.000 {method 'mean' of 'torch._C._TensorBase' objects}
+     1000    0.005    0.000    0.006    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/spaces/discrete.py:30(contains)
+      220    0.001    0.000    0.005    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/autograd/__init__.py:30(_make_grads)
+     7064    0.004    0.000    0.005    0.000 /usr/lib/python3.9/random.py:237(_randbelow_with_getrandbits)
+     3099    0.002    0.000    0.005    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1612(children)
+      880    0.002    0.000    0.005    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/autograd/profiler.py:439(__exit__)
+      880    0.001    0.000    0.005    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/sampler.py:100(num_samples)
+      550    0.000    0.000    0.005    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/fromnumeric.py:601(transpose)
+      440    0.005    0.000    0.005    0.000 {built-in method randperm}
+     1100    0.000    0.000    0.005    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/models/utils.py:126(__len__)
+     1004    0.002    0.000    0.005    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/numerictypes.py:356(issubdtype)
+      561    0.005    0.000    0.005    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+     2000    0.004    0.000    0.004    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/_methods.py:106(_clip_dep_invoke_with_casting)
+      550    0.002    0.000    0.004    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/fromnumeric.py:38(_wrapit)
+      220    0.004    0.000    0.004    0.000 {built-in method ones_like}
+     1100    0.002    0.000    0.004    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/_tensor.py:676(__len__)
+     2003    0.003    0.000    0.004    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/getlimits.py:457(__new__)
+       25    0.000    0.000    0.004    0.000 <frozen importlib._bootstrap_external>:916(get_code)
+     4552    0.004    0.000    0.004    0.000 {built-in method numpy.asarray}
+      880    0.004    0.000    0.004    0.000 {built-in method torch._ops.profiler._record_function_exit}
+     1551    0.003    0.000    0.003    0.000 {method 'reshape' of 'numpy.ndarray' objects}
+     3099    0.003    0.000    0.003    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1621(named_children)
+      220    0.001    0.000    0.003    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/sampler.py:85(__init__)
+      450    0.003    0.000    0.003    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/policies/__init__.py:41(random_policy)
+      478    0.001    0.000    0.003    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py:126(__setattr__)
+    13217    0.003    0.000    0.003    0.000 {method 'acquire' of '_multiprocessing.SemLock' objects}
+4180/3960    0.003    0.000    0.003    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/dataloader.py:345(__setattr__)
+        1    0.000    0.000    0.003    0.003 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/__init__.py:1(<module>)
+     1000    0.002    0.000    0.003    0.000 /home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/src/lib/ATPO_policy.py:167(remember)
+      550    0.000    0.000    0.003    0.000 <__array_function__ internals>:177(put)
+     4000    0.002    0.000    0.003    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/_methods.py:101(_clip_dep_is_byte_swapped)
+        1    0.000    0.000    0.003    0.003 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/agents/dqn/DQNAgent.py:19(__init__)
+     2008    0.002    0.000    0.003    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/numerictypes.py:282(issubclass_)
+       55    0.000    0.000    0.003    0.000 <frozen importlib._bootstrap>:901(_find_spec)
+      889    0.000    0.000    0.003    0.000 /usr/lib/python3.9/abc.py:117(__instancecheck__)
+      550    0.000    0.000    0.003    0.000 <__array_function__ internals>:177(nonzero)
+      440    0.003    0.000    0.003    0.000 {method 'random_' of 'torch._C._TensorBase' objects}
+      220    0.001    0.000    0.002    0.000 {built-in method builtins.all}
+      220    0.001    0.000    0.002    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/functional.py:46(broadcast_tensors)
+     1012    0.002    0.000    0.002    0.000 {built-in method numpy.array}
+      454    0.002    0.000    0.002    0.000 {built-in method empty}
+    24541    0.002    0.000    0.002    0.000 {method 'append' of 'list' objects}
+      889    0.001    0.000    0.002    0.000 {built-in method _abc._abc_instancecheck}
+    26026    0.002    0.000    0.002    0.000 {built-in method torch._C._has_torch_function_unary}
+       55    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:1406(find_spec)
+        2    0.000    0.000    0.002    0.001 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py:133(flatten_parameters)
+       55    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:1374(_get_spec)
+     3174    0.001    0.000    0.002    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/_tensor.py:706(__hash__)
+       25    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:645(_compile_bytecode)
+       25    0.002    0.000    0.002    0.000 {built-in method marshal.loads}
+      550    0.000    0.000    0.002    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/fromnumeric.py:486(put)
+      550    0.000    0.000    0.002    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/fromnumeric.py:1866(nonzero)
+       58    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:1505(find_spec)
+    12415    0.002    0.000    0.002    0.000 {method 'startswith' of 'str' objects}
+     7040    0.001    0.000    0.002    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/_utils/collate.py:167(<genexpr>)
+     1000    0.002    0.000    0.002    0.000 {method 'numpy' of 'torch._C._TensorBase' objects}
+     2479    0.002    0.000    0.002    0.000 {built-in method builtins.min}
+        1    0.002    0.002    0.002    0.002 {built-in method _cudnn_rnn_flatten_weight}
+     3080    0.001    0.000    0.002    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/parameter.py:129(is_lazy)
+    13217    0.002    0.000    0.002    0.000 {method 'release' of '_multiprocessing.SemLock' objects}
+        1    0.000    0.000    0.002    0.002 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/agents/Agent.py:18(__init__)
+        2    0.000    0.000    0.002    0.001 /usr/lib/python3.9/multiprocessing/context.py:132(Value)
+      550    0.002    0.000    0.002    0.000 {method 'put' of 'numpy.ndarray' objects}
+     8488    0.001    0.000    0.001    0.000 {method 'get' of 'dict' objects}
+      880    0.001    0.000    0.001    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1384(<dictcomp>)
+     1000    0.001    0.000    0.001    0.000 {built-in method numpy.zeros}
+    305/2    0.000    0.000    0.001    0.001 /usr/lib/python3.9/copy.py:128(deepcopy)
+       59    0.000    0.000    0.001    0.000 {built-in method builtins.__build_class__}
+  262/260    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap>:1033(_handle_fromlist)
+     44/2    0.000    0.000    0.001    0.001 /usr/lib/python3.9/copy.py:258(_reconstruct)
+     3080    0.001    0.000    0.001    0.000 {method 'conj' of 'torch._C._TensorBase' objects}
+     1000    0.001    0.000    0.001    0.000 <string>:1(<lambda>)
+      220    0.001    0.000    0.001    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/dataloader.py:51(create_fetcher)
+      440    0.001    0.000    0.001    0.000 {method 'tolist' of 'torch._C._TensorBase' objects}
+     3066    0.001    0.000    0.001    0.000 {method 'requires_grad_' of 'torch._C._TensorBase' objects}
+     9990    0.001    0.000    0.001    0.000 {method 'getrandbits' of '_random.Random' objects}
+     10/2    0.000    0.000    0.001    0.001 /usr/lib/python3.9/copy.py:226(_deepcopy_dict)
+      220    0.001    0.000    0.001    0.000 {built-in method broadcast_tensors}
+     1000    0.001    0.000    0.001    0.000 <string>:8(setvalue)
+     6183    0.001    0.000    0.001    0.000 {method 'split' of 'str' objects}
+     3079    0.001    0.000    0.001    0.000 {built-in method builtins.issubclass}
+      220    0.000    0.000    0.001    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/autograd/grad_mode.py:82(clone)
+     1254    0.001    0.000    0.001    0.000 {built-in method __new__ of type object at 0x7fd7aeba0900}
+      6/3    0.000    0.000    0.001    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/cuda/__init__.py:190(_lazy_init)
+       27    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1036(get_data)
+     3080    0.001    0.000    0.001    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/overrides.py:1552(is_tensor_like)
+  240/225    0.000    0.000    0.001    0.000 /usr/lib/python3.9/abc.py:121(__subclasscheck__)
+       53    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap>:486(_init_module_attrs)
+     7065    0.001    0.000    0.001    0.000 {method 'items' of 'collections.OrderedDict' objects}
+      224    0.001    0.000    0.001    0.000 {built-in method torch._C._log_api_usage_once}
+      440    0.001    0.000    0.001    0.000 {method 'copy' of 'collections.OrderedDict' objects}
+      511    0.001    0.000    0.001    0.000 {method 'format' of 'str' objects}
+      550    0.001    0.000    0.001    0.000 {method 'nonzero' of 'numpy.ndarray' objects}
+     3086    0.001    0.000    0.001    0.000 {built-in method math.sqrt}
+        1    0.000    0.000    0.001    0.001 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_search.py:1(<module>)
+     1000    0.001    0.000    0.001    0.000 {built-in method math.cos}
+        1    0.000    0.000    0.001    0.001 /usr/lib/python3.9/multiprocessing/sharedctypes.py:10(<module>)
+  240/225    0.001    0.000    0.001    0.000 {built-in method _abc._abc_subclasscheck}
+       28    0.001    0.000    0.001    0.000 {built-in method zeros_like}
+      220    0.001    0.000    0.001    0.000 {method 'manual_seed' of 'torch._C.Generator' objects}
+      156    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:135(_path_stat)
+        2    0.000    0.000    0.001    0.000 {built-in method builtins.__import__}
+     4551    0.001    0.000    0.001    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/fromnumeric.py:3160(_ndim_dispatcher)
+        1    0.000    0.000    0.001    0.001 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/sprite.py:21(<module>)
+      168    0.001    0.000    0.001    0.000 {built-in method posix.stat}
+        1    0.000    0.000    0.001    0.001 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/classic_control/mountain_car.py:97(__init__)
+      220    0.001    0.000    0.001    0.000 {built-in method torch._C.set_vital}
+     3663    0.001    0.000    0.001    0.000 {built-in method builtins.id}
+        1    0.000    0.000    0.001    0.001 /home/filipesousa/.local/lib/python3.9/site-packages/gym/spaces/box.py:40(__init__)
+      250    0.000    0.000    0.001    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/memory/ExperienceReplayBuffer.py:13(push)
+      220    0.000    0.000    0.001    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py:44(__init__)
+     1433    0.001    0.000    0.001    0.000 {built-in method builtins.hasattr}
+     7064    0.001    0.000    0.001    0.000 {method 'bit_length' of 'int' objects}
+        1    0.001    0.001    0.001    0.001 {built-in method torch._C._cuda_init}
+        1    0.000    0.000    0.001    0.001 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_validation.py:1(<module>)
+     2220    0.001    0.000    0.001    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/memory/ExperienceReplayBuffer.py:25(__len__)
+        2    0.000    0.000    0.001    0.000 /usr/lib/python3.9/multiprocessing/sharedctypes.py:70(Value)
+      220    0.000    0.000    0.001    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/sampler.py:209(__init__)
+      101    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:203(_lock_unlock_module)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1689(__init__)
+       50    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:361(cache_from_source)
+      561    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/fromnumeric.py:70(<dictcomp>)
+       78    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:385(cached)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/spaces/box.py:11(_short_repr)
+       55    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:156(__enter__)
+        5    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/wrappers/time_limit.py:24(reset)
+       27    0.000    0.000    0.000    0.000 {built-in method io.open_code}
+        5    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/wrappers/order_enforcing.py:16(reset)
+     2000    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/fromnumeric.py:2079(_clip_dispatcher)
+        5    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/classic_control/mountain_car.py:136(reset)
+      207    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:121(_path_join)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:1(<module>)
+       14    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/parameter.py:28(__deepcopy__)
+      156    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:166(_get_module_lock)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:1575(_array_str_implementation)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:561(array2string)
+       53    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:491(_get_cached)
+     2335    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/utils/random.py:4(<module>)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:506(wrapper)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:523(_array2string)
+       24    0.000    0.000    0.000    0.000 /usr/lib/python3.9/abc.py:105(__new__)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/sharedctypes.py:44(RawValue)
+      550    0.000    0.000    0.000    0.000 {method 'transpose' of 'numpy.ndarray' objects}
+       65    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:154(_path_isfile)
+      220    0.000    0.000    0.000    0.000 {built-in method math.log}
+      220    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/dataloader.py:320(multiprocessing_context)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/cuda/__init__.py:98(_check_capability)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/sharedctypes.py:39(_new_value)
+       53    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1500(_get_spec)
+       69    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:145(_path_is_mode_type)
+      156    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:87(acquire)
+      221    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/models/TorchModel.py:154(_check_optimizer_initialization)
+       27    0.000    0.000    0.000    0.000 {method 'read' of '_io.BufferedReader' objects}
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.9/gettext.py:741(gettext)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/heap.py:326(__init__)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.9/gettext.py:664(dgettext)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.9/gettext.py:583(translation)
+     1000    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/agents/Agent.py:117(name)
+     1364    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+        3    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/cuda/__init__.py:348(get_device_properties)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/heap.py:296(malloc)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/cuda/__init__.py:331(get_device_capability)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.9/gettext.py:542(find)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:452(_get_format_function)
+       14    0.000    0.000    0.000    0.000 {method 'clone' of 'torch._C._TensorBase' objects}
+     1760    0.000    0.000    0.000    0.000 {method 'values' of 'collections.OrderedDict' objects}
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:411(<lambda>)
+        3    0.000    0.000    0.000    0.000 {built-in method torch.cuda._get_device_properties}
+      156    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:112(release)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:907(__init__)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/heap.py:188(_malloc)
+      220    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py:8(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/heap.py:158(_new_arena)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:934(fillFormat)
+      220    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/autograd/__init__.py:77(_tensor_or_tensors_to_tuple)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/heap.py:77(__init__)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/sharedctypes.py:148(make_property)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/context.py:70(RLock)
+      441    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
+      207    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:123(<listcomp>)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/models/TorchModel.py:173(reset_optimizer_state)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/synchronize.py:186(__init__)
+      880    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1382(<dictcomp>)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/synchronize.py:50(__init__)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1556(_fill_cache)
+      223    0.000    0.000    0.000    0.000 /usr/lib/python3.9/_collections_abc.py:315(__subclasshook__)
+      220    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/_reduction.py:7(get_enum)
+       59    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1337(_path_importer_cache)
+      880    0.000    0.000    0.000    0.000 {method 'keys' of 'collections.OrderedDict' objects}
+       53    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:696(spec_from_file_location)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/linear.py:79(__init__)
+        5    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/core.py:52(np_random)
+       50    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:127(_path_split)
+       55    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:160(__exit__)
+      220    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/dataloader.py:415(check_worker_number_rationality)
+        4    0.000    0.000    0.000    0.000 {built-in method posix.listdir}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/utils/seeding.py:13(np_random)
+      111    0.000    0.000    0.000    0.000 {built-in method builtins.setattr}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/tempfile.py:300(mkstemp)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/optim/adam.py:67(__init__)
+        3    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:254(__init__)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1388(add_argument)
+        1    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(linspace)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/optim/optimizer.py:33(__init__)
+      660    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/dataloader.py:370(_auto_collation)
+      440    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/_utils/worker.py:83(get_worker_info)
+        5    0.000    0.000    0.000    0.000 {method 'uniform' of 'numpy.random._generator.Generator' objects}
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1324(_path_hooks)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/function_base.py:23(linspace)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1820(parse_args)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.9/tempfile.py:149(__next__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1827(parse_known_args)
+      550    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/numeric.py:567(_argwhere_dispatcher)
+      220    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/utils/data/dataloader.py:374(_index_sampler)
+      554    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/fromnumeric.py:2670(_amax_dispatcher)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/tempfile.py:243(_mkstemp_inner)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/sharedctypes.py:212(Synchronized)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1866(_parse_known_args)
+       28    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/parameter.py:23(__new__)
+      550    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/fromnumeric.py:482(_put_dispatcher)
+       28    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1514(parameters)
+      220    0.000    0.000    0.000    0.000 {method 'numel' of 'torch._C._TensorBase' objects}
+       13    0.000    0.000    0.000    0.000 /usr/lib/python3.9/typing.py:271(inner)
+      220    0.000    0.000    0.000    0.000 /home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/src/lib/ATPO_policy.py:36(input_shape)
+       28    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1538(named_parameters)
+       25    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1077(path_stats)
+      220    0.000    0.000    0.000    0.000 {built-in method math.ceil}
+       63    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1934(consume_optional)
+       28    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1179(exec_module)
+        5    0.000    0.000    0.000    0.000 /home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/src/lib/time.py:5(getReadableTime)
+     12/8    0.000    0.000    0.000    0.000 /usr/lib/python3.9/copy.py:200(_deepcopy_list)
+       28    0.000    0.000    0.000    0.000 {built-in method _make_subclass}
+       28    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1501(_named_members)
+      550    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/fromnumeric.py:1862(_nonzero_dispatcher)
+       25    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:560(_classify_pyc)
+      132    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:398(parent)
+       27    0.000    0.000    0.000    0.000 {method '__exit__' of '_io._IOBase' objects}
+       55    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:185(cb)
+       45    0.000    0.000    0.000    0.000 {method '__reduce_ex__' of 'object' objects}
+      296    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:231(_verbose_message)
+        6    0.000    0.000    0.000    0.000 /usr/lib/python3.9/gettext.py:211(_expand_lang)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:2141(_match_argument)
+      220    0.000    0.000    0.000    0.000 /home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/src/lib/ATPO_policy.py:75(accuracy)
+      314    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/heap.py:10(<module>)
+      550    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/fromnumeric.py:597(_transpose_dispatcher)
+       55    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:58(__init__)
+        8    0.000    0.000    0.000    0.000 /usr/lib/python3.9/re.py:289(_compile)
+      220    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/models/TorchModel.py:64(<listcomp>)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/sharedctypes.py:238(SynchronizedString)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_search.py:382(BaseSearchCV)
+        3    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(any)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/utils/metaestimators.py:1(<module>)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.9/tempfile.py:138(rng)
+       14    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:580(compute_should_use_set_data)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/version.py:21(<module>)
+      239    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+      234    0.000    0.000    0.000    0.000 {built-in method torch._C._has_torch_function_variadic}
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/joblib/externals/loky/backend/__init__.py:8(_make_name)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/re.py:188(match)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1597(path_hook_for_FileFinder)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/util.py:205(__call__)
+      169    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:878(__exit__)
+      273    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+      220    0.000    0.000    0.000    0.000 {built-in method torch._C._has_torch_function}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/models/TorchModel.py:17(__init__)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/_ops.py:159(__getattr__)
+       71    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:79(_unpack_uint32)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/linear.py:92(reset_parameters)
+       14    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:328(register_parameter)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:780(_formatArray)
+       80    0.000    0.000    0.000    0.000 /usr/lib/python3.9/copy.py:242(_keep_alive)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:2537(_get_formatter)
+      169    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:874(__enter__)
+      6/2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:789(recurser)
+       12    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/backends/cudnn/__init__.py:67(is_acceptable)
+        3    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/fromnumeric.py:2305(any)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/typing.py:352(__getitem__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/contextlib.py:76(inner)
+       24    0.000    0.000    0.000    0.000 {built-in method _abc._abc_init}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/typing.py:434(Union)
+       13    0.000    0.000    0.000    0.000 /usr/lib/python3.9/posixpath.py:71(join)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1306(__init__)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:161(__init__)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/spaces/box.py:213(_broadcast)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_compile.py:759(compile)
+       23    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:593(_validate_timestamp_pyc)
+        6    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/_ufunc_config.py:32(seterr)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/typing.py:738(__init__)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/random.py:117(__init__)
+      466    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+        6    0.000    0.000    0.000    0.000 /usr/lib/python3.9/locale.py:386(normalize)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/random.py:126(seed)
+      380    0.000    0.000    0.000    0.000 {built-in method _imp.acquire_lock}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/classic_control/acrobot.py:1(<module>)
+        3    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/_ufunc_config.py:429(__enter__)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/cursors.py:21(<module>)
+        4    0.000    0.000    0.000    0.000 <frozen zipimport>:63(__init__)
+       19    0.000    0.000    0.000    0.000 /usr/lib/python3.9/os.py:674(__getitem__)
+       14    0.000    0.000    0.000    0.000 {built-in method _has_compatible_shallow_copy_type}
+        9    0.000    0.000    0.000    0.000 /usr/lib/python3.9/functools.py:35(update_wrapper)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/heap.py:268(free)
+      380    0.000    0.000    0.000    0.000 {built-in method _imp.release_lock}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py:187(<listcomp>)
+        6    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/numeric.py:1859(isscalar)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.9/tempfile.py:152(<listcomp>)
+      128    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/warnings.py:96(_showwarnmsg)
+      250    0.000    0.000    0.000    0.000 {method 'append' of 'collections.deque' objects}
+      100    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:129(<genexpr>)
+      315    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.lock' objects}
+       55    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:811(find_spec)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1439(add_argument_group)
+       12    0.000    0.000    0.000    0.000 /usr/lib/python3.9/genericpath.py:16(exists)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/warnings.py:20(_showwarnmsg_impl)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/init.py:366(kaiming_uniform_)
+       55    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:351(__init__)
+       28    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1155(__init__)
+        2    0.000    0.000    0.000    0.000 {built-in method torch._C._jit_get_operation}
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1466(__init__)
+       12    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py:187(<lambda>)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/optim/optimizer.py:243(add_param_group)
+       24    0.000    0.000    0.000    0.000 /usr/lib/python3.9/random.py:343(choice)
+       28    0.000    0.000    0.000    0.000 {built-in method _imp.exec_dynamic}
+      314    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1616(__init__)
+       25    0.000    0.000    0.000    0.000 /usr/lib/python3.9/copy.py:263(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/typing.py:984(__class_getitem__)
+       12    0.000    0.000    0.000    0.000 /usr/lib/python3.9/_collections_abc.py:760(get)
+        2    0.000    0.000    0.000    0.000 {function Random.seed at 0x7fd7adc1de50}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_parse.py:937(parse)
+        4    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(amin)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/classic_control/continuous_mountain_car.py:1(<module>)
+        7    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/utils/metaestimators.py:162(<lambda>)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/classic_control/mountain_car.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/classic_control/pendulum.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/surfarray.py:21(<module>)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.9/locale.py:352(_replace_encoding)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/shutil.py:1332(get_terminal_size)
+        7    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/utils/metaestimators.py:94(__init__)
+        6    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:989(<genexpr>)
+       25    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:523(_check_name_wrapper)
+      2/1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_parse.py:435(_parse_sub)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/threads/__init__.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 {built-in method torch._C._nn._parse_to}
+        4    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/fromnumeric.py:2800(amin)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/optim/optimizer.py:78(_hook_for_profile)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/backends/cudnn/rnn.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/cuda/__init__.py:126(_check_cubins)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/colordict.py:21(<module>)
+      111    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+        1    0.000    0.000    0.000    0.000 {function SeedSequence.generate_state at 0x7fd73a672a60}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/fastevent.py:1(<module>)
+       55    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:152(__init__)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py:121(<listcomp>)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/heap.py:205(_add_free_block)
+        5    0.000    0.000    0.000    0.000 /usr/lib/python3.9/typing.py:1006(__init_subclass__)
+      2/1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_parse.py:493(_parse)
+       32    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:175(_path_isabs)
+        6    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:984(<genexpr>)
+        3    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/spaces/box.py:206(get_precision)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/tempfile.py:110(_sanitize_params)
+       14    0.000    0.000    0.000    0.000 /usr/lib/python3.9/typing.py:712(__setattr__)
+       25    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:35(_new_module)
+        5    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(result_type)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/typing.py:676(__init__)
+        4    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:1018(__call__)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/utils/deprecation.py:37(__call__)
+        4    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/cuda/_utils.py:7(_get_device_index)
+       55    0.000    0.000    0.000    0.000 {built-in method _imp.is_frozen}
+       12    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py:121(<lambda>)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/tempfile.py:85(_infer_return_type)
+        5    0.000    0.000    0.000    0.000 /home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/src/lib/time.py:16(_getDHMS)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/util.py:171(register_after_fork)
+       37    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1359(register)
+        2    0.000    0.000    0.000    0.000 {built-in method pygame.base.get_sdl_version}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/warnings.py:117(_formatwarnmsg)
+        5    0.000    0.000    0.000    0.000 /usr/lib/python3.9/copyreg.py:103(_slotnames)
+        1    0.000    0.000    0.000    0.000 {method 'write' of '_io.TextIOWrapper' objects}
+        1    0.000    0.000    0.000    0.000 {method 'any' of 'numpy.generic' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/optim/optimizer.py:81(profile_hook_step)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.9/typing.py:137(_type_check)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/sharedctypes.py:135(rebuild_ctype)
+       19    0.000    0.000    0.000    0.000 /usr/lib/python3.9/os.py:754(encode)
+        8    0.000    0.000    0.000    0.000 {built-in method numpy.core._multiarray_umath.dragon4_positional}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1800(_add_action)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/utils/deprecation.py:97(_decorate_property)
+        3    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/_ufunc_config.py:434(__exit__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/warnings.py:35(_formatwarnmsg_impl)
+      196    0.000    0.000    0.000    0.000 /usr/lib/python3.9/copy.py:182(_deepcopy_atomic)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:159(_path_isdir)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.9/_collections_abc.py:767(__contains__)
+        6    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/cursors.py:57(__init__)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.9/encodings/__init__.py:43(normalize_encoding)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1638(_add_action)
+       57    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+       12    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/backends/cudnn/__init__.py:21(_init)
+      120    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/cuda/__init__.py:296(__init__)
+        7    0.000    0.000    0.000    0.000 /usr/lib/python3.9/re.py:250(compile)
+        6    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/_ufunc_config.py:131(geterr)
+       72    0.000    0.000    0.000    0.000 {built-in method from_bytes}
+        1    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(concatenate)
+        6    0.000    0.000    0.000    0.000 {built-in method numpy.seterrobj}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/weakref.py:165(__setitem__)
+       16    0.000    0.000    0.000    0.000 {built-in method posix.getpid}
+       51    0.000    0.000    0.000    0.000 {method 'rfind' of 'str' objects}
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/util.py:186(__init__)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:64(_make_options_dict)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/cuda/__init__.py:316(get_device_name)
+        3    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/typing_extensions.py:120(_collect_type_vars)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:588(_format_args)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1449(_add_action)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1913(take_action)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/_methods.py:54(_any)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/sndarray.py:21(<module>)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/registration.py:60(parse_env_id)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_compile.py:598(_code)
+        4    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:753(_extendLine_pretty)
+       55    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:736(find_spec)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/init.py:356(_calculate_correct_fan)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/sysfont.py:21(<module>)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.9/typing.py:992(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/posixpath.py:373(abspath)
+     10/6    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1668(named_modules)
+        1    0.000    0.000    0.000    0.000 {built-in method posix.open}
+        3    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py:114(<listcomp>)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/weakref.py:106(remove)
+       25    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1006(__init__)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/cuda/__init__.py:271(__enter__)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1529(_get_optional_kwargs)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/heap.py:322(BufferWrapper)
+        5    0.000    0.000    0.000    0.000 /home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/src/lib/time.py:28(_getFirstSignificantIndex)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/heap.py:91(_choose_dir)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/copy.py:209(_deepcopy_tuple)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.9/typing.py:466(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/cuda/__init__.py:267(__init__)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/heap.py:258(_free_pending_blocks)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/init.py:284(_calculate_fan_in_and_fan_out)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/heap.py:250(_remove_allocated_block)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/registration.py:525(spec)
+        5    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/cuda/__init__.py:453(device_count)
+       14    0.000    0.000    0.000    0.000 {method 'is_floating_point' of 'torch._C._TensorBase' objects}
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:403(_get_formatdict)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/heap.py:123(__init__)
+       14    0.000    0.000    0.000    0.000 /usr/lib/python3.9/typing.py:664(_is_dunder)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/backends/cudnn/rnn.py:11(get_cudnn_mode)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/registration.py:371(__getitem__)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/cuda/__init__.py:460(get_arch_list)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/spaces/discrete.py:20(__init__)
+       13    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py:161(<genexpr>)
+        4    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1158(__setstate__)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/utils/metaestimators.py:19(_BaseComposition)
+        2    0.000    0.000    0.000    0.000 {built-in method _imp.source_hash}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/sharedctypes.py:103(synchronized)
+        1    0.000    0.000    0.000    0.000 {built-in method posix.statvfs}
+       15    0.000    0.000    0.000    0.000 /home/filipesousa/Documents/GitHub/ad-hoc-deep-learning/src/lib/time.py:24(_div)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/sprite.py:98(Sprite)
+       58    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:68(_relax_case)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/optim/adam.py:83(__setstate__)
+       53    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:406(has_location)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/__init__.py:45(__init__)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/cuda/__init__.py:479(current_device)
+       17    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1189(remove_from)
+       25    0.000    0.000    0.000    0.000 {built-in method _imp._fix_co_filename}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/rnn.py:256(__setstate__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/random.py:791(getrandbits)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/registration.py:203(versions)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/classic_control/continuous_mountain_car.py:28(Continuous_MountainCarEnv)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/posixpath.py:334(normpath)
+        6    0.000    0.000    0.000    0.000 /usr/lib/python3.9/copyreg.py:94(__newobj__)
+        1    0.000    0.000    0.000    0.000 {built-in method _use_cudnn_rnn_flatten_weight}
+       18    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/classic_control/acrobot.py:27(AcrobotEnv)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/classic_control/cartpole.py:18(CartPoleEnv)
+       15    0.000    0.000    0.000    0.000 /usr/lib/python3.9/posixpath.py:41(_get_sep)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/__init__.py:278(__getattr__)
+       13    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/backends/__init__.py:46(__getattr__)
+        5    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/cuda/__init__.py:120(<genexpr>)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/heap.py:335(create_memoryview)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1567(_get_handler)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/version.py:42(__new__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/posixpath.py:140(basename)
+        2    0.000    0.000    0.000    0.000 {built-in method numpy.asanyarray}
+      2/1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_compile.py:71(_compile)
+       51    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/enum.py:977(__and__)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/sprite.py:705(LayeredUpdates)
+        2    0.000    0.000    0.000    0.000 {built-in method posix.get_terminal_size}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:960(__init__)
+        2    0.000    0.000    0.000    0.000 {method 'fullmatch' of 're.Pattern' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:54(BaseCrossValidator)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/spaces/space.py:36(__init__)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/jit/_builtins.py:158(_register_builtin)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:817(__init__)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/_ops.py:188(__getattr__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:2415(_get_values)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/init.py:67(calculate_gain)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/classic_control/mountain_car.py:17(MountainCarEnv)
+       32    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1472(<genexpr>)
+        6    0.000    0.000    0.000    0.000 {built-in method time.time}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/copy.py:210(<listcomp>)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:2011(consume_positionals)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/wrappers/order_enforcing.py:7(__init__)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/optim/optimizer.py:63(__setstate__)
+        4    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:739(_extendLine)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/weakref.py:368(__init__)
+        4    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/_utils.py:499(_get_device_index)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/typing.py:232(_remove_dups_flatten)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/copyreg.py:12(pickle)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/classic_control/pendulum.py:15(PendulumEnv)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/heap.py:235(_absorb)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1082(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/warnings.py:403(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/tempfile.py:229(_get_candidate_names)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/wrappers/time_limit.py:7(__init__)
+        1    0.000    0.000    0.000    0.000 {built-in method posix.unlink}
+       12    0.000    0.000    0.000    0.000 {built-in method numpy.geterrobj}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_compile.py:536(_compile_info)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.9/os.py:758(decode)
+        1    0.000    0.000    0.000    0.000 {built-in method numpy.arange}
+       19    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:2282(_get_nargs_pattern)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/yaaf/memory/ExperienceReplayBuffer.py:7(__init__)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/sprite.py:346(AbstractGroup)
+        4    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/nn/modules/module.py:1559(<lambda>)
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.locals}
+      3/2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_parse.py:174(getwidth)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/linecache.py:26(getline)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/os.py:1073(__subclasshook__)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/registration.py:299(_assert_version_exists)
+        3    0.000    0.000    0.000    0.000 {method 'astype' of 'numpy.ndarray' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/cuda/__init__.py:137(<listcomp>)
+        1    0.000    0.000    0.000    0.000 {built-in method posix.ftruncate}
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/registration.py:270(_assert_name_exists)
+        1    0.000    0.000    0.000    0.000 {built-in method torch._C._cudnn.getVersionInt}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:937(__init__)
+        5    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+        5    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/typing_extensions.py:113(_should_collect_from_parameters)
+       25    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1031(get_filename)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/weakref.py:348(__new__)
+       25    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:841(create_module)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/cursors.py:56(Cursor)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/core.py:218(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/typing.py:932(__hash__)
+        5    0.000    0.000    0.000    0.000 /usr/lib/python3.9/abc.py:7(abstractmethod)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1563(_pop_action_class)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/functools.py:65(wraps)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:273(_BaseKFold)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/reduction.py:43(register)
+       12    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/backends/cudnn/__init__.py:62(is_available)
+       18    0.000    0.000    0.000    0.000 {method 'find' of 'str' objects}
+       14    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/__future__.py:18(get_overwrite_module_params_on_conversion)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/heap.py:115(Heap)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/sprite.py:250(DirtySprite)
+        5    0.000    0.000    0.000    0.000 /usr/lib/python3.9/typing.py:927(__eq__)
+        5    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/core.py:82(reset)
+        7    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/cuda/__init__.py:148(is_initialized)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:573(StratifiedKFold)
+       10    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_parse.py:96(closegroup)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/sprite.py:1364(GroupSingle)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.9/typing.py:128(_type_convert)
+        1    0.000    0.000    0.000    0.000 {built-in method posix.urandom}
+        6    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/cursors.py:90(<listcomp>)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/weakref.py:353(__init__)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/synchronize.py:90(_make_methods)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/enum.py:358(__call__)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1363(_registry_get)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/_collections_abc.py:78(_check_methods)
+        6    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:993(<genexpr>)
+        2    0.000    0.000    0.000    0.000 {built-in method _weakref._remove_dead_weakref}
+        2    0.000    0.000    0.000    0.000 {method 'from_buffer' of '_ctypes.PyCSimpleType' objects}
+       13    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:2107(PredefinedSplit)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/context.py:233(get_context)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/utils/deprecation.py:110(_update_doc)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/_ops.py:155(__init__)
+        2    0.000    0.000    0.000    0.000 {method 'fileno' of '_io.TextIOWrapper' objects}
+       12    0.000    0.000    0.000    0.000 {method 'data_ptr' of 'torch._C._TensorBase' objects}
+       15    0.000    0.000    0.000    0.000 {method 'isalnum' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/version.py:35(SoftwareVersion)
+        5    0.000    0.000    0.000    0.000 {method 'get' of 'mappingproxy' objects}
+        3    0.000    0.000    0.000    0.000 {method 'index' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_parse.py:224(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_parse.py:84(opengroup)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/heap.py:152(_roundup)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_parse.py:233(__next)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/sprite.py:1038(LayeredDirty)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_search.py:1037(GridSearchCV)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/posixpath.py:60(isabs)
+        4    0.000    0.000    0.000    0.000 {built-in method _bisect.insort_right}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/linecache.py:36(getlines)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/sprite.py:1453(collide_rect_ratio)
+        5    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+        2    0.000    0.000    0.000    0.000 {method 'remove' of 'set' objects}
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_parse.py:249(match)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/sharedctypes.py:182(__init__)
+        7    0.000    0.000    0.000    0.000 /usr/lib/python3.9/_collections_abc.py:409(__subclasshook__)
+        1    0.000    0.000    0.000    0.000 {built-in method torch._C._cuda_getDevice}
+        3    0.000    0.000    0.000    0.000 {method 'group' of 're.Match' objects}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1576(_check_conflict)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/typing.py:218(_deduplicate)
+       12    0.000    0.000    0.000    0.000 {built-in method torch._C._get_cudnn_enabled}
+        6    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:994(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:1557(BaseShuffleSplit)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:572(_metavar_formatter)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/heap.py:170(_discard_arena)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/_ufunc_config.py:425(__init__)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/types.py:171(__get__)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:581(format)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/registration.py:257(_assert_namespace_exists)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/util.py:44(sub_debug)
+        4    0.000    0.000    0.000    0.000 {method 'decode' of 'bytes' objects}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/copyreg.py:22(constructor)
+        3    0.000    0.000    0.000    0.000 {method 'acquire' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:2163(_match_arguments_partial)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_parse.py:286(tell)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_search.py:1395(RandomizedSearchCV)
+        1    0.000    0.000    0.000    0.000 <string>:2(<module>)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_parse.py:81(groups)
+        7    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_search.py:358(_estimator_has)
+        5    0.000    0.000    0.000    0.000 {method 'remove' of 'list' objects}
+        3    0.000    0.000    0.000    0.000 {method 'copy' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/typing.py:749(__eq__)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_parse.py:164(__getitem__)
+      2/1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/core.py:249(observation_space)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:203(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1812(_get_positional_actions)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/utils/deprecation.py:34(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:948(_sanity_check)
+       10    0.000    0.000    0.000    0.000 {built-in method builtins.callable}
+        4    0.000    0.000    0.000    0.000 {method 'setter' of 'property' objects}
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:72(<dictcomp>)
+        6    0.000    0.000    0.000    0.000 /usr/lib/python3.9/typing.py:742(<genexpr>)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_compile.py:595(isstring)
+        7    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/utils/metaestimators.py:129(available_if)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/heap.py:67(Arena)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_search.py:50(ParameterGrid)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/sharedctypes.py:180(SynchronizedBase)
+        3    0.000    0.000    0.000    0.000 {built-in method torch._C._cuda_isInBadFork}
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:621(_validate_hash_pyc)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_parse.py:921(fix_flags)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/__init__.py:42(MissingModule)
+        4    0.000    0.000    0.000    0.000 {method 'splitlines' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:954(__call__)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/optim/optimizer.py:56(__getstate__)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/threads/__init__.py:128(WorkerQueue)
+        6    0.000    0.000    0.000    0.000 {method 'reverse' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_search.py:188(ParameterSampler)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:365(KFold)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:1724(GroupShuffleSplit)
+        1    0.000    0.000    0.000    0.000 {built-in method torch._C._cuda_getCompiledVersion}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_parse.py:160(__len__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/sharedctypes.py:216(SynchronizedArray)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/arrayprint.py:898(_none_or_positive_arg)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/backends/cudnn/rnn.py:27(Unserializable)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:1211(LeavePGroupsOut)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:1101(LeaveOneGroupOut)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:453(GroupKFold)
+        1    0.000    0.000    0.000    0.000 {built-in method _imp.is_builtin}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/enum.py:670(__new__)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:944(TimeSeriesSplit)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_parse.py:111(__init__)
+        5    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/core.py:231(spec)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:193(LeavePOut)
+        4    0.000    0.000    0.000    0.000 {built-in method _ctypes.sizeof}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:1343(_RepeatedSplits)
+        2    0.000    0.000    0.000    0.000 {built-in method torch._C._cuda_getArchFlags}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_parse.py:254(get)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/jit/_builtins.py:128(_get_builtin_table)
+        2    0.000    0.000    0.000    0.000 {built-in method _bisect.bisect_left}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:1849(StratifiedShuffleSplit)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/site-packages/six.py:194(find_spec)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:2179(_parse_optional)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/typing_extensions.py:86(_check_generic)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/cuda/__init__.py:141(<listcomp>)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:751(StratifiedGroupKFold)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/util.py:48(debug)
+      2/1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/core.py:239(action_space)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:115(LeaveOneOut)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:610(<listcomp>)
+        4    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/fromnumeric.py:2795(_amin_dispatcher)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.delattr}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/envs/registration.py:496(<lambda>)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/sprite.py:677(OrderedUpdates)
+        1    0.000    0.000    0.000    0.000 {built-in method torch._C._cudnn.getRuntimeVersion}
+        5    0.000    0.000    0.000    0.000 {method '__init_subclass__' of 'object' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:1632(ShuffleSplit)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:2464(<listcomp>)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/spaces/box.py:93(shape)
+        2    0.000    0.000    0.000    0.000 {method 'discard' of 'set' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/utils/metaestimators.py:165(_IffHasAttrDescriptor)
+        3    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/fromnumeric.py:2300(_any_dispatcher)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:1444(RepeatedKFold)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/cuda/__init__.py:59(get_calls)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/sprite.py:1554(collide_circle_ratio)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_parse.py:76(__init__)
+        1    0.000    0.000    0.000    0.000 {built-in method sys.exc_info}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/context.py:197(get_start_method)
+        1    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:2209(_CVIterableWrapper)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/torch/cuda/__init__.py:280(__exit__)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/utils/metaestimators.py:83(_AvailableIfDescriptor)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/util.py:52(info)
+        2    0.000    0.000    0.000    0.000 {built-in method _ctypes.addressof}
+        1    0.000    0.000    0.000    0.000 {built-in method _operator.index}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/typing.py:803(__mro_entries__)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.any}
+        2    0.000    0.000    0.000    0.000 {method 'lstrip' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/sklearn/model_selection/_split.py:1498(RepeatedStratifiedKFold)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_compile.py:65(_combine_flags)
+        1    0.000    0.000    0.000    0.000 {built-in method _sre.compile}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/contextlib.py:63(_recreate_cm)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/threads/__init__.py:177(FuncResult)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/sprite.py:618(Group)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/multiprocessing/context.py:187(get_context)
+        3    0.000    0.000    0.000    0.000 {method 'release' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/logger.py:32(info)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/function_base.py:18(_linspace_dispatcher)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1291(__init__)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.hash}
+        1    0.000    0.000    0.000    0.000 {built-in method torch._C._cudnn.getCompileVersion}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/sre_parse.py:172(append)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:2040(<listcomp>)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/typing_extensions.py:137(<listcomp>)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.9/argparse.py:1813(<listcomp>)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/sprite.py:647(RenderUpdates)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.9/enum.py:792(value)
+        2    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/importlib_metadata/_compat.py:51(find_spec)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/version.py:56(PygameVersion)
+        1    0.000    0.000    0.000    0.000 {method 'get_device' of 'torch._C._TensorBase' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/pygame/version.py:61(SDLVersion)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/gym/core.py:179(unwrapped)
+        1    0.000    0.000    0.000    0.000 {method 'isdisjoint' of 'set' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method sys.audit}
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/multiarray.py:664(result_type)
+        1    0.000    0.000    0.000    0.000 /home/filipesousa/.local/lib/python3.9/site-packages/numpy/core/multiarray.py:148(concatenate)
+        1    0.000    0.000    0.000    0.000 {method 'values' of 'dict' objects}
+
+
+
