@@ -6,7 +6,7 @@ from hfo import HFOEnvironment, HIGH_LEVEL_FEATURE_SET, IN_GAME, SERVER_DOWN, PA
 
 from src.lib.observations import getTeamUniformNumbers
 from src.lib.paths import getPath
-from src.hfo_agents.input import readInputData
+from src.lib.input import readInputData
 
 
 class AgentForHFO:
@@ -62,6 +62,7 @@ class AgentForHFO:
     def playEpisode(self) -> bool:
         self._status = IN_GAME
         self._observation = self._hfo.getState()
+        self._next_observation = None
         
         self._atEpisodeStart()
 
@@ -75,7 +76,7 @@ class AgentForHFO:
 
             self._atTimestepEnd()
 
-            self._observation = self._next_observation
+            self._updateObservation()
 
         self._atEpisodeEnd()
 
@@ -91,15 +92,19 @@ class AgentForHFO:
         pass
 
 
-    def _atEpisodeEnd(self) -> None:
-        pass
-
-
     def _atTimestepStart(self) -> None:
         pass
 
 
     def _atTimestepEnd(self) -> None:
+        pass
+
+
+    def _updateObservation(self) -> None:
+        self._observation = self._next_observation
+    
+
+    def _atEpisodeEnd(self) -> None:
         pass
 
 
