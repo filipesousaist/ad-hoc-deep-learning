@@ -14,6 +14,7 @@ from yaaf import Timestep
 from src.hfo_agents.AgentForHFO import AgentForHFO
 from src.lib.actions import isActionValid
 from src.lib.features import extractFeatures
+from src.lib.observations import ableToKick
 
 class LearningAgentForHFO(AgentForHFO):
     def __init__(self, directory: str, port: int, team: str, input_loadout: int = 0):
@@ -24,6 +25,8 @@ class LearningAgentForHFO(AgentForHFO):
         self._num_timesteps: int 
 
         self._actions: "list[int]"
+        self._auto_move: bool
+        self._auto_moving: bool
         self._reward_function: dict
         self._custom_features: bool
         
@@ -42,8 +45,9 @@ class LearningAgentForHFO(AgentForHFO):
 
     def _storeInputData(self) -> None:
         self._input_data["HFO_actions"] = \
-            [globals()[action] for action in self._input_data["actions"]]
+            [globals()[action] for action in self._input_data["actions"] if not action.startswith("_")]
         self._actions = self._input_data["HFO_actions"]
+        self._storeCustomActions([action for action in self._input_data["actions"] if action.startswith("_")])
 
         self._custom_features = self._input_data["custom_features"]
 
@@ -56,9 +60,12 @@ class LearningAgentForHFO(AgentForHFO):
         if self._custom_features:
             num_features = len(extractFeatures(np.zeros(num_features)))
         
-        num_actions = len(self._actions)
-        
-        self._agent = self._createAgent(num_features, num_actions, self._input_data["agent_parameters"])
+        self._agent = self._createAgent(num_features, len(self._actions), self._input_data["agent_parameters"])
+
+
+    def _storeCustomActions(self, actions: "list[str]") -> None:
+        self._auto_move = "_AUTO_MOVE" in actions
+        self._auto_moving = False
 
 
     def _inputPurpose(self) -> str:
@@ -71,9 +78,19 @@ class LearningAgentForHFO(AgentForHFO):
 
 
     def _selectAction(self) -> int:
+        self._updateAutoMove()
+        if self._auto_moving:
+            return MOVE
         self._action = self._agent.action(self._features)
         hfo_action = self._actions[self._action]
         return hfo_action if isActionValid(hfo_action, self._observation) else NOOP
+
+
+    def _updateAutoMove(self) -> None:
+        if self._auto_moving:
+            self._auto_moving = not ableToKick(self._next_observation) # Since _observation is not updated
+        else:
+            self._auto_moving = self._auto_move and not ableToKick(self._observation) # Since _next_observation might be unset
 
 
     def _extractFeatures(self, observation):
@@ -87,28 +104,36 @@ class LearningAgentForHFO(AgentForHFO):
         self._num_timesteps = 0    
         self._info = {}
 
+        self._auto_moving = False
+
         self._features = self._extractFeatures(self._observation)
-
-
-    def _atEpisodeEnd(self) -> None:
-        print(self._info)
-
-    
-    def _atTimestepStart(self) -> None:
-        self._num_timesteps += 1
+        self._action = None
 
 
     def _atTimestepEnd(self) -> None:
-        self._next_features = self._extractFeatures(self._next_observation)
+        if (not self._auto_moving or self._status != IN_GAME) and self._action != None:
+            self._num_timesteps += 1
 
-        timestep = Timestep(self._features, self._action, self._reward(self._status), 
-            self._next_features, self._status != IN_GAME, {})
+            self._next_features = self._extractFeatures(self._next_observation)
+                
+            timestep = Timestep(self._features, self._action, self._reward(self._status), 
+                self._next_features, self._status != IN_GAME, {})
 
-        self._features = self._next_features
+            self._features = self._next_features
 
-        self._info = self._agent.reinforcement(timestep)
-        if self._info != None and "Loss" in self._info:
-            self._episode_loss += self._info["Loss"]
+            self._info = self._agent.reinforcement(timestep)
+            if self._info != None and "Loss" in self._info:
+                self._episode_loss += self._info["Loss"]
+
+
+    def _updateObservation(self) -> None:
+        if not self._auto_moving:
+            super()._updateObservation()
+    
+
+    def _atEpisodeEnd(self) -> None:
+        print(self._info)
+        print(f"<< {self._num_timesteps} >>")
 
 
     def _reward(self, status):
