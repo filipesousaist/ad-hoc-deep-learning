@@ -13,7 +13,7 @@ import argparse
 
 
 def main():
-    run(num_episodes=10)
+    run(num_episodes=5)
 
 
 def run(num_episodes: int):
