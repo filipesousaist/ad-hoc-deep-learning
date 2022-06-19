@@ -78,6 +78,7 @@ def parseArguments() -> argparse.Namespace:
 
 def launchHFO(input_data: dict, port: int, gnome_terminal: bool, visualizer: bool) -> None:
     gnome_terminal_command = "gnome-terminal -- " if gnome_terminal else ""
+    background_process = "" if gnome_terminal else " &" 
 
     num_offense_agents = int(input_data["agent_type"] != "npc") + \
         input_data["num_teammates"] * int(input_data["teammates_type"] != "npc")
@@ -95,8 +96,8 @@ def launchHFO(input_data: dict, port: int, gnome_terminal: bool, visualizer: boo
         " --untouched-time {}".format(input_data["untouched_time"]) 
     ]
 
-    unformatted_command = "{}script -c 'LC_ALL=C ../HFO/bin/HFO " + "{}" * len(hfo_args) + "'"
-    Thread(target = lambda: os.system(unformatted_command.format(gnome_terminal_command, *hfo_args))).start()
+    unformatted_command = "{}script -c 'LC_ALL=C ../HFO/bin/HFO " + "{}" * len(hfo_args) + "'{}"
+    os.system(unformatted_command.format(gnome_terminal_command, *hfo_args, background_process))
 
 
 def launchOtherAgents(directory: str, port: int, input_loadout: int, input_data: dict, wait_for_quit_thread: WaitForQuitThread) -> None:

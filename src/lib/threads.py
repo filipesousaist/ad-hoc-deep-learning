@@ -2,28 +2,15 @@ from abc import abstractclassmethod
 from threading import Thread
 from typing import Type
 import time
-import signal
 
 from src.hfo_agents.AgentForHFO import AgentForHFO
 from src.hfo_agents.agentForHFOFactory import getAgentForHFOFactory
 
 
 class WaitForQuitThread(Thread):
-    def __init__(self):
-        signal.signal(signal.SIGINT, self._exit)
-        signal.signal(signal.SIGTERM, self._exit)
-        self._interrupted = False
-
     def run(self):
-        while input().lower().startswith('q'):
+        while not input().lower().startswith('q'):
             pass
-
-    def _exit(self):
-        self._interrupted = True
-
-
-    def is_alive(self):
-        return super().is_alive() and not self._interrupted
 
 
 class AgentThread(Thread):
