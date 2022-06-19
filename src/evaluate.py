@@ -96,7 +96,7 @@ def launchHFO(input_data: dict, port: int, gnome_terminal: bool, visualizer: boo
     ]
 
     unformatted_command = "{}script -c 'LC_ALL=C ../HFO/bin/HFO " + "{}" * len(hfo_args) + "'"
-    os.system(unformatted_command.format(gnome_terminal_command, *hfo_args))
+    Thread(target = lambda: os.system(unformatted_command.format(gnome_terminal_command, *hfo_args))).start()
 
 
 def launchOtherAgents(directory: str, port: int, input_loadout: int, input_data: dict, wait_for_quit_thread: WaitForQuitThread) -> None:

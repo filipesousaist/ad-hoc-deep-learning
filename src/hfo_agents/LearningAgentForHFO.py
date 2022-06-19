@@ -133,7 +133,6 @@ class LearningAgentForHFO(AgentForHFO):
 
     def _atEpisodeEnd(self) -> None:
         print(self._info)
-        print(f"<< {self._num_timesteps} >>")
 
 
     def _reward(self, status):
