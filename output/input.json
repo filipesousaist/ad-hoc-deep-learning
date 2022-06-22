@@ -1,0 +1,16 @@
+{
+    "1": {
+        "agent_type": "npc",
+        
+        "num_teammates": 1,
+        "num_opponents": 3,
+        "teammates_type": "npc",
+        "opponents_type": "npc",
+        "fullstate": true,
+        "frames_per_trial": 500,
+        "untouched_time": 200,
+
+        "num_test_episodes": 30,
+        "num_train_episodes": 100
+    }
+}
