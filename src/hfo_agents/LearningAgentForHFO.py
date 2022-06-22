@@ -1,5 +1,6 @@
 from abc import abstractmethod
 from typing import Type
+from hfo.hfo import ACTION_STRINGS
 import numpy as np
 
 from hfo import NOOP
@@ -78,12 +79,13 @@ class LearningAgentForHFO(AgentForHFO):
 
 
     def _selectAction(self) -> int:
+        latest_observation = self._next_observation if self._auto_moving else self._observation
         self._updateAutoMove()
         if self._auto_moving:
             return MOVE
         self._action = self._agent.action(self._features)
         hfo_action = self._actions[self._action]
-        return hfo_action if isActionValid(hfo_action, self._observation) else NOOP
+        return hfo_action if isActionValid(hfo_action, latest_observation) else NOOP
 
 
     def _updateAutoMove(self) -> None:

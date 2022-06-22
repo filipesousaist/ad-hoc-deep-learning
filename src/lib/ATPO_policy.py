@@ -128,7 +128,7 @@ class DRQNAgent(DQNAgent):
     def policy(self, observation):
         target = False
         q_values, self._last_hidden = self.q_values(observation, target) if self._last_hidden is None else self.q_values(observation, target, self._last_hidden)
-        q_values = q_values.numpy()
+        q_values = q_values.cpu().numpy()
         return epsilon_greedy_policy(q_values, self.exploration_rate)
 
     def q_values(self, observation, target=False, last_hidden=None):
