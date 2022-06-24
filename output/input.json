@@ -1,16 +1,35 @@
 {
     "1": {
-        "agent_type": "npc",
-        
-        "num_teammates": 1,
-        "num_opponents": 3,
+        "agent_type": "dqn",
+        "agent_parameters": {
+            "learning_rate": 0.00025,
+            "initial_exploration_rate": 1,
+            "final_exploration_rate": 0.1,
+            "final_exploration_step": 1000000,
+            "discount_factor": 0.99,
+            "target_network_update_frequency": 75
+        },
+        "actions": [
+            "SHOOT",
+            "DRIBBLE",
+            "PASS",
+            "MOVE",
+            "REORIENT"
+        ],
+        "custom_features": false,
+        "reward_function": {
+            "IN_GAME": 0,
+            "GOAL": 100,
+            "default": -100
+        },
+        "num_teammates": 0,
+        "num_opponents": 1,
         "teammates_type": "npc",
         "opponents_type": "npc",
         "fullstate": true,
         "frames_per_trial": 500,
         "untouched_time": 200,
-
-        "num_test_episodes": 30,
-        "num_train_episodes": 100
+        "num_test_episodes": 50,
+        "num_train_episodes": 500
     }
 }

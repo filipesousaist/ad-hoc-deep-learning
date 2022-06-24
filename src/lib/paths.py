@@ -17,5 +17,5 @@ _paths = {
 }
 
 
-def getPath(directory, type: str) -> dict:
+def getPath(directory, type: str) -> str:
     return directory.rstrip("/") + "/" + _paths[type]
