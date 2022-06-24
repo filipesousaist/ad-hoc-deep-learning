@@ -84,6 +84,7 @@ def launchHFO(input_data: dict, port: int, gnome_terminal: bool, visualizer: boo
     num_defense_agents = input_data["num_opponents"] * int(input_data["opponents_type"] != "npc")
 
     hfo_args = [
+        " --no-logging",
         " --port {}".format(port) if port else "",
         " --no-sync" if visualizer else " --headless",
         " --fullstate" if input_data["fullstate"] else "",
