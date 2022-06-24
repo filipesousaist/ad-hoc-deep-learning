@@ -83,14 +83,9 @@ class LearningAgentForHFO(AgentForHFO):
         latest_observation = self._next_observation if self._auto_moving else self._observation
         self._updateAutoMove()
         if self._auto_moving:
-            print("Move??")
             return MOVE
         self._action = self._agent.action(self._features)
         hfo_action = self._actions[self._action]
-        if hfo_action != MOVE:
-            print(hfo_action, end="")
-        else:
-            print("Move")
         return hfo_action if isActionValid(hfo_action, latest_observation) else NOOP
 
 
