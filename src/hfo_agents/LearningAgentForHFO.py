@@ -17,20 +17,21 @@ from src.lib.actions import isActionValid
 from src.lib.features import extractFeatures
 from src.lib.observations import ableToKick
 
+
 class LearningAgentForHFO(AgentForHFO):
     def __init__(self, directory: str, port: int, team: str, input_loadout: int = 0):
         super().__init__(directory, port, team, input_loadout)
 
         self._agent: Type[Agent]
         self._episode_loss: int
-        self._num_timesteps: int 
+        self._num_timesteps: int
 
         self._actions: "list[int]"
         self._auto_move: bool
         self._auto_moving: bool
         self._reward_function: dict
         self._custom_features: bool
-        
+
         self._action: int
         self._features: np.ndarray
         self._next_features: np.ndarray
@@ -60,7 +61,7 @@ class LearningAgentForHFO(AgentForHFO):
         num_features = 12 + 3 * self._num_opponents + 6 * self._num_teammates
         if self._custom_features:
             num_features = len(extractFeatures(np.zeros(num_features)))
-        
+
         self._agent = self._createAgent(num_features, len(self._actions), self._input_data["agent_parameters"])
 
 
@@ -82,28 +83,35 @@ class LearningAgentForHFO(AgentForHFO):
         latest_observation = self._next_observation if self._auto_moving else self._observation
         self._updateAutoMove()
         if self._auto_moving:
+            print("Move??")
             return MOVE
         self._action = self._agent.action(self._features)
         hfo_action = self._actions[self._action]
+        if hfo_action != MOVE:
+            print(hfo_action, end="")
+        else:
+            print("Move")
         return hfo_action if isActionValid(hfo_action, latest_observation) else NOOP
 
 
     def _updateAutoMove(self) -> None:
         if self._auto_moving:
-            self._auto_moving = not ableToKick(self._next_observation) # Since _observation is not updated
+            self._auto_moving = not ableToKick(self._next_observation)
+            # Since _observation is not updated
         else:
-            self._auto_moving = self._auto_move and not ableToKick(self._observation) # Since _next_observation might be unset
+            self._auto_moving = self._auto_move and not ableToKick(self._observation)
+            # Since _next_observation might be unset
 
 
     def _extractFeatures(self, observation):
         return extractFeatures(observation) if self._custom_features else observation
-    
-    
+
+
     def _atEpisodeStart(self) -> None:
         self._agent._last_hidden = None
 
         self._episode_loss = 0
-        self._num_timesteps = 0    
+        self._num_timesteps = 0
         self._info = {}
 
         self._auto_moving = False
@@ -113,25 +121,25 @@ class LearningAgentForHFO(AgentForHFO):
 
 
     def _atTimestepEnd(self) -> None:
-        if (not self._auto_moving or self._status != IN_GAME) and self._action != None:
+        if (not self._auto_moving or self._status != IN_GAME) and self._action is not None:
             self._num_timesteps += 1
 
             self._next_features = self._extractFeatures(self._next_observation)
-                
-            timestep = Timestep(self._features, self._action, self._reward(self._status), 
-                self._next_features, self._status != IN_GAME, {})
+
+            timestep = Timestep(self._features, self._action, self._reward(self._status),
+                                self._next_features, self._status != IN_GAME, {})
 
             self._features = self._next_features
 
             self._info = self._agent.reinforcement(timestep)
-            if self._info != None and "Loss" in self._info:
+            if self._info is not None and "Loss" in self._info:
                 self._episode_loss += self._info["Loss"]
 
 
     def _updateObservation(self) -> None:
         if not self._auto_moving:
             super()._updateObservation()
-    
+
 
     def _atEpisodeEnd(self) -> None:
         print(self._info)
@@ -139,8 +147,8 @@ class LearningAgentForHFO(AgentForHFO):
 
     def _reward(self, status):
         return self._reward_function[status] if status in self._reward_function else \
-               self._reward_function["default"]
-    
+            self._reward_function["default"]
+
 
     def setLearning(self, value):
         if value:
@@ -151,7 +159,7 @@ class LearningAgentForHFO(AgentForHFO):
 
     def saveNetwork(self, directory: str):
         self._agent.save(directory)
-    
+
 
     def loadNetwork(self, directory: str):
         self._agent.load(directory)
