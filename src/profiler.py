@@ -8,7 +8,9 @@ parser = argparse.ArgumentParser()
 parser.add_argument("module_path", type=str)
 args, _ = parser.parse_known_args()
 
-sys.argv = [sys.argv[0]] + sys.argv[2:]
+print(sys.argv)
+
+sys.argv = [sys.argv[0]] + sys.argv[3:]
 
 pr = cProfile.Profile()
 
