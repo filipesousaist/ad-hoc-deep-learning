@@ -1,3 +1,20 @@
+['/home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/profiler.py', '--module-path', 'src.evaluate', '-g', '-i', '1']
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+base_left: init ok.  unum: 11 side: l
+base_left 11:  KickTable created.
+base_left 11: [0, 1]  prepare see synch
+base_left 11: [0, 7]  see synch.
+Feature 1 Violated Feature Bounds: -33 Expected min/max: [-5.25, 57.75]
+Feature 7 Violated Feature Bounds: 93.1625 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 89.9611 Expected min/max: [0, 85.9084]
+Feature 1 Violated Feature Bounds: -33 Expected min/max: [-5.25, 57.75]
+Feature 7 Violated Feature Bounds: 93.1625 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 89.9611 Expected min/max: [0, 85.9084]
 [INFO] Starting 'evaluate.py'... ('Q' + 'Return' to quit)
 [INFO] 'evaluate.py' loaded loadout 1, with the following parameters:
 {'agent_type': 'dqn', 'num_teammates': 0, 'num_opponents': 1, 'teammates_type': 'npc', 'opponents_type': 'npc', 'fullstate': True, 'frames_per_trial': 500, 'untouched_time': 200, 'num_test_episodes': 50, 'num_train_episodes': 500}
