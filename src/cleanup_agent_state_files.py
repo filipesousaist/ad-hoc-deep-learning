@@ -49,7 +49,7 @@ def listAgentStates(paths):
         [{
             "num_episodes": state, 
             "score_rate": score_rate_per_state[state]
-        } for state in states], 
+        } for state in states if state in score_rate_per_state],
         key = lambda dict: dict["num_episodes"])
 
 

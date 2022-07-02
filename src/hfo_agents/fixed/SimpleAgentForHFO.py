@@ -1,6 +1,5 @@
 from hfo import SHOOT, MOVE, PASS, DRIBBLE
 
-from src.lib.observations import distanceToGoal
 from src.hfo_agents.AgentForHFO import AgentForHFO
 
 

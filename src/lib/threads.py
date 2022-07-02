@@ -1,4 +1,4 @@
-from abc import abstractclassmethod
+from abc import abstractmethod
 from threading import Thread
 from typing import Type
 import time
@@ -30,7 +30,7 @@ class AgentThread(Thread):
         while self._wait_for_quit_thread.is_alive() and agent.playEpisode():
             pass
     
-    @abstractclassmethod
+    @abstractmethod
     def getTeam(self) -> str:
         pass
 
