@@ -11,35 +11,34 @@ from src.lib.input import readInputData
 
 class AgentForHFO:
     def __init__(self, directory: str, port: int, team: str, input_loadout: int = 0):
-        
-        self._directory:        str             = directory
-        self._port:             int             = port
-        self._team:             str             = team
-        self._input_loadout:    int             = input_loadout
-        self._hfo:              HFOEnvironment  = HFOEnvironment()
-        self._input_data:       dict
-        
-        self._num_opponents:    int
-        self._num_teammates:    int
-        self._team_unums:       "list[int]"     = []
-        
-        self._observation:      np.ndarray
-        self._next_observation: np.ndarray
-        
-        self._status:           int
+        self._directory: str = directory
+        self._port: int = port
+        self._team: str = team
+        self._input_loadout: int = input_loadout
+        self._hfo: HFOEnvironment = HFOEnvironment()
+        self._input_data: dict
+
+        self._num_opponents: int
+        self._num_teammates: int
+        self._team_unums: "list[int]" = []
+
+        self._observation: np.ndarray = np.array(0)
+        self._next_observation: np.ndarray = np.array(0)
+
+        self._status: int = -1
 
         self._readInput()
         self._setupHFO()
 
-    
+
     @property
     def status(self) -> int:
         return self._status
-  
+
 
     def _readInput(self):
         self._input_data = readInputData(getPath(self._directory, "input"),
-            self._inputPurpose(), self._input_loadout)
+                                         self._inputPurpose(), self._input_loadout)
         print(f"[INFO] 'AgentForHFO.py' loaded loadout {self._input_loadout}, with the following parameters:")
         print(self._input_data)
 
@@ -52,8 +51,10 @@ class AgentForHFO:
         # Connect to the server with the specified
         # feature set. See feature sets in hfo.py/hfo.hpp.
         self._hfo.connectToServer(HIGH_LEVEL_FEATURE_SET,
-            '../HFO/bin/teams/base/config/formations-dt',
-            self._port, 'localhost', self._team, False)
+                                  '../HFO/bin/teams/base/config/formations-dt',
+                                  self._port, 'localhost', self._team, False)
+
+        print("[INFO] Main agent uniform number:", self._hfo.getUnum())
 
         self._num_opponents = self._hfo.getNumOpponents()
         self._num_teammates = self._hfo.getNumTeammates()
@@ -63,14 +64,14 @@ class AgentForHFO:
         self._status = IN_GAME
         self._observation = self._hfo.getState()
         self._next_observation = None
-        
+
         self._atEpisodeStart()
 
         while self._status == IN_GAME:
             self._atTimestepStart()
 
             self._act(self._selectAction())
-            
+
             self._status = self._hfo.step()
             self._next_observation = self._hfo.getState()
 
@@ -84,10 +85,10 @@ class AgentForHFO:
         if self._status == SERVER_DOWN:
             self._hfo.act(QUIT)
             return False
-        
+
         return True
 
-    
+
     def _atEpisodeStart(self) -> None:
         pass
 
@@ -102,7 +103,7 @@ class AgentForHFO:
 
     def _updateObservation(self) -> None:
         self._observation = self._next_observation
-    
+
 
     def _atEpisodeEnd(self) -> None:
         pass
@@ -112,7 +113,7 @@ class AgentForHFO:
     def _selectAction(self) -> int:
         pass
 
-    
+
     def _act(self, hfo_action):
         if hfo_action == PASS:
             self._pass(self._observation)
@@ -128,4 +129,3 @@ class AgentForHFO:
             self._hfo.act(PASS, self._team_unums[0])
         else:
             self._hfo.act(NOOP)
-    
