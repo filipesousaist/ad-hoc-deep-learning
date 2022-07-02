@@ -1,5 +1,8 @@
 import argparse
 import os
+import psutil
+from psutil import Popen
+from signal import SIGTERM
 from threading import Thread
 import time
 from typing import Type
@@ -14,7 +17,7 @@ from src.lib.threads import WaitForQuitThread, TeammateThread, OpponentThread
 from src.lib.input import readInputData
 
 from src.hfo_agents.agentForHFOFactory import getAgentForHFOFactory
-from src.hfo_agents.LearningAgentForHFO import LearningAgentForHFO
+from src.hfo_agents.learning.LearningAgentForHFO import LearningAgentForHFO
 
 
 def main() -> None:
@@ -35,7 +38,7 @@ def main() -> None:
     print(f"[INFO] 'evaluate.py' loaded loadout {input_loadout}, with the following parameters:")
     print(input_data)
 
-    launchHFO(input_data, port, args.gnome_terminal, args.visualizer)
+    hfo_process = launchHFO(input_data, port, args.gnome_terminal, args.visualizer)
     time.sleep(2)
     launchOtherAgents(directory, port, input_loadout, input_data, wait_for_quit_thread)
 
@@ -52,7 +55,7 @@ def main() -> None:
     if not args.no_output:
         flushOutput(getPath(directory, "output"))
 
-    os.system("killall rcssserver -9")
+    killProcesses(hfo_process, args.gnome_terminal)
 
 
 def parseArguments() -> argparse.Namespace:
@@ -75,8 +78,10 @@ def parseArguments() -> argparse.Namespace:
     return args
 
 
-def launchHFO(input_data: dict, port: int, gnome_terminal: bool, visualizer: bool) -> None:
-    gnome_terminal_command = "gnome-terminal -- " if gnome_terminal else ""
+def launchHFO(input_data: dict, port: int, gnome_terminal: bool, visualizer: bool) -> Popen:
+    # gnome_terminal_command = "gnome-terminal -- " if gnome_terminal else ""
+    gnome_terminal_command = "xterm -e " if gnome_terminal else ""
+
     background_process = "" if gnome_terminal else " &"
 
     num_offense_agents = int(input_data["agent_type"] != "npc") + \
@@ -96,8 +101,12 @@ def launchHFO(input_data: dict, port: int, gnome_terminal: bool, visualizer: boo
         " --untouched-time {}".format(input_data["untouched_time"])
     ]
 
-    unformatted_command = "{}script -c 'LC_ALL=C ../HFO/bin/HFO " + "{}" * len(hfo_args) + "'{}"
-    os.system(unformatted_command.format(gnome_terminal_command, *hfo_args, background_process))
+    unformatted_command = "{}../HFO/bin/HFO " + "{}" * len(hfo_args) + "{}"
+    formatted_command = unformatted_command.format(gnome_terminal_command, *hfo_args, background_process)
+    environment_variables = {**os.environ, "LC_ALL": "C"}
+
+
+    return Popen(formatted_command, shell=True, env=environment_variables, start_new_session=True)
 
 
 def launchOtherAgents(directory: str, port: int, input_loadout: int, input_data: dict,
@@ -282,6 +291,18 @@ def saveTestData(save_data: dict, directory: str, num_episodes: dict, test_episo
                 save_data["current_test_rollout_goals"] * 100 / num_episodes["test"]
             ))
 
+
+def killProcesses(hfo_process: Popen, gnome_terminal: bool):
+    if gnome_terminal:
+        for p in hfo_process.children(recursive=True):
+            try:
+                p.kill()
+            except psutil.NoSuchProcess:
+                pass
+        hfo_process.kill()
+    else:
+        os.killpg(os.getpgid(hfo_process.pid), SIGTERM)
+        os.kill(hfo_process.pid, SIGTERM)
 
 if __name__ == '__main__':
     main()

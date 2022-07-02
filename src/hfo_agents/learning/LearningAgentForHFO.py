@@ -46,9 +46,8 @@ class LearningAgentForHFO(AgentForHFO):
 
 
     def _storeInputData(self) -> None:
-        self._input_data["HFO_actions"] = \
+        self._actions = \
             [globals()[action] for action in self._input_data["actions"] if not action.startswith("_")]
-        self._actions = self._input_data["HFO_actions"]
         self._storeCustomActions([action for action in self._input_data["actions"] if action.startswith("_")])
 
         self._custom_features = self._input_data["custom_features"]
@@ -107,12 +106,15 @@ class LearningAgentForHFO(AgentForHFO):
 
         self._episode_loss = 0
         self._num_timesteps = 0
-        self._info = {}
 
         self._auto_moving = False
 
         self._features = self._extractFeatures(self._observation)
         self._action = None
+
+
+    def _atTimestepStart(self) -> None:
+        self._info = {}
 
 
     def _atTimestepEnd(self) -> None:
@@ -126,8 +128,8 @@ class LearningAgentForHFO(AgentForHFO):
 
             self._features = self._next_features
 
-            self._info = self._agent.reinforcement(timestep)
-            if self._info is not None and "Loss" in self._info:
+            self._info.update(self._agent.reinforcement(timestep) or {})
+            if "Loss" in self._info:
                 self._episode_loss += self._info["Loss"]
 
 
@@ -150,6 +152,11 @@ class LearningAgentForHFO(AgentForHFO):
             self._agent.train()
         else:
             self._agent.eval()
+
+
+    @property
+    def is_learning(self):
+        return self._agent.trainable
 
 
     def saveNetwork(self, directory: str):
