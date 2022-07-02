@@ -1,6 +1,6 @@
 from src.lib.ATPO_policy import DRQNAgent
 
-from src.hfo_agents.LearningAgentForHFO import LearningAgentForHFO
+from src.hfo_agents.learning.LearningAgentForHFO import LearningAgentForHFO
 
 
 class DRQNAgentForHFO(LearningAgentForHFO):

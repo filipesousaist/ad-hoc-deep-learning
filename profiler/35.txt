@@ -1,0 +1,1147 @@
+['/home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/profiler.py', '--module-path', 'src.evaluate', '-g', '-i', '1']
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+base_left: init ok.  unum: 11 side: l
+base_left 11:  KickTable created.
+base_left 11: [0, 1]  prepare see synch
+base_left 11: [0, 7]  see synch.
+Feature 1 Violated Feature Bounds: -33 Expected min/max: [-5.25, 57.75]
+Feature 7 Violated Feature Bounds: 93.1625 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 89.9611 Expected min/max: [0, 85.9084]
+Feature 1 Violated Feature Bounds: -33 Expected min/max: [-5.25, 57.75]
+Feature 7 Violated Feature Bounds: 93.1625 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 89.9611 Expected min/max: [0, 85.9084]
+[INFO] Starting 'evaluate.py'... ('Q' + 'Return' to quit)
+[INFO] 'evaluate.py' loaded loadout 1, with the following parameters:
+{'agent_type': 'dqn', 'num_teammates': 0, 'num_opponents': 1, 'teammates_type': 'npc', 'opponents_type': 'npc', 'fullstate': True, 'frames_per_trial': 500, 'untouched_time': 200, 'num_test_episodes': 50, 'num_train_episodes': 500}
+[INFO] 'AgentForHFO.py' loaded loadout 1, with the following parameters:
+{'agent_parameters': {'learning_rate': 0.00025, 'initial_exploration_rate': 1, 'final_exploration_rate': 0.1, 'final_exploration_step': 1000000, 'discount_factor': 0.99, 'target_network_update_frequency': 75}, 'actions': ['SHOOT', 'DRIBBLE', 'PASS', 'MOVE', 'REORIENT'], 'custom_features': False, 'reward_function': {'IN_GAME': 0, 'GOAL': 100, 'default': -100}}
+None
+Test episode 0 (0 of rollout 0) ended with OutOfTime
+None
+Test episode 1 (1 of rollout 0) ended with OutOfTime
+None
+Test episode 2 (2 of rollout 0) ended with OutOfTime
+None
+Test episode 3 (3 of rollout 0) ended with OutOfTime
+None
+Test episode 4 (4 of rollout 0) ended with OutOfTime
+None
+Test episode 5 (5 of rollout 0) ended with OutOfTime
+None
+Test episode 6 (6 of rollout 0) ended with OutOfTime
+None
+Test episode 7 (7 of rollout 0) ended with OutOfTime
+None
+Test episode 8 (8 of rollout 0) ended with OutOfTime
+None
+Test episode 9 (9 of rollout 0) ended with OutOfTime
+None
+Test episode 10 (10 of rollout 0) ended with OutOfTime
+None
+Test episode 11 (11 of rollout 0) ended with OutOfTime
+None
+Test episode 12 (12 of rollout 0) ended with OutOfTime
+None
+Test episode 13 (13 of rollout 0) ended with OutOfTime
+None
+Test episode 14 (14 of rollout 0) ended with OutOfTime
+None
+Test episode 15 (15 of rollout 0) ended with OutOfTime
+None
+Test episode 16 (16 of rollout 0) ended with OutOfTime
+None
+Test episode 17 (17 of rollout 0) ended with OutOfTime
+None
+Test episode 18 (18 of rollout 0) ended with OutOfTime
+None
+Test episode 19 (19 of rollout 0) ended with OutOfTime
+None
+Test episode 20 (20 of rollout 0) ended with OutOfTime
+None
+Test episode 21 (21 of rollout 0) ended with OutOfTime
+None
+Test episode 22 (22 of rollout 0) ended with OutOfTime
+None
+Test episode 23 (23 of rollout 0) ended with OutOfTime
+None
+Test episode 24 (24 of rollout 0) ended with OutOfTime
+None
+Test episode 25 (25 of rollout 0) ended with OutOfTime
+None
+Test episode 26 (26 of rollout 0) ended with OutOfTime
+None
+Test episode 27 (27 of rollout 0) ended with OutOfTime
+None
+Test episode 28 (28 of rollout 0) ended with OutOfTime
+None
+Test episode 29 (29 of rollout 0) ended with OutOfTime
+None
+Test episode 30 (30 of rollout 0) ended with OutOfTime
+None
+Test episode 31 (31 of rollout 0) ended with OutOfTime
+None
+Test episode 32 (32 of rollout 0) ended with OutOfTime
+None
+Test episode 33 (33 of rollout 0) ended with OutOfTime
+None
+Test episode 34 (34 of rollout 0) ended with OutOfTime
+None
+Test episode 35 (35 of rollout 0) ended with OutOfTime
+None
+Test episode 36 (36 of rollout 0) ended with OutOfTime
+None
+Test episode 37 (37 of rollout 0) ended with OutOfTime
+None
+Test episode 38 (38 of rollout 0) ended with OutOfTime
+None
+Test episode 39 (39 of rollout 0) ended with OutOfTime
+None
+Test episode 40 (40 of rollout 0) ended with OutOfTime
+None
+Test episode 41 (41 of rollout 0) ended with OutOfTime
+None
+Test episode 42 (42 of rollout 0) ended with OutOfTime
+None
+Test episode 43 (43 of rollout 0) ended with OutOfTime
+None
+Test episode 44 (44 of rollout 0) ended with OutOfTime
+None
+Test episode 45 (45 of rollout 0) ended with OutOfTime
+None
+Test episode 46 (46 of rollout 0) ended with OutOfTime
+None
+Test episode 47 (47 of rollout 0) ended with OutOfTime
+None
+Test episode 48 (48 of rollout 0) ended with OutOfTime
+None
+Test episode 49 (49 of rollout 0) ended with OutOfTime
+{'Exploration rate': 0.9997, 'Replay Buffer Samples': 363}
+Train episode 0 (0 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9992, 'Replay Buffer Samples': 838}
+Train episode 1 (1 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9989, 'Replay Buffer Samples': 1267}
+Train episode 2 (2 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9985, 'Replay Buffer Samples': 1645}
+Train episode 3 (3 of rollout 0) ended with Goal
+{'Exploration rate': 0.9984, 'Replay Buffer Samples': 1745}
+Train episode 4 (4 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9983, 'Replay Buffer Samples': 1855}
+Train episode 5 (5 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9982, 'Replay Buffer Samples': 2011}
+Train episode 6 (6 of rollout 0) ended with OutOfBounds
+{'Exploration rate': 0.998, 'Replay Buffer Samples': 2214}
+Train episode 7 (7 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9978, 'Replay Buffer Samples': 2414}
+Train episode 8 (8 of rollout 0) ended with OutOfTime
+{'Exploration rate': 0.9977, 'Replay Buffer Samples': 2535}
+Train episode 9 (9 of rollout 0) ended with OutOfBounds
+{'Exploration rate': 0.9973, 'Replay Buffer Samples': 3034}
+Train episode 10 (10 of rollout 0) ended with OutOfTime
+{'Exploration rate': 0.9969, 'Replay Buffer Samples': 3494}
+Train episode 11 (11 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9964, 'Replay Buffer Samples': 3993}
+Train episode 12 (12 of rollout 0) ended with OutOfTime
+{'Exploration rate': 0.9961, 'Replay Buffer Samples': 4280, 'Loss': 0.020066991448402405, 'Accuracy': 0.75}
+Train episode 13 (13 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9958, 'Replay Buffer Samples': 4660, 'Loss': 0.01871395669877529, 'Accuracy': 0.78125}
+Train episode 14 (14 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9956, 'Replay Buffer Samples': 4866}
+Train episode 15 (15 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9954, 'Replay Buffer Samples': 5138}
+Train episode 16 (16 of rollout 0) ended with OutOfBounds
+{'Exploration rate': 0.9953, 'Replay Buffer Samples': 5235}
+Train episode 17 (17 of rollout 0) ended with OutOfBounds
+{'Exploration rate': 0.9952, 'Replay Buffer Samples': 5349}
+Train episode 18 (18 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9948, 'Replay Buffer Samples': 5798}
+Train episode 19 (19 of rollout 0) ended with OutOfBounds
+{'Exploration rate': 0.9946, 'Replay Buffer Samples': 6012, 'Loss': 0.03949042782187462, 'Accuracy': 0.75}
+Train episode 20 (20 of rollout 0) ended with OutOfBounds
+{'Exploration rate': 0.9943, 'Replay Buffer Samples': 6316, 'Loss': 0.03580500930547714, 'Accuracy': 0.78125}
+Train episode 21 (21 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9941, 'Replay Buffer Samples': 6595}
+Train episode 22 (22 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9939, 'Replay Buffer Samples': 6810}
+Train episode 23 (23 of rollout 0) ended with OutOfBounds
+{'Exploration rate': 0.9934, 'Replay Buffer Samples': 7309}
+Train episode 24 (24 of rollout 0) ended with OutOfTime
+{'Exploration rate': 0.9932, 'Replay Buffer Samples': 7515}
+Train episode 25 (25 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9931, 'Replay Buffer Samples': 7682}
+Train episode 26 (26 of rollout 0) ended with OutOfBounds
+{'Exploration rate': 0.9927, 'Replay Buffer Samples': 8164, 'Loss': 0.020291153341531754, 'Accuracy': 0.875}
+Train episode 27 (27 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9924, 'Replay Buffer Samples': 8461}
+Train episode 28 (28 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9921, 'Replay Buffer Samples': 8757}
+Train episode 29 (29 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9918, 'Replay Buffer Samples': 9128, 'Loss': 0.022418230772018433, 'Accuracy': 0.8125}
+Train episode 30 (30 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9916, 'Replay Buffer Samples': 9304, 'Loss': 62.53693389892578, 'Accuracy': 0.75}
+Train episode 31 (31 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9914, 'Replay Buffer Samples': 9575}
+Train episode 32 (32 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9911, 'Replay Buffer Samples': 9853}
+Train episode 33 (33 of rollout 0) ended with OutOfBounds
+{'Exploration rate': 0.9908, 'Replay Buffer Samples': 10222}
+Train episode 34 (34 of rollout 0) ended with OutOfTime
+{'Exploration rate': 0.9904, 'Replay Buffer Samples': 10662}
+Train episode 35 (35 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9903, 'Replay Buffer Samples': 10827}
+Train episode 36 (36 of rollout 0) ended with OutOfBounds
+{'Exploration rate': 0.9899, 'Replay Buffer Samples': 11226}
+Train episode 37 (37 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9897, 'Replay Buffer Samples': 11458}
+Train episode 38 (38 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.9895, 'Replay Buffer Samples': 11696, 'Loss': 0.01688193902373314, 'Accuracy': 0.78125}
+Train episode 39 (39 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.989, 'Replay Buffer Samples': 12195}
+Train episode 40 (40 of rollout 0) ended with OutOfTime
+{'Exploration rate': 0.9887, 'Replay Buffer Samples': 12527}
+Train episode 41 (41 of rollout 0) ended with CapturedByDefense
+[INFO] Terminating 'evaluate.py' and associated processes...
+         28675564 function calls (26369894 primitive calls) in 63.757 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     11/1    0.001    0.000   63.757   63.757 {built-in method builtins.exec}
+        1    0.003    0.003   63.757   63.757 <string>:1(<module>)
+        1    0.000    0.000   63.753   63.753 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/evaluate.py:20(main)
+        1    0.000    0.000   60.124   60.124 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/evaluate.py:114(evaluateAgent)
+        1    0.000    0.000   60.122   60.122 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/evaluate.py:188(playEpisodes)
+       92    0.001    0.000   60.121    0.653 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/evaluate.py:197(playEpisode)
+       92    0.191    0.002   60.066    0.653 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/AgentForHFO.py:62(playEpisode)
+    22529    0.151    0.000   45.075    0.002 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/LearningAgentForHFO.py:118(_atTimestepEnd)
+    22529    0.071    0.000   44.860    0.002 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/Agent.py:53(reinforcement)
+    12527    0.062    0.000   44.662    0.004 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/dqn/DQNAgent.py:80(_reinforce)
+     3131    0.044    0.000   44.308    0.014 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/dqn/DQNAgent.py:67(experience_replay)
+     3131    3.809    0.001   35.646    0.011 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/dqn/DQNAgent.py:117(_preprocess)
+   209927    1.083    0.000   32.310    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/dqn/DQNAgent.py:111(q_values)
+   199848    0.261    0.000   30.319    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/dqn/DQNAgent.py:125(<lambda>)
+   213058    1.295    0.000   28.986    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/TorchModel.py:109(predict)
+1948832/219320    2.858    0.000   22.494    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1104(_call_impl)
+   216189    0.828    0.000   21.522    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/dqn/networks.py:32(forward)
+   216189    1.652    0.000   16.768    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/feature_extraction.py:75(forward)
+   648567    1.093    0.000    8.856    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/linear.py:102(forward)
+     3131    0.099    0.000    8.288    0.003 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/TorchModel.py:34(fit_and_validate)
+    22529    7.764    0.000    7.764    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/hfo/hfo.py:177(step)
+   648567    7.282    0.000    7.282    0.000 {built-in method torch._C._nn.linear}
+    22529    0.090    0.000    5.319    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/LearningAgentForHFO.py:82(_selectAction)
+    22529    0.059    0.000    5.170    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/Agent.py:31(action)
+     3131    0.042    0.000    5.169    0.002 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/TorchModel.py:55(<listcomp>)
+     3131    0.044    0.000    3.817    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/TorchModel.py:94(_fit_batch)
+    22529    0.047    0.000    3.652    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/dqn/DQNAgent.py:57(policy)
+   313138    3.506    0.000    3.506    0.000 {built-in method tensor}
+   219320    0.445    0.000    3.432    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/TorchModel.py:186(data_to_model)
+    22529    0.084    0.000    3.404    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/policies/__init__.py:70(lazy_epsilon_greedy_policy)
+   432378    0.372    0.000    3.086    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/activation.py:97(forward)
+   225582    0.274    0.000    2.940    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/utils.py:75(assure_tensor)
+   432378    0.353    0.000    2.713    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/functional.py:1431(relu)
+   432378    0.382    0.000    2.689    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/dropout.py:57(forward)
+   432378    1.249    0.000    2.306    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/functional.py:1262(dropout)
+    10079    0.018    0.000    2.291    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/dqn/DQNAgent.py:59(<lambda>)
+   432378    2.276    0.000    2.276    0.000 {built-in method relu}
+     3131    0.018    0.000    2.221    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/dqn/networks.py:38(accuracy)
+     3131    0.014    0.000    2.146    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/TorchModel.py:198(accuracy)
+   213058    0.528    0.000    2.093    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/dqn/networks.py:24(input_shape)
+        1    2.002    2.002    2.002    2.002 {built-in method time.sleep}
+     3131    0.030    0.000    1.419    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/optim/optimizer.py:83(wrapper)
+    22529    0.114    0.000    1.404    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/policies/__init__.py:9(action_from_policy)
+  2161942    1.364    0.000    1.364    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1172(__getattr__)
+     6262    0.051    0.000    1.310    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/dataloader.py:526(__next__)
+     3131    0.015    0.000    1.294    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/autograd/grad_mode.py:24(decorate_context)
+        1    0.000    0.000    1.251    1.251 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/LearningAgentForHFO.py:22(__init__)
+   213059    0.311    0.000    1.243    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/container.py:194(__getitem__)
+     3131    0.083    0.000    1.239    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/optim/adam.py:89(step)
+        1    0.000    0.000    1.229    1.229 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/AgentForHFO.py:13(__init__)
+        1    0.000    0.000    1.228    1.228 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/AgentForHFO.py:51(_setupHFO)
+        1    1.228    1.228    1.228    1.228 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/hfo/hfo.py:118(connectToServer)
+139459/78685    0.109    0.000    1.171    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+  1964487    1.164    0.000    1.164    0.000 {built-in method torch._C._get_tracing_state}
+     3131    0.018    0.000    1.118    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/metrics/_classification.py:144(accuracy_score)
+     3131    0.301    0.000    1.101    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/optim/_functional.py:64(adam)
+     6262    0.048    0.000    1.081    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/dataloader.py:568(_next_data)
+     3131    0.007    0.000    1.014    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/TorchModel.py:117(classify)
+    22621    0.169    0.000    0.989    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/hfo/hfo.py:150(getState)
+     3131    0.012    0.000    0.986    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/_tensor.py:307(backward)
+     3131    0.019    0.000    0.974    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/autograd/__init__.py:85(backward)
+    12527    0.832    0.000    0.956    0.000 {method 'choice' of 'numpy.random.mtrand.RandomState' objects}
+     3131    0.903    0.000    0.903    0.000 {method 'run_backward' of 'torch._C._EngineBase' objects}
+   213059    0.447    0.000    0.865    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/container.py:185(_get_abs_string_index)
+     3131    0.027    0.000    0.846    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/metrics/_classification.py:57(_check_targets)
+   209927    0.764    0.000    0.764    0.000 {method 'reshape' of 'torch._C._TensorBase' objects}
+   216441    0.291    0.000    0.666    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/autograd/grad_mode.py:126(__enter__)
+   432882    0.469    0.000    0.661    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/autograd/grad_mode.py:215(__init__)
+   216441    0.275    0.000    0.655    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/autograd/grad_mode.py:130(__exit__)
+    22529    0.041    0.000    0.652    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/AgentForHFO.py:116(_act)
+    10079    0.138    0.000    0.651    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/policies/__init__.py:48(greedy_policy)
+    22621    0.274    0.000    0.644    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/ctypeslib.py:530(as_ctypes)
+   432378    0.642    0.000    0.642    0.000 {built-in method dropout}
+    22529    0.366    0.000    0.610    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/hfo/hfo.py:157(act)
+     3131    0.010    0.000    0.594    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py:47(fetch)
+   216441    0.590    0.000    0.590    0.000 {method 'detach' of 'torch._C._TensorBase' objects}
+68904/6264    0.139    0.000    0.558    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1713(train)
+   432378    0.334    0.000    0.537    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/container.py:219(__iter__)
+1245103/803322    0.313    0.000    0.530    0.000 {built-in method builtins.len}
+   216441    0.453    0.000    0.489    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/autograd/grad_mode.py:121(__init__)
+     6262    0.069    0.000    0.463    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/utils/multiclass.py:200(type_of_target)
+     6262    0.007    0.000    0.439    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/dataloader.py:520(_next_index)
+    99768    0.435    0.000    0.435    0.000 {method 'max' of 'torch._C._TensorBase' objects}
+     9401    0.006    0.000    0.434    0.000 {built-in method builtins.next}
+     6262    0.061    0.000    0.426    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/sampler.py:224(__iter__)
+    35056    0.081    0.000    0.383    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/dqn/DQNAgent.py:98(exploration_rate)
+     6262    0.022    0.000    0.376    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/utils/validation.py:318(check_consistent_length)
+        2    0.375    0.188    0.375    0.188 {built-in method posix.system}
+        1    0.000    0.000    0.372    0.372 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/evaluate.py:78(launchHFO)
+    20081    0.016    0.000    0.371    0.000 <__array_function__ internals>:177(argwhere)
+    12788    0.015    0.000    0.358    0.000 <__array_function__ internals>:177(unique)
+   774810    0.277    0.000    0.354    0.000 {built-in method builtins.isinstance}
+   435509    0.240    0.000    0.349    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/_VF.py:25(__getattr__)
+   103211    0.158    0.000    0.346    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/sampler.py:107(__iter__)
+   422985    0.341    0.000    0.341    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+    20081    0.039    0.000    0.338    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/numeric.py:571(argwhere)
+   230009    0.327    0.000    0.327    0.000 {method 'reshape' of 'numpy.ndarray' objects}
+    12788    0.026    0.000    0.316    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/lib/arraysetops.py:138(unique)
+    20081    0.018    0.000    0.302    0.000 <__array_function__ internals>:177(amax)
+     3131    0.032    0.000    0.295    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py:49(<listcomp>)
+     3131    0.015    0.000    0.291    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/memory/ExperienceReplayBuffer.py:17(sample)
+9393/3131    0.077    0.000    0.289    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/_utils/collate.py:84(default_collate)
+    37572    0.287    0.000    0.287    0.000 {method 'mul_' of 'torch._C._TensorBase' objects}
+    22529    0.285    0.000    0.285    0.000 {method 'uniform' of 'numpy.random.mtrand.RandomState' objects}
+   205990    0.177    0.000    0.281    0.000 <string>:2(getvalue)
+     3133    0.004    0.000    0.280    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1735(eval)
+     3131    0.128    0.000    0.273    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/random.py:315(sample)
+    22621    0.047    0.000    0.265    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/ctypeslib.py:468(as_ctypes_type)
+   100080    0.262    0.000    0.262    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/utils.py:129(__getitem__)
+    20081    0.038    0.000    0.258    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2675(amax)
+    12788    0.178    0.000    0.249    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/lib/arraysetops.py:320(_unique1d)
+   115170    0.062    0.000    0.239    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/Agent.py:124(trainable)
+    20082    0.056    0.000    0.220    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:69(_wrapreduction)
+    22621    0.041    0.000    0.218    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/ctypeslib.py:459(_ctype_from_dtype)
+    69036    0.154    0.000    0.214    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1188(__setattr__)
+    61396    0.163    0.000    0.206    0.000 {built-in method numpy.asarray}
+     3131    0.058    0.000    0.204    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/dataloader.py:166(__init__)
+     3131    0.065    0.000    0.204    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/optim/optimizer.py:189(zero_grad)
+   131544    0.070    0.000    0.199    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1612(children)
+     3131    0.007    0.000    0.195    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/loss.py:528(forward)
+   426122    0.145    0.000    0.194    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/container.py:215(__len__)
+    40162    0.040    0.000    0.194    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:51(_wrapfunc)
+   649323    0.188    0.000    0.188    0.000 {built-in method torch._C.is_grad_enabled}
+     3131    0.023    0.000    0.188    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/functional.py:3234(mse_loss)
+    20081    0.013    0.000    0.187    0.000 <__array_function__ internals>:177(transpose)
+    23213    0.183    0.000    0.183    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+    37572    0.183    0.000    0.183    0.000 {method 'add_' of 'torch._C._TensorBase' objects}
+     6262    0.037    0.000    0.182    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/utils/multiclass.py:116(is_multilabel)
+    22621    0.143    0.000    0.178    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/ctypeslib.py:380(_ctype_from_dtype_scalar)
+  1052634    0.175    0.000    0.175    0.000 {built-in method torch._C._has_torch_function_unary}
+    18786    0.164    0.000    0.164    0.000 {built-in method zeros}
+    12524    0.038    0.000    0.162    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/autograd/profiler.py:435(__enter__)
+    20081    0.010    0.000    0.159    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:601(transpose)
+     3131    0.006    0.000    0.154    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/_utils/collate.py:172(<listcomp>)
+     3131    0.003    0.000    0.137    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/dataloader.py:355(__iter__)
+    25054    0.049    0.000    0.137    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/policies/__init__.py:87(linear_annealing)
+    45150    0.136    0.000    0.136    0.000 {built-in method numpy.zeros}
+     3131    0.007    0.000    0.136    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/metrics/_classification.py:135(_weighted_sum)
+     3131    0.006    0.000    0.135    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/dataloader.py:309(_get_iterator)
+    18786    0.134    0.000    0.134    0.000 {method 'sqrt' of 'torch._C._TensorBase' objects}
+   131544    0.108    0.000    0.129    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1621(named_children)
+   438641    0.129    0.000    0.129    0.000 {built-in method builtins.iter}
+     3131    0.010    0.000    0.128    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/dataloader.py:560(__init__)
+     3131    0.006    0.000    0.128    0.000 <__array_function__ internals>:177(average)
+   497155    0.128    0.000    0.128    0.000 {built-in method builtins.getattr}
+    22529    0.035    0.000    0.127    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/_internal.py:267(data_as)
+     6262    0.126    0.000    0.126    0.000 {built-in method stack}
+    12524    0.124    0.000    0.124    0.000 {built-in method torch._ops.profiler._record_function_enter}
+     6262    0.010    0.000    0.121    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/utils/validation.py:329(<listcomp>)
+    20081    0.050    0.000    0.120    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:38(_wrapit)
+    78293    0.033    0.000    0.120    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/Agent.py:131(total_training_timesteps)
+     3131    0.009    0.000    0.118    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/lib/function_base.py:395(average)
+   110555    0.079    0.000    0.116    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/random.py:250(_randbelow_with_getrandbits)
+     3131    0.113    0.000    0.113    0.000 {built-in method torch._C._nn.mse_loss}
+    12524    0.054    0.000    0.111    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/utils/validation.py:254(_num_samples)
+   435511    0.110    0.000    0.110    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/TorchModel.py:149(_check_device)
+     3131    0.005    0.000    0.108    0.000 {method 'mean' of 'numpy.ndarray' objects}
+     6262    0.107    0.000    0.107    0.000 {method 'argmax' of 'torch._C._TensorBase' objects}
+    18786    0.105    0.000    0.105    0.000 {method 'addcdiv_' of 'torch._C._TensorBase' objects}
+     3131    0.031    0.000    0.103    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/_methods.py:162(_mean)
+     3131    0.031    0.000    0.102    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/dataloader.py:494(__init__)
+   432882    0.098    0.000    0.098    0.000 {built-in method torch._C._set_grad_enabled}
+    12524    0.021    0.000    0.097    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/autograd/profiler.py:426(__init__)
+    12450    0.078    0.000    0.093    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/policies/__init__.py:41(random_policy)
+    22529    0.092    0.000    0.092    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/ctypes/__init__.py:506(cast)
+   213058    0.089    0.000    0.089    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/feature_extraction.py:89(input_shape)
+    22621    0.088    0.000    0.088    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/ctypeslib.py:354(_ctype_ndarray)
+     6262    0.016    0.000    0.084    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/utils/validation.py:1002(column_or_1d)
+    12524    0.009    0.000    0.081    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/sampler.py:100(num_samples)
+    20081    0.010    0.000    0.080    0.000 <__array_function__ internals>:177(nonzero)
+    15655    0.007    0.000    0.078    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/utils.py:126(__len__)
+    31313    0.014    0.000    0.077    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/abc.py:96(__instancecheck__)
+   433374    0.077    0.000    0.077    0.000 {method 'values' of 'collections.OrderedDict' objects}
+     6262    0.076    0.000    0.076    0.000 {built-in method randperm}
+    18786    0.076    0.000    0.076    0.000 {method 'addcmul_' of 'torch._C._TensorBase' objects}
+    12524    0.024    0.000    0.075    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/autograd/profiler.py:439(__exit__)
+    12528    0.027    0.000    0.075    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/numerictypes.py:356(issubdtype)
+    25054    0.074    0.000    0.074    0.000 {built-in method builtins.round}
+    12524    0.031    0.000    0.074    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/warnings.py:165(simplefilter)
+   218609    0.074    0.000    0.074    0.000 {method 'acquire' of '_multiprocessing.SemLock' objects}
+    22529    0.055    0.000    0.071    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/LearningAgentForHFO.py:134(_updateObservation)
+    22621    0.070    0.000    0.070    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/hfo/hfo.py:146(getStateSize)
+   131484    0.056    0.000    0.069    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/_tensor.py:1092(grad)
+    31313    0.037    0.000    0.063    0.000 {built-in method _abc._abc_instancecheck}
+    15655    0.037    0.000    0.061    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/_tensor.py:676(__len__)
+     3131    0.060    0.000    0.060    0.000 {method 'mean' of 'torch._C._TensorBase' objects}
+    10079    0.009    0.000    0.060    0.000 <__array_function__ internals>:177(put)
+    20081    0.013    0.000    0.058    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:1866(nonzero)
+    22529    0.057    0.000    0.057    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/_internal.py:250(__init__)
+    12527    0.015    0.000    0.057    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/dqn/DQNAgent.py:64(remember)
+    10026    0.023    0.000    0.051    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/random.py:285(choice)
+    12524    0.051    0.000    0.051    0.000 {built-in method torch._ops.profiler._record_function_exit}
+59489/56358    0.047    0.000    0.050    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/dataloader.py:345(__setattr__)
+    25054    0.041    0.000    0.049    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:457(__new__)
+    22529    0.047    0.000    0.047    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/actions.py:17(isActionValid)
+     3131    0.030    0.000    0.047    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/utils.py:100(__init__)
+     3131    0.009    0.000    0.047    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/sampler.py:85(__init__)
+    25056    0.031    0.000    0.046    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/numerictypes.py:282(issubclass_)
+       92    0.002    0.000    0.046    0.001 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/evaluate.py:246(saveData)
+     3131    0.019    0.000    0.045    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/autograd/__init__.py:30(_make_grads)
+    28865    0.045    0.000    0.045    0.000 {method 'numpy' of 'torch._C._TensorBase' objects}
+    18786    0.016    0.000    0.043    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/_tensor.py:728(__array__)
+   213060    0.043    0.000    0.043    0.000 {built-in method _operator.index}
+    12527    0.029    0.000    0.042    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/memory/ExperienceReplayBuffer.py:13(push)
+   236254    0.042    0.000    0.042    0.000 {method 'get' of 'dict' objects}
+    12524    0.025    0.000    0.042    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/warnings.py:181(_add_filter)
+    10079    0.007    0.000    0.041    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:486(put)
+     3131    0.012    0.000    0.039    0.000 {built-in method builtins.all}
+     6262    0.038    0.000    0.038    0.000 {method 'random_' of 'torch._C._TensorBase' objects}
+    22529    0.021    0.000    0.037    0.000 <string>:1(__new__)
+   216441    0.036    0.000    0.036    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/_jit_internal.py:957(is_scripting)
+    38102    0.035    0.000    0.035    0.000 {built-in method numpy.asanyarray}
+   160647    0.035    0.000    0.035    0.000 {method 'add' of 'set' objects}
+   218609    0.035    0.000    0.035    0.000 {method 'release' of '_multiprocessing.SemLock' objects}
+    67863    0.035    0.000    0.035    0.000 {method 'newbyteorder' of 'numpy.dtype' objects}
+    10079    0.033    0.000    0.033    0.000 {method 'put' of 'numpy.ndarray' objects}
+    20082    0.012    0.000    0.033    0.000 <__array_function__ internals>:177(ndim)
+     3131    0.010    0.000    0.032    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/functional.py:46(broadcast_tensors)
+     6268    0.032    0.000    0.032    0.000 {built-in method empty}
+    12524    0.030    0.000    0.030    0.000 {method 'item' of 'torch._C._TensorBase' objects}
+    12524    0.024    0.000    0.029    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/typing.py:868(__new__)
+     3131    0.027    0.000    0.029    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/_methods.py:66(_count_reduce_items)
+   100080    0.021    0.000    0.027    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/_utils/collate.py:167(<genexpr>)
+       93    0.020    0.000    0.027    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/io.py:89(writeTxt)
+    12788    0.027    0.000    0.027    0.000 {method 'flatten' of 'numpy.ndarray' objects}
+    75262    0.026    0.000    0.026    0.000 {built-in method builtins.hasattr}
+15674/15659    0.007    0.000    0.026    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/abc.py:100(__subclasscheck__)
+     6262    0.005    0.000    0.026    0.000 <__array_function__ internals>:177(ravel)
+    12788    0.026    0.000    0.026    0.000 {method 'sort' of 'numpy.ndarray' objects}
+    12524    0.022    0.000    0.025    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/warnings.py:458(__enter__)
+    40732    0.025    0.000    0.025    0.000 {built-in method builtins.min}
+   206925    0.024    0.000    0.024    0.000 {method 'append' of 'list' objects}
+   167654    0.024    0.000    0.024    0.000 {method 'getrandbits' of '_random.Random' objects}
+     3131    0.022    0.000    0.022    0.000 {built-in method ones_like}
+    20081    0.022    0.000    0.022    0.000 {method 'nonzero' of 'numpy.ndarray' objects}
+        1    0.000    0.000    0.022    0.022 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/LearningAgentForHFO.py:48(_storeInputData)
+        1    0.000    0.000    0.021    0.021 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/DQNAgentForHFO.py:7(_createAgent)
+        1    0.000    0.000    0.021    0.021 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/dqn/DQNAgent.py:162(__init__)
+    35134    0.021    0.000    0.021    0.000 {built-in method __new__ of type object at 0x55f7f7ad79a0}
+    18780    0.021    0.000    0.021    0.000 {method 'zero_' of 'torch._C._TensorBase' objects}
+    12619    0.015    0.000    0.020    0.000 <string>:8(setvalue)
+15674/15659    0.017    0.000    0.019    0.000 {built-in method _abc._abc_subclasscheck}
+     3131    0.019    0.000    0.019    0.000 {built-in method broadcast_tensors}
+    22529    0.018    0.000    0.018    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/LearningAgentForHFO.py:143(_reward)
+    40836    0.018    0.000    0.018    0.000 {built-in method builtins.issubclass}
+    12788    0.018    0.000    0.018    0.000 {built-in method numpy.empty}
+     6262    0.009    0.000    0.016    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:1755(ravel)
+    22621    0.016    0.000    0.016    0.000 {method 'from_address' of '_ctypes.PyCArrayType' objects}
+     3131    0.007    0.000    0.016    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/dataloader.py:51(create_fetcher)
+    22529    0.016    0.000    0.016    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/AgentForHFO.py:103(_updateObservation)
+     6262    0.016    0.000    0.016    0.000 {method 'tolist' of 'torch._C._TensorBase' objects}
+        1    0.000    0.000    0.016    0.016 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/dqn/DQNAgent.py:19(__init__)
+     3141    0.016    0.000    0.016    0.000 {built-in method torch._C._log_api_usage_once}
+     6262    0.007    0.000    0.015    0.000 <__array_function__ internals>:177(shape)
+    12524    0.014    0.000    0.015    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/warnings.py:477(__exit__)
+    18816    0.009    0.000    0.015    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/_tensor.py:706(__hash__)
+    12524    0.015    0.000    0.015    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/warnings.py:437(__init__)
+     3131    0.004    0.000    0.015    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/autograd/grad_mode.py:82(clone)
+    20082    0.015    0.000    0.015    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:70(<dictcomp>)
+      235    0.013    0.000    0.014    0.000 {built-in method io.open}
+     3131    0.013    0.000    0.013    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/_reduction.py:7(get_enum)
+   110555    0.013    0.000    0.013    0.000 {method 'bit_length' of 'int' objects}
+       41    0.000    0.000    0.012    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1440(load_state_dict)
+    22529    0.012    0.000    0.012    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/LearningAgentForHFO.py:92(_updateAutoMove)
+   492/41    0.001    0.000    0.012    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1475(load)
+       92    0.002    0.000    0.012    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/io.py:74(readTxt)
+     3131    0.012    0.000    0.012    0.000 {built-in method torch._C.set_vital}
+    22529    0.011    0.000    0.011    0.000 {built-in method _ctypes.POINTER}
+    12530    0.011    0.000    0.011    0.000 {method 'remove' of 'list' objects}
+     6447    0.011    0.000    0.011    0.000 {method 'format' of 'str' objects}
+      492    0.006    0.000    0.010    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1346(_load_from_state_dict)
+     3131    0.010    0.000    0.010    0.000 {method 'manual_seed' of 'torch._C.Generator' objects}
+    71912    0.010    0.000    0.010    0.000 {method 'items' of 'collections.OrderedDict' objects}
+    12788    0.007    0.000    0.010    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/lib/arraysetops.py:125(_unpack_tuple)
+    18780    0.009    0.000    0.009    0.000 {method 'requires_grad_' of 'torch._C._TensorBase' objects}
+    20081    0.009    0.000    0.009    0.000 {method 'transpose' of 'numpy.ndarray' objects}
+     3131    0.005    0.000    0.009    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py:44(__init__)
+    407/1    0.003    0.000    0.009    0.009 /home/filipe/anaconda3/envs/marl/lib/python3.8/copy.py:128(deepcopy)
+    20082    0.009    0.000    0.009    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:3164(ndim)
+    22621    0.009    0.000    0.009    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/LearningAgentForHFO.py:101(_extractFeatures)
+    113/1    0.001    0.000    0.009    0.009 /home/filipe/anaconda3/envs/marl/lib/python3.8/copy.py:258(_reconstruct)
+    18786    0.008    0.000    0.008    0.000 {method 'conj' of 'torch._C._TensorBase' objects}
+     15/1    0.001    0.000    0.008    0.008 /home/filipe/anaconda3/envs/marl/lib/python3.8/copy.py:226(_deepcopy_dict)
+3154/3152    0.005    0.000    0.008    0.000 <frozen importlib._bootstrap>:1017(_handle_fromlist)
+     3131    0.007    0.000    0.008    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/sampler.py:209(__init__)
+    18801    0.008    0.000    0.008    0.000 {built-in method math.sqrt}
+      9/2    0.000    0.000    0.007    0.004 <frozen importlib._bootstrap>:986(_find_and_load)
+      9/2    0.000    0.000    0.007    0.004 <frozen importlib._bootstrap>:956(_find_and_load_unlocked)
+    12527    0.007    0.000    0.007    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/Agent.py:117(name)
+      264    0.000    0.000    0.007    0.000 <__array_function__ internals>:177(union1d)
+        1    0.000    0.000    0.007    0.007 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/Agent.py:18(__init__)
+        2    0.000    0.000    0.007    0.004 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/context.py:132(Value)
+     3130    0.007    0.000    0.007    0.000 {built-in method math.log}
+      9/2    0.000    0.000    0.007    0.003 <frozen importlib._bootstrap>:650(_load_unlocked)
+      264    0.001    0.000    0.007    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/lib/arraysetops.py:743(union1d)
+      8/2    0.000    0.000    0.007    0.003 <frozen importlib._bootstrap_external>:837(exec_module)
+        1    0.000    0.000    0.006    0.006 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/evaluate.py:234(saveAgent)
+        1    0.000    0.000    0.006    0.006 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/LearningAgentForHFO.py:155(saveNetwork)
+        1    0.000    0.000    0.006    0.006 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/dqn/DQNAgent.py:147(save)
+        1    0.000    0.000    0.006    0.006 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/TorchModel.py:126(save)
+     6280    0.006    0.000    0.006    0.000 {method 'size' of 'torch._C._TensorBase' objects}
+     11/2    0.000    0.000    0.006    0.003 <frozen importlib._bootstrap>:211(_call_with_frames_removed)
+    37572    0.005    0.000    0.005    0.000 {built-in method _warnings._filters_mutated}
+        1    0.000    0.000    0.005    0.005 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/dqn/networks.py:50(__init__)
+        2    0.000    0.000    0.005    0.003 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/serialization.py:334(save)
+    15667    0.005    0.000    0.005    0.000 {method 'dim' of 'torch._C._TensorBase' objects}
+    19548    0.005    0.000    0.005    0.000 {built-in method builtins.id}
+     9270    0.005    0.000    0.005    0.000 {method 'startswith' of 'str' objects}
+    15658    0.005    0.000    0.005    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/memory/ExperienceReplayBuffer.py:25(__len__)
+     3131    0.003    0.000    0.005    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/dataloader.py:320(multiprocessing_context)
+    12524    0.005    0.000    0.005    0.000 {method 'insert' of 'list' objects}
+     6262    0.004    0.000    0.004    0.000 {method 'ravel' of 'numpy.ndarray' objects}
+        2    0.001    0.000    0.004    0.002 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/serialization.py:526(_save)
+       42    0.003    0.000    0.004    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/evaluate.py:263(saveTrainData)
+   504/42    0.002    0.000    0.004    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1294(state_dict)
+    22529    0.004    0.000    0.004    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/AgentForHFO.py:95(_atTimestepStart)
+    20081    0.004    0.000    0.004    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/numeric.py:567(_argwhere_dispatcher)
+    20081    0.004    0.000    0.004    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2670(_amax_dispatcher)
+    21098    0.004    0.000    0.004    0.000 {method 'items' of 'dict' objects}
+     6262    0.003    0.000    0.004    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/scipy/sparse/_base.py:1291(isspmatrix)
+        2    0.001    0.000    0.004    0.002 {method 'dump' of '_pickle.Pickler' objects}
+      107    0.000    0.000    0.003    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/AgentForHFO.py:123(_pass)
+     3131    0.003    0.000    0.003    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py:8(__init__)
+    12528    0.003    0.000    0.003    0.000 {method 'append' of 'collections.deque' objects}
+       92    0.003    0.000    0.003    0.000 {method 'readlines' of '_io._IOBase' objects}
+    20081    0.003    0.000    0.003    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:1862(_nonzero_dispatcher)
+     3130    0.003    0.000    0.003    0.000 {built-in method math.ceil}
+    10079    0.003    0.000    0.003    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:482(_put_dispatcher)
+        1    0.000    0.000    0.003    0.003 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/feature_extraction.py:57(__init__)
+    20081    0.003    0.000    0.003    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:597(_transpose_dispatcher)
+        1    0.000    0.000    0.003    0.003 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/sharedctypes.py:10(<module>)
+    12788    0.003    0.000    0.003    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/lib/arraysetops.py:133(_unique_dispatcher)
+        1    0.000    0.000    0.003    0.003 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/__init__.py:1(<module>)
+    20082    0.003    0.000    0.003    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:3160(_ndim_dispatcher)
+     6262    0.003    0.000    0.003    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:1965(shape)
+        2    0.000    0.000    0.003    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/sharedctypes.py:70(Value)
+     3131    0.003    0.000    0.003    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/autograd/__init__.py:77(_tensor_or_tensors_to_tuple)
+        3    0.000    0.000    0.003    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/linear.py:79(__init__)
+     3131    0.003    0.000    0.003    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/dataloader.py:415(check_worker_number_rationality)
+        8    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:909(get_code)
+     9393    0.002    0.000    0.002    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/dataloader.py:370(_auto_collation)
+        1    0.000    0.000    0.002    0.002 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/dqn/networks.py:14(__init__)
+      504    0.001    0.000    0.002    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1257(_save_to_state_dict)
+        6    0.000    0.000    0.002    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/_tensor.py:148(__reduce_ex__)
+        6    0.000    0.000    0.002    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/_tensor.py:187(_reduce_ex_internal)
+       35    0.001    0.000    0.002    0.000 {built-in method builtins.__build_class__}
+     3131    0.002    0.000    0.002    0.000 {built-in method numpy.core._multiarray_umath.normalize_axis_index}
+      264    0.000    0.000    0.002    0.000 <__array_function__ internals>:177(concatenate)
+     3142    0.002    0.000    0.002    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/_collections_abc.py:302(__subclasshook__)
+       93    0.001    0.000    0.002    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/time.py:5(getReadableTime)
+     3131    0.001    0.000    0.002    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/dataloader.py:374(_index_sampler)
+     6262    0.002    0.000    0.002    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/data/_utils/worker.py:83(get_worker_info)
+        1    0.000    0.000    0.002    0.002 {built-in method builtins.__import__}
+     3133    0.001    0.000    0.001    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/TorchModel.py:154(_check_optimizer_initialization)
+      190    0.001    0.000    0.001    0.000 {built-in method builtins.print}
+        2    0.000    0.000    0.001    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/sharedctypes.py:44(RawValue)
+     6262    0.001    0.000    0.001    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:1961(_shape_dispatcher)
+        2    0.000    0.000    0.001    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/sharedctypes.py:39(_new_value)
+        9    0.000    0.000    0.001    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:254(__init__)
+        8    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:638(_compile_bytecode)
+        3    0.000    0.000    0.001    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/linear.py:92(reset_parameters)
+        1    0.000    0.000    0.001    0.001 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/evaluate.py:58(parseArguments)
+        2    0.000    0.000    0.001    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/heap.py:326(__init__)
+     3131    0.001    0.000    0.001    0.000 {method 'numel' of 'torch._C._TensorBase' objects}
+      204    0.001    0.000    0.001    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/serialization.py:536(persistent_id)
+        1    0.000    0.000    0.001    0.001 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/evaluate.py:135(createOutputFiles)
+        8    0.001    0.000    0.001    0.000 {built-in method marshal.loads}
+     6262    0.001    0.000    0.001    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:1751(_ravel_dispatcher)
+        2    0.000    0.000    0.001    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/context.py:70(RLock)
+        6    0.000    0.000    0.001    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/_tensor.py:169(storage)
+        2    0.000    0.000    0.001    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/heap.py:296(malloc)
+       92    0.000    0.000    0.001    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/LearningAgentForHFO.py:139(_atEpisodeEnd)
+     3131    0.001    0.000    0.001    0.000 {method 'pop' of 'set' objects}
+        3    0.000    0.000    0.001    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/tempfile.py:144(__next__)
+        9    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap>:890(_find_spec)
+        2    0.000    0.000    0.001    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/synchronize.py:186(__init__)
+        2    0.000    0.000    0.001    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/synchronize.py:50(__init__)
+      233    0.001    0.000    0.001    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/_bootlocale.py:33(getpreferredencoding)
+        2    0.000    0.000    0.001    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/heap.py:188(_malloc)
+        6    0.000    0.000    0.001    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/parameter.py:28(__deepcopy__)
+     3139    0.001    0.000    0.001    0.000 {method 'extend' of 'list' objects}
+      246    0.001    0.000    0.001    0.000 {method 'copy_' of 'torch._C._TensorBase' objects}
+        1    0.000    0.000    0.001    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/heap.py:158(_new_arena)
+        1    0.000    0.000    0.001    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/heap.py:77(__init__)
+        2    0.000    0.000    0.001    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/TorchModel.py:145(check_initialization)
+     3131    0.001    0.000    0.001    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/TorchModel.py:64(<listcomp>)
+     3131    0.001    0.000    0.001    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/lib/function_base.py:391(_average_dispatcher)
+        3    0.000    0.000    0.001    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/sharedctypes.py:148(make_property)
+     3137    0.001    0.000    0.001    0.000 {built-in method torch._C._has_torch_function_variadic}
+        3    0.000    0.000    0.001    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/init.py:366(kaiming_uniform_)
+        9    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1399(find_spec)
+        9    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1367(_get_spec)
+        2    0.000    0.000    0.001    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/input.py:19(readInputData)
+        1    0.001    0.001    0.001    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/hfo/hfo.py:112(__init__)
+        1    0.000    0.000    0.001    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/TorchModel.py:173(reset_optimizer_state)
+        3    0.000    0.000    0.001    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/tempfile.py:133(rng)
+      114    0.001    0.000    0.001    0.000 {method '__reduce_ex__' of 'object' objects}
+     3131    0.001    0.000    0.001    0.000 {built-in method torch._C._has_torch_function}
+        2    0.000    0.000    0.001    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/io.py:66(readJSON)
+        1    0.000    0.000    0.001    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/tempfile.py:295(mkstemp)
+        1    0.000    0.000    0.001    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/tempfile.py:238(_mkstemp_inner)
+        9    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1498(find_spec)
+        1    0.000    0.000    0.001    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_search.py:1(<module>)
+       12    0.001    0.000    0.001    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/storage.py:223(__init__)
+       93    0.000    0.000    0.001    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/threading.py:1071(is_alive)
+        2    0.000    0.000    0.001    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/random.py:94(__init__)
+        1    0.000    0.000    0.001    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/optim/adam.py:67(__init__)
+        6    0.001    0.000    0.001    0.000 {method 'clone' of 'torch._C._TensorBase' objects}
+        2    0.000    0.000    0.001    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/random.py:123(seed)
+        1    0.000    0.000    0.001    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/optim/optimizer.py:33(__init__)
+      380    0.000    0.000    0.001    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/io.py:24(write)
+       92    0.000    0.000    0.001    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/LearningAgentForHFO.py:148(setLearning)
+        9    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap>:549(module_from_spec)
+        2    0.001    0.000    0.001    0.000 {function Random.seed at 0x7fd02c41c5e0}
+        2    0.000    0.000    0.001    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/joblib/externals/loky/backend/__init__.py:8(_make_name)
+        1    0.000    0.000    0.001    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_validation.py:1(<module>)
+        2    0.000    0.000    0.001    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/json/__init__.py:274(load)
+        8    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1029(get_data)
+      147    0.000    0.000    0.001    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/copy.py:242(_keep_alive)
+        6    0.001    0.000    0.001    0.000 {built-in method builtins.eval}
+      233    0.001    0.000    0.001    0.000 {built-in method _locale.nl_langinfo}
+        1    0.000    0.000    0.001    0.001 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/sharedctypes.py:212(Synchronized)
+        6    0.000    0.000    0.000    0.000 {method 'uniform_' of 'torch._C._TensorBase' objects}
+      186    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/codecs.py:319(decode)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1638(__init__)
+     1545    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+       49    0.000    0.000    0.000    0.000 {built-in method posix.stat}
+       92    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/io.py:78(<listcomp>)
+        9    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1337(add_argument)
+        2    0.000    0.000    0.000    0.000 {method 'read' of '_io.TextIOWrapper' objects}
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:477(_init_module_attrs)
+       93    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/time.py:16(_getDHMS)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/__init__.py:11(mkdir)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1767(parse_args)
+       50    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/copy.py:263(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1774(parse_known_args)
+        1    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/AgentForHFO.py:40(_readInput)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/heap.py:10(<module>)
+       93    0.000    0.000    0.000    0.000 {method 'sort' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1809(_parse_known_args)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/container.py:180(__init__)
+     1362    0.000    0.000    0.000    0.000 {method 'write' of '_io.TextIOWrapper' objects}
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/dropout.py:12(__init__)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/sharedctypes.py:238(SynchronizedString)
+        7    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1514(parameters)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:1(<module>)
+       31    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:135(_path_stat)
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/container.py:258(extend)
+        7    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1538(named_parameters)
+       24    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/abc.py:84(__new__)
+       93    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/threading.py:1017(_wait_for_tstate_lock)
+        7    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1501(_named_members)
+      492    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1384(<dictcomp>)
+      143    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/paths.py:20(getPath)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/serialization.py:229(_open_file_like)
+       16    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:354(cache_from_source)
+       92    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/LearningAgentForHFO.py:105(_atEpisodeStart)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/utils/random.py:4(<module>)
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/tempfile.py:147(<listcomp>)
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/gettext.py:735(gettext)
+       50    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/Agent.py:87(eval)
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/gettext.py:660(dgettext)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/serialization.py:211(__init__)
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/gettext.py:579(translation)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/Agent.py:98(save)
+       12    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/parameter.py:23(__new__)
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/gettext.py:538(find)
+       17    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:376(cached)
+       94    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/codecs.py:309(__init__)
+        8    0.000    0.000    0.000    0.000 {built-in method io.open_code}
+      100    0.000    0.000    0.000    0.000 {method 'acquire' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/TorchModel.py:17(__init__)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/feature_extraction.py:17(__init__)
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:484(_get_cached)
+      279    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/time.py:24(_div)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1877(consume_optional)
+    13/12    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/copy.py:200(_deepcopy_list)
+       93    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/time.py:28(_getFirstSignificantIndex)
+       23    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/re.py:289(_compile)
+       12    0.000    0.000    0.000    0.000 {built-in method _make_subclass}
+       50    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/evaluate.py:272(saveTestData)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/serialization.py:214(__exit__)
+       42    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/agents/Agent.py:80(train)
+     1104    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 {method 'close' of '_io.BufferedWriter' objects}
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/pathlib.py:1281(mkdir)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:2084(_match_argument)
+        6    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:328(register_parameter)
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/init.py:122(uniform_)
+      246    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/parameter.py:129(is_lazy)
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:147(__enter__)
+        9    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:2480(_get_formatter)
+       92    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/evaluate.py:220(getEpisodeInfo)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/re.py:188(match)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/threading.py:834(start)
+        8    0.000    0.000    0.000    0.000 {method 'read' of '_io.BufferedReader' objects}
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/pathlib.py:1039(__new__)
+        9    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:161(__init__)
+       50    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:121(_path_join)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1164(create_module)
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/init.py:12(_no_grad_uniform_)
+        7    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:370(add_module)
+      198    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/__init__.py:293(is_storage)
+      186    0.000    0.000    0.000    0.000 {built-in method _codecs.utf_8_decode}
+        1    0.000    0.000    0.000    0.000 {built-in method _imp.create_dynamic}
+        6    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/storage.py:498(size)
+      107    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/observations.py:17(getTeamUniformNumbers)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_compile.py:759(compile)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/serialization.py:264(_open_zipfile_writer)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/pathlib.py:678(_from_parts)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/serialization.py:259(__exit__)
+        6    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/storage.py:334(__len__)
+      246    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/overrides.py:1552(is_tensor_like)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/optim/optimizer.py:243(add_param_group)
+    48/11    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1668(named_modules)
+       16    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/genericpath.py:16(exists)
+       11    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1158(__setstate__)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/threading.py:540(wait)
+       93    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/io.py:90(<listcomp>)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:154(_path_isfile)
+      139    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/codecs.py:186(__init__)
+        7    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/copyreg.py:99(_slotnames)
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:157(_get_module_lock)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/threading.py:270(wait)
+       82    0.000    0.000    0.000    0.000 {method 'copy' of 'collections.OrderedDict' objects}
+       13    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:145(_path_is_mode_type)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/json/__init__.py:299(loads)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/pathlib.py:658(_parse_args)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/serialization.py:255(__init__)
+      250    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/copy.py:182(_deepcopy_atomic)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1070(path_stats)
+        1    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(linspace)
+       16    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:127(_path_split)
+        1    0.000    0.000    0.000    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/function_base.py:23(linspace)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/json/decoder.py:332(decode)
+       88    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:389(parent)
+        6    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/init.py:284(_calculate_fan_in_and_fan_out)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/util.py:171(register_after_fork)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/optim/optimizer.py:78(_hook_for_profile)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/container.py:223(__iadd__)
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1493(_get_spec)
+      558    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/io.py:91(<lambda>)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/utils/metaestimators.py:1(<module>)
+        9    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/shutil.py:1312(get_terminal_size)
+        2    0.000    0.000    0.000    0.000 {built-in method posix.mkdir}
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_parse.py:937(parse)
+        6    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/storage.py:425(element_size)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/TorchModel.py:159(_deploy_to_device)
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/init.py:356(_calculate_correct_fan)
+        6    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/gettext.py:212(_expand_lang)
+      492    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1382(<dictcomp>)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/pathlib.py:64(parse_parts)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/optim/optimizer.py:96(state_dict)
+       50    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:123(<listcomp>)
+        9    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/functools.py:34(update_wrapper)
+      175    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_search.py:382(BaseSearchCV)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/pathlib.py:1417(is_dir)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/json/decoder.py:343(raw_decode)
+      4/2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_parse.py:435(_parse_sub)
+        1    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/io.py:50(logOutput)
+       13    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/posixpath.py:71(join)
+      259    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/weakref.py:159(__setitem__)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/hfo/hfo.py:115(__del__)
+       12    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/copyreg.py:90(__newobj__)
+       29    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+       94    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/codecs.py:260(__init__)
+        6    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/_utils.py:549(_element_size)
+      4/2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_parse.py:493(_parse)
+      492    0.000    0.000    0.000    0.000 {method 'keys' of 'collections.OrderedDict' objects}
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:553(_classify_pyc)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/optim/optimizer.py:81(profile_hook_step)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/optim/optimizer.py:118(<listcomp>)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/copy.py:209(_deepcopy_tuple)
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1255(__init__)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/sharedctypes.py:135(rebuild_ctype)
+      264    0.000    0.000    0.000    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/lib/arraysetops.py:739(_union1d_dispatcher)
+       12    0.000    0.000    0.000    0.000 {built-in method zeros_like}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/optim/optimizer.py:110(pack_group)
+      264    0.000    0.000    0.000    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/multiarray.py:148(concatenate)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/util.py:205(__call__)
+        4    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/heap.py:205(_add_free_block)
+       12    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/_utils.py:570(__get__)
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:689(spec_from_file_location)
+       30    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/os.py:670(__getitem__)
+        2    0.000    0.000    0.000    0.000 {method 'flush' of '_io.BufferedWriter' objects}
+       22    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:151(__exit__)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/_ops.py:159(__getattr__)
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/init.py:67(calculate_gain)
+        1    0.000    0.000    0.000    0.000 {built-in method posix.open}
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/pathlib.py:1193(stat)
+       24    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:79(_unpack_uint32)
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/util.py:186(__init__)
+      101    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+        9    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1747(_add_action)
+        6    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/locale.py:384(normalize)
+        6    0.000    0.000    0.000    0.000 {method 'stride' of 'torch._C._TensorBase' objects}
+       24    0.000    0.000    0.000    0.000 {built-in method _abc._abc_init}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/heap.py:322(BufferWrapper)
+       42    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/LearningAgentForHFO.py:77(average_loss)
+        4    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/pathlib.py:728(__fspath__)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/heap.py:268(free)
+       94    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/threading.py:513(is_set)
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:78(acquire)
+        9    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1589(_add_action)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1388(add_argument_group)
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1330(_path_importer_cache)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_compile.py:598(_code)
+        1    0.000    0.000    0.000    0.000 {built-in method _thread.start_new_thread}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/posixpath.py:372(abspath)
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:103(release)
+        9    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1478(_get_optional_kwargs)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/heap.py:91(_choose_dir)
+        6    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/serialization.py:165(location_tag)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1567(__init__)
+       21    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/re.py:250(compile)
+       16    0.000    0.000    0.000    0.000 {built-in method posix.getpid}
+      142    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/AgentForHFO.py:35(status)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:586(_validate_timestamp_pyc)
+       93    0.000    0.000    0.000    0.000 {built-in method time.time}
+        6    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/_namedtensor_internals.py:10(check_serializing_named_tensor)
+        1    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/io.py:60(flushOutput)
+        2    0.000    0.000    0.000    0.000 {built-in method torch._C._jit_get_operation}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1549(_fill_cache)
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:176(cb)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/copy.py:210(<listcomp>)
+        4    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/pathlib.py:718(__str__)
+       12    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/_collections_abc.py:657(get)
+        7    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/utils/metaestimators.py:162(<lambda>)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/heap.py:123(__init__)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/sharedctypes.py:103(synchronized)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/threading.py:761(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1172(exec_module)
+        4    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/heap.py:258(_free_pending_blocks)
+       95    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/LearningAgentForHFO.py:50(<listcomp>)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/optim/adam.py:83(__setstate__)
+       56    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:222(_verbose_message)
+        2    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/io.py:28(flush)
+        9    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1398(_add_action)
+       12    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/storage.py:225(<dictcomp>)
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:58(__init__)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/weakref.py:323(__new__)
+        9    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:586(_format_args)
+       10    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1559(<lambda>)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1317(_path_hooks)
+       64    0.000    0.000    0.000    0.000 {built-in method builtins.setattr}
+        1    0.000    0.000    0.000    0.000 {built-in method _imp.exec_dynamic}
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/locale.py:350(_replace_encoding)
+        7    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/utils/metaestimators.py:94(__init__)
+        4    0.000    0.000    0.000    0.000 {method 'flush' of '_io.TextIOWrapper' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method posix.listdir}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/posixpath.py:334(normpath)
+        4    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/serialization.py:194(_is_path)
+        1    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(any)
+       32    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:129(<genexpr>)
+        1    0.000    0.000    0.000    0.000 {built-in method posix.statvfs}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/storage.py:188(_dtype_to_storage_type_map)
+       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:867(__exit__)
+       10    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/nn/modules/module.py:1189(remove_from)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_compile.py:536(_compile_info)
+       30    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/os.py:748(encode)
+       37    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1308(register)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/hfo/hfo.py:197(getNumOpponents)
+        1    0.000    0.000    0.000    0.000 {built-in method posix.unlink}
+        1    0.000    0.000    0.000    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2305(any)
+        6    0.000    0.000    0.000    0.000 {method '_storage' of 'torch._C._TensorBase' objects}
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1856(take_action)
+       24    0.000    0.000    0.000    0.000 {method 'data_ptr' of 'torch._C.ByteStorageBase' objects}
+       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:863(__enter__)
+        9    0.000    0.000    0.000    0.000 {built-in method posix.get_terminal_size}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/optim/optimizer.py:63(__setstate__)
+        9    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:809(__init__)
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:800(find_spec)
+       24    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+        7    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_parse.py:233(__next)
+        8    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_parse.py:249(match)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/weakref.py:343(__init__)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/utils/deprecation.py:37(__call__)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:516(_check_name_wrapper)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/optim/optimizer.py:113(<dictcomp>)
+       57    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1590(path_hook_for_FileFinder)
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/encodings/__init__.py:43(normalize_encoding)
+        4    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:909(__init__)
+        6    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/storage.py:501(pickle_storage_type)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/tempfile.py:105(_sanitize_params)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/utils/deprecation.py:97(_decorate_property)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/heap.py:115(Heap)
+       12    0.000    0.000    0.000    0.000 {method 'nbytes' of 'torch._C.ByteStorageBase' objects}
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/heap.py:335(create_memoryview)
+        6    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/serialization.py:117(_cpu_tag)
+       47    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:35(_new_module)
+       45    0.000    0.000    0.000    0.000 {built-in method _imp.release_lock}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/memory/ExperienceReplayBuffer.py:7(__init__)
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:342(__init__)
+        7    0.000    0.000    0.000    0.000 {method 'get' of 'mappingproxy' objects}
+        1    0.000    0.000    0.000    0.000 {method 'any' of 'numpy.generic' objects}
+       45    0.000    0.000    0.000    0.000 {built-in method _imp.acquire_lock}
+       15    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/posixpath.py:41(_get_sep)
+       12    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/__init__.py:616(dtype)
+       12    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/storage.py:225(<genexpr>)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/weakref.py:328(__init__)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:2358(_get_values)
+        6    0.000    0.000    0.000    0.000 {method 'has_names' of 'torch._C._TensorBase' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/utils/metaestimators.py:19(_BaseComposition)
+      4/2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_compile.py:71(_compile)
+        9    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1514(_pop_action_class)
+        6    0.000    0.000    0.000    0.000 {method 'storage_offset' of 'torch._C._TensorBase' objects}
+        4    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:886(__init__)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/enum.py:938(__and__)
+        6    0.000    0.000    0.000    0.000 {built-in method sys.intern}
+        1    0.000    0.000    0.000    0.000 {built-in method posix.ftruncate}
+        6    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/utils/hooks.py:54(warn_if_has_hooks)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1031(__init__)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/cuda/__init__.py:76(is_available)
+       44    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
+        4    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/serialization.py:200(__init__)
+        8    0.000    0.000    0.000    0.000 {built-in method _imp._fix_co_filename}
+        1    0.000    0.000    0.000    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/_methods.py:54(_any)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1459(__init__)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/_collections_abc.py:252(__subclasshook__)
+       21    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+        1    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/LearningAgentForHFO.py:68(_storeCustomActions)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/threading.py:505(__init__)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/pathlib.py:701(_format_parsed_parts)
+       19    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1312(_registry_get)
+       17    0.000    0.000    0.000    0.000 {method 'rfind' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/LearningAgentForHFO.py:52(<listcomp>)
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.sorted}
+        2    0.000    0.000    0.000    0.000 {method 'from_buffer' of '_ctypes.PyCSimpleType' objects}
+      6/4    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_parse.py:174(getwidth)
+        4    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:851(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen zipimport>:63(__init__)
+       24    0.000    0.000    0.000    0.000 {built-in method from_bytes}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/optim/optimizer.py:115(<listcomp>)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/tempfile.py:84(_infer_return_type)
+        2    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/input.py:29(<listcomp>)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/sharedctypes.py:182(__init__)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/heap.py:250(_remove_allocated_block)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:999(__init__)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/typing.py:255(inner)
+        1    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(result_type)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/tempfile.py:224(_get_candidate_names)
+       42    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/codecs.py:214(setstate)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/synchronize.py:90(_make_methods)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/threading.py:944(_stop)
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/reduction.py:43(register)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/pathlib.py:1049(_init)
+       19    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/posixpath.py:60(isabs)
+       34    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/optim/optimizer.py:112(<dictcomp>)
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:143(__init__)
+        9    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/types.py:171(__get__)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/sharedctypes.py:180(SynchronizedBase)
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/heap.py:152(_roundup)
+        1    0.000    0.000    0.000    0.000 <string>:2(<module>)
+       27    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/functools.py:64(wraps)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/threading.py:222(__init__)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/weakref.py:103(remove)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:2225(_get_nargs_pattern)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/hfo/hfo.py:193(getNumTeammates)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_parse.py:96(closegroup)
+        9    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1527(_check_conflict)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/context.py:233(get_context)
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1518(_get_handler)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/_weakrefset.py:38(_remove)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/_collections_abc.py:72(_check_methods)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/sharedctypes.py:216(SynchronizedArray)
+      2/1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_compile.py:461(_get_literal_prefix)
+        5    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+        9    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:570(_metavar_formatter)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/posixpath.py:140(basename)
+        9    0.000    0.000    0.000    0.000 {built-in method _imp.is_frozen}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/optim/optimizer.py:56(__getstate__)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/heap.py:67(Arena)
+        9    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:202(__init__)
+        9    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:579(format)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/jit/_builtins.py:158(_register_builtin)
+       15    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/enum.py:313(__call__)
+       19    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+        6    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/storage.py:319(_untyped)
+        4    0.000    0.000    0.000    0.000 {built-in method _bisect.insort_right}
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_parse.py:224(__init__)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/serialization.py:315(_check_dill_version)
+        1    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/agentForHFOFactory.py:6(getAgentForHFOFactory)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/pathlib.py:293(splitroot)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:159(_path_isdir)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_parse.py:84(opengroup)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/heap.py:235(_absorb)
+        6    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/typing.py:1149(cast)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1954(consume_positionals)
+        4    0.000    0.000    0.000    0.000 {built-in method _ctypes.sizeof}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/threading.py:249(__exit__)
+        1    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/evaluate.py:103(launchOtherAgents)
+        9    0.000    0.000    0.000    0.000 {method 'fileno' of '_io.TextIOWrapper' objects}
+        2    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/input.py:24(<listcomp>)
+        1    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/io.py:34(__init__)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/_ops.py:188(__getattr__)
+        4    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/serialization.py:203(__enter__)
+        6    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_parse.py:164(__getitem__)
+       18    0.000    0.000    0.000    0.000 {method 'find' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/typing.py:720(__hash__)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/_weakrefset.py:81(add)
+        7    0.000    0.000    0.000    0.000 {built-in method builtins.globals}
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:725(find_spec)
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:68(_relax_case)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:175(_path_isabs)
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/os.py:752(decode)
+        6    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_parse.py:286(tell)
+        1    0.000    0.000    0.000    0.000 {built-in method numpy.arange}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:54(BaseCrossValidator)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/util.py:48(debug)
+        8    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_parse.py:81(groups)
+        2    0.000    0.000    0.000    0.000 {built-in method _bisect.bisect_left}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1148(__init__)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:2414(_get_value)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_search.py:1395(RandomizedSearchCV)
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:397(has_location)
+        2    0.000    0.000    0.000    0.000 {built-in method _ctypes.addressof}
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_parse.py:254(get)
+        2    0.000    0.000    0.000    0.000 {built-in method _stat.S_ISDIR}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/threading.py:1306(current_thread)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/threading.py:246(__enter__)
+        4    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/enum.py:631(__new__)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1024(get_filename)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/threading.py:1177(_make_invoke_excepthook)
+        9    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/enum.py:753(value)
+        8    0.000    0.000    0.000    0.000 {method 'reverse' of 'list' objects}
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/context.py:197(get_start_method)
+        9    0.000    0.000    0.000    0.000 {method 'lstrip' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/utils/metaestimators.py:83(_AvailableIfDescriptor)
+        1    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/io.py:41(__init__)
+       15    0.000    0.000    0.000    0.000 {method 'isalnum' of 'str' objects}
+        5    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/abc.py:7(abstractmethod)
+        4    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_compile.py:595(isstring)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:1557(BaseShuffleSplit)
+        2    0.000    0.000    0.000    0.000 {method 'getvalue' of '_io.BytesIO' objects}
+        3    0.000    0.000    0.000    0.000 {method 'index' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/threading.py:258(_acquire_restore)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:834(create_module)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/context.py:187(get_context)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_search.py:1037(GridSearchCV)
+        1    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/evaluate.py:152(getEpisodeAndTrainEpisode)
+        5    0.000    0.000    0.000    0.000 {method 'release' of '_thread.lock' objects}
+        2    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/lib/io.py:20(__init__)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_parse.py:921(fix_flags)
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:2122(_parse_optional)
+        4    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_parse.py:160(__len__)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/_ops.py:155(__init__)
+       19    0.000    0.000    0.000    0.000 {built-in method builtins.callable}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:273(_BaseKFold)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/utils/deprecation.py:110(_update_doc)
+        4    0.000    0.000    0.000    0.000 {method 'end' of 're.Match' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/threading.py:261(_is_owned)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_compile.py:432(_generate_overlap_table)
+        4    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_parse.py:111(__init__)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1759(_get_positional_actions)
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_compile.py:65(_combine_flags)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_parse.py:76(__init__)
+        7    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/_collections_abc.py:392(__subclasshook__)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/threading.py:734(_newname)
+        7    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_search.py:358(_estimator_has)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/threading.py:1095(daemon)
+        3    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_parse.py:172(append)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1465(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:2106(_match_arguments_partial)
+        2    0.000    0.000    0.000    0.000 {method 'discard' of 'set' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/numeric.py:1859(isscalar)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:573(StratifiedKFold)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:1724(GroupShuffleSplit)
+        1    0.000    0.000    0.000    0.000 {method 'isdisjoint' of 'set' objects}
+        2    0.000    0.000    0.000    0.000 {built-in method _sre.compile}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_search.py:50(ParameterGrid)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_search.py:188(ParameterSampler)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/yaaf/models/feature_extraction.py:85(num_features)
+        7    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/utils/metaestimators.py:129(available_if)
+        3    0.000    0.000    0.000    0.000 {method 'decode' of 'bytes' objects}
+        5    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:604(<listcomp>)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/threading.py:255(_release_save)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/typing.py:329(__hash__)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/optim/optimizer.py:120(<dictcomp>)
+        2    0.000    0.000    0.000    0.000 {built-in method _weakref._remove_dead_weakref}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:903(__call__)
+        2    0.000    0.000    0.000    0.000 {method 'remove' of 'set' objects}
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1983(<listcomp>)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/util.py:52(info)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:880(__call__)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:1343(_RepeatedSplits)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:365(KFold)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/torch/jit/_builtins.py:128(_get_builtin_table)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:453(GroupKFold)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:1849(StratifiedShuffleSplit)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/util.py:44(sub_debug)
+        1    0.000    0.000    0.000    0.000 {built-in method sys.audit}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/multiprocessing/heap.py:170(_discard_arena)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/utils/metaestimators.py:165(_IffHasAttrDescriptor)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:944(TimeSeriesSplit)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:2107(PredefinedSplit)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:193(LeavePOut)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:1632(ShuffleSplit)
+        1    0.000    0.000    0.000    0.000 {method 'astype' of 'numpy.ndarray' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:1101(LeaveOneGroupOut)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:751(StratifiedGroupKFold)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:1211(LeavePGroupsOut)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:115(LeaveOneOut)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/utils/deprecation.py:34(__init__)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:2209(_CVIterableWrapper)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:1444(RepeatedKFold)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1760(<listcomp>)
+        2    0.000    0.000    0.000    0.000 {method 'group' of 're.Match' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipe/Documents/GitHub/ad-hoc-deep-learning/src/hfo_agents/LearningAgentForHFO.py:73(_inputPurpose)
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.hash}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/site-packages/sklearn/model_selection/_split.py:1498(RepeatedStratifiedKFold)
+        2    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/sre_compile.py:453(_get_iscased)
+        1    0.000    0.000    0.000    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/multiarray.py:664(result_type)
+        1    0.000    0.000    0.000    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2300(_any_dispatcher)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:1240(__init__)
+        1    0.000    0.000    0.000    0.000 {method '__enter__' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:2407(<listcomp>)
+        1    0.000    0.000    0.000    0.000 /home/filipe/anaconda3/envs/marl/lib/python3.8/argparse.py:2440(_check_value)
+        1    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 /home/filipe/.local/lib/python3.8/site-packages/numpy/core/function_base.py:18(_linspace_dispatcher)
+        1    0.000    0.000    0.000    0.000 {method 'locked' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.ord}
+
+
+
