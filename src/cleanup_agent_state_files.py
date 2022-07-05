@@ -14,6 +14,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-D", "--directory", type=str)
     parser.add_argument("-l", "--list-only", action="store_true")
+    parser.add_argument("-g", "--gap-between-states", type=int)
     args = parser.parse_args()
 
     directory = args.directory or DEFAULT_DIRECTORY
@@ -25,8 +26,10 @@ def main():
         "test_output": getPath(directory, "test-output")
     }
 
+    gap_between_states_to_keep = args.gap_between_states or GAP_BETWEEN_STATES_TO_KEEP
+
     agent_states = listAgentStates(paths)
-    agent_states_to_delete = determineAgentStatesToDelete(agent_states)
+    agent_states_to_delete = determineAgentStatesToDelete(agent_states, gap_between_states_to_keep)
 
     if not args.list_only:
         deleteAgentStates(paths, agent_states_to_delete)
@@ -53,7 +56,7 @@ def listAgentStates(paths):
         key = lambda dict: dict["num_episodes"])
 
 
-def determineAgentStatesToDelete(states):
+def determineAgentStatesToDelete(states, gap_between_states_to_keep):
     num_states = len(states)
 
     if num_states <= max(NUM_BEST_STATES_TO_KEEP, NUM_LAST_STATES_TO_KEEP):
@@ -72,8 +75,8 @@ def determineAgentStatesToDelete(states):
         reasons_to_keep = []
         if num_episodes >= min_num_episodes:
             reasons_to_keep.append("last {} states".format(NUM_LAST_STATES_TO_KEEP))
-        if num_episodes % GAP_BETWEEN_STATES_TO_KEEP == 0:
-            reasons_to_keep.append("num_episodes muliple of {}".format(GAP_BETWEEN_STATES_TO_KEEP))
+        if num_episodes % gap_between_states_to_keep == 0:
+            reasons_to_keep.append("num_episodes muliple of {}".format(gap_between_states_to_keep))
         if score_rate >= min_score_rate and score_rate > 0:
             reasons_to_keep.append("best {} states".format(NUM_BEST_STATES_TO_KEEP))
 
