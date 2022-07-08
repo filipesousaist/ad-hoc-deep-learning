@@ -9,7 +9,7 @@ _REQUIRED_ARGS = {
     "learning_agent": [
         "agent_parameters", "actions", "custom_features", "reward_function"
     ],
-    "run_agent": [
+    "agent_type": [
         "agent_type"
     ]
 }

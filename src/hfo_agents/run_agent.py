@@ -15,7 +15,7 @@ def main():
     if not args.no_output:
         logOutput(getPath(directory, "output"))
 
-    input_data = readInputData(getPath(directory, "input"), "run_agent")
+    input_data = readInputData(getPath(directory, "input"), "agent_type")
 
     agent = getAgentForHFOFactory(input_data["agent_type"])(directory, port, "base_left")
 
