@@ -19,8 +19,8 @@ from src.lib.observations import ableToKick
 
 
 class LearningAgentForHFO(AgentForHFO):
-    def __init__(self, directory: str, port: int, team: str, input_loadout: int = 0):
-        super().__init__(directory, port, team, input_loadout)
+    def __init__(self, directory: str, port: int = -1, team: str = "", input_loadout: int = 0, setup_hfo: bool = True):
+        super().__init__(directory, port, team, input_loadout, setup_hfo)
 
         self._agent: Type[Agent]
         self._episode_loss: int

@@ -10,16 +10,16 @@ from src.lib.input import readInputData
 
 
 class AgentForHFO:
-    def __init__(self, directory: str, port: int, team: str, input_loadout: int = 0):
+    def __init__(self, directory: str, port: int = -1, team: str = "", input_loadout: int = 0, setup_hfo: bool = True):
         self._directory: str = directory
         self._port: int = port
         self._team: str = team
         self._input_loadout: int = input_loadout
         self._hfo: HFOEnvironment = HFOEnvironment()
-        self._input_data: dict
+        self._input_data: dict = {}
 
-        self._num_opponents: int
-        self._num_teammates: int
+        self._num_opponents: int = -1
+        self._num_teammates: int = -1
         self._team_unums: "list[int]" = []
 
         self._observation: np.ndarray = np.array(0)
@@ -28,7 +28,8 @@ class AgentForHFO:
         self._status: int = -1
 
         self._readInput()
-        self._setupHFO()
+        if setup_hfo:
+            self._setupHFO()
 
 
     @property

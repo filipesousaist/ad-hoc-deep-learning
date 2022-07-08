@@ -10,16 +10,16 @@ from src.lib.paths import getPath, DEFAULT_DIRECTORY
 
 DEFAULT_GRANULARITY = 500
 
-LINE_COLORS = [
-    (0.3, 0.1, 0.6),
-    (0.3, 0.6, 0.1),
-    (0.1, 0.3, 0.6),
-    (0.1, 0.6, 0.3),
-    (0.6, 0.3, 0.1),
-    (0.6, 0.1, 0.3)
-]
-AREA_COLORS = [tuple([channel + (1 - channel) / 2 for channel in color]) \
-    for color in LINE_COLORS]
+LINE_COLORS = (
+    (0.44, 0.07, 0.33),
+    (0.07, 0.27, 0.14),
+    (0.01, 0.22, 0.5),
+    (0.23, 0.04, 0.55),
+    (0.35, 0.19, 0),
+    (0.56, 0.06, 0.11)
+)
+AREA_COLORS = [tuple([channel + (1 - channel) / 3 for channel in color])
+               for color in LINE_COLORS]
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-D", "--directories", type=str, nargs="+")
@@ -31,7 +31,7 @@ args = parser.parse_args()
 directories = args.directories or [DEFAULT_DIRECTORY]
 num_directories = len(directories)
 if not (0 < num_directories <= len(LINE_COLORS)):
-    exit(f"Number of directories must be between 1 and {len(LINE_COLORS)}") 
+    exit(f"Number of directories must be between 1 and {len(LINE_COLORS)}")
 
 granularity = args.granularity or DEFAULT_GRANULARITY
 
@@ -54,13 +54,13 @@ for d in range(num_directories):
     if x[d].shape[0] < 2:
         exit("Need at least 2 points to plot")
     num_train_episodes = x[d][1] - x[d][0]
-    
+
     actual_granularity = (granularity // num_train_episodes) or 1
     granularity = actual_granularity * num_train_episodes
 
-    x_2d = x[d][: x[d].shape[0] // actual_granularity * actual_granularity]\
+    x_2d = x[d][: x[d].shape[0] // actual_granularity * actual_granularity] \
         .reshape((-1, actual_granularity))
-    y_2d = y[d][: y[d].shape[0] // actual_granularity * actual_granularity]\
+    y_2d = y[d][: y[d].shape[0] // actual_granularity * actual_granularity] \
         .reshape((-1, actual_granularity))
 
     x_max.append(np.max(x_2d, axis=1))
@@ -68,12 +68,12 @@ for d in range(num_directories):
     y_std.append(np.nanstd(y_2d, axis=1))
 
 fig, ax_dict = plt.subplot_mosaic(
-        [["top"] * 5 + ["BLANK"]] * 4 + \
-        ([["BLANK"] * 6] + [["bottom"] * 5 + ["BLANK"]] * 4 \
-         if granularity > num_train_episodes else []),
+    [["top"] * 5 + ["BLANK"]] * 4 +
+    ([["BLANK"] * 6] + [["bottom"] * 5 + ["BLANK"]] * 4
+     if granularity > num_train_episodes else []),
     empty_sentinel="BLANK")
 
-fig.canvas.manager.set_window_title('Agent score rate') 
+fig.canvas.manager.set_window_title('Agent score rate')
 fig.supylabel("Score rate (%)")
 
 for d in range(num_directories):
@@ -86,7 +86,7 @@ if granularity > num_train_episodes:
         ax_dict["bottom"].plot(x_max[d], y_mean[d], color=LINE_COLORS[d])
         if args.confidence_intervals:
             ax_dict["bottom"].fill_between(x_max[d], y_mean[d] - 1.96 * y_std[d], y_mean[d] + 1.96 * y_std[d],
-                color=AREA_COLORS[d] + (0.7,))
+                                           color=AREA_COLORS[d] + (0.3,))
     ax_dict["bottom"].set_xlabel(f"Training Episodes (Granularity = {granularity})")
 
 plt.show()
