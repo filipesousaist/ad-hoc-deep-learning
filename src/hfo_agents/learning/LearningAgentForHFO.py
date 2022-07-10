@@ -13,7 +13,6 @@ from yaaf.agents import Agent
 from yaaf import Timestep
 
 from src.hfo_agents.AgentForHFO import AgentForHFO
-from src.lib.actions import isActionValid
 from src.lib.features import extractFeatures
 from src.lib.observations import ableToKick
 

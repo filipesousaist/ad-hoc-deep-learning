@@ -6,6 +6,8 @@ import random
 
 from hfo import MOVE_TO, NOOP, MOVE, SHOOT, PASS, DRIBBLE
 
+from src.lib.math import get_angle
+
 
 # from agents.utils import get_angle
 # from agents.offline_plastic_v1.base.hfo_attacking_player import \
@@ -250,36 +252,36 @@ class HeliosPolicy:
             # Last action Failed (DRIBBLE):
             if last_action_failed or self._attempts_to_shoot >= 2:
                 self._attempts_to_shoot = 0
-                hfo_action = DRIBBLE
+                return DRIBBLE
 
             # Opponents near agent && good angle pass (PASS):
             elif agent_op_dist < -0.9 and team_op_dist > -0.7:
-                hfo_action = PASS  # , teammate_id
+                return PASS  # , teammate_id
 
             # Far from Goal:
             elif agent_coord[0] < 0.2:
                 # Teammate near Goal, good pass angle and far from op
                 if not teammate_further_from_goal(agent_coord, team_coord) and \
                         team_op_dist > -0.8:
-                    hfo_action = PASS  # , teammate_id
+                    return PASS  # , teammate_id
                 else:
-                    hfo_action = DRIBBLE
+                    return DRIBBLE
             # Near Goal:
             else:
                 # Teammate near Goal, better goal angle, good pass angle:
                 if team_coord[0] > 0 and (team_angle - agent_angle > 10) \
                         and team_op_dist > -0.9 and pass_angle > 0:
-                    hfo_action = PASS  # , teammate_id
+                    return PASS  # , teammate_id
                 # Good shoot angle and opponent far:
                 elif agent_angle > 7 and agent_op_dist > -0.9:
-                    hfo_action = SHOOT
                     self._attempts_to_shoot += 1
+                    return SHOOT
                 else:
-                    hfo_action = DRIBBLE
+                    return DRIBBLE
         # Teammate has ball
         else:
             # Update attempts to shoot counter:
-            attempts_to_shoot = 0
+            self._attempts_to_shoot = 0
             # Calculate distance between agents:
             agent_pos = np.array(agent_coord)
             team_pos = np.array(team_coord)
@@ -290,14 +292,14 @@ class HeliosPolicy:
 
             # If agent closer to ball:
             if agent_ball_dist < team_ball_dist:
-                hfo_action = MOVE
+                return MOVE
             # If agents very close to each other
             elif agents_dist < 0.4:
                 # Teammate upper side o field
                 if team_pos[1] < 0:
-                    hfo_action = (MOVE_TO, 0.4, 0.3)
+                    return (MOVE_TO, 0.4, 0.3)
                 else:
-                    hfo_action = (MOVE_TO, 0.4, -0.3)
+                    return (MOVE_TO, 0.4, -0.3)
             # Agents with good distance from each other:
             else:
-                hfo_action = MOVE
+                return MOVE
