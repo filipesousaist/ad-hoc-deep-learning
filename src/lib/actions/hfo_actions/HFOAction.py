@@ -8,15 +8,16 @@ from src.lib.actions.Action import Action
 
 
 class HFOAction(Action):
-    @abstractmethod
     @property
+    @abstractmethod
     def index(self) -> int:
         pass
+
 
     @property
     def name(self) -> str:
         return ACTION_STRINGS[self.index]
 
 
-    def execute(self, hfo: HFOEnvironment, observation: np.ndarray):
-        hfo.act(hfo, self._args)
+    def execute(self, hfo: HFOEnvironment, observation: np.ndarray) -> None:
+        hfo.act(self.index, *self._args)

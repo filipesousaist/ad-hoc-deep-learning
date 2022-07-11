@@ -1,4 +1,4 @@
-from yaaf.agents.dqn import MLPDQNAgent
+from yaaf.agents.dqn.DQNAgent import MLPDQNAgent
 
 from src.hfo_agents.learning.LearningAgentForHFO import LearningAgentForHFO
 

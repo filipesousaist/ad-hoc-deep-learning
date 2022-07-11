@@ -5,7 +5,6 @@ from psutil import Popen
 from signal import SIGTERM
 from threading import Thread
 import time
-from typing import Type
 
 import hfo
 from hfo import GOAL
@@ -61,7 +60,7 @@ def main() -> None:
 def parseArguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("-v", "--visualizer", action="store_true", help="launch HFO visualizer")
-    parser.add_argument("-g", "--gnome-terminal", action="store_true", help="lauch agent in an external terminal")
+    parser.add_argument("-g", "--gnome-terminal", action="store_true", help="launch agent in an external terminal")
     parser.add_argument("-n", "--no-output", action="store_true")
 
     parser.add_argument("-l", "--load", action="store_true", help="load data stored in save file")
@@ -79,13 +78,12 @@ def parseArguments() -> argparse.Namespace:
 
 
 def launchHFO(input_data: dict, port: int, gnome_terminal: bool, visualizer: bool) -> Popen:
-    # gnome_terminal_command = "gnome-terminal -- " if gnome_terminal else ""
     gnome_terminal_command = "xterm -e " if gnome_terminal else ""
 
     background_process = "" if gnome_terminal else " &"
 
     num_offense_agents = int(input_data["agent_type"] != "npc") + \
-                         input_data["num_teammates"] * int(input_data["teammates_type"] != "npc")
+        input_data["num_teammates"] * int(input_data["teammates_type"] != "npc")
     num_defense_agents = input_data["num_opponents"] * int(input_data["opponents_type"] != "npc")
 
     hfo_args = [
@@ -105,7 +103,6 @@ def launchHFO(input_data: dict, port: int, gnome_terminal: bool, visualizer: boo
     formatted_command = unformatted_command.format(gnome_terminal_command, *hfo_args, background_process)
     environment_variables = {**os.environ, "LC_ALL": "C"}
 
-
     return Popen(formatted_command, shell=True, env=environment_variables, start_new_session=True)
 
 
@@ -120,7 +117,7 @@ def launchOtherAgents(directory: str, port: int, input_loadout: int, input_data:
             OpponentThread(directory, port, input_loadout, input_data["opponents_type"], wait_for_quit_thread).start()
 
 
-def evaluateAgent(agent: Type[LearningAgentForHFO], directory: str, args: argparse.Namespace, input_data: dict,
+def evaluateAgent(agent: LearningAgentForHFO, directory: str, args: argparse.Namespace, input_data: dict,
                   wait_for_quit_thread: Thread) -> None:
     num_episodes = {
         "test": input_data["num_test_episodes"],
@@ -174,7 +171,7 @@ def loadEpisodeAndTrainEpisode(directory: str) -> tuple:
     return int(save_data["next_episode"]), int(save_data["next_train_episode"])
 
 
-def loadAgent(agent: Type[LearningAgentForHFO], directory: str, train_episode: int,
+def loadAgent(agent: LearningAgentForHFO, directory: str, train_episode: int,
               num_episodes: "dict[str, int]") -> None:
     agent_state_path = getPath(directory, "agent-state") + "/after{}episodes".format(
         train_episode // num_episodes["train"] * num_episodes["train"]
@@ -186,7 +183,7 @@ def loadAgent(agent: Type[LearningAgentForHFO], directory: str, train_episode: i
         print("[INFO] Path '" + agent_state_path + "' not found. Agent not loaded.")
 
 
-def playTestEpisodes(agent: Type[LearningAgentForHFO], wait_for_quit_thread: Thread):
+def playTestEpisodes(agent: LearningAgentForHFO, wait_for_quit_thread: Thread):
     episode = 0
     agent.setLearning(False)
     while wait_for_quit_thread.is_alive() and agent.playEpisode():
@@ -194,7 +191,7 @@ def playTestEpisodes(agent: Type[LearningAgentForHFO], wait_for_quit_thread: Thr
         episode += 1
 
 
-def playEpisodes(agent: Type[LearningAgentForHFO], directory: str, episode: int, num_episodes: dict,
+def playEpisodes(agent: LearningAgentForHFO, directory: str, episode: int, num_episodes: dict,
                  wait_for_quit_thread: Thread) -> None:
     server_running = True
     last_time = time.time()
@@ -203,7 +200,7 @@ def playEpisodes(agent: Type[LearningAgentForHFO], directory: str, episode: int,
         episode += 1
 
 
-def playEpisode(agent: Type[LearningAgentForHFO], directory: str, episode: int, num_episodes: dict,
+def playEpisode(agent: LearningAgentForHFO, directory: str, episode: int, num_episodes: dict,
                 last_time: float) -> tuple:
     is_training, episode_type, episode_type_index, rollout_episode, rollout = \
         getEpisodeInfo(episode, num_episodes)
@@ -240,7 +237,7 @@ def getEpisodeInfo(episode: int, num_episodes: dict) -> tuple:
     return is_training, episode_type, episode_type_index, rollout_episode, rollout
 
 
-def saveAgent(agent: Type[LearningAgentForHFO], directory: str, train_episode: int) -> None:
+def saveAgent(agent: LearningAgentForHFO, directory: str, train_episode: int) -> None:
     agent_state_path = getPath(directory, "agent-state")
     if not os.path.exists(agent_state_path):
         os.mkdir(agent_state_path)
@@ -252,7 +249,7 @@ def saveAgent(agent: Type[LearningAgentForHFO], directory: str, train_episode: i
     agent.saveNetwork(agent_state_full_path)
 
 
-def saveData(directory: str, agent: Type[LearningAgentForHFO], is_training: bool, episode: int,
+def saveData(directory: str, agent: LearningAgentForHFO, is_training: bool, episode: int,
              num_episodes: dict, episode_type_index: int, rollout: int, delta_time: float) -> None:
     save_path = getPath(directory, "save")
 
@@ -303,6 +300,7 @@ def killProcesses(hfo_process: Popen, gnome_terminal: bool):
     else:
         os.killpg(os.getpgid(hfo_process.pid), SIGTERM)
         os.kill(hfo_process.pid, SIGTERM)
+
 
 if __name__ == '__main__':
     main()

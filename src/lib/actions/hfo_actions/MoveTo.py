@@ -1,17 +1,17 @@
-from hfo import PASS
+from hfo import MOVE_TO
 
 from src.lib.actions.hfo_actions.HFOAction import HFOAction
 
 
-class Pass(HFOAction):
+class MoveTo(HFOAction):
     @property
     def num_args(self) -> int:
-        return 0 # TODO: Change to 1
+        return 2
 
 
     @property
     def index(self) -> int:
-        return PASS
+        return MOVE_TO
 
 
     @property
@@ -21,4 +21,4 @@ class Pass(HFOAction):
 
     @property
     def validation_value(self) -> int:
-        return 1
+        return -1

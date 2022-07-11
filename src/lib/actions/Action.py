@@ -15,14 +15,14 @@ class Action:
         self._args = args
 
 
-    @abstractmethod
     @property
+    @abstractmethod
     def name(self) -> str:
         pass
 
 
-    @abstractmethod
     @property
+    @abstractmethod
     def num_args(self) -> int:
         pass
 

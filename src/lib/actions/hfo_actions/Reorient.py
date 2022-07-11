@@ -3,7 +3,7 @@ from hfo import REORIENT
 from src.lib.actions.hfo_actions.HFOAction import HFOAction
 
 
-class Dribble(HFOAction):
+class Reorient(HFOAction):
     @property
     def num_args(self) -> int:
         return 0
