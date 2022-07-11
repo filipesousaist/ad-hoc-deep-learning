@@ -2,7 +2,7 @@ from abc import abstractmethod
 
 import numpy as np
 
-from hfo import ACTION_STRINGS, HFOEnvironment
+from hfo import HFOEnvironment
 
 
 class Action:
