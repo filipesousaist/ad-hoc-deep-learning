@@ -42,8 +42,10 @@ def main() -> None:
     launchOtherAgents(directory, port, input_loadout, input_data, wait_for_quit_thread)
 
     agent_type = input_data["agent_type"]
-    if agent_type != "npc":
-        agent = getAgentForHFOFactory(agent_type)(directory, port, "base_left", input_loadout)
+    if is_custom(agent_type):
+        teammates_type = input_data["teammates_type"]
+        team_name = "base" if is_custom(teammates_type) else get_team_name(teammates_type)
+        agent = getAgentForHFOFactory(agent_type)(directory, port, team_name + "_left", input_loadout)
         evaluateAgent(agent, directory, args, input_data, wait_for_quit_thread)
     else:
         while wait_for_quit_thread.is_alive():
@@ -55,6 +57,14 @@ def main() -> None:
         flushOutput(getPath(directory, "output"))
 
     killProcesses(hfo_process, args.gnome_terminal)
+
+
+def is_custom(agent_type: str) -> bool:
+    return agent_type != "npc" and not agent_type.startswith("bin_")
+
+
+def get_team_name(agent_type: str) -> str:
+    return agent_type[4:] if agent_type.startswith("bin_") else "base"
 
 
 def parseArguments() -> argparse.Namespace:
@@ -82,19 +92,35 @@ def launchHFO(input_data: dict, port: int, gnome_terminal: bool, visualizer: boo
 
     background_process = "" if gnome_terminal else " &"
 
-    num_offense_agents = int(input_data["agent_type"] != "npc") + \
-        input_data["num_teammates"] * int(input_data["teammates_type"] != "npc")
-    num_defense_agents = input_data["num_opponents"] * int(input_data["opponents_type"] != "npc")
+    agent_type = input_data["agent_type"]
+    agent_is_binary = not is_custom(agent_type)
+
+    teammates_type = input_data["teammates_type"]
+    teammates_are_binary = not is_custom(teammates_type)
+
+    opponents_type = input_data["opponents_type"]
+    opponents_are_binary = not is_custom(opponents_type)
+
+    offense_type = teammates_type if teammates_are_binary else agent_type
+    offense_is_binary = agent_is_binary or teammates_are_binary
+
+    if agent_is_binary and teammates_are_binary and agent_type != teammates_type:
+        exit("[ERROR]: 'agent_type' and 'teammates_type' must be the same if both are binary.")
+
+    num_offense_npcs = int(agent_is_binary) + input_data["num_teammates"] * int(teammates_are_binary)
+    num_defense_npcs = input_data["num_opponents"] * int(opponents_are_binary)
 
     hfo_args = [
         " --no-logging",
         " --port {}".format(port) if port else "",
         " --no-sync" if visualizer else " --headless",
         " --fullstate" if input_data["fullstate"] else "",
-        " --offense-agents {}".format(num_offense_agents),
-        " --offense-npcs {}".format(input_data["num_teammates"] + 1 - num_offense_agents),
-        " --defense-agents {}".format(num_defense_agents),
-        " --defense-npcs {}".format(input_data["num_opponents"] - num_defense_agents),
+        " --offense-agents {}".format(input_data["num_teammates"] + 1 - num_offense_npcs),
+        " --offense-npcs {}".format(num_offense_npcs),
+        " --offense-team {}".format(get_team_name(offense_type)) if offense_is_binary else "",
+        " --defense-agents {}".format(input_data["num_opponents"] - num_defense_npcs),
+        " --defense-npcs {}".format(num_defense_npcs),
+        " --defense-team {}".format(get_team_name(opponents_type)) if opponents_are_binary else "",
         " --frames-per-trial {}".format(input_data["frames_per_trial"]),
         " --untouched-time {}".format(input_data["untouched_time"])
     ]
@@ -108,13 +134,17 @@ def launchHFO(input_data: dict, port: int, gnome_terminal: bool, visualizer: boo
 
 def launchOtherAgents(directory: str, port: int, input_loadout: int, input_data: dict,
                       wait_for_quit_thread: WaitForQuitThread) -> None:
-    if input_data["teammates_type"] != "npc":
+    if is_custom(input_data["teammates_type"]):
+        agent_type = input_data["agent_type"]
+        team_name = "base" if is_custom(agent_type) else get_team_name(agent_type)
         for _ in range(int(input_data["num_teammates"])):
-            TeammateThread(directory, port, input_loadout, input_data["teammates_type"], wait_for_quit_thread).start()
+            TeammateThread(directory, port, input_loadout, input_data["teammates_type"],
+                           team_name, wait_for_quit_thread).start()
 
-    if input_data["opponents_type"] != "npc":
+    if is_custom(input_data["opponents_type"]):
         for _ in range(int(input_data["num_opponents"])):
-            OpponentThread(directory, port, input_loadout, input_data["opponents_type"], wait_for_quit_thread).start()
+            OpponentThread(directory, port, input_loadout, input_data["opponents_type"],
+                           "base", wait_for_quit_thread).start()
 
 
 def evaluateAgent(agent: LearningAgentForHFO, directory: str, args: argparse.Namespace, input_data: dict,

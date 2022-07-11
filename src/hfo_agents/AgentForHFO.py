@@ -10,6 +10,12 @@ from src.lib.paths import getPath
 from src.lib.input import readInputData
 
 
+TEAM_PREFIXES = {
+    "base": "base",
+    "helios": "HELIOS"
+}
+
+
 class AgentForHFO:
     def __init__(self, directory: str, port: int = -1, team: str = "", input_loadout: int = 0, setup_hfo: bool = True):
         self._directory: str = directory
@@ -52,11 +58,14 @@ class AgentForHFO:
     def _setupHFO(self):
         # Connect to the server with the specified
         # feature set. See feature sets in hfo.py/hfo.hpp.
+        team_info = self._team.split("_")
+        team = TEAM_PREFIXES[team_info[0]] + "_" + team_info[1]
+
         self._hfo.connectToServer(HIGH_LEVEL_FEATURE_SET,
                                   '../HFO/bin/teams/base/config/formations-dt',
-                                  self._port, 'localhost', self._team, False)
+                                  self._port, 'localhost', team, False)
 
-        print("[INFO] Main agent uniform number:", self._hfo.getUnum())
+        print("[INFO] Custom agent uniform number:", self._hfo.getUnum())
 
         self._num_opponents = self._hfo.getNumOpponents()
         self._num_teammates = self._hfo.getNumTeammates()
