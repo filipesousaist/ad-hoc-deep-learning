@@ -1,9 +1,7 @@
-from io import TextIOWrapper
+from io import TextIOWrapper, DEFAULT_BUFFER_SIZE
 import sys
 import os
 import json
-from typing import Type
-
 
 DEV_NULL = open(os.devnull, "w")
 
@@ -18,8 +16,10 @@ def disablePrint() -> None:
 
 class Logger(TextIOWrapper):
     def __init__(self, file, group_id):
+        super().__init__(file)
         self.file = file
         self.group_id = group_id
+        self.console = None
 
     def write(self, message):
         self.console.write(message)
@@ -44,10 +44,10 @@ class StderrLogger(Logger):
         sys.stderr = self
 
 
-_loggers: "list[Type[Logger]]" = []
+_loggers: "list[Logger]" = []
 
 
-def logOutput(log_filename: str, open_mode = "w", to_stdout: bool = True, to_stderr: bool = True) ->None:
+def logOutput(log_filename: str, open_mode="w", to_stdout: bool = True, to_stderr: bool = True) -> None:
     if not to_stdout and not to_stderr:
         return
     file = open(log_filename, open_mode)
@@ -75,23 +75,23 @@ def readTxt(path: str) -> dict:
     with open(path, "r") as file:
         lines = file.readlines()
 
-        keyValuePairs = [line.split(":") for line in lines]
-        keyValueDict = {}
+        key_value_pairs = [line.split(":") for line in lines]
+        key_value_dict = {}
 
-        for pair in keyValuePairs:
+        for pair in key_value_pairs:
             for i in range(2):
                 pair[i] = pair[i].strip("\n\r\t ")
-            keyValueDict[pair[0]] = pair[1]
-        
-        return keyValueDict
+            key_value_dict[pair[0]] = pair[1]
+
+        return key_value_dict
 
 
-def writeTxt(path: str, keyValueDict: dict) -> None:
-    keyValuePairs = list([(key, keyValueDict[key]) for key in keyValueDict.keys()])
-    keyValuePairs.sort(key = lambda pair: pair[0])
+def writeTxt(path: str, key_value_dict: dict) -> None:
+    key_value_pairs = list([(key, key_value_dict[key]) for key in key_value_dict.keys()])
+    key_value_pairs.sort(key=lambda pair: pair[0])
 
     with open(path, "w") as file:
-        for pair in keyValuePairs:
+        for pair in key_value_pairs:
             file.write(str(pair[0]) + ": " + str(pair[1]) + "\n")
 
 
@@ -102,9 +102,9 @@ def printTable(myDict, colList=None):
     Author: Thierry Husson - Use it as you want but don't blame me.
     """
     if not colList: colList = list(myDict[0].keys() if myDict else [])
-    myList = [colList] # 1st row = header
+    myList = [colList]  # 1st row = header
     for item in myDict: myList.append([str(item[col] if item[col] is not None else '') for col in colList])
-    colSize = [max(map(len,col)) for col in zip(*myList)]
+    colSize = [max(map(len, col)) for col in zip(*myList)]
     formatStr = ' | '.join(["{{:<{}}}".format(i) for i in colSize])
-    myList.insert(1, ['-' * i for i in colSize]) # Seperating line
+    myList.insert(1, ['-' * i for i in colSize])  # Seperating line
     for item in myList: print(formatStr.format(*item))

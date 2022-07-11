@@ -4,6 +4,7 @@ import numpy as np
 
 from hfo import HFOEnvironment, HIGH_LEVEL_FEATURE_SET, IN_GAME, SERVER_DOWN, PASS, NOOP, QUIT
 
+from src.lib.actions.Action import Action
 from src.lib.observations import getTeamUniformNumbers
 from src.lib.paths import getPath
 from src.lib.input import readInputData
@@ -71,7 +72,7 @@ class AgentForHFO:
         while self._status == IN_GAME:
             self._atTimestepStart()
 
-            self._act(self._selectAction())
+            self._act()
 
             self._status = self._hfo.step()
             self._next_observation = self._hfo.getState()
@@ -111,15 +112,18 @@ class AgentForHFO:
 
 
     @abstractmethod
-    def _selectAction(self) -> int:
+    def _selectAction(self) -> Action:
         pass
 
 
-    def _act(self, hfo_action):
-        if hfo_action == PASS:
+    def _act(self):
+        action: Action = self._selectAction()
+
+        # TODO: Should use latest_observation when AUTO_MOVE is set
+        if action.name == "Pass":  # TODO: Pass should be changed to PassN
             self._pass(self._observation)
         else:
-            self._hfo.act(hfo_action)
+            action.execute(self._hfo, self._observation)
 
 
     def _pass(self, observation):

@@ -1,12 +1,14 @@
 #!/usr/bin/hfo_env python3
 # encoding utf-8
-import argparse
 import numpy as np
-import random
-
-from hfo import MOVE_TO, NOOP, MOVE, SHOOT, PASS, DRIBBLE
 
 from src.lib.math import get_angle
+from src.lib.actions.Action import Action
+from src.lib.actions.hfo_actions.Move import Move
+from src.lib.actions.hfo_actions.MoveTo import MoveTo
+from src.lib.actions.hfo_actions.Shoot import Shoot
+from src.lib.actions.hfo_actions.Pass import Pass
+from src.lib.actions.hfo_actions.Dribble import Dribble
 
 
 # from agents.utils import get_angle
@@ -75,8 +77,7 @@ def best_shoot_angle(observation: np.ndarray, agent_coord: tuple, num_teammates:
                 observation[10 + 6 * num_teammates + 3 * o],
                 observation[10 + 6 * num_teammates + 3 * o + 1]
             ])
-            angles.append(get_angle(goalie=op_coord, player=player_coord,
-                                    point=goal_limit))
+            angles.append(get_angle(op_coord, player_coord, goal_limit))
         best_angles.append(min(angles))
     # return the best angles avaiable
     return max(best_angles)
@@ -228,7 +229,7 @@ class HeliosPolicy:
         self._attempts_to_shoot = 0
 
 
-    def get_action(self, observation: np.ndarray, num_teammates: int, num_opponents: int) -> int:
+    def get_action(self, observation: np.ndarray, num_teammates: int, num_opponents: int) -> Action:
         """
         Will only interact with first teammate in teammates list
         """
@@ -252,32 +253,32 @@ class HeliosPolicy:
             # Last action Failed (DRIBBLE):
             if last_action_failed or self._attempts_to_shoot >= 2:
                 self._attempts_to_shoot = 0
-                return DRIBBLE
+                return Dribble()
 
             # Opponents near agent && good angle pass (PASS):
             elif agent_op_dist < -0.9 and team_op_dist > -0.7:
-                return PASS  # , teammate_id
+                return Pass()  # , teammate_id
 
             # Far from Goal:
             elif agent_coord[0] < 0.2:
                 # Teammate near Goal, good pass angle and far from op
                 if not teammate_further_from_goal(agent_coord, team_coord) and \
                         team_op_dist > -0.8:
-                    return PASS  # , teammate_id
+                    return Pass()  # , teammate_id
                 else:
-                    return DRIBBLE
+                    return Dribble()
             # Near Goal:
             else:
                 # Teammate near Goal, better goal angle, good pass angle:
                 if team_coord[0] > 0 and (team_angle - agent_angle > 10) \
                         and team_op_dist > -0.9 and pass_angle > 0:
-                    return PASS  # , teammate_id
+                    return Pass()  # , teammate_id
                 # Good shoot angle and opponent far:
                 elif agent_angle > 7 and agent_op_dist > -0.9:
                     self._attempts_to_shoot += 1
-                    return SHOOT
+                    return Shoot()
                 else:
-                    return DRIBBLE
+                    return Dribble()
         # Teammate has ball
         else:
             # Update attempts to shoot counter:
@@ -292,14 +293,14 @@ class HeliosPolicy:
 
             # If agent closer to ball:
             if agent_ball_dist < team_ball_dist:
-                return MOVE
+                return Move()
             # If agents very close to each other
             elif agents_dist < 0.4:
                 # Teammate upper side o field
                 if team_pos[1] < 0:
-                    return (MOVE_TO, 0.4, 0.3)
+                    return MoveTo(0.4, 0.3)
                 else:
-                    return (MOVE_TO, 0.4, -0.3)
+                    return MoveTo(0.4, -0.3)
             # Agents with good distance from each other:
             else:
-                return MOVE
+                return Move()

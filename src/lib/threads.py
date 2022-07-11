@@ -1,6 +1,5 @@
 from abc import abstractmethod
 from threading import Thread
-from typing import Type
 import time
 
 from src.hfo_agents.AgentForHFO import AgentForHFO
@@ -24,7 +23,7 @@ class AgentThread(Thread):
 
     def run(self):
         time.sleep(1)
-        agent: Type[AgentForHFO] = \
+        agent: AgentForHFO = \
             getAgentForHFOFactory(self._agent_type)(self._directory, self._port, self.getTeam(), self._input_loadout)
         
         while self._wait_for_quit_thread.is_alive() and agent.playEpisode():
