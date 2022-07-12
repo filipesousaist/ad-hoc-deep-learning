@@ -12,7 +12,8 @@ from src.lib.input import readInputData
 
 TEAM_PREFIXES = {
     "base": "base",
-    "helios": "HELIOS"
+    "helios": "HELIOS",
+    "aut": "AUT"
 }
 
 
