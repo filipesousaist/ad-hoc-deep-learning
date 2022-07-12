@@ -157,7 +157,9 @@ def evaluateAgent(agent: LearningAgentForHFO, directory: str, args: argparse.Nam
     episode, train_episode = getEpisodeAndTrainEpisode(
         directory, args.load, args.test_from_episode, num_episodes)
 
-    if args.load or args.test_from_episode:
+    if args.load:
+        loadAgent(agent, directory, -1, num_episodes)
+    elif args.test_from_episode:
         loadAgent(agent, directory, train_episode, num_episodes)
     else:
         createOutputFiles(directory)
@@ -203,12 +205,13 @@ def loadEpisodeAndTrainEpisode(directory: str) -> tuple:
 
 def loadAgent(agent: LearningAgentForHFO, directory: str, train_episode: int,
               num_episodes: "dict[str, int]") -> None:
-    agent_state_path = getPath(directory, "agent-state") + "/after{}episodes".format(
-        train_episode // num_episodes["train"] * num_episodes["train"]
-    )
+    agent_state_path = getPath(directory, "agent-state") + \
+        ("/latest" if train_episode == -1 else
+         f"/after{train_episode // num_episodes['train'] * num_episodes['train']}episodes")
+
     if os.path.exists(agent_state_path):
         print("[INFO] Loading agent from file:", agent_state_path)
-        agent.loadNetwork(agent_state_path)
+        agent.load(agent_state_path)
     else:
         print("[INFO] Path '" + agent_state_path + "' not found. Agent not loaded.")
 
@@ -249,6 +252,7 @@ def playEpisode(agent: LearningAgentForHFO, directory: str, episode: int, num_ep
 
     saveData(directory, agent, is_training, episode, num_episodes, episode_type_index,
              rollout, current_time - last_time)
+    saveAgent(agent, directory, -1)
 
     return current_time, server_up
 
@@ -272,11 +276,12 @@ def saveAgent(agent: LearningAgentForHFO, directory: str, train_episode: int) ->
     if not os.path.exists(agent_state_path):
         os.mkdir(agent_state_path)
 
-    agent_state_full_path = f"{agent_state_path}/after{train_episode}episodes"
+    agent_state_full_path = agent_state_path + \
+                            ("/latest" if train_episode == -1 else f"/after{train_episode}episodes")
     if not os.path.exists(agent_state_full_path):
         os.mkdir(agent_state_full_path)
 
-    agent.saveNetwork(agent_state_full_path)
+    agent.save(agent_state_full_path)
 
 
 def saveData(directory: str, agent: LearningAgentForHFO, is_training: bool, episode: int,
@@ -294,6 +299,8 @@ def saveData(directory: str, agent: LearningAgentForHFO, is_training: bool, epis
         saveTestData(save_data, directory, num_episodes, episode_type_index, rollout, agent.status)
 
     writeTxt(save_path, save_data)
+
+    saveAgent(agent, directory, -1)
 
 
 def saveTrainData(save_data: dict, directory: str, train_episode: int,
