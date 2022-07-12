@@ -38,7 +38,7 @@ def main():
 
 def listAgentStates(paths):
     states = [int(path.lstrip("after").rstrip("episodes"))
-              for path in os.listdir(paths["agent_state"])]
+              for path in os.listdir(paths["agent_state"]) if path != "latest"]
     print(states)
     score_rate_per_state = {}
 
