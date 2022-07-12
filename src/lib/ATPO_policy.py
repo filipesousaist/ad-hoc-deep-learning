@@ -1,7 +1,10 @@
+# Adapted from:
 # https://github.com/adhoc-inesc-id/ATPO-Policy
 
-import torch
+import pickle
+import os
 
+import torch
 from torch.nn import Linear, LSTM, GRU
 
 from yaaf.agents.dqn import DQNAgent
@@ -10,8 +13,10 @@ from yaaf.policies import epsilon_greedy_policy
 from yaaf.models import TorchModel
 
 
-class DRQN(TorchModel):
+REPLAY_BUFFER_FILE_NAME = "replay_buffer.pkl"
 
+
+class DRQN(TorchModel):
     def __init__(self,
                  type: str,
                  num_features: int,
@@ -99,7 +104,6 @@ class DRQN(TorchModel):
 
 
 class DRQNAgent(DQNAgent):
-
     def __init__(self, num_features, num_actions,
                  rnn="lstm",
                  num_layers=2, hidden_sizes=256, dropout=0.0,
@@ -165,7 +169,7 @@ class DRQNAgent(DQNAgent):
         return info
 
     def remember(self, timestep):
-        timestep.info["hidden state"] = self._last_hidden
+        # timestep.info["hidden state"] = self._last_hidden
         self._current_sequence.append(timestep)
         current_length = len(self._current_sequence)
         if current_length == self.max_sequence_length:
@@ -203,3 +207,17 @@ class DRQNAgent(DQNAgent):
                 last_hidden = current_hidden
 
         return X, y
+
+
+def saveReplayBuffer(replay_buffer: ExperienceReplayBuffer, directory: str):
+    with open(directory + "/" + REPLAY_BUFFER_FILE_NAME, "wb") as file:
+        pickle.dump(replay_buffer, file, pickle.HIGHEST_PROTOCOL)
+
+
+def loadReplayBuffer(directory: str) -> ExperienceReplayBuffer:
+    path = directory + "/" + REPLAY_BUFFER_FILE_NAME
+    if os.path.exists(path):
+        with open(path, "rb") as file:
+            return pickle.load(file)
+    else:
+        print(f"[INFO]: File '{path}' not found. Replay buffer not loaded.")

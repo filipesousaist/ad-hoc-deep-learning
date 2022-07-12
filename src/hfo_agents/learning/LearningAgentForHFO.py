@@ -17,6 +17,7 @@ from src.lib.actions.hfo_actions.Move import Move
 from src.lib.actions.hfo_actions.NoOp import NoOp
 from src.lib.actions.parsing import parseActions, parseCustomActions
 from src.lib.reward import parseRewardFunction
+from src.lib.ATPO_policy import saveReplayBuffer, loadReplayBuffer
 
 
 class LearningAgentForHFO(AgentForHFO):
@@ -138,9 +139,12 @@ class LearningAgentForHFO(AgentForHFO):
         return self._agent.trainable
 
 
-    def saveNetwork(self, directory: str):
+    def save(self, directory: str):
         self._agent.save(directory)
+        saveReplayBuffer(self._agent._replay_buffer, directory)
 
 
-    def loadNetwork(self, directory: str):
+    def load(self, directory: str):
         self._agent.load(directory)
+        self._agent._replay_buffer = loadReplayBuffer(directory) or self._agent._replay_buffer
+
