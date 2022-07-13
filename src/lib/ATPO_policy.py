@@ -171,8 +171,7 @@ class DRQNAgent(DQNAgent):
     def remember(self, timestep):
         # timestep.info["hidden state"] = self._last_hidden
         self._current_sequence.append(timestep)
-        current_length = len(self._current_sequence)
-        if current_length == self.max_sequence_length:
+        if len(self._current_sequence) == self.max_sequence_length or timestep.is_terminal:
             self._replay_buffer.push(self._current_sequence)
             self._current_sequence = []
 

@@ -64,12 +64,20 @@ def run(agent: DRQNAgent, env: CoinFlip, num_episodes: int = 1):
 
 if __name__ == '__main__':
     env = CoinFlip(200)
-    agent = DRQNAgent(env.num_features, env.num_actions, hidden_sizes=4, target_network_update_frequency=10)
+    trajectory_update_lengths = list(range(1, 5 + 1))
+    test_accuracies = []
+    for trajectory_update_length in trajectory_update_lengths:
+        agent = DRQNAgent(env.num_features, env.num_actions, hidden_sizes=4, target_network_update_frequency=8,
+                          trajectory_update_length=trajectory_update_length)
 
-    print("Train")
-    agent.train()
-    print("Accuracy: {}".format(run(agent, env, num_episodes=20)))
+        print("Train")
+        agent.train()
+        print("Accuracy: {}".format(run(agent, env, num_episodes=20)))
 
-    print("Test")
-    agent.eval()
-    print("Accuracy: {}".format(run(agent, env, num_episodes=10)))
+        print("Test")
+        agent.eval()
+        accuracy = run(agent, env, num_episodes=20)
+        print("Accuracy: {}".format(accuracy))
+        test_accuracies.append(accuracy)
+
+    print(trajectory_update_lengths, test_accuracies)
