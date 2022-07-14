@@ -1,6 +1,6 @@
 current_test_rollout_goals: 0
-execution_time: 13.864818096160889
-execution_time_readable: 13.8648s
+execution_time: 10.989555358886719
+execution_time_readable: 10.9896s
 next_episode: 1
 next_test_episode: 1
 next_train_episode: 0
