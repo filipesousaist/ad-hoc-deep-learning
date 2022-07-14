@@ -3,13 +3,14 @@ from typing import List, Dict, Union
 
 import numpy as np
 
-# Statuses for globals()
 from hfo import IN_GAME
 
 from yaaf.agents.Agent import Agent
 from yaaf import Timestep
 
 from src.hfo_agents.AgentForHFO import AgentForHFO
+from src.lib.io import readTxt
+from src.lib.paths import getPath
 from src.lib.features import extractFeatures
 from src.lib.observations import ableToKick
 from src.lib.actions.Action import Action
@@ -17,11 +18,11 @@ from src.lib.actions.hfo_actions.Move import Move
 from src.lib.actions.hfo_actions.NoOp import NoOp
 from src.lib.actions.parsing import parseActions, parseCustomActions
 from src.lib.reward import parseRewardFunction
-from src.lib.ATPO_policy import saveReplayBuffer, loadReplayBuffer
 
 
 class LearningAgentForHFO(AgentForHFO):
-    def __init__(self, directory: str, port: int = -1, team: str = "", input_loadout: int = 0, setup_hfo: bool = True):
+    def __init__(self, directory: str, port: int = -1, team: str = "", input_loadout: int = 0, setup_hfo: bool = True,
+                 load_parameters: bool = False):
         super().__init__(directory, port, team, input_loadout, setup_hfo)
 
         self._actions: List[Action] = []
@@ -35,7 +36,12 @@ class LearningAgentForHFO(AgentForHFO):
         self._next_features: np.ndarray = np.array(0)
         self._info: dict = {}
 
-        self._storeInputData()
+        self._storeInputData(load_parameters)
+
+
+    @staticmethod
+    def is_learning_agent():
+        return True
 
 
     @abstractmethod
@@ -43,7 +49,7 @@ class LearningAgentForHFO(AgentForHFO):
         pass
 
 
-    def _storeInputData(self) -> None:
+    def _storeInputData(self, load_parameters: bool) -> None:
         self._actions = parseActions([action for action in self._input_data["actions"] if not action.startswith("_")])
         self._storeCustomActions([action for action in self._input_data["actions"] if action.startswith("_")])
 
@@ -54,16 +60,29 @@ class LearningAgentForHFO(AgentForHFO):
         if self._custom_features:
             num_features = len(extractFeatures(np.zeros(num_features)))
 
-        self._agent: Agent = self._createAgent(num_features, len(self._actions), self._input_data["agent_parameters"])
+        agent_parameters = self._input_data["agent_parameters"]
+        if load_parameters:
+            save_data = readTxt(getPath(self._directory, "save"))
+            self._loadParameters(save_data, agent_parameters)
+
+        self._agent: Agent = self._createAgent(num_features, len(self._actions), agent_parameters)
 
 
-    def _storeCustomActions(self, actions: "list[str]") -> None:
+    def _storeCustomActions(self, actions: List[str]) -> None:
         custom_actions_data = parseCustomActions(actions)
         self._auto_move = custom_actions_data["auto_move"]
 
 
     def _inputPurpose(self) -> str:
         return "learning_agent"
+
+
+    def _loadParameters(self, save_data: dict, target_dict: dict) -> None:
+        pass
+
+
+    def saveParameters(self, save_data: dict) -> None:
+        pass
 
 
     @property
@@ -103,19 +122,21 @@ class LearningAgentForHFO(AgentForHFO):
 
 
     def _atTimestepEnd(self) -> None:
-        if (not self._auto_moving or self._status != IN_GAME) and self._action is not None:
+        is_terminal = self._status != IN_GAME
+        if (not self._auto_moving or is_terminal) and self._action is not None:
             self._num_timesteps += 1
 
             self._next_features = self._extractFeatures(self._next_observation)
 
             timestep = Timestep(self._features, self._action, self._reward_function[self._status],
-                                self._next_features, self._status != IN_GAME, {})
+                                self._next_features, is_terminal, {})
 
             self._features = self._next_features
 
             self._info.update(self._agent.reinforcement(timestep) or {})
             if "Loss" in self._info:
                 self._episode_loss += self._info["Loss"]
+        print(self._info)
 
 
     def _updateObservation(self) -> None:
@@ -124,10 +145,10 @@ class LearningAgentForHFO(AgentForHFO):
 
 
     def _atEpisodeEnd(self) -> None:
-        print(self._info)
+        pass #print(self._info)
 
 
-    def setLearning(self, value):
+    def setLearning(self, value) -> None:
         if value:
             self._agent.train()
         else:
@@ -135,16 +156,28 @@ class LearningAgentForHFO(AgentForHFO):
 
 
     @property
-    def is_learning(self):
+    def is_learning(self) -> bool:
         return self._agent.trainable
 
 
-    def save(self, directory: str):
+    @property
+    def agent(self):
+        return self._agent
+
+
+    @property
+    def exploration_rate(self) -> float:
+        return -1.0
+
+
+    @property
+    def total_training_timesteps(self) -> int:
+        return self._agent.total_training_timesteps
+
+
+    def save(self, directory: str) -> None:
         self._agent.save(directory)
-        saveReplayBuffer(self._agent._replay_buffer, directory)
 
 
-    def load(self, directory: str):
+    def load(self, directory: str) -> None:
         self._agent.load(directory)
-        self._agent._replay_buffer = loadReplayBuffer(directory) or self._agent._replay_buffer
-

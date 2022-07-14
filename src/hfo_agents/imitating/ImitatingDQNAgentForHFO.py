@@ -2,13 +2,14 @@ from random import random
 
 from hfo import SHOOT, PASS, DRIBBLE, MOVE
 
-from yaaf.agents.dqn import MLPDQNAgent
+from yaaf.agents.Agent import Agent
 
-from src.hfo_agents.learning.DQNAgentForHFO import DQNAgentForHFO
+from src.lib.actions.Action import Action
+from src.hfo_agents.learning.MLPDQNAgentForHFO import MLPDQNAgentForHFO
 
 
-class ImitatingDQNAgentForHFO(DQNAgentForHFO):
-    def _createAgent(self, num_features: int, num_actions: int, parameters: dict) -> MLPDQNAgent:
+class ImitatingDQNAgentForHFO(MLPDQNAgentForHFO):
+    def _createAgent(self, num_features: int, num_actions: int, parameters: dict) -> Agent:
         self._initial_chance_to_imitate: float = parameters["initial_chance_to_imitate"]
         self._final_chance_to_imitate: float = parameters["final_chance_to_imitate"]
         self._steps_to_imitate: int = parameters["steps_to_imitate"]
@@ -36,11 +37,11 @@ class ImitatingDQNAgentForHFO(DQNAgentForHFO):
                self._final_chance_to_imitate * steps_fraction
 
 
-    def _getAction(self) -> int:
+    def _getAction(self) -> Action:
         pass
 
 
-    def _selectAction(self) -> int:
+    def _selectAction(self) -> Action:
         self._info["chance_to_imitate"] = self._chance_to_imitate()
         if self.is_learning and random() < self._info["chance_to_follow_base"]:
             hfo_action = self._getAction()
