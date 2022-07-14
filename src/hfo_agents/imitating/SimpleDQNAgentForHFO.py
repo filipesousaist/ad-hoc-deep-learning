@@ -1,6 +1,6 @@
 from hfo import SHOOT, PASS, DRIBBLE, MOVE
 
-from src.hfo_agents.learning.DQNAgentForHFO import DQNAgentForHFO
+from src.hfo_agents.learning.MLPDQNAgentForHFO import MLPDQNAgentForHFO
 
 
 params = {'SHT_DST': 0.136664020547, 'SHT_ANG': -0.747394386098,
@@ -32,7 +32,7 @@ def _can_shoot(goal_dist, goal_angle):
     return bool((goal_dist < params['SHT_DST']) and (goal_angle > params['SHT_ANG']))
 
 
-class SimpleDQNAgentForHFO(DQNAgentForHFO):
+class SimpleDQNAgentForHFO(MLPDQNAgentForHFO):
     def _getAction(self):
         if int(self._observation[5]) == 1:
             goal_dist = float(self._observation[6])

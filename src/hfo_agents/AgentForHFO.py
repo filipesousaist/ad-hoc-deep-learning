@@ -40,6 +40,11 @@ class AgentForHFO:
             self._setupHFO()
 
 
+    @staticmethod
+    def is_learning_agent():
+        return False
+
+
     @property
     def status(self) -> int:
         return self._status

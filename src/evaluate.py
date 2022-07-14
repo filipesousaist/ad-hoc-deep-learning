@@ -5,6 +5,7 @@ from psutil import Popen
 from signal import SIGTERM
 from threading import Thread
 import time
+from typing import Type, cast
 
 import hfo
 from hfo import GOAL
@@ -16,6 +17,7 @@ from src.lib.threads import WaitForQuitThread, TeammateThread, OpponentThread
 from src.lib.input import readInputData
 
 from src.hfo_agents.agentForHFOFactory import getAgentForHFOFactory
+from src.hfo_agents.AgentForHFO import AgentForHFO
 from src.hfo_agents.learning.LearningAgentForHFO import LearningAgentForHFO
 
 
@@ -44,9 +46,17 @@ def main() -> None:
     agent_type = input_data["agent_type"]
     if is_custom(agent_type):
         teammates_type = input_data["teammates_type"]
-        team_name = "base" if is_custom(teammates_type) else get_team_name(teammates_type)
-        agent = getAgentForHFOFactory(agent_type)(directory, port, team_name + "_left", input_loadout)
-        evaluateAgent(agent, directory, args, input_data, wait_for_quit_thread)
+        team_name = ("base" if is_custom(teammates_type) else get_team_name(teammates_type)) + "_left"
+        agent_factory: Type[AgentForHFO] = getAgentForHFOFactory(agent_type)
+        if agent_factory.is_learning_agent():
+            agent = agent_factory(directory, port, team_name, input_loadout, args.load)
+            learning_agent = cast(LearningAgentForHFO, agent)
+            evaluateAgent(learning_agent, directory, args, input_data, wait_for_quit_thread)
+        else:
+            agent = agent_factory(directory, port, team_name, input_loadout)
+            playTestEpisodes(agent, wait_for_quit_thread)
+
+
     else:
         while wait_for_quit_thread.is_alive():
             pass
@@ -162,29 +172,36 @@ def evaluateAgent(agent: LearningAgentForHFO, directory: str, args: argparse.Nam
     elif args.test_from_episode:
         loadAgent(agent, directory, train_episode, num_episodes)
     else:
-        createOutputFiles(directory)
+        createOutputFiles(directory, agent)
 
     if args.test_from_episode:
+        agent.setLearning(False)
         playTestEpisodes(agent, wait_for_quit_thread)
     else:
         playEpisodes(agent, directory, episode, num_episodes, wait_for_quit_thread)
 
 
-def createOutputFiles(directory: str) -> None:
+def createOutputFiles(directory: str, agent: LearningAgentForHFO) -> None:
     with open(getPath(directory, "test-output"), "w"):
         pass
 
     with open(getPath(directory, "train-output"), "w") as train_output_file:
         train_output_file.write("Episode\t\tAverage loss\n\n")
 
-    writeTxt(getPath(directory, "save"), {
+    save_data = {
         "next_episode": 0,
         "next_test_episode": 0,
         "current_test_rollout_goals": 0,
         "next_train_episode": 0,
         "execution_time": 0,
-        "execution_time_readable": getReadableTime(0)
-    })
+        "execution_time_readable": getReadableTime(0),
+        "total_training_timesteps": 0
+    }
+    exploration_rate = agent.exploration_rate
+    if exploration_rate != -1.0:
+        save_data["current_exploration_rate"] = exploration_rate
+
+    writeTxt(getPath(directory, "save"), save_data)
 
 
 def getEpisodeAndTrainEpisode(directory: str, load: bool, test_from_episode: int,
@@ -206,8 +223,8 @@ def loadEpisodeAndTrainEpisode(directory: str) -> tuple:
 def loadAgent(agent: LearningAgentForHFO, directory: str, train_episode: int,
               num_episodes: "dict[str, int]") -> None:
     agent_state_path = getPath(directory, "agent-state") + \
-        ("/latest" if train_episode == -1 else
-         f"/after{train_episode // num_episodes['train'] * num_episodes['train']}episodes")
+                       ("/latest" if train_episode == -1 else
+                        f"/after{train_episode // num_episodes['train'] * num_episodes['train']}episodes")
 
     if os.path.exists(agent_state_path):
         print("[INFO] Loading agent from file:", agent_state_path)
@@ -216,9 +233,8 @@ def loadAgent(agent: LearningAgentForHFO, directory: str, train_episode: int,
         print("[INFO] Path '" + agent_state_path + "' not found. Agent not loaded.")
 
 
-def playTestEpisodes(agent: LearningAgentForHFO, wait_for_quit_thread: Thread):
+def playTestEpisodes(agent: AgentForHFO, wait_for_quit_thread: Thread):
     episode = 0
-    agent.setLearning(False)
     while wait_for_quit_thread.is_alive() and agent.playEpisode():
         print(f'Test episode {episode} ended with {hfo.STATUS_STRINGS[agent.status]}')
         episode += 1
@@ -294,6 +310,7 @@ def saveData(directory: str, agent: LearningAgentForHFO, is_training: bool, epis
     save_data["execution_time_readable"] = getReadableTime(save_data["execution_time"])
 
     if is_training:
+        agent.saveParameters(save_data)
         saveTrainData(save_data, directory, episode_type_index, agent.average_loss)
     else:
         saveTestData(save_data, directory, num_episodes, episode_type_index, rollout, agent.status)
