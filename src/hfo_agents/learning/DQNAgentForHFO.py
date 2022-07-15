@@ -50,8 +50,3 @@ class DQNAgentForHFO(LearningAgentForHFO):
     def load(self, directory: str) -> None:
         super().load(directory)
         self._agent._replay_buffer = loadReplayBuffer(directory) or self._dqn_agent._replay_buffer
-
-    # TODO: DELETE
-    def _atTimestepEnd(self) -> None:
-        super()._atTimestepEnd()
-        print(max(self.exploration_timesteps - self.total_training_timesteps, 0))
