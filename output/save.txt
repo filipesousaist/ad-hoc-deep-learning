@@ -1,0 +1,8 @@
+current_exploration_rate: 0.7861
+current_test_rollout_goals: 0
+execution_time: 7.436155080795288
+execution_time_readable: 7.43616s
+exploration_timesteps_left: 3175
+next_episode: 7
+next_test_episode: 1
+next_train_episode: 6

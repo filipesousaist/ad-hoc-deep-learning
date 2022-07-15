@@ -49,14 +49,12 @@ def main() -> None:
         team_name = ("base" if is_custom(teammates_type) else get_team_name(teammates_type)) + "_left"
         agent_factory: Type[AgentForHFO] = getAgentForHFOFactory(agent_type)
         if agent_factory.is_learning_agent():
-            agent = agent_factory(directory, port, team_name, input_loadout, args.load)
-            learning_agent = cast(LearningAgentForHFO, agent)
+            learning_agent_factory = cast(Type[LearningAgentForHFO], agent_factory)
+            learning_agent = learning_agent_factory(directory, port, team_name, input_loadout, load_parameters=args.load)
             evaluateAgent(learning_agent, directory, args, input_data, wait_for_quit_thread)
         else:
             agent = agent_factory(directory, port, team_name, input_loadout)
             playTestEpisodes(agent, wait_for_quit_thread)
-
-
     else:
         while wait_for_quit_thread.is_alive():
             pass
@@ -194,12 +192,9 @@ def createOutputFiles(directory: str, agent: LearningAgentForHFO) -> None:
         "current_test_rollout_goals": 0,
         "next_train_episode": 0,
         "execution_time": 0,
-        "execution_time_readable": getReadableTime(0),
-        "total_training_timesteps": 0
+        "execution_time_readable": getReadableTime(0)
     }
-    exploration_rate = agent.exploration_rate
-    if exploration_rate != -1.0:
-        save_data["current_exploration_rate"] = exploration_rate
+    agent.saveParameters(save_data)
 
     writeTxt(getPath(directory, "save"), save_data)
 
