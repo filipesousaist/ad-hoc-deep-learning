@@ -136,7 +136,6 @@ class LearningAgentForHFO(AgentForHFO):
             self._info.update(self._agent.reinforcement(timestep) or {})
             if "Loss" in self._info:
                 self._episode_loss += self._info["Loss"]
-        print(self._info)
 
 
     def _updateObservation(self) -> None:
@@ -145,7 +144,7 @@ class LearningAgentForHFO(AgentForHFO):
 
 
     def _atEpisodeEnd(self) -> None:
-        pass #print(self._info)
+        print(self._info)
 
 
     def setLearning(self, value) -> None:
