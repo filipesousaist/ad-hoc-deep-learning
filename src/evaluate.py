@@ -263,7 +263,8 @@ def playEpisode(agent: LearningAgentForHFO, directory: str, episode: int, num_ep
 
     saveData(directory, agent, is_training, episode, num_episodes, episode_type_index,
              rollout, current_time - last_time)
-    saveAgent(agent, directory, -1)
+    if is_training:
+        saveAgent(agent, directory, -1)
 
     return current_time, server_up
 
