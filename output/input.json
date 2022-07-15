@@ -2,19 +2,32 @@
     "1": {
         "agent_type": "dqn",
         "agent_parameters": {
-            "learning_rate": 0.00025,
-            "initial_exploration_rate": 1,
+            "learning_rate": 0.001,
+            "initial_exploration_rate": 0.6604,
             "final_exploration_rate": 0.1,
-            "final_exploration_step": 5000,
+            "final_exploration_step": 389166,
             "discount_factor": 0.99,
-            "target_network_update_frequency": 75
+            "target_network_update_frequency": 25,
+            "layers": [
+                [
+                    256,
+                    "relu"
+                ],
+                [
+                    256,
+                    "relu"
+                ],
+                [
+                    256,
+                    "relu"
+                ]
+            ]
         },
         "actions": [
             "SHOOT",
             "DRIBBLE",
             "PASS",
-            "MOVE",
-            "REORIENT"
+            "_AUTO_MOVE"
         ],
         "custom_features": false,
         "reward_function": {
@@ -22,14 +35,14 @@
             "GOAL": 100,
             "default": -100
         },
-        "num_teammates": 0,
-        "num_opponents": 1,
+        "num_teammates": 1,
+        "num_opponents": 3,
         "teammates_type": "npc",
         "opponents_type": "npc",
         "fullstate": true,
         "frames_per_trial": 500,
         "untouched_time": 200,
-        "num_test_episodes": 1,
-        "num_train_episodes": 10
+        "num_test_episodes": 50,
+        "num_train_episodes": 500
     }
 }
