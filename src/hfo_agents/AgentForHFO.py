@@ -2,10 +2,9 @@ from abc import abstractmethod
 
 import numpy as np
 
-from hfo import HFOEnvironment, HIGH_LEVEL_FEATURE_SET, IN_GAME, SERVER_DOWN, PASS, NOOP, QUIT
+from hfo import HFOEnvironment, HIGH_LEVEL_FEATURE_SET, IN_GAME, SERVER_DOWN, QUIT
 
 from src.lib.actions.Action import Action
-from src.lib.observations import getTeamUniformNumbers
 from src.lib.paths import getPath
 from src.lib.input import readInputData
 
@@ -79,22 +78,24 @@ class AgentForHFO:
 
     def playEpisode(self) -> bool:
         self._status = IN_GAME
-        self._observation = self._hfo.getState()
-        self._next_observation = None
+        self._next_observation = self._hfo.getState()
 
         self._atEpisodeStart()
+
+        self._observation = self._next_observation
 
         while self._status == IN_GAME:
             self._atTimestepStart()
 
-            self._act()
+            # TODO: Should use latest_observation when AUTO_MOVE is set
+            self._selectAction().execute(self._hfo)
 
             self._status = self._hfo.step()
             self._next_observation = self._hfo.getState()
 
             self._atTimestepEnd()
 
-            self._updateObservation()
+            self._observation = self._next_observation
 
         self._atEpisodeEnd()
 
@@ -129,23 +130,3 @@ class AgentForHFO:
     @abstractmethod
     def _selectAction(self) -> Action:
         pass
-
-
-    def _act(self):
-        action: Action = self._selectAction()
-
-        # TODO: Should use latest_observation when AUTO_MOVE is set
-        if action.name == "Pass":  # TODO: Pass should be changed to PassN
-            self._pass(self._observation)
-        else:
-            action.execute(self._hfo, self._observation)
-
-
-    def _pass(self, observation):
-        if not self._team_unums:
-            self._team_unums = getTeamUniformNumbers(observation, self._num_teammates)
-
-        if self._team_unums:
-            self._hfo.act(PASS, self._team_unums[0])
-        else:
-            self._hfo.act(NOOP)

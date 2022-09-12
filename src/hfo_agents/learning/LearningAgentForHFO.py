@@ -12,10 +12,11 @@ from src.hfo_agents.AgentForHFO import AgentForHFO
 from src.lib.io import readTxt
 from src.lib.paths import getPath
 from src.lib.features import extractFeatures
-from src.lib.observations import ableToKick
+from src.lib.observations import ableToKick, OFFENSE_UNUMS
 from src.lib.actions.Action import Action
 from src.lib.actions.hfo_actions.Move import Move
 from src.lib.actions.hfo_actions.NoOp import NoOp
+from src.lib.actions.hfo_actions.Pass import Pass
 from src.lib.actions.parsing import parseActions, parseCustomActions
 from src.lib.reward import parseRewardFunction
 
@@ -32,8 +33,7 @@ class LearningAgentForHFO(AgentForHFO):
         self._custom_features: bool = False
 
         self._action: int = -1
-        self._features: np.ndarray = np.array(0)
-        self._next_features: np.ndarray = np.array(0)
+        self._saved_observation: np.ndarray = np.array(0)
         self._info: dict = {}
 
         self._storeInputData(load_parameters)
@@ -70,7 +70,20 @@ class LearningAgentForHFO(AgentForHFO):
 
     def _storeCustomActions(self, actions: List[str]) -> None:
         custom_actions_data = parseCustomActions(actions)
+
         self._auto_move = custom_actions_data["auto_move"]
+
+        if custom_actions_data["pass_n"]:
+            my_unum = self._hfo.getUnum()
+            n = 0
+            for u in range(len(OFFENSE_UNUMS)):
+                if n == self._num_teammates:
+                    break
+                unum = OFFENSE_UNUMS[u]
+                if unum != my_unum:
+                    self._actions.append(Pass(unum))
+                    n += 1
+
 
 
     def _inputPurpose(self) -> str:
@@ -91,14 +104,21 @@ class LearningAgentForHFO(AgentForHFO):
 
 
     def _selectAction(self) -> Action:
-        latest_observation = self._next_observation if self._auto_moving else self._observation
-        if self._auto_move:
-            self._auto_moving = not ableToKick(latest_observation)
-            if self._auto_moving:
-                return Move()
-        self._action = self._agent.action(self._features)
+        if self._auto_moving:
+            return Move()
+        self._action = self._agent.action(self._extractFeatures(self._observation))
         hfo_action = self._actions[self._action]
-        return hfo_action if hfo_action.is_valid(latest_observation) else NoOp()
+        return hfo_action if hfo_action.is_valid(self._observation) else NoOp()
+
+
+    def _updateAutoMove(self) -> None:
+        if self._auto_move:
+            self._auto_moving = not ableToKick(self._next_observation)
+
+
+    def _updateObservation(self) -> None:
+        if not self._auto_moving:
+            self._saved_observation = self._next_observation
 
 
     def _extractFeatures(self, observation: np.ndarray) -> np.ndarray:
@@ -111,10 +131,12 @@ class LearningAgentForHFO(AgentForHFO):
         self._episode_loss = 0
         self._num_timesteps = 0
 
-        self._auto_moving = False
-
-        self._features = self._extractFeatures(self._observation)
         self._action = None
+        self._saved_observation = None
+
+        self._updateAutoMove()
+        self._updateObservation()
+
 
 
     def _atTimestepStart(self) -> None:
@@ -122,25 +144,23 @@ class LearningAgentForHFO(AgentForHFO):
 
 
     def _atTimestepEnd(self) -> None:
+        self._updateAutoMove()
+
         is_terminal = self._status != IN_GAME
-        if (not self._auto_moving or is_terminal) and self._action is not None:
+        if (not self._auto_moving or is_terminal) and self._saved_observation is not None:
             self._num_timesteps += 1
 
-            self._next_features = self._extractFeatures(self._next_observation)
+            features = self._extractFeatures(self._saved_observation)
+            next_features = self._extractFeatures(self._next_observation)
 
-            timestep = Timestep(self._features, self._action, self._reward_function[self._status],
-                                self._next_features, is_terminal, {})
-
-            self._features = self._next_features
+            timestep = Timestep(features, self._action, self._reward_function[self._status],
+                                next_features, is_terminal, {})
 
             self._info.update(self._agent.reinforcement(timestep) or {})
             if "Loss" in self._info:
                 self._episode_loss += self._info["Loss"]
 
-
-    def _updateObservation(self) -> None:
-        if not self._auto_moving:
-            super()._updateObservation()
+        self._updateObservation()
 
 
     def _atEpisodeEnd(self) -> None:

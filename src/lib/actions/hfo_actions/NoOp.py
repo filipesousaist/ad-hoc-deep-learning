@@ -1,9 +1,9 @@
 from hfo import NOOP
 
-from src.lib.actions.hfo_actions.HFOAction import HFOAction
+from src.lib.actions.Action import Action
 
 
-class NoOp(HFOAction):
+class NoOp(Action):
     @property
     def num_args(self) -> int:
         return 0

@@ -45,7 +45,8 @@ def parseActions(actions: List[str]) -> List[Action]:
 
 def parseCustomActions(actions: List[str]) -> dict:
     data = {
-        "auto_move": "_AUTO_MOVE" in actions
+        "auto_move": "_AUTO_MOVE" in actions,
+        "pass_n": "_PASS_N" in actions
     }
 
     return data

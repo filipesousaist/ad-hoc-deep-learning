@@ -1,12 +1,12 @@
 from hfo import PASS
 
-from src.lib.actions.hfo_actions.HFOAction import HFOAction
+from src.lib.actions.Action import Action
 
 
-class Pass(HFOAction):
+class Pass(Action):
     @property
     def num_args(self) -> int:
-        return 0 # TODO: Change to 1
+        return 1
 
 
     @property

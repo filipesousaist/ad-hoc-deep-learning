@@ -5,6 +5,8 @@ from math import sqrt
 GOAL_COORDS = [1, 0]
 MAX_DISTANCE = 2 * sqrt(2)
 
+OFFENSE_UNUMS = [11, 7, 8, 9, 10, 6, 3, 2, 4, 5]
+
 
 def distanceToGoal(x, y) -> float:
     return sqrt((x - GOAL_COORDS[0])**2 + (y - GOAL_COORDS[1])**2) / MAX_DISTANCE

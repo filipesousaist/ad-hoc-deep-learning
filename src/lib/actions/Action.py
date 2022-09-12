@@ -2,7 +2,7 @@ from abc import abstractmethod
 
 import numpy as np
 
-from hfo import HFOEnvironment
+from hfo import ACTION_STRINGS, HFOEnvironment
 
 
 class Action:
@@ -14,11 +14,15 @@ class Action:
                  f"{'' if expected_num_args == 1 else 's'}, but got {num_args}.")
         self._args = args
 
-
     @property
     @abstractmethod
-    def name(self) -> str:
+    def index(self) -> int:
         pass
+
+
+    @property
+    def name(self) -> str:
+        return ACTION_STRINGS[self.index]
 
 
     @property
@@ -42,6 +46,5 @@ class Action:
                int(observation[self.validation_feature]) == self.validation_value
 
 
-    @abstractmethod
-    def execute(self, hfo: HFOEnvironment, observation: np.ndarray) -> None:
-        pass
+    def execute(self, hfo: HFOEnvironment) -> None:
+        hfo.act(self.index, *self._args)
