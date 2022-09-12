@@ -1,5 +1,6 @@
 log/
-experiments
+output/
+experiments/
 typescript
 TODO
 .idea/
