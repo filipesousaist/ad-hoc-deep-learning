@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # encoding: utf-8
+import os.path
 
 from matplotlib import pyplot as plt
 import numpy as np
@@ -77,7 +78,13 @@ fig.canvas.manager.set_window_title('Agent score rate')
 fig.supylabel("Score rate (%)")
 
 for d in range(num_directories):
-    ax_dict["top"].plot(x[d], y[d], color=LINE_COLORS[d], label=directories[d])
+    label_path = getPath(directories[d], "label")
+    label = None
+    if os.path.exists(label_path):
+        label_file = open(label_path, "r")
+        label = label_file.readline()
+    ax_dict["top"].plot(x[d], y[d], color=LINE_COLORS[d], label=(label or directories[d]))
+
 ax_dict["top"].legend(bbox_to_anchor=(1.05, 1), loc="upper left")
 ax_dict["top"].set_xlabel(f"Training Episodes (Granularity = {num_train_episodes})")
 

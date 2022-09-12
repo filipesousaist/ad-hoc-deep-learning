@@ -1,9 +1,9 @@
 from hfo import REORIENT
 
-from src.lib.actions.hfo_actions.HFOAction import HFOAction
+from src.lib.actions.Action import Action
 
 
-class Reorient(HFOAction):
+class Reorient(Action):
     @property
     def num_args(self) -> int:
         return 0

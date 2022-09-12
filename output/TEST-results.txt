@@ -1,0 +1,6 @@
+% goals after 0 train episodes: 0.0%
+% goals after 500 train episodes: 14.0%
+% goals after 1000 train episodes: 78.0%
+% goals after 1500 train episodes: 86.0%
+% goals after 2000 train episodes: 84.0%
+% goals after 2500 train episodes: 82.0%

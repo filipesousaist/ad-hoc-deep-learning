@@ -1,9 +1,9 @@
 from hfo import MOVE_TO
 
-from src.lib.actions.hfo_actions.HFOAction import HFOAction
+from src.lib.actions.Action import Action
 
 
-class MoveTo(HFOAction):
+class MoveTo(Action):
     @property
     def num_args(self) -> int:
         return 2
