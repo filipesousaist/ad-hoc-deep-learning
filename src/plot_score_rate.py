@@ -12,13 +12,15 @@ from src.lib.paths import getPath, DEFAULT_DIRECTORY
 DEFAULT_GRANULARITY = 500
 
 LINE_COLORS = (
-    (0.44, 0.07, 0.33),
-    (0.07, 0.27, 0.14),
-    (0.01, 0.22, 0.5),
-    (0.23, 0.04, 0.55),
-    (0.35, 0.19, 0),
-    (0.56, 0.06, 0.11)
+    (0.66, 0.11, 0.50),
+    (0.11, 0.41, 0.21),
+    (0.02, 0.33, 0.75),
+    (0.35, 0.06, 0.83),
+    (0.53, 0.29, 0),
+    (0.84, 0.09, 0.17),
+    (0.45, 0.64, 0.31)
 )
+
 AREA_COLORS = [tuple([channel + (1 - channel) / 3 for channel in color])
                for color in LINE_COLORS]
 

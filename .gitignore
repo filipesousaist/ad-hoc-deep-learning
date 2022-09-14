@@ -2,7 +2,7 @@ log/
 output/
 experiments/
 typescript
-TODO
+sync_experiments.sh
 .idea/
 __pycache__/
 *.pyc
