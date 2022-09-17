@@ -10,7 +10,7 @@ from typing import Type, cast
 import hfo
 from hfo import GOAL
 
-from src.lib.paths import DEFAULT_DIRECTORY, DEFAULT_PORT, getPath
+from src.lib.paths import DEFAULT_DIRECTORY, DEFAULT_PORT, getPath, getAgentStatePath
 from src.lib.io import logOutput, flushOutput, readTxt, writeTxt
 from src.lib.time import getReadableTime
 from src.lib.threads import WaitForQuitThread, TeammateThread, OpponentThread
@@ -50,7 +50,8 @@ def main() -> None:
         agent_factory: Type[AgentForHFO] = getAgentForHFOFactory(agent_type)
         if agent_factory.is_learning_agent():
             learning_agent_factory = cast(Type[LearningAgentForHFO], agent_factory)
-            learning_agent = learning_agent_factory(directory, port, team_name, input_loadout, load_parameters=args.load)
+            learning_agent = learning_agent_factory(directory, port, team_name, input_loadout,
+                                                    load_parameters=args.load)
             evaluateAgent(learning_agent, directory, args, input_data, wait_for_quit_thread)
         else:
             agent = agent_factory(directory, port, team_name, input_loadout)
@@ -77,11 +78,14 @@ def get_team_name(agent_type: str) -> str:
 
 def parseArguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
-    parser.add_argument("-v", "--visualizer", action="store_true", help="launch HFO visualizer")
-    parser.add_argument("-g", "--gnome-terminal", action="store_true", help="launch agent in an external terminal")
+    parser.add_argument("-v", "--visualizer", action="store_true", help="Launch HFO visualizer.")
+    parser.add_argument("-g", "--gnome-terminal", action="store_true", help="Launch agent in an external terminal.")
     parser.add_argument("-n", "--no-output", action="store_true")
 
-    parser.add_argument("-l", "--load", action="store_true", help="load data stored in save file")
+    parser.add_argument("-l", "--load", action="store_true",
+                        help=f"Load data stored in {getAgentStatePath('')} and {getPath('', 'save')}.")
+    parser.add_argument("-s", "--save-period", type=int, help=f"Save data to {getAgentStatePath('')} and "
+                                                              f"{getPath('', 'save')} every SAVE_PERIOD episodes.")
     parser.add_argument("-t", "--test-from-episode", type=int)
     parser.add_argument("-D", "--directory", type=str)
     parser.add_argument("-p", "--port", type=int)
@@ -89,8 +93,11 @@ def parseArguments() -> argparse.Namespace:
 
     args = parser.parse_args()
 
-    if args.load and args.test_from_episode:
-        exit("'load' and 'test-from-episode' cannot be both set.")
+    if args.test_from_episode:
+        if args.load:
+            exit("'load' and 'test-from-episode' cannot be both set.")
+        elif args.save_period:
+            exit("'save-period' and 'test-from-episode' cannot be both set.")
 
     return args
 
@@ -160,7 +167,8 @@ def evaluateAgent(agent: LearningAgentForHFO, directory: str, args: argparse.Nam
     num_episodes = {
         "test": input_data["num_test_episodes"],
         "train": input_data["num_train_episodes"],
-        "total": input_data["num_test_episodes"] + input_data["num_train_episodes"]
+        "total": input_data["num_test_episodes"] + input_data["num_train_episodes"],
+        "save": args.save_period or 1
     }
     episode, train_episode = getEpisodeAndTrainEpisode(
         directory, args.load, args.test_from_episode, num_episodes)
@@ -217,9 +225,7 @@ def loadEpisodeAndTrainEpisode(directory: str) -> tuple:
 
 def loadAgent(agent: LearningAgentForHFO, directory: str, train_episode: int,
               num_episodes: "dict[str, int]") -> None:
-    agent_state_path = getPath(directory, "agent-state") + \
-                       ("/latest" if train_episode == -1 else
-                        f"/after{train_episode // num_episodes['train'] * num_episodes['train']}episodes")
+    agent_state_path = getAgentStatePath(directory, train_episode, num_episodes["train"])
 
     if os.path.exists(agent_state_path):
         print("[INFO] Loading agent from file:", agent_state_path)
@@ -237,34 +243,45 @@ def playTestEpisodes(agent: AgentForHFO, wait_for_quit_thread: Thread):
 
 def playEpisodes(agent: LearningAgentForHFO, directory: str, episode: int, num_episodes: dict,
                  wait_for_quit_thread: Thread) -> None:
-    server_running = True
     last_time = time.time()
+    server_running = True
+    saved = False
     while wait_for_quit_thread.is_alive() and server_running:
-        last_time, server_running = playEpisode(agent, directory, episode, num_episodes, last_time)
+        last_time, server_running, saved = playEpisode(agent, directory, episode, num_episodes, last_time)
         episode += 1
+    if server_running and not saved:  # Exit by quit
+        is_training, episode_type, episode_type_index, rollout_episode, rollout = \
+            getEpisodeInfo(episode - 1, num_episodes)
+        saveData(directory, agent, is_training, episode - 1, num_episodes, episode_type_index,
+                 rollout, time.time() - last_time)
+        print("saving on quit")
 
 
 def playEpisode(agent: LearningAgentForHFO, directory: str, episode: int, num_episodes: dict,
                 last_time: float) -> tuple:
-    is_training, episode_type, episode_type_index, rollout_episode, rollout = \
-        getEpisodeInfo(episode, num_episodes)
+    is_training, episode_type, episode_type_index, rollout_episode, rollout = getEpisodeInfo(episode, num_episodes)
 
     if episode % num_episodes["total"] == 0:
-        saveAgent(agent, directory, rollout * num_episodes["train"])
+        saveAgent(agent, directory, rollout * num_episodes["train"], num_episodes["train"])
 
     agent.setLearning(is_training)
     server_up = agent.playEpisode()
-    current_time = time.time()
 
     print('{} episode {} ({} of rollout {}) ended with {}'.format(
         episode_type, episode_type_index, rollout_episode, rollout,
         hfo.STATUS_STRINGS[agent.status]
     ))
 
-    saveData(directory, agent, is_training, episode, num_episodes, episode_type_index,
-             rollout, current_time - last_time)
+    saved = False
+    if (episode + 1) % num_episodes["save"] == 0:
+        current_time = time.time()
+        saveData(directory, agent, is_training, episode, num_episodes, episode_type_index,
+                 rollout, current_time - last_time)
+        last_time = current_time
+        saved = True
+        print("saving periodically")
 
-    return current_time, server_up
+    return last_time, server_up, saved
 
 
 def getEpisodeInfo(episode: int, num_episodes: dict) -> tuple:
@@ -281,13 +298,13 @@ def getEpisodeInfo(episode: int, num_episodes: dict) -> tuple:
     return is_training, episode_type, episode_type_index, rollout_episode, rollout
 
 
-def saveAgent(agent: LearningAgentForHFO, directory: str, train_episode: int) -> None:
+def saveAgent(agent: LearningAgentForHFO, directory: str, train_episode: int = -1,
+              num_train_episodes: int = 1) -> None:
     agent_state_path = getPath(directory, "agent-state")
     if not os.path.exists(agent_state_path):
         os.mkdir(agent_state_path)
 
-    agent_state_full_path = agent_state_path + \
-                            ("/latest" if train_episode == -1 else f"/after{train_episode}episodes")
+    agent_state_full_path = getAgentStatePath(directory, train_episode, num_train_episodes)
     if not os.path.exists(agent_state_full_path):
         os.mkdir(agent_state_full_path)
 
@@ -312,7 +329,7 @@ def saveData(directory: str, agent: LearningAgentForHFO, is_training: bool, epis
     writeTxt(save_path, save_data)
 
     if is_training:
-        saveAgent(agent, directory, -1)
+        saveAgent(agent, directory)
 
 
 def saveTrainData(save_data: dict, directory: str, train_episode: int,
