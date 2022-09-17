@@ -246,15 +246,16 @@ def playEpisodes(agent: LearningAgentForHFO, directory: str, episode: int, num_e
     last_time = time.time()
     server_running = True
     saved = False
+
     while wait_for_quit_thread.is_alive() and server_running:
         last_time, server_running, saved = playEpisode(agent, directory, episode, num_episodes, last_time)
         episode += 1
+
     if server_running and not saved:  # Exit by quit
         is_training, episode_type, episode_type_index, rollout_episode, rollout = \
             getEpisodeInfo(episode - 1, num_episodes)
         saveData(directory, agent, is_training, episode - 1, num_episodes, episode_type_index,
                  rollout, time.time() - last_time)
-        print("saving on quit")
 
 
 def playEpisode(agent: LearningAgentForHFO, directory: str, episode: int, num_episodes: dict,
@@ -279,7 +280,6 @@ def playEpisode(agent: LearningAgentForHFO, directory: str, episode: int, num_ep
                  rollout, current_time - last_time)
         last_time = current_time
         saved = True
-        print("saving periodically")
 
     return last_time, server_up, saved
 
