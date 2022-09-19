@@ -246,20 +246,18 @@ def playEpisodes(agent: LearningAgentForHFO, directory: str, episode: int, num_e
     last_time = time.time()
     server_running = True
     saved = False
+    unsaved_data = {"test": [], "train": []}
 
     while wait_for_quit_thread.is_alive() and server_running:
-        last_time, server_running, saved = playEpisode(agent, directory, episode, num_episodes, last_time)
+        last_time, server_running, saved = playEpisode(agent, directory, episode, num_episodes, last_time, unsaved_data)
         episode += 1
 
     if server_running and not saved:  # Exit by quit
-        is_training, episode_type, episode_type_index, rollout_episode, rollout = \
-            getEpisodeInfo(episode - 1, num_episodes)
-        saveData(directory, agent, is_training, episode - 1, num_episodes, episode_type_index,
-                 rollout, time.time() - last_time)
+        saveData(directory, agent, num_episodes, time.time() - last_time, unsaved_data)
 
 
 def playEpisode(agent: LearningAgentForHFO, directory: str, episode: int, num_episodes: dict,
-                last_time: float) -> tuple:
+                last_time: float, unsaved_data: dict) -> tuple:
     is_training, episode_type, episode_type_index, rollout_episode, rollout = getEpisodeInfo(episode, num_episodes)
 
     if episode % num_episodes["total"] == 0:
@@ -273,11 +271,30 @@ def playEpisode(agent: LearningAgentForHFO, directory: str, episode: int, num_ep
         hfo.STATUS_STRINGS[agent.status]
     ))
 
+    if episode_type == "Train":
+        unsaved_data["train"].append({
+            "train_episode": episode_type_index,
+            "average_loss": agent.average_loss
+        })
+    else:  # "Test"
+        if episode_type_index % num_episodes["test"] == 0 or len(unsaved_data["test"]) == 0:  # First episode in rollout
+            unsaved_data["test"].append({
+                "train_episode": rollout * num_episodes["train"],
+                "rollout_goals": int(agent.status == GOAL),
+                "rollout_episodes": 1,
+                "finished_rollout": False
+            })
+        else:
+            unsaved_data["test"][-1]["rollout_goals"] += int(agent.status == GOAL)
+            unsaved_data["test"][-1]["rollout_episodes"] += 1
+
+        if (episode_type_index + 1) % num_episodes["test"] == 0:  # Last episode in rollout
+            unsaved_data["test"][-1]["finished_rollout"] = True
+
     saved = False
     if (episode + 1) % num_episodes["save"] == 0:
         current_time = time.time()
-        saveData(directory, agent, is_training, episode, num_episodes, episode_type_index,
-                 rollout, current_time - last_time)
+        saveData(directory, agent, num_episodes, current_time - last_time, unsaved_data)
         last_time = current_time
         saved = True
 
@@ -311,48 +328,58 @@ def saveAgent(agent: LearningAgentForHFO, directory: str, train_episode: int = -
     agent.save(agent_state_full_path)
 
 
-def saveData(directory: str, agent: LearningAgentForHFO, is_training: bool, episode: int,
-             num_episodes: dict, episode_type_index: int, rollout: int, delta_time: float) -> None:
-    save_path = getPath(directory, "save")
+def saveData(directory: str, agent: LearningAgentForHFO, num_episodes: dict, delta_time: float,
+             unsaved_data: dict) -> None:
+    train_episodes_elapsed = len(unsaved_data["train"])
+    test_episodes_elapsed = sum(map(lambda data: data["rollout_episodes"], unsaved_data["test"]))
 
+    save_path = getPath(directory, "save")
     save_data = readTxt(save_path)
-    save_data["next_episode"] = episode + 1
+
+    agent.saveParameters(save_data)
+    if train_episodes_elapsed > 0:
+        saveTrainData(directory, unsaved_data["train"])
+        saveAgent(agent, directory)
+    if test_episodes_elapsed > 0:
+        saveTestData(directory, unsaved_data["test"], save_data, num_episodes["test"])
+
+    save_data["next_episode"] = int(save_data["next_episode"]) + train_episodes_elapsed + test_episodes_elapsed
+    save_data["next_train_episode"] = int(save_data["next_train_episode"]) + train_episodes_elapsed
+    save_data["next_test_episode"] = int(save_data["next_test_episode"]) + test_episodes_elapsed
     save_data["execution_time"] = float(save_data["execution_time"]) + delta_time
     save_data["execution_time_readable"] = getReadableTime(save_data["execution_time"])
 
-    if is_training:
-        agent.saveParameters(save_data)
-        saveTrainData(save_data, directory, episode_type_index, agent.average_loss)
-    else:
-        saveTestData(save_data, directory, num_episodes, episode_type_index, rollout, agent.status)
-
     writeTxt(save_path, save_data)
 
-    if is_training:
-        saveAgent(agent, directory)
 
-
-def saveTrainData(save_data: dict, directory: str, train_episode: int,
-                  average_loss: float) -> None:
-    save_data["current_test_rollout_goals"] = 0
-    save_data["next_train_episode"] = train_episode + 1
-
+def saveTrainData(directory: str, train_data: list) -> None:
     with open(getPath(directory, "train-output"), "a") as file:
-        file.write("{}\t\t{}\n".format(train_episode, average_loss))
+        file.writelines([
+            f"{data['train_episode']}\t\t{data['average_loss']}\n"
+            for data in train_data
+        ])
+
+    train_data.clear()
 
 
-def saveTestData(save_data: dict, directory: str, num_episodes: dict, test_episode: int,
-                 rollout: int, status: int) -> None:
-    save_data["current_test_rollout_goals"] = \
-        int(save_data["current_test_rollout_goals"]) + int(status == GOAL)
-    save_data["next_test_episode"] = test_episode + 1
+def saveTestData(directory: str, test_data: list, save_data: dict, num_test_episodes: int) -> None:
+    rollout_goals = int(save_data["current_test_rollout_goals"])
+    if rollout_goals > 0:
+        test_data[0]["rollout_goals"] += rollout_goals
+        save_data["current_test_rollout_goals"] = 0
 
-    if test_episode % num_episodes["test"] == num_episodes["test"] - 1:
-        with open(getPath(directory, "test-output"), "a") as file:
-            file.write("% goals after {} train episodes: {}%\n".format(
-                rollout * num_episodes["train"],
-                save_data["current_test_rollout_goals"] * 100 / num_episodes["test"]
-            ))
+    if not test_data[-1]["finished_rollout"]:
+        save_data["current_test_rollout_goals"] = test_data[-1]["rollout_goals"]
+
+    with open(getPath(directory, "test-output"), "a") as file:
+        file.writelines([
+            "% goals after {} train episodes: {}%\n".format(
+                data["train_episode"],
+                data["rollout_goals"] * 100 / num_test_episodes
+            ) for data in test_data if data["finished_rollout"]
+        ])
+
+    test_data.clear()
 
 
 def killProcesses(hfo_process: Popen, gnome_terminal: bool):
