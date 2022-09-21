@@ -10,6 +10,8 @@ import argparse
 from src.lib.paths import getPath, DEFAULT_DIRECTORY
 
 DEFAULT_GRANULARITY = 500
+DEFAULT_GRAPH_WIDTH = 4
+DEFAULT_LEGEND_WIDTH = 3
 
 LINE_COLORS = (
     (0.66, 0.11, 0.50),
@@ -28,7 +30,10 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-D", "--directories", type=str, nargs="+")
 parser.add_argument("-c", "--confidence-intervals", action="store_true")
 parser.add_argument("-g", "--granularity", type=int)
-
+parser.add_argument("-l", "--left-width", type=int,
+                    help=f"Width of the graph on the left size of the image. Default: {DEFAULT_GRAPH_WIDTH}")
+parser.add_argument("-r", "--right-width", type=int,
+                    help=f"Width of the legend on the right size of the image. Default: {DEFAULT_LEGEND_WIDTH}")
 args = parser.parse_args()
 
 directories = args.directories or [DEFAULT_DIRECTORY]
@@ -37,6 +42,8 @@ if not (0 < num_directories <= len(LINE_COLORS)):
     exit(f"Number of directories must be between 1 and {len(LINE_COLORS)}")
 
 granularity = args.granularity or DEFAULT_GRANULARITY
+l_w = args.left_width or DEFAULT_GRAPH_WIDTH
+r_w = args.right_width or DEFAULT_LEGEND_WIDTH
 
 x = []
 y = []
@@ -71,8 +78,8 @@ for d in range(num_directories):
     y_std.append(np.nanstd(y_2d, axis=1))
 
 fig, ax_dict = plt.subplot_mosaic(
-    [["top"] * 5 + ["BLANK"]] * 4 +
-    ([["BLANK"] * 6] + [["bottom"] * 5 + ["BLANK"]] * 4
+    [["top"] * l_w + ["BLANK"] * r_w] * 4 +
+    ([["BLANK"] * (l_w + r_w)] + [["bottom"] * l_w + ["BLANK"] * r_w] * 4
      if granularity > num_train_episodes else []),
     empty_sentinel="BLANK")
 

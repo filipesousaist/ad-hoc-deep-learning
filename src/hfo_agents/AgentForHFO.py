@@ -87,7 +87,6 @@ class AgentForHFO:
         while self._status == IN_GAME:
             self._atTimestepStart()
 
-            # TODO: Should use latest_observation when AUTO_MOVE is set
             self._selectAction().execute(self._hfo)
 
             self._status = self._hfo.step()
@@ -117,10 +116,6 @@ class AgentForHFO:
 
     def _atTimestepEnd(self) -> None:
         pass
-
-
-    def _updateObservation(self) -> None:
-        self._observation = self._next_observation
 
 
     def _atEpisodeEnd(self) -> None:

@@ -14,6 +14,15 @@ _REQUIRED_ARGS = {
     ]
 }
 
+_OPTIONAL_ARGS = {
+    "evaluate": [],
+    "agent": [],
+    "learning_agent": [
+        "see_move_chance"
+    ],
+    "agent_type": []
+}
+
 _REQUIRED_ARGS["imitating_agent"] = _REQUIRED_ARGS["learning_agent"] + \
     ["initial_chance_to_imitate", "final_chance_to_imitate", "steps_to_imitate"]
 
@@ -28,8 +37,9 @@ def readInputData(path: str, purpose: str, loadout: int = 0) -> dict:
     if len(missing_args) > 0:
         print(f"[ERROR]: Missing required argument(s): {', '.join(missing_args)}")
 
-    unnecessary_args = [arg for arg in input_data if arg not in _REQUIRED_ARGS[purpose]]
-    for arg in unnecessary_args:
+    args_to_delete = [arg for arg in input_data
+                      if (arg not in _REQUIRED_ARGS[purpose]) and (arg not in _OPTIONAL_ARGS[purpose])]
+    for arg in args_to_delete:
         del input_data[arg]
 
     return input_data

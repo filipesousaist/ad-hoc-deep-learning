@@ -1,5 +1,6 @@
 from abc import abstractmethod
 from typing import List, Dict, Union
+from random import random
 
 import numpy as np
 
@@ -29,6 +30,7 @@ class LearningAgentForHFO(AgentForHFO):
         self._actions: List[Action] = []
         self._auto_move: bool = False
         self._auto_moving: bool = False
+        self._see_move_chance: float = 0.0
         self._reward_function: Dict[Union[int, str], int] = {}
         self._custom_features: bool = False
 
@@ -37,6 +39,9 @@ class LearningAgentForHFO(AgentForHFO):
         self._info: dict = {}
 
         self._storeInputData(load_parameters)
+
+        #debug
+        self._total_timesteps = 0
 
 
     @staticmethod
@@ -72,6 +77,8 @@ class LearningAgentForHFO(AgentForHFO):
         custom_actions_data = parseCustomActions(actions)
 
         self._auto_move = custom_actions_data["auto_move"]
+        if "see_move_chance" in self._input_data:
+            self._see_move_chance = self._input_data["see_move_chance"]
 
         if custom_actions_data["pass_n"]:
             my_unum = self._hfo.getUnum()
@@ -113,7 +120,7 @@ class LearningAgentForHFO(AgentForHFO):
 
     def _updateAutoMove(self) -> None:
         if self._auto_move:
-            self._auto_moving = not ableToKick(self._next_observation)
+            self._auto_moving = not ableToKick(self._next_observation) and random() >= self._see_move_chance
 
 
     def _updateObservation(self) -> None:
@@ -149,6 +156,7 @@ class LearningAgentForHFO(AgentForHFO):
         is_terminal = self._status != IN_GAME
         if (not self._auto_moving or is_terminal) and self._saved_observation is not None:
             self._num_timesteps += 1
+            self._total_timesteps += 1
 
             features = self._extractFeatures(self._saved_observation)
             next_features = self._extractFeatures(self._next_observation)
@@ -165,6 +173,7 @@ class LearningAgentForHFO(AgentForHFO):
 
     def _atEpisodeEnd(self) -> None:
         print(self._info)
+        print("Total timesteps:", self._total_timesteps)
 
 
     def setLearning(self, value) -> None:
