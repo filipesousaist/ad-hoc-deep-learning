@@ -30,7 +30,7 @@ class LearningAgentForHFO(AgentForHFO):
         self._actions: List[Action] = []
         self._auto_move: bool = False
         self._auto_moving: bool = False
-        self._see_move_chance: float = 0.0
+        self._ignore_auto_move_chance: float = 0.0
         self._reward_function: Dict[Union[int, str], int] = {}
         self._custom_features: bool = False
 
@@ -77,8 +77,8 @@ class LearningAgentForHFO(AgentForHFO):
         custom_actions_data = parseCustomActions(actions)
 
         self._auto_move = custom_actions_data["auto_move"]
-        if "see_move_chance" in self._input_data:
-            self._see_move_chance = self._input_data["see_move_chance"]
+        if "ignore_auto_move_chance" in self._input_data:
+            self._ignore_auto_move_chance = self._input_data["ignore_auto_move_chance"]
 
         if custom_actions_data["pass_n"]:
             my_unum = self._hfo.getUnum()
@@ -120,8 +120,7 @@ class LearningAgentForHFO(AgentForHFO):
 
     def _updateAutoMove(self) -> None:
         if self._auto_move:
-            self._auto_moving = not ableToKick(self._next_observation) and random() >= self._see_move_chance
-
+            self._auto_moving = not ableToKick(self._next_observation) and random() >= self._ignore_auto_move_chance
 
     def _updateObservation(self) -> None:
         if not self._auto_moving:
