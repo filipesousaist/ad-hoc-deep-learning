@@ -29,7 +29,7 @@ class MemoryFE(FeatureExtractor):
         unused_indices = \
             [10 + 3 * num_teammates + 3 * t + 2 for t in range(num_teammates)] + \
             [10 + 6 * num_teammates + 3 * o + 2 for o in range(num_opponents)]
-        print(unused_indices)
+
         self._observation_indices = [i for i in range(12 + 6 * num_teammates + 3 * num_opponents)
                                      if i not in unused_indices]
 

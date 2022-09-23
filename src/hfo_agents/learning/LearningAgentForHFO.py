@@ -34,7 +34,7 @@ class LearningAgentForHFO(AgentForHFO):
         self._auto_moving: bool = False
         self._ignore_auto_move_chance: float = 0.0
         self._see_move_period: int = sys.maxsize
-        self._see_move_counter: int = 0
+        self._see_move_counter: int = 1
 
         self._reward_function: Dict[Union[int, str], int] = {}
         self._feature_extractor: Union[FeatureExtractor, None] = None
@@ -127,7 +127,7 @@ class LearningAgentForHFO(AgentForHFO):
         if self._auto_move:
             self._auto_moving = not ableToKick(self._next_observation) and random() >= self._ignore_auto_move_chance
         if not self._auto_moving:
-            self._see_move_counter = 0
+            self._see_move_counter = 1
 
     def _updateFeatures(self) -> None:
         if not self._auto_moving or self._see_move_counter == 0:
@@ -149,7 +149,7 @@ class LearningAgentForHFO(AgentForHFO):
             self._feature_extractor.reset()
         self._next_features = self._extractFeatures(self._next_observation)
 
-        self._see_move_counter = 0
+        self._see_move_counter = 1
 
         self._updateAutoMove()
         self._updateFeatures()
