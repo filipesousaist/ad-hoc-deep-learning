@@ -19,6 +19,7 @@ from src.lib.observations import ableToKick, OFFENSE_UNUMS
 from src.lib.actions.Action import Action
 from src.lib.actions.hfo_actions.Move import Move
 from src.lib.actions.hfo_actions.Pass import Pass
+from src.lib.actions.hfo_actions.NoOp import NoOp
 from src.lib.actions.parsing import parseActions, parseCustomActions
 from src.lib.reward import parseRewardFunction
 
@@ -119,7 +120,8 @@ class LearningAgentForHFO(AgentForHFO):
         if self._auto_moving:
             return Move()
         self._action = self._agent.action(self._extractFeatures(self._observation))
-        return self._actions[self._action]
+        hfo_action = self._actions[self._action]
+        return hfo_action if hfo_action.is_valid(self._observation) else NoOp()
 
     def _updateAutoMove(self) -> None:
         if self._auto_moving:
