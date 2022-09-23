@@ -7,7 +7,7 @@ _REQUIRED_ARGS = {
     ],
     "agent": [],
     "learning_agent": [
-        "agent_parameters", "actions", "custom_features", "reward_function"
+        "agent_parameters", "actions", "reward_function"
     ],
     "agent_type": [
         "agent_type"
@@ -18,7 +18,7 @@ _OPTIONAL_ARGS = {
     "evaluate": [],
     "agent": [],
     "learning_agent": [
-        "ignore_auto_move_chance"
+        "ignore_auto_move_chance", "see_move_period", "feature_extractor"
     ],
     "agent_type": []
 }

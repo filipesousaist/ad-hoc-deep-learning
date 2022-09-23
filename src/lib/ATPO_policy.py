@@ -111,7 +111,8 @@ class DRQNAgent(DQNAgent):
                  discount_factor=0.95, initial_exploration_rate=0.50, final_exploration_rate=0.05,
                  initial_exploration_steps=0, final_exploration_step=5000,
                  replay_buffer_size=100000, replay_batch_size=32,
-                 target_network_update_frequency=1, trajectory_update_length=4, cuda=False):
+                 network_update_frequency=4, target_network_update_frequency=1,
+                 trajectory_update_length=4, cuda=False):
 
         self.max_sequence_length = trajectory_update_length
         self._current_sequence = []
@@ -126,6 +127,7 @@ class DRQNAgent(DQNAgent):
             discount_factor=discount_factor,
             initial_exploration_rate=initial_exploration_rate, final_exploration_rate=final_exploration_rate,
             initial_exploration_steps=initial_exploration_steps, final_exploration_step=final_exploration_step,
+            network_update_frequency=network_update_frequency,
             target_network_update_frequency=target_network_update_frequency,
             replay_buffer=ExperienceReplayBuffer(replay_buffer_size, replay_batch_size))
 
