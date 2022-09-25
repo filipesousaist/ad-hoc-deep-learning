@@ -1,5 +1,7 @@
 import argparse
 import os
+import sys
+
 import psutil
 from psutil import Popen
 from signal import SIGTERM
@@ -87,6 +89,9 @@ def parseArguments() -> argparse.Namespace:
     parser.add_argument("-s", "--save-period", type=int, help=f"Save data to {getAgentStatePath('')} and "
                                                               f"{getPath('', 'save')} every SAVE_PERIOD episodes.")
     parser.add_argument("-t", "--test-from-episode", type=int)
+    parser.add_argument("-m", "--max-episode", type=int, help="Stop running at train episode MAX_EPISODE in "
+                                                              "train/test mode, or at test episode MAX_EPISODE in "
+                                                              "test mode.")
     parser.add_argument("-D", "--directory", type=str)
     parser.add_argument("-p", "--port", type=int)
     parser.add_argument("-i", "--input-loadout", type=int)
@@ -168,7 +173,8 @@ def evaluateAgent(agent: LearningAgentForHFO, directory: str, args: argparse.Nam
         "test": input_data["num_test_episodes"],
         "train": input_data["num_train_episodes"],
         "total": input_data["num_test_episodes"] + input_data["num_train_episodes"],
-        "save": args.save_period or 1
+        "save": args.save_period or 1,
+        "max": args.max_episode or sys.maxsize
     }
     episode, train_episode = getEpisodeAndTrainEpisode(
         directory, args.load, args.test_from_episode, num_episodes)
@@ -182,7 +188,7 @@ def evaluateAgent(agent: LearningAgentForHFO, directory: str, args: argparse.Nam
 
     if args.test_from_episode:
         agent.setLearning(False)
-        playTestEpisodes(agent, wait_for_quit_thread)
+        playTestEpisodes(agent, num_episodes["max"], wait_for_quit_thread)
     else:
         playEpisodes(agent, directory, episode, num_episodes, wait_for_quit_thread)
 
@@ -234,9 +240,9 @@ def loadAgent(agent: LearningAgentForHFO, directory: str, train_episode: int,
         print("[INFO] Path '" + agent_state_path + "' not found. Agent not loaded.")
 
 
-def playTestEpisodes(agent: AgentForHFO, wait_for_quit_thread: Thread):
+def playTestEpisodes(agent: AgentForHFO, max_episode: int, wait_for_quit_thread: Thread):
     episode = 0
-    while wait_for_quit_thread.is_alive() and agent.playEpisode():
+    while wait_for_quit_thread.is_alive() and episode < max_episode and agent.playEpisode():
         print(f'Test episode {episode} ended with {hfo.STATUS_STRINGS[agent.status]}')
         episode += 1
 
@@ -248,7 +254,8 @@ def playEpisodes(agent: LearningAgentForHFO, directory: str, episode: int, num_e
     saved = False
     unsaved_data = {"test": [], "train": []}
 
-    while wait_for_quit_thread.is_alive() and server_running:
+    while wait_for_quit_thread.is_alive() and server_running and \
+            nextTrainEpisode(episode, num_episodes) < num_episodes["max"]:
         last_time, server_running, saved = playEpisode(agent, directory, episode, num_episodes, last_time, unsaved_data)
         episode += 1
 
@@ -299,6 +306,11 @@ def playEpisode(agent: LearningAgentForHFO, directory: str, episode: int, num_ep
         saved = True
 
     return last_time, server_up, saved
+
+
+def nextTrainEpisode(episode: int, num_episodes: dict) -> int:
+    is_training, _, episode_type_index, _, _ = getEpisodeInfo(episode, num_episodes)
+    return episode_type_index if is_training else episode - episode_type_index
 
 
 def getEpisodeInfo(episode: int, num_episodes: dict) -> tuple:
