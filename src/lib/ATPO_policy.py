@@ -62,7 +62,7 @@ class DRQN(TorchModel):
         self._check_device()
         with torch.no_grad():
             X = self.data_to_model(X, torch.float32)
-            Z, H = self(X) if hidden_last is None else self(X, self.tuple_to_model(hidden_last, torch.float32))
+            Z, H = self(X) if hidden_last is None else self(X, self.tensors_to_model(hidden_last, torch.float32))
             Z = Z.detach().cpu()
             if isinstance(H, tuple):
                 H = H[0].detach().cpu(), H[1].detach().cpu()
@@ -70,23 +70,18 @@ class DRQN(TorchModel):
                 H = H.detach().cpu()
             return Z, H
     
-    def tuple_to_model_LSTM(self, tup: tuple, dtype: torch.dtype):
+    def tuple_to_model(self, tup: tuple, dtype: torch.dtype):
         new_tup = ()
         for tensor in tup:
             new_tup += (self.data_to_model(tensor, dtype),)
         return new_tup
 
-    @staticmethod
-    def tuple_to_model_GRU(tup):
-        if isinstance(tup, tuple):
-            return torch.stack(tup)
-        return tup
+    def tensors_to_model(self, tensors, dtype: torch.dtype):
+        if isinstance(tensors, tuple):
+            model_tuple = self.tuple_to_model(tensors, dtype)
+            return model_tuple if isinstance(self._input_layer, LSTM) else torch.stack(model_tuple)
+        return self.data_to_model(tensors, dtype)
 
-    def tuple_to_model(self, tup, dtype: torch.dtype):
-        if isinstance(self._input_layer, LSTM):
-            return self.tuple_to_model_LSTM(tup, dtype)
-        else:  # GRU
-            return DRQN.tuple_to_model_GRU(tup)
 
 
     def accuracy(self, X, y):
