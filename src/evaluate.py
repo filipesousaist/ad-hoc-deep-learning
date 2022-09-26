@@ -310,8 +310,8 @@ def playEpisode(agent: LearningAgentForHFO, directory: str, episode: int, num_ep
 def reachedMaxTrainEpisode(episode: int, num_episodes: dict) -> int:
     is_training, _, episode_type_index, _, _ = getEpisodeInfo(episode, num_episodes)
     if is_training:
-        return (episode - episode_type_index) > num_episodes["max"]
-    return episode >= num_episodes["max"]
+        return episode_type_index >= num_episodes["max"]
+    return (episode - episode_type_index) > num_episodes["max"]
 
 
 def getEpisodeInfo(episode: int, num_episodes: dict) -> tuple:

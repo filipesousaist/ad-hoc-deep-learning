@@ -38,7 +38,7 @@ class LearningAgentForHFO(AgentForHFO):
         self._see_move_counter: int = 1
 
         self._reward_function: Dict[Union[int, str], int] = {}
-        self._feature_extractor: Union[FeatureExtractor, None] = None
+        self._feature_extractors: List[FeatureExtractor] = []
 
         self._action: int = -1
 
@@ -95,13 +95,23 @@ class LearningAgentForHFO(AgentForHFO):
                     n += 1
 
     def _handleOptionalArguments(self) -> None:
-        if "feature_extractor" in self._input_data:
-            self._feature_extractor = getFeatureExtractor(self._input_data["feature_extractor"],
-                                                          self._num_teammates, self._num_opponents)
+        if "feature_extractors" in self._input_data:
+            self._addFeatureExtractors()
         if "ignore_auto_move_chance" in self._input_data:
             self._ignore_auto_move_chance = self._input_data["ignore_auto_move_chance"]
         if "see_move_period" in self._input_data:
             self._see_move_period = self._input_data["see_move_period"]
+
+    def _addFeatureExtractors(self):
+        num_teammates = self._num_teammates
+        num_opponents = self._num_opponents
+        for data in self._input_data["feature_extractors"]:
+            feature_extractor = getFeatureExtractor(data, num_teammates, num_opponents) if isinstance(data, str) else \
+                getFeatureExtractor(data[0], num_teammates, num_opponents, *data[1:])
+            self._feature_extractors.append(feature_extractor)
+            num_teammates = feature_extractor.getOutputNumTeammates()
+            num_opponents = feature_extractor.getOutputNumOpponents()
+
 
     def _inputPurpose(self) -> str:
         return "learning_agent"
@@ -136,7 +146,9 @@ class LearningAgentForHFO(AgentForHFO):
             self._saved_features = self._next_features
 
     def _extractFeatures(self, observation: np.ndarray) -> np.ndarray:
-        return observation if self._feature_extractor is None else self._feature_extractor.apply(observation)
+        for feature_extractor in self._feature_extractors:
+            observation = feature_extractor.apply(observation)
+        return observation
 
     def _atEpisodeStart(self) -> None:
         self._agent._last_hidden = None
@@ -147,8 +159,8 @@ class LearningAgentForHFO(AgentForHFO):
         self._action = randint(0, len(self._actions) - 1)
         self._saved_features = None
 
-        if self._feature_extractor is not None:
-            self._feature_extractor.reset()
+        for feature_extractor in self._feature_extractors:
+            feature_extractor.reset()
         self._next_features = self._extractFeatures(self._next_observation)
 
         self._see_move_counter = 1

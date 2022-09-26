@@ -8,7 +8,6 @@ class FeatureExtractor:
         self._num_teammates = num_teammates
         self._num_opponents = num_opponents
 
-
     @abstractmethod
     def apply(self, observation: np.ndarray):
         raise NotImplementedError()
@@ -16,3 +15,9 @@ class FeatureExtractor:
 
     def reset(self):
         pass
+
+    def getOutputNumTeammates(self) -> int:
+        return self._num_teammates
+
+    def getOutputNumOpponents(self) -> int:
+        return self._num_opponents
