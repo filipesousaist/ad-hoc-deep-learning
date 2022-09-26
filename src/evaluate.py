@@ -254,8 +254,7 @@ def playEpisodes(agent: LearningAgentForHFO, directory: str, episode: int, num_e
     saved = False
     unsaved_data = {"test": [], "train": []}
 
-    while wait_for_quit_thread.is_alive() and server_running and \
-            nextTrainEpisode(episode, num_episodes) < num_episodes["max"]:
+    while wait_for_quit_thread.is_alive() and server_running and not reachedMaxTrainEpisode(episode, num_episodes):
         last_time, server_running, saved = playEpisode(agent, directory, episode, num_episodes, last_time, unsaved_data)
         episode += 1
 
@@ -308,9 +307,11 @@ def playEpisode(agent: LearningAgentForHFO, directory: str, episode: int, num_ep
     return last_time, server_up, saved
 
 
-def nextTrainEpisode(episode: int, num_episodes: dict) -> int:
+def reachedMaxTrainEpisode(episode: int, num_episodes: dict) -> int:
     is_training, _, episode_type_index, _, _ = getEpisodeInfo(episode, num_episodes)
-    return episode_type_index if is_training else episode - episode_type_index
+    if is_training:
+        return (episode - episode_type_index) > num_episodes["max"]
+    return episode >= num_episodes["max"]
 
 
 def getEpisodeInfo(episode: int, num_episodes: dict) -> tuple:
