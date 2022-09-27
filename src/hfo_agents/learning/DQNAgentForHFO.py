@@ -28,9 +28,13 @@ class DQNAgentForHFO(LearningAgentForHFO):
 
     def saveParameters(self, save_data: dict):
         super().saveParameters(save_data)
+        is_learning = self.is_learning
+        self.setLearning(True)
+
         save_data["current_exploration_rate"] = self.exploration_rate
         save_data["exploration_timesteps_left"] = max(self.exploration_timesteps - self.total_training_timesteps, 0)
 
+        self.setLearning(is_learning)
 
     @property
     def exploration_rate(self) -> float:
