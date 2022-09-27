@@ -5,7 +5,6 @@ import sys
 import psutil
 from psutil import Popen
 from signal import SIGTERM
-from threading import Thread
 import time
 from typing import Type, cast
 
@@ -57,12 +56,15 @@ def main() -> None:
             evaluateAgent(learning_agent, directory, args, input_data, wait_for_quit_thread)
         else:
             agent = agent_factory(directory, port, team_name, input_loadout)
-            playTestEpisodes(agent, wait_for_quit_thread)
+            playTestEpisodes(agent, args.max_episode or sys.maxsize, wait_for_quit_thread)
     else:
         while wait_for_quit_thread.is_alive():
             pass
 
     print("[INFO] Terminating 'evaluate.py' and associated processes...")
+
+    if wait_for_quit_thread.is_alive():
+        wait_for_quit_thread.stop()
 
     if not args.no_output:
         flushOutput(getPath(directory, "output"))
@@ -168,7 +170,7 @@ def launchOtherAgents(directory: str, port: int, input_loadout: int, input_data:
 
 
 def evaluateAgent(agent: LearningAgentForHFO, directory: str, args: argparse.Namespace, input_data: dict,
-                  wait_for_quit_thread: Thread) -> None:
+                  wait_for_quit_thread: WaitForQuitThread) -> None:
     num_episodes = {
         "test": input_data["num_test_episodes"],
         "train": input_data["num_train_episodes"],
@@ -240,7 +242,7 @@ def loadAgent(agent: LearningAgentForHFO, directory: str, train_episode: int,
         print("[INFO] Path '" + agent_state_path + "' not found. Agent not loaded.")
 
 
-def playTestEpisodes(agent: AgentForHFO, max_episode: int, wait_for_quit_thread: Thread):
+def playTestEpisodes(agent: AgentForHFO, max_episode: int, wait_for_quit_thread: WaitForQuitThread):
     episode = 0
     while wait_for_quit_thread.is_alive() and episode < max_episode and agent.playEpisode():
         print(f'Test episode {episode} ended with {hfo.STATUS_STRINGS[agent.status]}')
@@ -248,7 +250,7 @@ def playTestEpisodes(agent: AgentForHFO, max_episode: int, wait_for_quit_thread:
 
 
 def playEpisodes(agent: LearningAgentForHFO, directory: str, episode: int, num_episodes: dict,
-                 wait_for_quit_thread: Thread) -> None:
+                 wait_for_quit_thread: WaitForQuitThread) -> None:
     last_time = time.time()
     server_running = True
     saved = False
@@ -258,7 +260,7 @@ def playEpisodes(agent: LearningAgentForHFO, directory: str, episode: int, num_e
         last_time, server_running, saved = playEpisode(agent, directory, episode, num_episodes, last_time, unsaved_data)
         episode += 1
 
-    if server_running and not saved:  # Exit by quit
+    if server_running and not saved:  # Exit by quit or by max train episode reached
         saveData(directory, agent, num_episodes, time.time() - last_time, unsaved_data)
 
 
