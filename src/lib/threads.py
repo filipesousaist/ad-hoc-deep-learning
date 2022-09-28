@@ -1,50 +1,35 @@
-# Adapted from https://blog.tomecek.net/post/non-blocking-stdin-in-python/
+# Adapted from https://repolinux.wordpress.com/2012/10/09/non-blocking-read-from-stdin-in-python/
 
 from abc import abstractmethod
 from threading import Thread
 import time
-import os
 import sys
-import fcntl
 import select
 
 from src.hfo_agents.AgentForHFO import AgentForHFO
 from src.hfo_agents.agentForHFOFactory import getAgentForHFOFactory
 
 
-
-
 class WaitForQuitThread(Thread):
     def __init__(self):
         super().__init__()
         self._running = True
+        self._read_list = [sys.stdin]
 
 
     def run(self):
-        fd = sys.stdin.fileno()
-        fl = fcntl.fcntl(fd, fcntl.F_GETFL)
-        fcntl.fcntl(fd, fcntl.F_SETFL, fl | os.O_NONBLOCK)
+        while self._read_list and self._running:
+            ready = select.select(self._read_list, [], [], 0.1)[0]
+            if ready:
+                for file in ready:
+                    line = file.readline()
+                    if not line:  # EOF, remove file from input list
+                        self._read_list.remove(file)
+                    elif line.rstrip():  # optional: skipping empty lines
+                        if line.lower().startswith("q"):
+                            self._running = False
 
-        epoll = select.epoll()
-        epoll.register(fd, select.EPOLLIN)
-
-        try:
-            while self._running:
-                events = epoll.poll(1)
-                for _, _ in events:
-                    string = ""
-                    while True:
-                        char = sys.stdin.read(64)
-                        if not char:
-                            break
-                        string += char
-                    if string.lower().startswith("q"):
-                        self._running = False
-        finally:
-            epoll.unregister(fd)
-            epoll.close()
-
-        print("[INFO] Quitting...")
+        print("[INFO] Thread quitting...")
 
     def stop(self):
         self._running = False
