@@ -21,12 +21,10 @@ class MemoryFE(FeatureExtractor):
             self._memorized_features[i] = 2 * r - 1
 
     def apply(self, observation: np.ndarray):
-        sliced_observation = super().apply(observation)
-
         for i in range(self._num_features):
-            if sliced_observation[i] == -2:
-                sliced_observation[i] = self._memorized_features[i]
+            if observation[i] == -2:
+                observation[i] = self._memorized_features[i]
             else:
-                self._memorized_features[i] = sliced_observation[i]
+                self._memorized_features[i] = observation[i]
 
-        return sliced_observation
+        return observation
