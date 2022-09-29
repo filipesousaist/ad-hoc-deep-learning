@@ -28,6 +28,7 @@ class WaitForQuitThread(Thread):
                     elif line.rstrip():  # optional: skipping empty lines
                         if line.lower().startswith("q"):
                             self._running = False
+                            break
 
         print("[INFO] Thread quitting...")
 
