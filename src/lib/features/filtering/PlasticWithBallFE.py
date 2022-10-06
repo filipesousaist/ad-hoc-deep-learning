@@ -1,6 +1,8 @@
-from src.lib.features.FeatureExtractor import FeatureExtractor
+from typing import List
 
-import numpy as np
+from src.lib.features import F_FLOAT, E_BALL
+from src.lib.features.filtering.PlasticFE import PlasticFE
+from src.lib.features.Feature import Feature, findRequiredInputFeatures
 
 
 # 0   X position
@@ -17,14 +19,13 @@ import numpy as np
 # 3O  X, Y, and Uniform Number of Opponents    --> 2O  X, Y of Opponents
 
 
-class PlasticWithBallFE(FeatureExtractor):
-    def __init__(self, num_teammates: int, num_opponents: int):
-        super().__init__(num_teammates, num_opponents)
-
-        self._observation_indices = [0, 1, 2, 3, 4, 8, 9]
-        self._observation_indices += [10 + t for t in range(3 * num_teammates)]  # 3T teammate features
-        self._observation_indices += [10 + 3 * num_teammates + 3 * t for t in range(num_teammates)]  # X
-        self._observation_indices += [10 + 3 * num_teammates + 3 * t + 1 for t in range(num_teammates)]  # Y
-
-    def apply(self, observation: np.ndarray):
-        return observation[self._observation_indices]
+class PlasticWithBallFE(PlasticFE):
+    def _createObservationIndices(self) -> List[int]:
+        observation_indices = super()._createObservationIndices()
+        return observation_indices[0:3] + \
+            findRequiredInputFeatures(
+                self.input_features,
+                [Feature("x", F_FLOAT, E_BALL),
+                 Feature("y", F_FLOAT, E_BALL)],
+                "PlasticWithBallFE"
+            ) + observation_indices[3:]

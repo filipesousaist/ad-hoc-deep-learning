@@ -1,60 +1,100 @@
+from typing import List
+
 import numpy as np
 
+from src.lib.features import E_AGENT, E_TEAMMATE, E_OPPONENT, E_BALL
 from src.lib.features.FeatureExtractor import FeatureExtractor
+from src.lib.features.Feature import Feature, findByName
+from src.lib.features.Entity import getAllEntities, getAllIndices
 
-
-# 0   X position
-# 1   Y position
-# 2   Orientation
-# 3   Ball X
-# 4   Ball Y
-# 5   Able to Kick
-# 6   Goal Center Proximity
-# 7   Goal Center Angle
-# 8   Goal Opening Angle
-# 9   Proximity to Opponent
-# T   Teammate's Goal Opening Angle            --> T'  Teammate's Goal Opening Angle
-# T   Proximity from Teammate i to Opponent    --> T'  Proximity from Teammate i to Opponent
-# T   Pass Opening Angle                       --> T'  Proximity from Teammate i to Opponent
-# 3T  X, Y, and Uniform Number of Teammates    --> 3T' X, Y, and Uniform Number of Teammates
-# 3O  X, Y, and Uniform Number of Opponents    --> 3O' X, Y, and Uniform Number of Opponents
-# +1  Last_Action_Success_Possible
-# +1  Stamina
 
 class DummyFE(FeatureExtractor):
-    def __init__(self, source_num_teammates: int, source_num_opponents: int,
-                 target_num_teammates: int, target_num_opponents: int):
-        super().__init__(source_num_teammates, source_num_opponents)
+    def __init__(self, input_features: List[Feature], target_num_teammates: int, target_num_opponents: int):
         self._target_num_teammates = target_num_teammates
         self._target_num_opponents = target_num_opponents
 
-        self._observation_indices = list(range(10))
+        self._new_features = []
 
-        extra_num_teammates = target_num_teammates - source_num_teammates
+        super().__init__(input_features)
+
+
+    def _createObservationIndices(self):
+        last_features_indices = self._getLastFeaturesIndices()
+        observation_indices = getAllIndices(
+            getAllEntities(self.input_features, [E_AGENT, E_BALL]),
+            ignore_indices=last_features_indices
+        )
+
+        teammates = getAllEntities(self.input_features, [E_TEAMMATE])
+        source_num_teammates = len(teammates)
+
+        opponents = getAllEntities(self.input_features, [E_OPPONENT])
+        source_num_opponents = len(opponents)
+
+        extra_num_teammates = self._target_num_teammates - source_num_teammates
         if extra_num_teammates < 0:
-            exit("[ERROR] DummyFE: target_num_teammates - source_num_teammates must be non-negative.")
-        extra_num_opponents = target_num_opponents - source_num_opponents
+            exit("[ERROR] DummyFE: target_num_teammates must be greater than or equal to source_num_teammates.")
+        extra_num_opponents = self._target_num_opponents - source_num_opponents
         if extra_num_opponents < 0:
-            exit("[ERROR] DummyFE: target_num_opponents - source_num_opponents must be non-negative.")
+            exit("[ERROR] DummyFE: target_num_opponents must be greater than or equal to source_num_opponents.")
 
-        # First 3T teammate features
-        for i in range(3):
-            self._observation_indices += [10 + i * source_num_teammates + t for t in range(source_num_teammates)] + \
-                                         [-1] * (target_num_teammates - source_num_teammates)
-        # Second 3T teammate features
-        self._observation_indices += [10 + 3 * source_num_teammates + t for t in range(3 * source_num_teammates)] + \
-                                     [-1] * (3 * extra_num_teammates)
+        self._addFeatureIndices(getAllIndices(teammates), source_num_teammates, extra_num_teammates)
+        self._addFeatureIndices(getAllIndices(opponents), source_num_opponents, extra_num_opponents)
 
-        # 3O opponent features
-        self._observation_indices += [10 + 6 * source_num_teammates + o for o in range(3 * source_num_opponents)] + \
-                                     [-1] * (3 * extra_num_opponents)
+        observation_indices += last_features_indices
 
-    def apply(self, observation: np.ndarray):
-        dummy_observation = np.concatenate((observation, np.array([0])))
-        return dummy_observation[self._observation_indices]
+        return observation_indices
 
-    def getOutputNumTeammates(self) -> int:
-        return self._target_num_teammates
 
-    def getOutputNumOpponents(self) -> int:
-        return self._target_num_opponents
+    def _getLastFeaturesIndices(self) -> List[int]:
+        indices = [findByName(self.input_features, feature_name)
+                   for feature_name in ("last_action_success_possible", "stamina")]
+        last_features_indices = [i for i in indices if i != -1]
+        last_features_indices.sort()
+        return last_features_indices
+
+
+    def _addFeatureIndices(self, feature_indices: List[int], source_num_entities: int, extra_num_entities: int):
+        new_indices = []
+
+        features = {}
+        found_feature_names = []
+        completed_feature_names = []
+        for i in feature_indices:
+            new_indices.append(i)
+
+            feature = self.input_features[i]
+            if feature.name in features:
+                features[feature.name].append(feature)
+            else:
+                features[feature.name] = [feature]
+                found_feature_names.append(feature.name)
+            if len(features[feature.name]) == source_num_entities:
+                completed_feature_names.append(feature.name)
+                if len(completed_feature_names) == len(found_feature_names):
+                    for feature_name in completed_feature_names:
+                        new_indices += [-1] * extra_num_entities
+                        sample_feature = features[feature_name][0]
+                        self._new_features += [
+                            Feature(feature_name, sample_feature.data_type, sample_feature.entity_type, i)
+                            for i in range(source_num_entities + 1, source_num_entities + extra_num_entities + 1)
+                        ]
+
+        return new_indices
+
+
+    def _createOutputFeatures(self) -> List[Feature]:
+        output_features = []
+        n = 0
+        for i in self._observation_indices:
+            if i == -1:
+                output_features.append(self._new_features[n])
+                n += 1
+            else:
+                output_features.append(self.input_features[i])
+        return output_features
+
+
+    def _modify(self, observation: np.ndarray) -> np.ndarray:
+        dummy_observation = np.concatenate((observation, np.array([-2])))
+        return dummy_observation

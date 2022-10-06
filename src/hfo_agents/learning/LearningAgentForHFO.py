@@ -15,6 +15,7 @@ from src.lib.io import readTxt
 from src.lib.paths import getPath
 from src.lib.features.extractors import getFeatureExtractor
 from src.lib.features.FeatureExtractor import FeatureExtractor
+from src.lib.features.default import getDefaultFeatures
 from src.lib.observations import ableToKick, OFFENSE_UNUMS
 from src.lib.actions.Action import Action
 from src.lib.actions.hfo_actions.Move import Move
@@ -102,16 +103,23 @@ class LearningAgentForHFO(AgentForHFO):
         if "see_move_period" in self._input_data:
             self._see_move_period = self._input_data["see_move_period"]
 
-    def _addFeatureExtractors(self):
-        num_teammates = self._num_teammates
-        num_opponents = self._num_opponents
-        for data in self._input_data["feature_extractors"]:
-            feature_extractor = getFeatureExtractor(data, num_teammates, num_opponents) if isinstance(data, str) else \
-                getFeatureExtractor(data[0], num_teammates, num_opponents, *data[1:])
-            self._feature_extractors.append(feature_extractor)
-            num_teammates = feature_extractor.getOutputNumTeammates()
-            num_opponents = feature_extractor.getOutputNumOpponents()
+    # def _addFeatureExtractorsOld(self):
+    #     num_teammates = self._num_teammates
+    #     num_opponents = self._num_opponents
+    #     for data in self._input_data["feature_extractors"]:
+    #         feature_extractor = getFeatureExtractor(data, num_teammates, num_opponents) if isinstance(data, str) else \
+    #             getFeatureExtractor(data[0], num_teammates, num_opponents, *data[1:])
+    #         self._feature_extractors.append(feature_extractor)
+    #         num_teammates = feature_extractor.getOutputNumTeammates()
+    #         num_opponents = feature_extractor.getOutputNumOpponents()
 
+    def _addFeatureExtractors(self):
+        input_features = getDefaultFeatures(self._num_teammates, self._num_opponents)
+        for data in self._input_data["feature_extractors"]:
+            feature_extractor = getFeatureExtractor(data, input_features) if isinstance(data, str) else \
+                getFeatureExtractor(data[0], input_features, *data[1:])
+            self._feature_extractors.append(feature_extractor)
+            input_features = feature_extractor.output_features
 
     def _inputPurpose(self) -> str:
         return "learning_agent"
@@ -146,8 +154,12 @@ class LearningAgentForHFO(AgentForHFO):
             self._saved_features = self._next_features
 
     def _extractFeatures(self, observation: np.ndarray) -> np.ndarray:
+        #_FE = FeatureExtractor(getDefaultFeatures(self._num_teammates, self._num_opponents))
+        #_FE.printOutputFeatures(observation)
+
         for feature_extractor in self._feature_extractors:
             observation = feature_extractor.apply(observation)
+            #feature_extractor.printOutputFeatures(observation)
         return observation
 
     def _atEpisodeStart(self) -> None:

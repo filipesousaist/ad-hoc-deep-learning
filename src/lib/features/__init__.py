@@ -1,0 +1,11 @@
+F_FLOAT = 0
+F_BOOL = 1
+
+E_AGENT = 0
+E_TEAMMATE = 1
+E_OPPONENT = 2
+E_BALL = 3
+
+
+
+
