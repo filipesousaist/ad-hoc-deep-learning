@@ -7,7 +7,7 @@ from src.lib.features.filtering.PlasticWithBallFE import PlasticWithBallFE
 
 from src.lib.features.MemoryFE import MemoryFE
 from src.lib.features.MemoryZeroFE import MemoryZeroFE
-from src.lib.features.DummyFE import DummyFE
+from lib.features.dummy.DummyMimicFE import DummyMimicFE
 from src.lib.features.PartialObservabilityZeroFE import PartialObservabilityZeroFE
 
 
@@ -19,6 +19,6 @@ def getFeatureExtractor(name: str, num_teammates: int, num_opponents: int, *args
         "plastic_with_ball": PlasticWithBallFE,
         "memory": MemoryFE,
         "memory_zero": MemoryZeroFE,
-        "dummy": DummyFE,
+        "dummy": DummyMimicFE,
         "partial_observability_zero": PartialObservabilityZeroFE
     }[name](num_teammates, num_opponents, *args)

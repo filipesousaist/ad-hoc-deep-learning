@@ -1,22 +1,16 @@
 from typing import List
 
-import numpy as np
-
+from src.lib.features.dummy.DummyFE import DummyFE
 from src.lib.features import E_AGENT, E_TEAMMATE, E_OPPONENT, E_BALL
-from src.lib.features.FeatureExtractor import FeatureExtractor
 from src.lib.features.Feature import Feature, findByName
 from src.lib.features.Entity import getAllEntities, getAllIndices
 
 
-class DummyFE(FeatureExtractor):
+class DummyMimicFE(DummyFE):
     def __init__(self, input_features: List[Feature], target_num_teammates: int, target_num_opponents: int):
-        self._target_num_teammates = target_num_teammates
-        self._target_num_opponents = target_num_opponents
-
         self._new_features = []
 
-        super().__init__(input_features)
-
+        super().__init__(input_features, target_num_teammates, target_num_opponents)
 
     def _createObservationIndices(self):
         last_features_indices = self._getLastFeaturesIndices()
@@ -45,14 +39,14 @@ class DummyFE(FeatureExtractor):
 
         return observation_indices
 
-
     def _getLastFeaturesIndices(self) -> List[int]:
-        indices = [findByName(self.input_features, feature_name)
-                   for feature_name in ("last_action_success_possible", "stamina")]
-        last_features_indices = [i for i in indices if i != -1]
-        last_features_indices.sort()
-        return last_features_indices
-
+        indices = []
+        for feature_name in ("last_action_success_possible", "stamina"):
+            found, index = findByName(self.input_features, feature_name)
+            if found:
+                indices.append(index)
+        indices.sort()
+        return indices
 
     def _addFeatureIndices(self, feature_indices: List[int], source_num_entities: int, extra_num_entities: int):
         new_indices = []
@@ -82,7 +76,6 @@ class DummyFE(FeatureExtractor):
 
         return new_indices
 
-
     def _createOutputFeatures(self) -> List[Feature]:
         output_features = []
         n = 0
@@ -93,8 +86,3 @@ class DummyFE(FeatureExtractor):
             else:
                 output_features.append(self.input_features[i])
         return output_features
-
-
-    def _modify(self, observation: np.ndarray) -> np.ndarray:
-        dummy_observation = np.concatenate((observation, np.array([-2])))
-        return dummy_observation

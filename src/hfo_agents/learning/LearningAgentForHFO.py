@@ -25,6 +25,7 @@ from src.lib.actions.parsing import parseActions, parseCustomActions
 from src.lib.reward import parseRewardFunction
 
 
+
 class LearningAgentForHFO(AgentForHFO):
     def __init__(self, directory: str, port: int = -1, team: str = "", input_loadout: int = 0, setup_hfo: bool = True,
                  load_parameters: bool = False):
@@ -41,7 +42,7 @@ class LearningAgentForHFO(AgentForHFO):
         self._reward_function: Dict[Union[int, str], int] = {}
         self._feature_extractors: List[FeatureExtractor] = []
 
-        self._action: int = -1
+        self._a: int = -1
 
         self._saved_features: np.ndarray = np.array(0)
         self._next_features: np.ndarray = np.array(0)
@@ -62,8 +63,11 @@ class LearningAgentForHFO(AgentForHFO):
         pass
 
     def _storeInputData(self, load_parameters: bool) -> None:
-        self._actions = parseActions([action for action in self._input_data["actions"] if not action.startswith("_")])
-        self._storeCustomActions([action for action in self._input_data["actions"] if action.startswith("_")])
+        def _isCustomAction(action) -> bool:
+            return isinstance(action, str) and action.startswith("_")
+
+        self._actions = parseActions([action for action in self._input_data["actions"] if not _isCustomAction(action)])
+        self._storeCustomActions([action for action in self._input_data["actions"] if _isCustomAction(action)])
 
         self._handleOptionalArguments()
 
@@ -103,21 +107,16 @@ class LearningAgentForHFO(AgentForHFO):
         if "see_move_period" in self._input_data:
             self._see_move_period = self._input_data["see_move_period"]
 
-    # def _addFeatureExtractorsOld(self):
-    #     num_teammates = self._num_teammates
-    #     num_opponents = self._num_opponents
-    #     for data in self._input_data["feature_extractors"]:
-    #         feature_extractor = getFeatureExtractor(data, num_teammates, num_opponents) if isinstance(data, str) else \
-    #             getFeatureExtractor(data[0], num_teammates, num_opponents, *data[1:])
-    #         self._feature_extractors.append(feature_extractor)
-    #         num_teammates = feature_extractor.getOutputNumTeammates()
-    #         num_opponents = feature_extractor.getOutputNumOpponents()
 
     def _addFeatureExtractors(self):
         input_features = getDefaultFeatures(self._num_teammates, self._num_opponents)
-        for data in self._input_data["feature_extractors"]:
+        for d in range(len(self._input_data["feature_extractors"])):
+            data = self._input_data["feature_extractors"][d]
             feature_extractor = getFeatureExtractor(data, input_features) if isinstance(data, str) else \
                 getFeatureExtractor(data[0], input_features, *data[1:])
+            if feature_extractor.first_only and d > 0:
+                exit(f"[ERROR] {self.__class__.__name__}: {feature_extractor.__class__.__name__}" 
+                     " must be used in the beginning of the sequence")
             self._feature_extractors.append(feature_extractor)
             input_features = feature_extractor.output_features
 
@@ -135,11 +134,29 @@ class LearningAgentForHFO(AgentForHFO):
         return self._episode_loss / self._num_timesteps if self._num_timesteps > 0 else None
 
     def _selectAction(self) -> Action:
-        if self._auto_moving:
+        last_action = self._actions[self._a]
+        if last_action.usages_left > 0 and self._tryToUse(last_action, renew=False):
+            return last_action
+
+        elif self._auto_moving:
             return Move()
-        self._action = self._agent.action(self._extractFeatures(self._observation))
-        hfo_action = self._actions[self._action]
-        return hfo_action if hfo_action.is_valid(self._observation) else NoOp()
+
+        self._a = self._agent.action(self._extractFeatures(self._observation))
+        action = self._actions[self._a]
+        return action if self._tryToUse(action, renew=True) else NoOp()
+
+
+
+    def _tryToUse(self, action: Action, renew: bool) -> bool:
+        if action.is_valid(self._observation):
+            if renew:
+                action.renew()
+            action.use()
+            #print(f"Used {action.name}, {action.usages_left} usages left")
+            return True
+        #print(f"Failed {action.name}")
+        action.deplete()
+        return False
 
     def _updateAutoMove(self) -> None:
         if self._auto_moving:
@@ -150,8 +167,13 @@ class LearningAgentForHFO(AgentForHFO):
             self._see_move_counter = 1
 
     def _updateFeatures(self) -> None:
-        if not self._auto_moving or self._see_move_counter == 0:
+        if self._canUpdate():
             self._saved_features = self._next_features
+
+    def _canUpdate(self) -> bool:
+        if self._auto_moving:
+            return self._see_move_counter == 0
+        return self._actions[self._a].usages_left == 0
 
     def _extractFeatures(self, observation: np.ndarray) -> np.ndarray:
         #_FE = FeatureExtractor(getDefaultFeatures(self._num_teammates, self._num_opponents))
@@ -168,7 +190,9 @@ class LearningAgentForHFO(AgentForHFO):
         self._episode_loss = 0
         self._num_timesteps = 0
 
-        self._action = randint(0, len(self._actions) - 1)
+        self._a = randint(0, len(self._actions) - 1)
+        for action in self._actions:
+            action.deplete()
         self._saved_features = None
 
         for feature_extractor in self._feature_extractors:
@@ -188,12 +212,13 @@ class LearningAgentForHFO(AgentForHFO):
         self._next_features = self._extractFeatures(self._next_observation)
 
         is_terminal = self._status != IN_GAME
-        if (not self._auto_moving or self._see_move_counter == 0 or is_terminal) \
-                and self._saved_features is not None:
+        if (self._canUpdate() or is_terminal) and self._saved_features is not None:
             self._num_timesteps += 1
             self._total_timesteps += 1
 
-            timestep = Timestep(self._saved_features, self._action, self._reward_function[self._status],
+            #self._feature_extractors[-1].printOutputFeatures(self._next_features)
+
+            timestep = Timestep(self._saved_features, self._a, self._reward_function[self._status],
                                 self._next_features, is_terminal, {})
 
             self._info.update(self._agent.reinforcement(timestep) or {})
@@ -201,6 +226,8 @@ class LearningAgentForHFO(AgentForHFO):
                 self._episode_loss += self._info["Loss"]
 
         self._updateFeatures()
+
+
 
     def _atEpisodeEnd(self) -> None:
         print(self._info)

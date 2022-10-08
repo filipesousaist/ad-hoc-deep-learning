@@ -45,6 +45,6 @@ class ImitatingDQNAgentForHFO(MLPDQNAgentForHFO):
         self._info["chance_to_imitate"] = self._chance_to_imitate()
         if self.is_learning and random() < self._info["chance_to_follow_base"]:
             hfo_action = self._getAction()
-            self._action = self._actions.index(hfo_action)
+            self._a = self._actions.index(hfo_action)
             return hfo_action
         return super()._selectAction()

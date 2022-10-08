@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Tuple
 
 from src.lib.features import E_AGENT, E_TEAMMATE, E_OPPONENT, E_BALL
 
@@ -51,23 +51,24 @@ class Feature:
         return "_".join(info_list)
 
 
-def find(features: List[Feature], feature: Feature) -> int:
-    return features.index(feature) if feature in features else -1
+def find(features: List[Feature], feature: Feature) -> Tuple[bool, int]:
+    return (True, features.index(feature)) if feature in features else (False, 0)
 
 
-def findByName(features: List[Feature], feature_name: str) -> int:
+def findByName(features: List[Feature], feature_name: str) -> Tuple[bool, int]:
     for f in range(len(features)):
         if features[f].name == feature_name:
-            return f
-    return -1
+            return True, f
+    return False, 0
 
 
 def findRequiredInputFeatures(input_features: List[Feature], required_features: List[Feature], extractor_name: str) -> List[int]:
     indices = []
     for feature in required_features:
-        index = find(input_features, feature)
-        if index == -1:
-            exit(f"[ERROR] {extractor_name}: missing required input feature {feature}")
-        else:
+        found, index = find(input_features, feature)
+        if found:
             indices.append(index)
+        else:
+            exit(f"[ERROR] {extractor_name}: missing required input feature {feature}")
+
     return indices

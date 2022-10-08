@@ -14,6 +14,8 @@ class Action:
                  f"{'' if expected_num_args == 1 else 's'}, but got {num_args}.")
         self._args = args
 
+        self._usages_left = 1
+
     @property
     @abstractmethod
     def index(self) -> int:
@@ -40,6 +42,10 @@ class Action:
     def validation_value(self) -> int:
         return 0
 
+    @property
+    def usages_left(self) -> int:
+        return self._usages_left
+
 
     def is_valid(self, observation: np.ndarray) -> bool:
         return self.validation_feature == -1 or \
@@ -48,3 +54,13 @@ class Action:
 
     def execute(self, hfo: HFOEnvironment) -> None:
         hfo.act(self.index, *self._args)
+
+
+    def use(self) -> None:
+        self._usages_left -= 1
+
+    def renew(self) -> None:
+        self._usages_left = 1
+
+    def deplete(self) -> None:
+        self._usages_left = 0

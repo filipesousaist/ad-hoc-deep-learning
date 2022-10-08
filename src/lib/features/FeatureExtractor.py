@@ -58,6 +58,10 @@ class FeatureExtractor:
         pass
 
 
+    @property
+    def first_only(self):
+        return False
+
     def printOutputFeatures(self, features: np.ndarray):
         header_str = f"*** Output features of {self.__class__.__name__} ***"
         print(header_str)

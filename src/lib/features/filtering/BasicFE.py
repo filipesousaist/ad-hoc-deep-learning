@@ -4,7 +4,7 @@ import numpy as np
 
 from src.lib.features import F_FLOAT, E_BALL, F_BOOL
 from src.lib.features.FeatureExtractor import FeatureExtractor
-from src.lib.features.Feature import Feature, find, findRequiredInputFeatures
+from src.lib.features.Feature import Feature, findRequiredInputFeatures
 
 from src.lib.observations import distanceToNearestEdge
 
