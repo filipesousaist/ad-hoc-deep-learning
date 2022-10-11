@@ -1,11 +1,13 @@
 from typing import Type, List, Dict, Union
-import re
 
 from src.lib.actions.Action import Action
-from src.lib.actions.hfo_actions.Dribble import Dribble
+
+from src.lib.actions.hfo_actions.MoveTo import MoveTo
+from src.lib.actions.hfo_actions.Intercept import Intercept
 from src.lib.actions.hfo_actions.Move import Move
 from src.lib.actions.hfo_actions.Shoot import Shoot
 from src.lib.actions.hfo_actions.Pass import Pass
+from src.lib.actions.hfo_actions.Dribble import Dribble
 from src.lib.actions.hfo_actions.NoOp import NoOp
 from src.lib.actions.hfo_actions.GoToBall import GoToBall
 from src.lib.actions.hfo_actions.Reorient import Reorient
@@ -18,9 +20,9 @@ _string_to_action: Dict[str, Type[Action]] = {
     "TACKLE": None,
     "KICK": None,
     "KICK_TO": None,
-    "MOVE_TO": None,
+    "MOVE_TO": MoveTo,
     "DRIBBLE_TO": None,
-    "INTERCEPT": None,
+    "INTERCEPT": Intercept,
     "MOVE": Move,
     "SHOOT": Shoot,
     "PASS": Pass,
@@ -36,14 +38,6 @@ _string_to_action: Dict[str, Type[Action]] = {
 
     "REPEATED": RepeatedAction
 }
-
-
-def parseActions2(actions: List[str]) -> List[Action]:
-    parsed_actions = [list(filter(
-        lambda string: string != "",
-        re.split('[(),]', action.strip(" "))
-    )) for action in actions]
-    return [_string_to_action[action[0]](*action[1:]) for action in parsed_actions]
 
 
 ActionArg = List[Union[str, int, "ActionArg"]]

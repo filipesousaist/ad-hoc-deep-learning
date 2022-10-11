@@ -1,11 +1,13 @@
+from hfo import HFOEnvironment
+
 from src.lib.actions.Action import Action
 
 
 class RepeatedAction(Action):
-    def __init__(self, action: Action, duration: int, *args):
+    def __init__(self, action: Action, duration: int):
         self._action = action
 
-        super().__init__(*args)
+        super().__init__()
 
         self._duration = duration
 
@@ -22,7 +24,7 @@ class RepeatedAction(Action):
 
     @property
     def num_args(self) -> int:
-        return self._action.num_args
+        return 0
 
 
     @property
@@ -37,3 +39,6 @@ class RepeatedAction(Action):
 
     def renew(self) -> None:
         self._usages_left = self._duration
+
+    def execute(self, hfo: HFOEnvironment) -> None:
+        self._action.execute(hfo)

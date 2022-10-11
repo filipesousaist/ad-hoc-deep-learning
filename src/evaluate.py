@@ -181,7 +181,7 @@ def evaluateAgent(agent: LearningAgentForHFO, directory: str, args: argparse.Nam
     episode, train_episode = getEpisodeAndTrainEpisode(
         directory, args.load, args.test_from_episode, num_episodes)
 
-    if args.load:
+    if args.load or args.test_from_episode == -1:
         loadAgent(agent, directory, -1, num_episodes)
     elif args.test_from_episode:
         loadAgent(agent, directory, train_episode, num_episodes)
