@@ -218,8 +218,12 @@ class LearningAgentForHFO(AgentForHFO):
 
             #self._feature_extractors[-1].printOutputFeatures(self._next_features)
 
+
             timestep = Timestep(self._saved_features, self._a, self._reward_function[self._status],
                                 self._next_features, is_terminal, {})
+
+            #if timestep.reward != 0:
+            #    print(timestep)
 
             self._info.update(self._agent.reinforcement(timestep) or {})
             if "Loss" in self._info:

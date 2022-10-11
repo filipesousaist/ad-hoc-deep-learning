@@ -12,6 +12,8 @@ from yaaf.memory import ExperienceReplayBuffer
 from yaaf.policies import epsilon_greedy_policy
 from yaaf.models import TorchModel
 
+from src.lib.replay_buffers.DRQNBalancedExperienceReplayBuffer import DRQNBalancedExperienceReplayBuffer
+
 
 REPLAY_BUFFER_FILE_NAME = "replay_buffer.pkl"
 
@@ -117,6 +119,7 @@ class DRQNAgent(DQNAgent):
                  learning_rate=0.01, optimizer="adam",
                  discount_factor=0.95, initial_exploration_rate=0.50, final_exploration_rate=0.05,
                  initial_exploration_steps=0, final_exploration_step=5000,
+                 replay_buffer_type="default", replay_buffer_args=(),
                  replay_buffer_size=100000, replay_batch_size=32,
                  network_update_frequency=4, target_network_update_frequency=1,
                  trajectory_update_length=4, cuda=False):
@@ -136,7 +139,12 @@ class DRQNAgent(DQNAgent):
             initial_exploration_steps=initial_exploration_steps, final_exploration_step=final_exploration_step,
             network_update_frequency=network_update_frequency,
             target_network_update_frequency=target_network_update_frequency,
-            replay_buffer=ExperienceReplayBuffer(replay_buffer_size, replay_batch_size))
+            replay_buffer=
+                ExperienceReplayBuffer(replay_buffer_size, replay_batch_size)
+                if replay_buffer_type == "default" else
+                DRQNBalancedExperienceReplayBuffer(replay_buffer_size, replay_batch_size, *replay_buffer_args)
+                if replay_buffer_type == "balanced" else None
+        )
 
     def policy(self, observation):
         target = False
@@ -185,7 +193,6 @@ class DRQNAgent(DQNAgent):
             self._current_sequence = []
 
     def _preprocess(self, batch):
-
         L = self.max_sequence_length
         F = self._network.input_shape
         A = self._num_actions
