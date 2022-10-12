@@ -46,7 +46,6 @@ class LearningAgentForHFO(AgentForHFO):
         self._reward_function: Dict[Union[int, str], int] = {}
         self._feature_extractors: List[FeatureExtractor] = []
 
-
         self._saved_features: np.ndarray = np.array(0)
         self._next_features: np.ndarray = np.array(0)
 

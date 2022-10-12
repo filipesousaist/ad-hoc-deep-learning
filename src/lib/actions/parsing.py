@@ -1,7 +1,9 @@
 from typing import Type, List, Dict, Union
 
+
 from src.lib.actions.Action import Action
 
+from src.lib.actions.hfo_actions.KickTo import KickTo
 from src.lib.actions.hfo_actions.MoveTo import MoveTo
 from src.lib.actions.hfo_actions.Intercept import Intercept
 from src.lib.actions.hfo_actions.Move import Move
@@ -12,6 +14,7 @@ from src.lib.actions.hfo_actions.NoOp import NoOp
 from src.lib.actions.hfo_actions.GoToBall import GoToBall
 from src.lib.actions.hfo_actions.Reorient import Reorient
 
+from src.lib.actions.Invalid import Invalid
 from src.lib.actions.NoOpWithBall import NoOpWithBall
 from src.lib.actions.RepeatedAction import RepeatedAction
 
@@ -20,7 +23,7 @@ _string_to_action: Dict[str, Type[Action]] = {
     "TURN": None,
     "TACKLE": None,
     "KICK": None,
-    "KICK_TO": None,
+    "KICK_TO": KickTo,
     "MOVE_TO": MoveTo,
     "DRIBBLE_TO": None,
     "INTERCEPT": Intercept,
@@ -37,12 +40,13 @@ _string_to_action: Dict[str, Type[Action]] = {
     "GO_TO_BALL": GoToBall,
     "REORIENT": Reorient,
 
+    "INVALID": Invalid,
     "NOOP_WITH_BALL": NoOpWithBall,
     "REPEATED": RepeatedAction
 }
 
 
-ActionArg = List[Union[str, int, "ActionArg"]]
+ActionArg = List[Union[str, int, float, "ActionArg"]]
 
 
 def parseActions(actions: List[Union[str, ActionArg]]) -> List[Action]:
@@ -55,7 +59,7 @@ def parseActions(actions: List[Union[str, ActionArg]]) -> List[Action]:
     return parsed_actions
 
 
-def parseAction(name: str, *args: Union[str, int, ActionArg]):
+def parseAction(name: str, *args: Union[str, int, float, ActionArg]):
     return _string_to_action[name](
         *[
             (parseAction(arg[0], *arg[1:]) if isinstance(arg, list) else

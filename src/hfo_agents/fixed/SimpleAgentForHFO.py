@@ -1,4 +1,9 @@
-from hfo import SHOOT, MOVE, PASS, DRIBBLE
+from src.lib.actions.Action import Action
+
+from src.lib.actions.hfo_actions.Shoot import Shoot
+from src.lib.actions.hfo_actions.Pass import Pass
+from src.lib.actions.hfo_actions.Dribble import Dribble
+from src.lib.actions.hfo_actions.Move import Move
 
 from src.hfo_agents.AgentForHFO import AgentForHFO
 
@@ -18,7 +23,7 @@ def _canPass(pass_angle):
 
 
 class SimpleAgentForHFO(AgentForHFO):   
-    def _selectAction(self) -> int:
+    def _selectAction(self) -> Action:
         can_kick = self._observation[5] == 1
         goal_dist = self._observation[6]
         goal_angle = self._observation[8]
@@ -27,10 +32,10 @@ class SimpleAgentForHFO(AgentForHFO):
 
         if can_kick:
             if _canShoot(goal_dist, goal_angle):
-                return SHOOT
-            elif _canPass(teammate_pass_angle) and teammate_goal_angle > goal_angle:
-                return PASS
-            return DRIBBLE
-        return MOVE
+                return Shoot()
+            elif self._num_teammates > 0 and _canPass(teammate_pass_angle) and teammate_goal_angle > goal_angle:
+                return Pass(7)
+            return Dribble()
+        return Move()
 
     
