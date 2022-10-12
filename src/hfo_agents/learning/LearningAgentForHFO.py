@@ -7,8 +7,9 @@ import numpy as np
 
 from hfo import IN_GAME
 
-from yaaf.agents.Agent import Agent
 from yaaf import Timestep
+from yaaf.agents.Agent import Agent
+from yaaf.policies import action_from_policy
 
 from src.hfo_agents.AgentForHFO import AgentForHFO
 from src.lib.io import readTxt
@@ -32,6 +33,9 @@ class LearningAgentForHFO(AgentForHFO):
         super().__init__(directory, port, team, input_loadout, setup_hfo)
 
         self._actions: List[Action] = []
+        self._a: int = -1
+        self._num_actions: int = 0
+        self._filter_policy: bool = False
 
         self._auto_move: bool = False
         self._auto_moving: bool = False
@@ -42,7 +46,6 @@ class LearningAgentForHFO(AgentForHFO):
         self._reward_function: Dict[Union[int, str], int] = {}
         self._feature_extractors: List[FeatureExtractor] = []
 
-        self._a: int = -1
 
         self._saved_features: np.ndarray = np.array(0)
         self._next_features: np.ndarray = np.array(0)
@@ -68,6 +71,7 @@ class LearningAgentForHFO(AgentForHFO):
 
         self._actions = parseActions([action for action in self._input_data["actions"] if not _isCustomAction(action)])
         self._storeCustomActions([action for action in self._input_data["actions"] if _isCustomAction(action)])
+        self._num_actions = len(self._actions)
 
         self._handleOptionalArguments()
 
@@ -81,7 +85,7 @@ class LearningAgentForHFO(AgentForHFO):
             save_data = readTxt(getPath(self._directory, "save"))
             self._loadParameters(save_data, agent_parameters)
 
-        self._agent: Agent = self._createAgent(num_features, len(self._actions), agent_parameters)
+        self._agent: Agent = self._createAgent(num_features, self._num_actions, agent_parameters)
 
     def _storeCustomActions(self, actions: List[str]) -> None:
         custom_actions_data = parseCustomActions(actions)
@@ -106,6 +110,8 @@ class LearningAgentForHFO(AgentForHFO):
             self._ignore_auto_move_chance = self._input_data["ignore_auto_move_chance"]
         if "see_move_period" in self._input_data:
             self._see_move_period = self._input_data["see_move_period"]
+        if "filter_policy" in self._input_data:
+            self._filter_policy = self._input_data["filter_policy"]
 
 
     def _addFeatureExtractors(self):
@@ -141,11 +147,22 @@ class LearningAgentForHFO(AgentForHFO):
         elif self._auto_moving:
             return Move()
 
-        self._a = self._agent.action(self._extractFeatures(self._observation))
+        features = self._extractFeatures(self._observation)
+        self._a = self._getValidAction(features) if self._filter_policy else self._agent.action(features)
         action = self._actions[self._a]
         return action if self._tryToUse(action, renew=True) else NoOp()
 
+    def _getValidAction(self, features: np.ndarray) -> int:
+        policy = self._agent.policy(features)
+        valid_action_indices = [a for a in range(self._num_actions) if self._actions[a].is_valid(self._observation)]
+        filtered_policy = np.array([policy[a] if a in valid_action_indices else 0
+                                    for a in range(self._num_actions)])
+        p_sum = np.sum(filtered_policy)
+        normalized_policy = filtered_policy / p_sum if p_sum > 0 \
+            else np.array([1 / len(valid_action_indices) if a in valid_action_indices else 0
+                           for a in range(self._num_actions)])
 
+        return action_from_policy(normalized_policy, not self.is_learning)
 
     def _tryToUse(self, action: Action, renew: bool) -> bool:
         if action.is_valid(self._observation):
@@ -154,7 +171,9 @@ class LearningAgentForHFO(AgentForHFO):
             action.use()
             #print(f"Used {action.name}, {action.usages_left} usages left")
             return True
-        #print(f"Failed {action.name}")
+        #print(f"Cannot use {action.name}: invalid action")
+        #if renew:
+        #    print("Used NOOP instead.")
         action.deplete()
         return False
 
@@ -190,7 +209,7 @@ class LearningAgentForHFO(AgentForHFO):
         self._episode_loss = 0
         self._num_timesteps = 0
 
-        self._a = randint(0, len(self._actions) - 1)
+        self._a = randint(0, self._num_actions - 1)
         for action in self._actions:
             action.deplete()
         self._saved_features = None

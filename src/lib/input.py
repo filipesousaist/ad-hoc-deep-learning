@@ -18,7 +18,7 @@ _OPTIONAL_ARGS = {
     "evaluate": [],
     "agent": [],
     "learning_agent": [
-        "ignore_auto_move_chance", "see_move_period", "feature_extractors"
+        "ignore_auto_move_chance", "see_move_period", "feature_extractors", "filter_policy"
     ],
     "agent_type": []
 }
