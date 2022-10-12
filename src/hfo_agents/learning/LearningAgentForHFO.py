@@ -169,11 +169,11 @@ class LearningAgentForHFO(AgentForHFO):
             if renew:
                 action.renew()
             action.use()
-            #print(f"Used {action.name}, {action.usages_left} usages left")
+            print(f"Used {action.name}, {action.usages_left} usages left")
             return True
-        #print(f"Cannot use {action.name}: invalid action")
-        #if renew:
-        #    print("Used NOOP instead.")
+        print(f"Cannot use {action.name}: invalid action")
+        if renew:
+            print("Used NOOP instead.")
         action.deplete()
         return False
 

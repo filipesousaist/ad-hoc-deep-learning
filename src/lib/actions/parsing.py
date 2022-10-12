@@ -12,6 +12,7 @@ from src.lib.actions.hfo_actions.NoOp import NoOp
 from src.lib.actions.hfo_actions.GoToBall import GoToBall
 from src.lib.actions.hfo_actions.Reorient import Reorient
 
+from src.lib.actions.NoOpWithBall import NoOpWithBall
 from src.lib.actions.RepeatedAction import RepeatedAction
 
 _string_to_action: Dict[str, Type[Action]] = {
@@ -36,6 +37,7 @@ _string_to_action: Dict[str, Type[Action]] = {
     "GO_TO_BALL": GoToBall,
     "REORIENT": Reorient,
 
+    "NOOP_WITH_BALL": NoOpWithBall,
     "REPEATED": RepeatedAction
 }
 
