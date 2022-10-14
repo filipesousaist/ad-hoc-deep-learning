@@ -1,7 +1,12 @@
-from io import TextIOWrapper, DEFAULT_BUFFER_SIZE
+from io import TextIOWrapper
 import sys
 import os
 import json
+from typing import Tuple
+
+import numpy as np
+
+from src.lib.paths import getPath
 
 DEV_NULL = open(os.devnull, "w")
 
@@ -84,6 +89,14 @@ def readTxt(path: str) -> dict:
             key_value_dict[pair[0]] = pair[1]
 
         return key_value_dict
+
+
+def readScoreRate(directory: str) -> Tuple[np.ndarray, np.ndarray]:
+    path = getPath(directory, "test-output")
+    file = open(path, "r")
+    lines = [line.rstrip("\n%").split(" ") for line in file.readlines() if len(line) > 0 and line[0] == "%"]
+
+    return np.array([int(line[3]) for line in lines]), np.array([float(line[-1]) for line in lines])
 
 
 def writeTxt(path: str, key_value_dict: dict) -> None:

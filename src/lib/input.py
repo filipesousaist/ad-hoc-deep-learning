@@ -5,6 +5,16 @@ _REQUIRED_ARGS = {
         "agent_type", "fullstate", "num_teammates", "num_opponents", "teammates_type", "opponents_type",
         "frames_per_trial", "untouched_time", "num_test_episodes", "num_train_episodes"
     ],
+    "seq_evaluate_first_loadout": [
+        "agent_type", "fullstate", "num_teammates", "num_opponents", "teammates_type", "opponents_type",
+        "frames_per_trial", "untouched_time", "num_test_episodes", "num_train_episodes",
+        "max_train_episode"
+    ],
+    "seq_evaluate": [
+        "agent_type", "fullstate", "num_teammates", "num_opponents", "teammates_type", "opponents_type",
+        "frames_per_trial", "untouched_time", "num_test_episodes", "num_train_episodes",
+        "max_train_episode"
+    ],
     "agent": [],
     "learning_agent": [
         "agent_parameters", "actions", "reward_function"
@@ -16,6 +26,8 @@ _REQUIRED_ARGS = {
 
 _OPTIONAL_ARGS = {
     "evaluate": [],
+    "seq_evaluate_first_loadout": [],
+    "seq_evaluate": ["reset_parameters"],
     "agent": [],
     "learning_agent": [
         "ignore_auto_move_chance", "see_move_period", "feature_extractors", "filter_policy"
@@ -43,3 +55,5 @@ def readInputData(path: str, purpose: str, loadout: int = 0) -> dict:
         del input_data[arg]
 
     return input_data
+
+

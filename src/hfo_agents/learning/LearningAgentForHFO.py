@@ -29,8 +29,8 @@ from src.lib.reward import parseRewardFunction
 
 class LearningAgentForHFO(AgentForHFO):
     def __init__(self, directory: str, port: int = -1, team: str = "", input_loadout: int = 0, setup_hfo: bool = True,
-                 load_parameters: bool = False):
-        super().__init__(directory, port, team, input_loadout, setup_hfo)
+                 multiprocessing: bool = False, load_parameters: bool = False):
+        super().__init__(directory, port, team, input_loadout, setup_hfo, multiprocessing)
 
         self._actions: List[Action] = []
         self._a: int = -1
@@ -51,7 +51,12 @@ class LearningAgentForHFO(AgentForHFO):
 
         self._info: dict = {}
 
-        self._storeInputData(load_parameters)
+        self.storeInputData(load_parameters)
+
+        observation_size = 12 + 3 * self._num_opponents + 6 * self._num_teammates
+        num_features = self._extractFeatures(np.zeros(observation_size)).shape[0]
+
+        self._agent: Agent = self._createAgent(num_features, self._num_actions, self._input_data["agent_parameters"])
 
         # Debug
         self._total_timesteps = 0
@@ -64,7 +69,7 @@ class LearningAgentForHFO(AgentForHFO):
     def _createAgent(self, num_features: int, num_actions: int, parameters: dict) -> Agent:
         pass
 
-    def _storeInputData(self, load_parameters: bool) -> None:
+    def storeInputData(self, load_parameters: bool) -> None:
         def _isCustomAction(action) -> bool:
             return isinstance(action, str) and action.startswith("_")
 
@@ -76,15 +81,9 @@ class LearningAgentForHFO(AgentForHFO):
 
         self._reward_function = parseRewardFunction(self._input_data["reward_function"])
 
-        observation_size = 12 + 3 * self._num_opponents + 6 * self._num_teammates
-        num_features = self._extractFeatures(np.zeros(observation_size)).shape[0]
-
-        agent_parameters = self._input_data["agent_parameters"]
         if load_parameters:
             save_data = readTxt(getPath(self._directory, "save"))
-            self._loadParameters(save_data, agent_parameters)
-
-        self._agent: Agent = self._createAgent(num_features, self._num_actions, agent_parameters)
+            self._loadParameters(save_data, self._input_data["agent_parameters"])
 
     def _storeCustomActions(self, actions: List[str]) -> None:
         custom_actions_data = parseCustomActions(actions)
@@ -112,8 +111,8 @@ class LearningAgentForHFO(AgentForHFO):
         if "filter_policy" in self._input_data:
             self._filter_policy = self._input_data["filter_policy"]
 
-
     def _addFeatureExtractors(self):
+        self._feature_extractors = []
         input_features = getDefaultFeatures(self._num_teammates, self._num_opponents)
         for d in range(len(self._input_data["feature_extractors"])):
             data = self._input_data["feature_extractors"][d]
@@ -132,6 +131,30 @@ class LearningAgentForHFO(AgentForHFO):
         pass
 
     def saveParameters(self, save_data: dict) -> None:
+        pass
+
+    def resetParameters(self) -> None:
+        pass
+
+    @staticmethod
+    def _changeableParameters() -> List[str]:
+        return []
+
+    def setStaticParameters(self) -> None:
+        parameters = self._input_data["agent_parameters"]
+        parameters_to_change = [parameter for parameter in parameters if parameter in self._changeableParameters()]
+        unchanged_parameters = [parameter for parameter in parameters if parameter not in self._changeableParameters()]
+
+        print(f"[INFO] 'LearningAgentForHFO.py' loaded the following parameters from loadout {self._input_loadout}:")
+        print([f"{parameter}: {parameters[parameter]}" for parameter in parameters_to_change])
+
+        print("[INFO] 'LearningAgentForHFO.py' will not be apply the following parameters from loadout "
+              f"{self._input_loadout}:")
+        print(unchanged_parameters)
+
+        self._changeStaticParameters(parameters, parameters_to_change)
+
+    def _changeStaticParameters(self, parameters: dict, parameters_to_change: List[str]):
         pass
 
     @property

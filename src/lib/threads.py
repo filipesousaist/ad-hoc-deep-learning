@@ -35,6 +35,9 @@ class WaitForQuitThread(Thread):
     def stop(self):
         self._running = False
 
+    def is_running(self):
+        return self._running
+
 
 class AgentThread(Thread):
     def __init__(self, directory: str, port: int, input_loadout: int, agent_type: str, team: str,

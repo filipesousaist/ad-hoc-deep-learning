@@ -7,6 +7,7 @@ import numpy as np
 
 import argparse
 
+from src.lib.io import readScoreRate
 from src.lib.paths import getPath, DEFAULT_DIRECTORY
 
 DEFAULT_GRANULARITY = 500
@@ -54,12 +55,9 @@ y_std = []
 num_train_episodes = None
 
 for d in range(num_directories):
-    path = getPath(directories[d], "test-output")
-    file = open(path, "r")
-    lines = [line.rstrip("\n%").split(" ") for line in file.readlines() if len(line) > 0 and line[0] == "%"]
-
-    x.append(np.array([int(line[3]) for line in lines]))
-    y.append(np.array([float(line[-1]) for line in lines]))
+    data_arrays = readScoreRate(directories[d])
+    x.append(data_arrays[0])
+    y.append(data_arrays[1])
 
     if x[d].shape[0] < 2:
         exit("Need at least 2 points to plot")
