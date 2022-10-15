@@ -108,7 +108,7 @@ def sequentialEvaluateAgent(agent_factory: Type[LearningAgentForHFO], directory:
             "max": input_data["max_train_episode"] or sys.maxsize
         }
 
-        episode = getEpisodeAndTrainEpisode(directory, False, 0, num_episodes)[0]
+        episode = getEpisodeAndTrainEpisode(directory, True, 0, num_episodes)[0]
         playEpisodes(agent, directory, episode, num_episodes, wait_for_quit_thread)
 
         print(f"[INFO] 'seq_evaluate.py' finished loadout {input_loadout}. Terminating associated processes...")
