@@ -1,4 +1,4 @@
-from src.lib.ATPO_policy import DRQNAgent
+from src.lib.agents import DRQNAgent
 
 import random
 import numpy as np

@@ -148,7 +148,7 @@ class LearningAgentForHFO(AgentForHFO):
         print(f"[INFO] 'LearningAgentForHFO.py' loaded the following parameters from loadout {self._input_loadout}:")
         print([f"{parameter}: {parameters[parameter]}" for parameter in parameters_to_change])
 
-        print("[INFO] 'LearningAgentForHFO.py' will not be apply the following parameters from loadout "
+        print("[INFO] 'LearningAgentForHFO.py' will not apply the following parameters from loadout "
               f"{self._input_loadout}:")
         print(unchanged_parameters)
 

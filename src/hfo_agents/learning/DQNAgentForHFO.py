@@ -4,7 +4,7 @@ from typing import List
 from yaaf.agents.Agent import Agent
 from yaaf.agents.dqn.DQNAgent import DQNAgent
 
-from src.lib.ATPO_policy import saveReplayBuffer, loadReplayBuffer
+from src.lib.agents import saveReplayBuffer, loadReplayBuffer
 from src.hfo_agents.learning.LearningAgentForHFO import LearningAgentForHFO
 
 
@@ -60,7 +60,7 @@ class DQNAgentForHFO(LearningAgentForHFO):
     def _changeableParameters() -> List[str]:
         return [
             "initial_exploration_rate", "final_exploration_rate", "initial_exploration_steps", "final_exploration_step",
-            "target_network_update_frequency"
+            "target_network_update_frequency",
         ]
 
     def _changeStaticParameters(self, parameters: dict, parameters_to_change: List[str]) -> None:

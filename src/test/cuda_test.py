@@ -1,6 +1,6 @@
 import time
 
-from src.lib.ATPO_policy import DRQNAgent
+from src.lib.agents import DRQNAgent
 from yaaf.agents.dqn import MLPDQNAgent
 
 import gym

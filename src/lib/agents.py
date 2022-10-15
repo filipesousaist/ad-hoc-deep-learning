@@ -3,13 +3,15 @@
 
 import pickle
 import os
+from typing import Any, Tuple
 
 import torch
 from torch.nn import Linear, LSTM, GRU
 
-from yaaf.agents.dqn import DQNAgent
+from yaaf.agents.dqn import DQNAgent, MLPDQNAgent
+from yaaf.agents.dqn.networks import DeepQNetwork
 from yaaf.memory import ExperienceReplayBuffer
-from yaaf.policies import epsilon_greedy_policy
+from yaaf.policies import epsilon_greedy_policy, linear_annealing
 from yaaf.models import TorchModel
 
 from src.lib.replay_buffers.DRQNBalancedExperienceReplayBuffer import DRQNBalancedExperienceReplayBuffer
@@ -236,3 +238,83 @@ def loadReplayBuffer(directory: str) -> ExperienceReplayBuffer:
             return pickle.load(file)
     else:
         print(f"[INFO]: File '{path}' not found. Replay buffer not loaded.")
+
+
+class CustomMLPDQNAgent(MLPDQNAgent):
+    def __init__(self,
+                 num_features: Any,
+                 num_actions: int,
+                 layers: Tuple[Tuple[int, str], Tuple[int, str]] = ((64, "relu"), (64, "relu")),
+                 learning_rate: float = 0.001,
+                 optimizer: str = "adam",
+                 discount_factor: float = 0.95,
+                 initial_exploration_rate: float = 0.50,
+                 final_exploration_rate: float = 0.05,
+                 initial_exploration_steps: int = 0,
+                 final_exploration_step: int = 5000,
+                 replay_buffer_size: int = 100000,
+                 replay_batch_size: int = 32,
+                 target_network_update_frequency: int = 1,
+                 cuda: bool = False,
+                 initial_episode=0, final_episode=10000, exploration_rate_by_episode=False):
+
+        self._episode = initial_episode
+        self._initial_episode = initial_episode
+        self._final_episode = final_episode
+        self._exploration_rate_by_episode = exploration_rate_by_episode
+
+        super().__init__(num_features, num_actions, layers, learning_rate, optimizer, discount_factor,
+                         initial_exploration_rate, final_exploration_rate, initial_exploration_steps,
+                         final_exploration_step, replay_buffer_size, replay_batch_size,
+                         target_network_update_frequency, cuda)
+
+    def remember(self, timestep) -> None:
+        super().remember(timestep)
+        if self.trainable and timestep.is_terminal:
+            self._episode += 1
+
+    @property
+    def exploration_rate(self) -> float:
+        if self._exploration_rate_by_episode:
+            return linear_annealing(self._episode - self._initial_episode, self._final_episode - self._initial_episode,
+                                    self._initial_exploration_rate, self._final_exploration_rate)
+        return super().exploration_rate
+
+
+class CustomDRQNAgent(DRQNAgent):
+    def __init__(self, num_features, num_actions,
+                 rnn="lstm",
+                 num_layers=2, hidden_sizes=256, dropout=0.0,
+                 learning_rate=0.01, optimizer="adam",
+                 discount_factor=0.95, initial_exploration_rate=0.50, final_exploration_rate=0.05,
+                 initial_exploration_steps=0, final_exploration_step=5000,
+                 replay_buffer_type="default", replay_buffer_args=(),
+                 replay_buffer_size=100000, replay_batch_size=32,
+                 network_update_frequency=4, target_network_update_frequency=1,
+                 trajectory_update_length=4, cuda=False,
+                 initial_episode=0, final_episode=10000, exploration_rate_by_episode=False):
+
+        self._episode = initial_episode
+        self._initial_episode = initial_episode
+        self._final_episode = final_episode
+        self._exploration_rate_by_episode = exploration_rate_by_episode
+
+        super().__init__(num_features, num_actions, rnn, num_layers, hidden_sizes, dropout, learning_rate, optimizer,
+                         discount_factor, initial_exploration_rate, final_exploration_rate, initial_exploration_steps,
+                         final_exploration_step, replay_buffer_type, replay_buffer_args, replay_buffer_size,
+                         replay_batch_size, network_update_frequency, target_network_update_frequency,
+                         trajectory_update_length, cuda)
+
+    def remember(self, timestep) -> None:
+        super().remember(timestep)
+        if self.trainable and timestep.is_terminal:
+            self._episode += 1
+
+    @property
+    def exploration_rate(self) -> float:
+        if self._exploration_rate_by_episode:
+            return linear_annealing(self._episode - self._initial_episode, self._final_episode - self._initial_episode,
+                                    self._initial_exploration_rate, self._final_exploration_rate)
+        return super().exploration_rate
+
+
