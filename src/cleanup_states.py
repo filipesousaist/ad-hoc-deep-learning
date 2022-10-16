@@ -15,6 +15,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-D", "--directory", type=str)
     parser.add_argument("-l", "--list-only", action="store_true")
+    parser.add_argument("-f", "--force", action="store_true")
     parser.add_argument("-g", "--gap-between-states", type=int)
     args = parser.parse_args()
 
@@ -33,7 +34,7 @@ def main():
     agent_states_to_delete = determineAgentStatesToDelete(agent_states, gap_between_states_to_keep)
 
     if not args.list_only:
-        deleteAgentStates(paths, agent_states_to_delete)
+        deleteAgentStates(paths, agent_states_to_delete, args.force)
 
 
 def listAgentStates(paths):
@@ -93,12 +94,12 @@ def determineAgentStatesToDelete(states, gap_between_states_to_keep):
     return states_to_delete
 
 
-def deleteAgentStates(paths, states):
+def deleteAgentStates(paths, states, force: bool):
     # Keep last 5 states, all multiples of 5000 and the 5 best overall. 
     # In case of tie, keep all the tied states, unless they have a score rate of 0.
     # In that case, keep none of them.
 
-    if not input("\n*** Confirm cleanup? (y/n) ***\n>>> ").lower().startswith("y"):
+    if not force and not input("\n*** Confirm cleanup? (y/n) ***\n>>> ").lower().startswith("y"):
         print("State cleanup cancelled.")
         return
 
