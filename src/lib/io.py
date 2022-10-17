@@ -2,7 +2,7 @@ from io import TextIOWrapper
 import sys
 import os
 import json
-from typing import Tuple
+from typing import Tuple, List
 
 import numpy as np
 
@@ -91,12 +91,55 @@ def readTxt(path: str) -> dict:
         return key_value_dict
 
 
-def readScoreRate(directory: str) -> Tuple[np.ndarray, np.ndarray]:
+def readScoreRate(directory: str, recursive=False) -> Tuple[np.ndarray, List[np.ndarray]]:
     path = getPath(directory, "test-output")
-    file = open(path, "r")
-    lines = [line.rstrip("\n%").split(" ") for line in file.readlines() if len(line) > 0 and line[0] == "%"]
+    if os.path.exists(path):
+        file = open(path, "r")
+        lines = [line.rstrip("\n%").split(" ") for line in file.readlines() if len(line) > 0 and line[0] == "%"]
 
-    return np.array([int(line[3]) for line in lines]), np.array([float(line[-1]) for line in lines])
+        print("Return", path)
+        return (
+            np.array([int(line[3]) for line in lines]),
+            [np.array([float(line[-1]) for line in lines])]
+        )
+    if not recursive:
+        exit("[ERROR] io.py/readScoreRate: Path '" + path + "' not found.")
+
+    return _readScoreRateMultipleFiles(directory)
+
+
+def _readScoreRateMultipleFiles(directory: str) -> Tuple[np.ndarray, List[np.ndarray]]:
+    sub_dirs = getSubDirectories(directory)
+
+    x_list = []
+    score_rates = []
+    for sub_dir in sub_dirs:
+        x, y_list = readScoreRate(sub_dir, True)
+        x_list.append(x)
+        score_rates += y_list
+
+    min_len = min([len(array) for array in (x_list + score_rates)])
+
+    x_list[0] = x_list[0][:min_len]
+    for i in range(1, len(x_list)):
+        if not np.array_equal(x_list[i][:min_len], x_list[0]):
+            exit("[ERROR] io.py/readScoreRate: X values must be compatible for averaging results. "
+                 f"Incompatible files: {getPath(sub_dirs[0], 'test-output')} and {getPath(sub_dirs[i], 'test-output')}")
+
+    for i in range(len(score_rates)):
+        score_rates[i] = score_rates[i][:min_len]
+
+    return x_list[0], score_rates
+
+
+def getSubDirectories(directory: str) -> List[str]:
+    sub_dirs = []
+    for d in os.listdir(directory):
+        path = os.path.join(directory, d)
+        if os.path.isdir(path):
+            sub_dirs.append(path)
+    sub_dirs.sort()
+    return sub_dirs
 
 
 def writeTxt(path: str, key_value_dict: dict) -> None:

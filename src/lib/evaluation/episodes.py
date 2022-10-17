@@ -22,7 +22,7 @@ def _loadEpisodeAndTrainEpisode(directory: str) -> tuple:
 
 def getBestTrainEpisode(directory: str) -> int:
     episodes, score_rates = readScoreRate(directory)
-    return episodes[np.argmax(score_rates)]
+    return episodes[np.argmax(score_rates[0])]
 
 
 def reachedMaxTrainEpisode(episode: int, num_episodes: dict) -> int:
