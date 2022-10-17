@@ -1,15 +1,14 @@
 #!/bin/bash
 
-#for dir in "$1"/*; do
-#  if [[ -e "$dir"/TEST-results.txt ]]; then
-#    python -m src.cleanup_states -f -g 10000 -D "$dir"
-#  fi
-#done
-
 function clean_dirs() {
-  for subdir in "$1"/*; do
+  for subdir in "$1"/*/; do
+    if [ "${subdir: -2}" = "*/" ]; then
+      break
+    elif [ "${subdir: -1}" = "/" ]; then
+      subdir="${subdir::-1}"
+    fi
     if [[ -e "$subdir"/TEST-results.txt ]]; then
-      python -m src.cleanup_states -f -g 10000 -D "$subdir"
+      python -m src.cleanup_states -fs -g 10000 -D "$subdir"
     else
       clean_dirs "$subdir"
     fi

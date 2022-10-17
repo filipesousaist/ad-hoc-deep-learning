@@ -1,7 +1,7 @@
 import argparse
 import os
 import shutil
-import sys
+from typing import Dict, List, Union
 
 from src.lib.io import printTable
 from src.lib.paths import DEFAULT_DIRECTORY, getPath
@@ -16,31 +16,36 @@ def main():
     parser.add_argument("-D", "--directory", type=str)
     parser.add_argument("-l", "--list-only", action="store_true")
     parser.add_argument("-f", "--force", action="store_true")
+    parser.add_argument("-s", "--silent", action="store_true")
     parser.add_argument("-g", "--gap-between-states", type=int)
     args = parser.parse_args()
 
     directory = args.directory or DEFAULT_DIRECTORY
     if not os.path.exists(directory):
-        sys.exit("[ERROR]: Path \"" + directory + "\" not found.")
+        exit("[ERROR] cleanup_states.py: Path \"" + directory + "\" not found.")
 
     paths = {
         "agent_state": getPath(directory, "agent-state"),
         "test_output": getPath(directory, "test-output")
     }
+    for path in paths.values():
+        if not os.path.exists(path):
+            exit("[ERROR] cleanup_states.py: Path \"" + path + "\" not found.")
 
     gap_between_states_to_keep = args.gap_between_states or GAP_BETWEEN_STATES_TO_KEEP
 
-    agent_states = listAgentStates(paths)
-    agent_states_to_delete = determineAgentStatesToDelete(agent_states, gap_between_states_to_keep)
+    agent_states = listAgentStates(paths, args.silent)
+    agent_states_to_delete = determineAgentStatesToDelete(agent_states, gap_between_states_to_keep, args.silent)
 
     if not args.list_only:
         deleteAgentStates(paths, agent_states_to_delete, args.force)
 
 
-def listAgentStates(paths):
+def listAgentStates(paths: Dict[str, str], silent: bool) -> List[Dict[str, Union[int, float]]]:
     states = [int(path.lstrip("after").rstrip("episodes"))
               for path in os.listdir(paths["agent_state"]) if path != "latest"]
-    print(states)
+    if not silent:
+        print(states)
     score_rate_per_state = {}
 
     with open(paths["test_output"], "r") as file:
@@ -58,11 +63,12 @@ def listAgentStates(paths):
         key=lambda dict: dict["num_episodes"])
 
 
-def determineAgentStatesToDelete(states, gap_between_states_to_keep):
+def determineAgentStatesToDelete(states: List[Dict[str, Union[int, float, str]]],
+                                 gap_between_states_to_keep: int, silent: bool):
     num_states = len(states)
 
     if num_states <= max(NUM_BEST_STATES_TO_KEEP, NUM_LAST_STATES_TO_KEEP):
-        return
+        return []
 
     min_num_episodes = states[-NUM_LAST_STATES_TO_KEEP]["num_episodes"]
     min_score_rate = sorted(states, key=lambda dict: dict["score_rate"])[-NUM_BEST_STATES_TO_KEEP]["score_rate"]
@@ -88,13 +94,15 @@ def determineAgentStatesToDelete(states, gap_between_states_to_keep):
         else:
             states_to_delete.append(state)
 
-    print("*** Agent states to keep ***")
-    printTable(states_to_keep, ["num_episodes", "score_rate", "reason"])
+    if not silent:
+        print("*** Agent states to keep ***")
+        printTable(states_to_keep, ["num_episodes", "score_rate", "reason"])
 
     return states_to_delete
 
 
-def deleteAgentStates(paths, states, force: bool):
+def deleteAgentStates(paths: Dict[str, str], states: List[Dict[str, Union[int, float, str]]],
+                      force: bool):
     # Keep last 5 states, all multiples of 5000 and the 5 best overall. 
     # In case of tie, keep all the tied states, unless they have a score rate of 0.
     # In that case, keep none of them.

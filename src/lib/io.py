@@ -97,7 +97,6 @@ def readScoreRate(directory: str, recursive=False) -> Tuple[np.ndarray, List[np.
         file = open(path, "r")
         lines = [line.rstrip("\n%").split(" ") for line in file.readlines() if len(line) > 0 and line[0] == "%"]
 
-        print("Return", path)
         return (
             np.array([int(line[3]) for line in lines]),
             [np.array([float(line[-1]) for line in lines])]
@@ -105,31 +104,42 @@ def readScoreRate(directory: str, recursive=False) -> Tuple[np.ndarray, List[np.
     if not recursive:
         exit("[ERROR] io.py/readScoreRate: Path '" + path + "' not found.")
 
-    return _readScoreRateMultipleFiles(directory)
+    episodes, score_rates = _readScoreRateMultipleFiles(directory)
+    if len(episodes) == 0:
+        exit("[ERROR] io.py/readScoreRate: Directory '" + directory + "' has no score-rate files.")
+    return episodes, score_rates
 
 
 def _readScoreRateMultipleFiles(directory: str) -> Tuple[np.ndarray, List[np.ndarray]]:
+    if os.path.exists(getPath(directory, "test-output")):
+        print(f"Using score-rate file from {directory}")
+        return readScoreRate(directory, False)
+
     sub_dirs = getSubDirectories(directory)
 
-    x_list = []
+    episodes = []
     score_rates = []
     for sub_dir in sub_dirs:
-        x, y_list = readScoreRate(sub_dir, True)
-        x_list.append(x)
-        score_rates += y_list
+        x, y_list = _readScoreRateMultipleFiles(sub_dir)
+        if len(x) > 0:
+            episodes.append(x)
+            score_rates += y_list
 
-    min_len = min([len(array) for array in (x_list + score_rates)])
+    if len(episodes) == 0:
+        return np.array([]), []
 
-    x_list[0] = x_list[0][:min_len]
-    for i in range(1, len(x_list)):
-        if not np.array_equal(x_list[i][:min_len], x_list[0]):
+    min_len = min([len(array) for array in episodes])
+
+    episodes[0] = episodes[0][:min_len]
+    for i in range(1, len(episodes)):
+        if not np.array_equal(episodes[i][:min_len], episodes[0]):
             exit("[ERROR] io.py/readScoreRate: X values must be compatible for averaging results. "
                  f"Incompatible files: {getPath(sub_dirs[0], 'test-output')} and {getPath(sub_dirs[i], 'test-output')}")
 
     for i in range(len(score_rates)):
         score_rates[i] = score_rates[i][:min_len]
 
-    return x_list[0], score_rates
+    return episodes[0], score_rates
 
 
 def getSubDirectories(directory: str) -> List[str]:
