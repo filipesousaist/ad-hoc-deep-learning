@@ -91,7 +91,7 @@ def readTxt(path: str) -> dict:
         return key_value_dict
 
 
-def readScoreRate(directory: str, recursive=False) -> Tuple[np.ndarray, List[np.ndarray]]:
+def readScoreRate(directory: str, recursive=False, ignore_errors=False) -> Tuple[np.ndarray, List[np.ndarray]]:
     path = getPath(directory, "test-output")
     if os.path.exists(path):
         file = open(path, "r")
@@ -102,12 +102,20 @@ def readScoreRate(directory: str, recursive=False) -> Tuple[np.ndarray, List[np.
             [np.array([float(line[-1]) for line in lines])]
         )
     if not recursive:
-        exit("[ERROR] io.py/readScoreRate: Path '" + path + "' not found.")
+        _printErrorOrExit("io.py/readScoreRate: Path '" + path + "' not found.", not ignore_errors)
+
 
     episodes, score_rates = _readScoreRateMultipleFiles(directory)
     if len(episodes) == 0:
-        exit("[ERROR] io.py/readScoreRate: Directory '" + directory + "' has no score-rate files.")
+        _printErrorOrExit("io.py/readScoreRate: Directory '" + directory + "' has no score-rate files.",
+                          not ignore_errors)
     return episodes, score_rates
+
+
+def _printErrorOrExit(message: str, exit_on_error: bool) -> None:
+    if exit_on_error:
+        exit("[ERROR] " + message)
+    print("[INFO] " + message)
 
 
 def _readScoreRateMultipleFiles(directory: str) -> Tuple[np.ndarray, List[np.ndarray]]:

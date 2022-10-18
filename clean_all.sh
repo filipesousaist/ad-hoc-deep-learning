@@ -1,7 +1,11 @@
 #!/bin/bash
 
 function clean_dirs() {
-  for subdir in "$1"/*/; do
+  dir="$1"
+  if [ "${dir: -1}" = "/" ]; then
+    dir="${dir::-1}"
+  fi
+  for subdir in "$dir"/*/; do
     if [ "${subdir: -2}" = "*/" ]; then
       break
     elif [ "${subdir: -1}" = "/" ]; then
