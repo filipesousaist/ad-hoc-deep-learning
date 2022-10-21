@@ -12,7 +12,7 @@ function clean_dirs() {
       subdir="${subdir::-1}"
     fi
     if [[ -e "$subdir"/TEST-results.txt ]]; then
-      python -m src.cleanup_states -fs -g 10000 -D "$subdir"
+      python -m src.cleanup_states -fs -g 20000 -D "$subdir"
     else
       clean_dirs "$subdir"
     fi
