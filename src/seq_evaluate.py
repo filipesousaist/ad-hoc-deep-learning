@@ -3,18 +3,16 @@ import argparse
 from argparse import Namespace
 import sys
 from typing import Type, cast, List, Optional
-from multiprocessing import Process, Pool, JoinableQueue, Manager, Queue
 
 from src.lib.evaluation.processes import killProcesses, startProcesses
 from src.lib.evaluation.storage import createOutputFiles
 from src.lib.evaluation.execution import playEpisodes
 from src.lib.evaluation.episodes import getEpisodeAndTrainEpisode
 from src.hfo_agents.learning.LearningAgentForHFO import LearningAgentForHFO
-from src.lib.input import readInputData
 from src.hfo_agents import is_custom, get_team
-from src.hfo_agents.AgentForHFO import AgentForHFO
 from src.hfo_agents.agentForHFOFactory import getAgentForHFOFactory
-from src.lib.io import logOutput, readJSON, flushOutput
+from src.lib.input import readInputData
+from src.lib.io import logOutput, flushOutput, getLoadoutLabels
 from src.lib.paths import getPath, getAgentStatePath, DEFAULT_DIRECTORY, DEFAULT_PORT
 from src.lib.threads import WaitForQuitThread
 
@@ -32,9 +30,7 @@ def main() -> None:
     print("[INFO] Starting 'seq_evaluate.py'... ('Q' + 'Return' to quit)")
 
     input_path = getPath(directory, "input")
-    input_dict = readJSON(input_path)
-    loadout_labels = [int(label) for label in input_dict]
-    loadout_labels.sort()
+    loadout_labels = getLoadoutLabels(input_path)
     num_loadouts = len(loadout_labels)
 
     loadouts = []
@@ -46,7 +42,7 @@ def main() -> None:
     if not is_custom(agent_type):
         exit("[ERROR] Agent must be custom.")
 
-    agent_factory: Type[AgentForHFO] = getAgentForHFOFactory(agent_type)
+    agent_factory = getAgentForHFOFactory(agent_type)
     if not agent_factory.is_learning_agent():
         exit("[ERROR] Agent must be a learning agent.")
 

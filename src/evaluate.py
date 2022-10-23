@@ -124,11 +124,11 @@ def evaluateAgent(agent: LearningAgentForHFO, directory: str, args: Namespace, i
         directory, args.load or args.load_best, args.test_from_episode, num_episodes)
 
     if args.load or args.test_from_episode == -1:
-        loadAgent(agent, directory, -1, num_episodes)
+        loadAgent(agent, directory, -1, num_episodes["train"])
     elif args.load_best:
-        loadAgent(agent, directory, getBestTrainEpisode(directory), num_episodes)
+        loadAgent(agent, directory, getBestTrainEpisode(directory), num_episodes["train"])
     elif args.test_from_episode:
-        loadAgent(agent, directory, train_episode, num_episodes)
+        loadAgent(agent, directory, train_episode, num_episodes["train"])
     else:
         createOutputFiles(directory, agent)
 

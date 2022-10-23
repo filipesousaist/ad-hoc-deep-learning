@@ -26,9 +26,8 @@ def createOutputFiles(directory: str, agent: LearningAgentForHFO) -> None:
     writeTxt(getPath(directory, "save"), save_data)
 
 
-def loadAgent(agent: LearningAgentForHFO, directory: str, train_episode: int,
-              num_episodes: "dict[str, int]") -> None:
-    agent_state_path = getAgentStatePath(directory, train_episode, num_episodes["train"])
+def loadAgent(agent: LearningAgentForHFO, directory: str, train_episode: int, num_train_episodes: int) -> None:
+    agent_state_path = getAgentStatePath(directory, train_episode, num_train_episodes)
 
     if os.path.exists(agent_state_path):
         print("[INFO] Loading agent from file:", agent_state_path)
@@ -37,8 +36,7 @@ def loadAgent(agent: LearningAgentForHFO, directory: str, train_episode: int,
         print("[INFO] Path '" + agent_state_path + "' not found. Agent not loaded.")
 
 
-def saveAgent(agent: LearningAgentForHFO, directory: str, train_episode: int = -1,
-              num_train_episodes: int = 1) -> None:
+def saveAgent(agent: LearningAgentForHFO, directory: str, train_episode: int = -1, num_train_episodes: int = 1) -> None:
     agent_state_path = getPath(directory, "agent-state")
     if not os.path.exists(agent_state_path):
         os.mkdir(agent_state_path)

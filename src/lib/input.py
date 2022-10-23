@@ -21,6 +21,9 @@ _REQUIRED_ARGS = {
     ],
     "agent_type": [
         "agent_type"
+    ],
+    "generate_nn_model": [
+        "agent_type", "num_train_episodes"
     ]
 }
 
@@ -32,7 +35,8 @@ _OPTIONAL_ARGS = {
     "learning_agent": [
         "ignore_auto_move_chance", "see_move_period", "feature_extractors", "filter_policy"
     ],
-    "agent_type": []
+    "agent_type": [],
+    "generate_nn_model": []
 }
 
 _REQUIRED_ARGS["imitating_agent"] = _REQUIRED_ARGS["learning_agent"] + \

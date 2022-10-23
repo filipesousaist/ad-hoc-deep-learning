@@ -1,11 +1,15 @@
 from abc import abstractmethod
 from typing import List
 
+import numpy as np
+from yaaf import Timestep
 from yaaf.agents.Agent import Agent
 from yaaf.agents.dqn.DQNAgent import DQNAgent
 
+from src.lib.models.NearestObservationModel import NearestObservationModel
 from src.lib.agents import saveReplayBuffer, loadReplayBuffer
 from src.hfo_agents.learning.LearningAgentForHFO import LearningAgentForHFO
+from src.lib.paths import getAgentStatePath
 
 
 def _retrieveLoadedParameters(parameters: dict) -> dict:
@@ -92,4 +96,25 @@ class DQNAgentForHFO(LearningAgentForHFO):
 
     def load(self, directory: str) -> None:
         super().load(directory)
-        self._agent._replay_buffer = loadReplayBuffer(directory) or self._dqn_agent._replay_buffer
+        self._dqn_agent._replay_buffer = loadReplayBuffer(directory) or self._dqn_agent._replay_buffer
+
+    def createNNModel(self, train_episode: int) -> None:
+        timesteps = self._getAllTimesteps()
+
+        observations = np.array([timestep.observation for timestep in timesteps])
+        next_observations = np.array([timestep.next_observation for timestep in timesteps])
+
+        model = NearestObservationModel()
+        print(f"[INFO] {self.__class__.__name__}: Fitting NNModel to observations...")
+        model.fit(observations, np.arange(len(next_observations)))
+        print(f"[INFO] {self.__class__.__name__}: Done!")
+
+        path = getAgentStatePath(self._directory, train_episode)
+        print(f"[INFO] {self.__class__.__name__}: Saving NNModel to directory {path}...")
+        model.save(path)
+        print(f"[INFO] {self.__class__.__name__}: Done!")
+
+
+    @abstractmethod
+    def _getAllTimesteps(self) -> List[Timestep]:
+        pass

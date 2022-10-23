@@ -112,6 +112,13 @@ def readScoreRate(directory: str, recursive=False, ignore_errors=False) -> Tuple
     return episodes, score_rates
 
 
+def getLoadoutLabels(input_path: str) -> List[int]:
+    input_dict = readJSON(input_path)
+    loadout_labels = [int(label) for label in input_dict]
+    loadout_labels.sort()
+    return loadout_labels
+
+
 def _printErrorOrExit(message: str, exit_on_error: bool) -> None:
     if exit_on_error:
         exit("[ERROR] " + message)

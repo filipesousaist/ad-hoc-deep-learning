@@ -26,7 +26,6 @@ from src.lib.actions.parsing import parseActions, parseCustomActions
 from src.lib.reward import parseRewardFunction
 
 
-
 class LearningAgentForHFO(AgentForHFO):
     def __init__(self, directory: str, port: int = -1, team: str = "", input_loadout: int = 0, setup_hfo: bool = True,
                  multiprocessing: bool = False, load_parameters: bool = False):
@@ -145,10 +144,10 @@ class LearningAgentForHFO(AgentForHFO):
         parameters_to_change = [parameter for parameter in parameters if parameter in self._changeableParameters()]
         unchanged_parameters = [parameter for parameter in parameters if parameter not in self._changeableParameters()]
 
-        print(f"[INFO] 'LearningAgentForHFO.py' loaded the following parameters from loadout {self._input_loadout}:")
+        print(f"[INFO] {self.__class__.__name__} loaded the following parameters from loadout {self._input_loadout}:")
         print([f"{parameter}: {parameters[parameter]}" for parameter in parameters_to_change])
 
-        print("[INFO] 'LearningAgentForHFO.py' will not apply the following parameters from loadout "
+        print(f"[INFO] {self.__class__.__name__} will not apply the following parameters from loadout "
               f"{self._input_loadout}:")
         print(unchanged_parameters)
 
@@ -305,3 +304,6 @@ class LearningAgentForHFO(AgentForHFO):
 
     def load(self, directory: str) -> None:
         self._agent.load(directory)
+
+    def createNNModel(self, train_episode: int) -> None:
+        exit(f"[ERROR]: {self.__class__.__name__} has no NNModel generator.")

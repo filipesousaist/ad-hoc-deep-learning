@@ -1,5 +1,6 @@
 from typing import List
 
+from yaaf import Timestep
 from yaaf.agents.dqn.DQNAgent import DQNAgent
 
 from src.lib.agents import CustomMLPDQNAgent
@@ -26,3 +27,8 @@ class MLPDQNAgentForHFO(DQNAgentForHFO):
             self._mlpdqn_agent._final_episode = parameters["final_episode"]
         if "exploration_rate_by_episode" in parameters_to_change:
             self._mlpdqn_agent._exploration_rate_by_episode = parameters["exploration_rate_by_episode"]
+
+
+    def _getAllTimesteps(self) -> List[Timestep]:
+        return self._mlpdqn_agent._replay_buffer.all
+
