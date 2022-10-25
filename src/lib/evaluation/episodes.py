@@ -20,9 +20,11 @@ def _loadEpisodeAndTrainEpisode(directory: str) -> tuple:
     return int(save_data["next_episode"]), int(save_data["next_train_episode"])
 
 
-def getBestTrainEpisode(directory: str) -> int:
+def getBestTrainEpisode(directory: str, last: int = -1) -> int:
     episodes, score_rates = readScoreRate(directory)
-    return episodes[np.argmax(score_rates[0])]
+    if last < 0:
+        return episodes[np.argmax(score_rates[0])]
+    return episodes[-last:][np.argmax(score_rates[0][-last:])]
 
 
 def reachedMaxTrainEpisode(episode: int, num_episodes: dict) -> int:

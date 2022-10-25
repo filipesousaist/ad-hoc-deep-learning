@@ -24,6 +24,13 @@ _REQUIRED_ARGS = {
     ],
     "generate_nn_model": [
         "agent_type", "num_train_episodes"
+    ],
+    "plastic_agent": [
+        "agent_parameters", "actions", "reward_function", "known_teams"
+    ],
+    "evaluate_plastic": [
+        "agent_type", "fullstate", "num_teammates", "num_opponents", "known_teams", "possible_teams", "opponents_type",
+        "frames_per_trial", "untouched_time", "num_episodes_per_trial", "num_trials", "eta"
     ]
 }
 
@@ -35,8 +42,12 @@ _OPTIONAL_ARGS = {
     "learning_agent": [
         "ignore_auto_move_chance", "see_move_period", "feature_extractors", "filter_policy"
     ],
+    "plastic_agent": [
+        "feature_extractors", "filter_policy"
+    ],
     "agent_type": [],
-    "generate_nn_model": []
+    "generate_nn_model": [],
+    "evaluate_plastic": []
 }
 
 _REQUIRED_ARGS["imitating_agent"] = _REQUIRED_ARGS["learning_agent"] + \

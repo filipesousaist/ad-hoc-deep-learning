@@ -9,7 +9,7 @@ from yaaf.agents.dqn.DQNAgent import DQNAgent
 from src.lib.models.NearestObservationModel import NearestObservationModel
 from src.lib.agents import saveReplayBuffer, loadReplayBuffer
 from src.hfo_agents.learning.LearningAgentForHFO import LearningAgentForHFO
-from src.lib.paths import getAgentStatePath
+from src.lib.paths import getPath
 
 
 def _retrieveLoadedParameters(parameters: dict) -> dict:
@@ -98,7 +98,7 @@ class DQNAgentForHFO(LearningAgentForHFO):
         super().load(directory)
         self._dqn_agent._replay_buffer = loadReplayBuffer(directory) or self._dqn_agent._replay_buffer
 
-    def createNNModel(self, train_episode: int) -> None:
+    def createNNModel(self) -> None:
         timesteps = self._getAllTimesteps()
 
         observations = np.array([timestep.observation for timestep in timesteps])
@@ -106,11 +106,11 @@ class DQNAgentForHFO(LearningAgentForHFO):
 
         model = NearestObservationModel()
         print(f"[INFO] {self.__class__.__name__}: Fitting NNModel to observations...")
-        model.fit(observations, np.arange(len(next_observations)))
+        model.fit(observations, next_observations)
         print(f"[INFO] {self.__class__.__name__}: Done!")
 
-        path = getAgentStatePath(self._directory, train_episode)
-        print(f"[INFO] {self.__class__.__name__}: Saving NNModel to directory {path}...")
+        path = getPath(self._directory, "knowledge")
+        print(f"[INFO] {self.__class__.__name__}: Saving NNModel to directory '{path}'...")
         model.save(path)
         print(f"[INFO] {self.__class__.__name__}: Done!")
 

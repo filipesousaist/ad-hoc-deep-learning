@@ -76,6 +76,11 @@ def readJSON(path: str) -> dict:
         return json.load(file)
 
 
+def writeJSON(path: str, obj: dict) -> None:
+    with open(path, "w") as file:
+        json.dump(obj, file, indent=4)
+
+
 def readTxt(path: str) -> dict:
     with open(path, "r") as file:
         lines = file.readlines()

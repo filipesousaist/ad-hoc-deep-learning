@@ -14,7 +14,11 @@ from src.lib.input import readInputData
 TEAM_PREFIXES = {
     "base": "base",
     "helios": "HELIOS",
-    "aut": "AUT"
+    "aut": "AUT",
+    "axiom": "AXIOM",
+    "cyrus": "CYRUS",
+    "gliders": "GLIDERS",
+    "yushan": "YUSHAN"
 }
 
 

@@ -8,10 +8,9 @@ import numpy as np
 
 import argparse
 
-from src.lib.io import readScoreRate, getSubDirectories
+from src.lib.io import readScoreRate, getSubDirectories, readJSON
 from src.lib.paths import getPath, DEFAULT_DIRECTORY
 
-DEFAULT_GRANULARITY: int = 500
 DEFAULT_GRAPH_WIDTH: int = 4
 DEFAULT_LEGEND_WIDTH: int = 3
 
@@ -37,10 +36,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-S", "--super-directories", type=str, nargs="+")
     parser.add_argument("-D", "--directories", type=str, nargs="+")
-    parser.add_argument("-O", "--offsets", type=int, nargs="+")
-    parser.add_argument("-i", "--ignore-errors", action="store_true")
     parser.add_argument("-c", "--confidence-intervals", action="store_true")
-    parser.add_argument("-g", "--granularity", type=int)
     parser.add_argument("-l", "--left-width", type=int,
                         help=f"Width of the graph on the left size of the image. Default: {DEFAULT_GRAPH_WIDTH}")
     parser.add_argument("-r", "--right-width", type=int,
@@ -57,69 +53,49 @@ def main():
         exit(f"[ERROR]: Number of directories ({num_directories}) is outside the valid range "
              f"(between 1 and {len(LINE_COLORS)}).")
 
-    offsets = args.offsets or [0] * num_directories
-    num_offsets = len(offsets)
-    if num_offsets != num_directories:
-        exit(f"[ERROR]: Number of offsets ({num_offsets}) is different from number of directories ({num_directories}).")
-
-    granularity = args.granularity or DEFAULT_GRANULARITY
     l_w = args.left_width or DEFAULT_GRAPH_WIDTH
     r_w = args.right_width or DEFAULT_LEGEND_WIDTH
 
-    n_list = []
-
-    x_list = []
-    y_list = []
-    y_std_list = []
-
-    x_min_list = []
-    y_mean_list = []
-    y_mean_std_list = []
-
-    num_train_episodes = None
+    episodes = []
+    score_rates = []
+    stds = []
+    numbers_of_trials = []
 
     will_plot = [True] * num_directories
 
     for d in range(num_directories):
-        x, ys = readScoreRate(directories[d], True, args.ignore_errors)
+        results_path = getPath(directories[d], "plastic-results")
+        if not os.path.exists(results_path):
+            print(f"Skipping '{directories[d]}': No data.")
+            continue
 
-        num_plots = len(ys)
-        n_list.append(num_plots)
-        if len(x) == 0 or num_plots == 0:
+        results = readJSON(results_path)
+        num_trials = len(results)
+        numbers_of_trials.append(num_trials)
+        if num_trials == 0:
             will_plot[d] = False
-            for l in (x_list, y_list, y_std_list, x_min_list, y_mean_list, y_mean_std_list):
+            for l in (episodes, score_rates, stds):
                 l.append(np.array([]))
             print(f"Skipping '{directories[d]}': No data.")
             continue
 
-        x += offsets[d]
+        num_episodes_per_trial = len(list(results.values())[0]["goals"]) - 1
+        episodes.append(np.arange(1, num_episodes_per_trial + 1))
 
-        x_list.append(x)
+        score_rates.append(np.zeros((num_episodes_per_trial,)))
 
-        Y = np.array(ys)
+        for trial in results.values():
+            score_rates[d] += np.array(trial["goals"][1:])
 
-        y = np.nanmean(Y, axis=0).reshape((-1,))
-        y_list.append(y)
-        y_std_list.append(np.nanstd(Y, axis=0).reshape((-1,)))
+        stds.append(np.array([
+            np.std(np.array([1] * int(score_rates[d][i]) + [0] * (num_trials - int(score_rates[d][i]))))
+            for i in range(num_episodes_per_trial)
+        ]))
 
-        if x.shape[0] < 2:
-            exit("[ERROR]: Need at least 2 points to plot")
-        num_train_episodes = x[1] - x[0]
-
-        actual_granularity = (granularity // num_train_episodes) or 1
-        granularity = actual_granularity * num_train_episodes
-
-        x_2d = reshape(x, actual_granularity)
-        y_2d = reshape(y, actual_granularity)
-
-        x_min_list.append(np.min(x_2d, axis=1))
-        y_mean_list.append(np.nanmean(y_2d, axis=1))
-        y_mean_std_list.append(np.nanstd(y_2d, axis=1))
+        score_rates[d] /= num_trials
 
     fig, ax_dict = plt.subplot_mosaic(
-        [["top"] * l_w + ["BLANK"] * r_w] * 4 +
-        ([["BLANK"] * (l_w + r_w)] + [["bottom"] * l_w + ["BLANK"] * r_w] * 4
-         if granularity > num_train_episodes else []),
+        [["top"] * l_w + ["BLANK"] * r_w] * 4,
         empty_sentinel="BLANK")
 
     fig.canvas.manager.set_window_title('Agent score rate')
@@ -133,25 +109,13 @@ def main():
                 label_file = open(label_path, "r")
                 label = label_file.readline()
 
-            plot(ax_dict["top"], x_list[d], y_list[d], y_std_list[d], n_list[d],
+            plot(ax_dict["top"], episodes[d], score_rates[d], stds[d], numbers_of_trials[d],
                  LINE_COLORS[d], AREA_COLORS[d], args.confidence_intervals, label or directories[d])
 
     ax_dict["top"].legend(bbox_to_anchor=(1.05, 1), loc="upper left")
-    ax_dict["top"].set_xlabel(f"Training Episodes (Granularity = {num_train_episodes})")
-
-    if granularity > num_train_episodes:
-        for d in range(num_directories):
-            if will_plot[d]:
-                plot(ax_dict["bottom"], x_min_list[d], y_mean_list[d], y_mean_std_list[d], n_list[d],
-                     LINE_COLORS[d], AREA_COLORS[d], args.confidence_intervals)
-
-        ax_dict["bottom"].set_xlabel(f"Training Episodes (Granularity = {granularity})")
+    ax_dict["top"].set_xlabel(f"Episode")
 
     plt.show()
-
-
-def reshape(array: np.ndarray, granularity: int) -> np.ndarray:
-    return array[: array.shape[0] // granularity * granularity].reshape((-1, granularity))
 
 
 def plot(ax: plt.Axes, x: np.ndarray, y: np.ndarray, y_std: np.ndarray, n: int,

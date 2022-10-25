@@ -24,7 +24,7 @@ y = np.arange(len(X))
 
 model.fit(X, y)
 
-#print(model.predict(np.array([[20.5, 21.5]])))
+print(model.predict(np.array([[20.5, 21.5]])))
 
-print(model.index.search(np.array([[-100, 100]]).astype(np.float32), 5))
+#print(model.index.search(np.array([[-100, 100]]).astype(np.float32), 5))
 print(time.time() - t, "s")

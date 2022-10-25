@@ -12,6 +12,7 @@ from yaaf.agents.Agent import Agent
 from yaaf.policies import action_from_policy
 
 from src.hfo_agents.AgentForHFO import AgentForHFO
+from src.lib.actions import getValidAction
 from src.lib.io import readTxt
 from src.lib.paths import getPath
 from src.lib.features.extractors import getFeatureExtractor
@@ -173,17 +174,11 @@ class LearningAgentForHFO(AgentForHFO):
         action = self._actions[self._a]
         return action if self._tryToUse(action, renew=True) else NoOp()
 
+
     def _getValidAction(self, features: np.ndarray) -> int:
         policy = self._agent.policy(features)
-        valid_action_indices = [a for a in range(self._num_actions) if self._actions[a].is_valid(self._observation)]
-        filtered_policy = np.array([policy[a] if a in valid_action_indices else 0
-                                    for a in range(self._num_actions)])
-        p_sum = np.sum(filtered_policy)
-        normalized_policy = filtered_policy / p_sum if p_sum > 0 \
-            else np.array([1 / len(valid_action_indices) if a in valid_action_indices else 0
-                           for a in range(self._num_actions)])
+        return getValidAction(policy, self._actions, self._observation, self.is_learning)
 
-        return action_from_policy(normalized_policy, not self.is_learning)
 
     def _tryToUse(self, action: Action, renew: bool) -> bool:
         if action.is_valid(self._observation):
@@ -305,5 +300,5 @@ class LearningAgentForHFO(AgentForHFO):
     def load(self, directory: str) -> None:
         self._agent.load(directory)
 
-    def createNNModel(self, train_episode: int) -> None:
+    def createNNModel(self) -> None:
         exit(f"[ERROR]: {self.__class__.__name__} has no NNModel generator.")

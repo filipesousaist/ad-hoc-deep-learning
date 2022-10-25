@@ -10,14 +10,14 @@ from src.lib.threads import WaitForQuitThread, TeammateThread, OpponentThread
 
 
 def startProcesses(directory: str, port: int, args: argparse.Namespace, input_loadout: int, input_data: dict,
-                   wait_for_quit_thread: WaitForQuitThread) -> Popen:
-    hfo_process = launchHFO(input_data, port, args.gnome_terminal, args.visualizer)
+                   wait_for_quit_thread: WaitForQuitThread, teammates_type: str = None) -> Popen:
+    hfo_process = launchHFO(input_data, port, args.gnome_terminal, args.visualizer, teammates_type)
     time.sleep(2)
     launchOtherAgents(directory, port, input_loadout, input_data, wait_for_quit_thread)
     return hfo_process
 
 
-def launchHFO(input_data: dict, port: int, gnome_terminal: bool, visualizer: bool) -> Popen:
+def launchHFO(input_data: dict, port: int, gnome_terminal: bool, visualizer: bool, teammates_type: str = None) -> Popen:
     gnome_terminal_command = "xterm -e " if gnome_terminal else ""
 
     background_process = "" if gnome_terminal else " &"
@@ -25,7 +25,8 @@ def launchHFO(input_data: dict, port: int, gnome_terminal: bool, visualizer: boo
     agent_type = input_data["agent_type"]
     agent_is_binary = not is_custom(agent_type)
 
-    teammates_type = input_data["teammates_type"]
+    if not teammates_type:
+        teammates_type = input_data["teammates_type"]
     teammates_are_binary = not is_custom(teammates_type)
 
     opponents_type = input_data["opponents_type"]
@@ -64,7 +65,7 @@ def launchHFO(input_data: dict, port: int, gnome_terminal: bool, visualizer: boo
 
 def launchOtherAgents(directory: str, port: int, input_loadout: int, input_data: dict,
                       wait_for_quit_thread: WaitForQuitThread) -> None:
-    if is_custom(input_data["teammates_type"]):
+    if "teammates_type" in input_data and is_custom(input_data["teammates_type"]):
         agent_type = input_data["agent_type"]
         team_name = "base" if is_custom(agent_type) else get_team_name(agent_type)
         for _ in range(int(input_data["num_teammates"])):
