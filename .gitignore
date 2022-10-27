@@ -2,6 +2,7 @@ log/
 output/
 experiments/
 old_experiments/
+images/
 typescript
 sync_experiments.sh
 .idea/

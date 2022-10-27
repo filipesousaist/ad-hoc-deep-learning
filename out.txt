@@ -1,0 +1,770 @@
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+CYRUS_left 7: [0, 1] lost change_view? at [0, 1] sense=0 internal=1
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+CYRUS_left 11: [0, 7]  see synch.
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+******************************************************************
+ librcsc 4.1.0
+ Copyright 2000 - 2007. Hidehisa Akiyama.
+ Copyright 2007 - 2011. Hidehisa Akiyama and Hiroki Shimora
+ All rights reserved.
+******************************************************************
+*****************************************************************
+ This program is based on agent2d created by Hidehisa Akiyama.
+ Copyright 2006 - 2011. Hidehisa Akiyama and Hiroki Shimora.
+ All rights reserved.
+*****************************************************************
+Feature 1 Violated Feature Bounds: -32.9809 Expected min/max: [-5.25, 57.75]
+Feature 7 Violated Feature Bounds: 93.1443 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 1 Violated Feature Bounds: -32.9809 Expected min/max: [-5.25, 57.75]
+Feature 7 Violated Feature Bounds: 93.1443 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 1 Violated Feature Bounds: -32.9809 Expected min/max: [-5.25, 57.75]
+Feature 7 Violated Feature Bounds: 93.1443 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 63.7543 Expected min/max: [-5.25, 57.75]
+base_right 2: [242, 0] lost kick? at [242, 0] sense=1 internal=2
+Feature 4 Violated Feature Bounds: 58.1025 Expected min/max: [-5.25, 57.75]
+Feature 20 Violated Feature Bounds: 64.7304 Expected min/max: [-5.25, 57.75]
+base_right 1: [1079, 0] lost kick? at [1079, 0] sense=0 internal=1
+base_right 1: [1080, 0] lost kick? at [1080, 0] sense=0 internal=1
+base_right 1: [1892, 0] lost kick? at [1892, 0] sense=0 internal=1
+base_right 1: [1893, 0] lost kick? at [1893, 0] sense=0 internal=1
+base_right 1: [2381, 0] lost move? at [2381, 0] sense=1 internal=2
+base_right 1: [2798, 0] lost kick? at [2798, 0] sense=0 internal=1
+base_right 1: [3343, 0] lost kick? at [3343, 0] sense=0 internal=1
+base_right 1: [3344, 0] lost kick? at [3344, 0] sense=0 internal=1
+base_right 1: [4276, 0] lost kick? at [4276, 0] sense=0 internal=1
+base_right 1: [4277, 0] lost kick? at [4277, 0] sense=0 internal=1
+base_right 1: [4567, 0] lost kick? at [4567, 0] sense=0 internal=1
+base_right 1: [4568, 0] lost kick? at [4568, 0] sense=0 internal=1
+[INFO] Starting 'evaluate.py'... ('Q' + 'Return' to quit)
+[INFO] 'evaluate.py' loaded loadout 1, with the following parameters:
+{'agent_type': 'drqn', 'num_teammates': 1, 'num_opponents': 2, 'teammates_type': 'bin_cyrus', 'opponents_type': 'npc', 'fullstate': False, 'frames_per_trial': 500, 'untouched_time': 100, 'num_test_episodes': 50, 'num_train_episodes': 500}
+[INFO] 'AgentForHFO.py' loaded loadout 1, with the following parameters:
+{'agent_parameters': {'learning_rate': 0.00025, 'initial_exploration_rate': 0.5, 'final_exploration_rate': 0.05, 'replay_buffer_size': 100000, 'discount_factor': 0.995, 'target_network_update_frequency': 500, 'trajectory_update_length': 10, 'num_layers': 1, 'hidden_sizes': 12, 'cuda': False, 'initial_episode': 0, 'final_episode': 40000, 'exploration_rate_by_episode': True}, 'actions': ['SHOOT', 'DRIBBLE', '_PASS_N', ['REPEATED', 'INTERCEPT', 5], ['REPEATED', 'MOVE', 15]], 'filter_policy': True, 'feature_extractors': ['no_unums', 'validity_features', 'invalid_to_zero'], 'reward_function': {'IN_GAME': 0, 'GOAL': 10, 'default': -10}}
+[INFO] Custom agent uniform number: 11
+{}
+Total timesteps: 5
+Test episode 0 (0 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 16
+Test episode 1 (1 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 26
+Test episode 2 (2 of rollout 0) ended with Goal
+{}
+Total timesteps: 29
+Test episode 3 (3 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 42
+Test episode 4 (4 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 49
+Test episode 5 (5 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 59
+Test episode 6 (6 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 70
+Test episode 7 (7 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 77
+Test episode 8 (8 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 89
+Test episode 9 (9 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 94
+Test episode 10 (10 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 101
+Test episode 11 (11 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 115
+Test episode 12 (12 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 120
+Test episode 13 (13 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 128
+Test episode 14 (14 of rollout 0) ended with Goal
+{}
+Total timesteps: 146
+Test episode 15 (15 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 157
+Test episode 16 (16 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 167
+Test episode 17 (17 of rollout 0) ended with Goal
+{}
+Total timesteps: 176
+Test episode 18 (18 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 194
+Test episode 19 (19 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 201
+Test episode 20 (20 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 208
+Test episode 21 (21 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 226
+Test episode 22 (22 of rollout 0) ended with OutOfBounds
+{}
+Total timesteps: 232
+Test episode 23 (23 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 245
+Test episode 24 (24 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 252
+Test episode 25 (25 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 259
+Test episode 26 (26 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 266
+Test episode 27 (27 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 274
+Test episode 28 (28 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 279
+Test episode 29 (29 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 287
+Test episode 30 (30 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 296
+Test episode 31 (31 of rollout 0) ended with Goal
+{}
+Total timesteps: 303
+Test episode 32 (32 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 311
+Test episode 33 (33 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 323
+Test episode 34 (34 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 337
+Test episode 35 (35 of rollout 0) ended with OutOfBounds
+{}
+Total timesteps: 351
+Test episode 36 (36 of rollout 0) ended with Goal
+{}
+Total timesteps: 357
+Test episode 37 (37 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 363
+Test episode 38 (38 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 371
+Test episode 39 (39 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 381
+Test episode 40 (40 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 399
+Test episode 41 (41 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 407
+Test episode 42 (42 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 413
+Test episode 43 (43 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 419
+Test episode 44 (44 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 424
+Test episode 45 (45 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 432
+Test episode 46 (46 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 438
+Test episode 47 (47 of rollout 0) ended with CapturedByDefense
+{}
+Total timesteps: 449
+Test episode 48 (48 of rollout 0) ended with Goal
+{}
+Total timesteps: 468
+Test episode 49 (49 of rollout 0) ended with OutOfBounds
+{'Exploration rate': 0.5, 'Replay Buffer Samples': 1}
+Total timesteps: 476
+Train episode 0 (0 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.5, 'Replay Buffer Samples': 2}
+Total timesteps: 482
+Train episode 1 (1 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.5, 'Replay Buffer Samples': 3}
+Total timesteps: 492
+Train episode 2 (2 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.5, 'Replay Buffer Samples': 4}
+Total timesteps: 498
+Train episode 3 (3 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4999, 'Replay Buffer Samples': 5}
+Total timesteps: 507
+Train episode 4 (4 of rollout 0) ended with Goal
+{'Exploration rate': 0.4999, 'Replay Buffer Samples': 7}
+Total timesteps: 520
+Train episode 5 (5 of rollout 0) ended with Goal
+{'Exploration rate': 0.4999, 'Replay Buffer Samples': 9}
+Total timesteps: 537
+Train episode 6 (6 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4999, 'Replay Buffer Samples': 10}
+Total timesteps: 545
+Train episode 7 (7 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4999, 'Replay Buffer Samples': 12}
+Total timesteps: 556
+Train episode 8 (8 of rollout 0) ended with Goal
+{'Exploration rate': 0.4999, 'Replay Buffer Samples': 14}
+Total timesteps: 575
+Train episode 9 (9 of rollout 0) ended with Goal
+{'Exploration rate': 0.4999, 'Replay Buffer Samples': 16}
+Total timesteps: 595
+Train episode 10 (10 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4999, 'Replay Buffer Samples': 18}
+Total timesteps: 607
+Train episode 11 (11 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4999, 'Replay Buffer Samples': 20}
+Total timesteps: 619
+Train episode 12 (12 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4998, 'Replay Buffer Samples': 21}
+Total timesteps: 628
+Train episode 13 (13 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4998, 'Replay Buffer Samples': 22}
+Total timesteps: 634
+Train episode 14 (14 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4998, 'Replay Buffer Samples': 24}
+Total timesteps: 648
+Train episode 15 (15 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4998, 'Replay Buffer Samples': 25}
+Total timesteps: 658
+Train episode 16 (16 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4998, 'Replay Buffer Samples': 26}
+Total timesteps: 663
+Train episode 17 (17 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4998, 'Replay Buffer Samples': 28}
+Total timesteps: 675
+Train episode 18 (18 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4998, 'Replay Buffer Samples': 29}
+Total timesteps: 683
+Train episode 19 (19 of rollout 0) ended with Goal
+{'Exploration rate': 0.4998, 'Replay Buffer Samples': 31}
+Total timesteps: 698
+Feature 4 Violated Feature Bounds: 57.8591 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 58.7795 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 57.7501 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 58.6269 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 59.451 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 59.451 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 59.451 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 59.451 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 59.451 Expected min/max: [-5.25, 57.75]
+Feature 4 Violated Feature Bounds: 59.451 Expected min/max: [-5.25, 57.75]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 10 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+Feature 12 Violated Feature Bounds: 3.40282e+38 Expected min/max: [0, 85.9084]
+CYRUS_left 11: waited 5 seconds. server down??
+Train episode 20 (20 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4998, 'Replay Buffer Samples': 33}
+Total timesteps: 715
+Train episode 21 (21 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4997, 'Replay Buffer Samples': 34}
+Total timesteps: 722
+Train episode 22 (22 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4997, 'Replay Buffer Samples': 38}
+Total timesteps: 754
+Train episode 23 (23 of rollout 0) ended with Goal
+{'Exploration rate': 0.4997, 'Replay Buffer Samples': 39}
+Total timesteps: 761
+Train episode 24 (24 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4997, 'Replay Buffer Samples': 40, 'Loss': 1.4422943592071533, 'Accuracy': 0}
+Total timesteps: 768
+Train episode 25 (25 of rollout 0) ended with Goal
+{'Exploration rate': 0.4997, 'Replay Buffer Samples': 41}
+Total timesteps: 778
+Train episode 26 (26 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4997, 'Replay Buffer Samples': 42}
+Total timesteps: 784
+Train episode 27 (27 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4997, 'Replay Buffer Samples': 43}
+Total timesteps: 791
+Train episode 28 (28 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4997, 'Replay Buffer Samples': 44, 'Loss': 1.4407495260238647, 'Accuracy': 0}
+Total timesteps: 797
+Train episode 29 (29 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4997, 'Replay Buffer Samples': 46}
+Total timesteps: 817
+Train episode 30 (30 of rollout 0) ended with Goal
+{'Exploration rate': 0.4996, 'Replay Buffer Samples': 47}
+Total timesteps: 826
+Train episode 31 (31 of rollout 0) ended with Goal
+{'Exploration rate': 0.4996, 'Replay Buffer Samples': 49}
+Total timesteps: 844
+Train episode 32 (32 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4996, 'Replay Buffer Samples': 50}
+Total timesteps: 853
+Train episode 33 (33 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4996, 'Replay Buffer Samples': 52, 'Loss': 1.303053855895996, 'Accuracy': 0}
+Total timesteps: 864
+Train episode 34 (34 of rollout 0) ended with Goal
+{'Exploration rate': 0.4996, 'Replay Buffer Samples': 54}
+Total timesteps: 877
+Train episode 35 (35 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4996, 'Replay Buffer Samples': 55}
+Total timesteps: 883
+Train episode 36 (36 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4996, 'Replay Buffer Samples': 56, 'Loss': 1.2997753620147705, 'Accuracy': 0}
+Total timesteps: 889
+Train episode 37 (37 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4996, 'Replay Buffer Samples': 57}
+Total timesteps: 896
+Train episode 38 (38 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4995, 'Replay Buffer Samples': 58}
+Total timesteps: 904
+Train episode 39 (39 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4995, 'Replay Buffer Samples': 60, 'Loss': 1.2360944747924805, 'Accuracy': 0}
+Total timesteps: 917
+Train episode 40 (40 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4995, 'Replay Buffer Samples': 62}
+Total timesteps: 929
+Train episode 41 (41 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4995, 'Replay Buffer Samples': 63}
+Total timesteps: 937
+Train episode 42 (42 of rollout 0) ended with Goal
+{'Exploration rate': 0.4995, 'Replay Buffer Samples': 64, 'Loss': 1.4271550178527832, 'Accuracy': 0}
+Total timesteps: 940
+Train episode 43 (43 of rollout 0) ended with OutOfBounds
+{'Exploration rate': 0.4995, 'Replay Buffer Samples': 65}
+Total timesteps: 946
+Train episode 44 (44 of rollout 0) ended with CapturedByDefense
+{'Exploration rate': 0.4995, 'Replay Buffer Samples': 66}
+Total timesteps: 949
+Train episode 45 (45 of rollout 0) ended with ServerDown
+[INFO] Terminating 'evaluate.py' and associated processes...
+base_right 2: finished.
+base_right 1: finished.
+[INFO] Thread quitting...
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Waiting for player-controlled agent CYRUS_left-0: config_dir=/home/filipe/Documents/GitHub/HFO/bin/teams/base/config/formations-dt, server_port=6005, server_addr=localhost, team_name=CYRUS_left, play_goalie=False
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 0 / 1 35 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 0 / 2 137 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 1 / 3 208 GOAL-7
+EndOfTrial: 1 / 4 241 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 1 / 5 296 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 1 / 6 340 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 1 / 7 396 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 1 / 8 462 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 1 / 9 502 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 1 / 10 584 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 1 / 11 627 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 1 / 12 674 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 1 / 13 758 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 1 / 14 798 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 2 / 15 877 GOAL-7
+EndOfTrial: 2 / 16 995 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 2 / 17 1078 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 3 / 18 1158 GOAL-11
+EndOfTrial: 3 / 19 1209 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 3 / 20 1293 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 3 / 21 1351 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 3 / 22 1392 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 3 / 23 1517 OUT_OF_BOUNDS
+EndOfTrial: 3 / 24 1570 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 3 / 25 1654 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 3 / 26 1704 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 3 / 27 1791 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 3 / 28 1839 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 3 / 29 1891 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 3 / 30 1930 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 3 / 31 1982 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 4 / 32 2067 GOAL-11
+EndOfTrial: 4 / 33 2104 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 4 / 34 2153 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 4 / 35 2215 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 4 / 36 2325 OUT_OF_BOUNDS
+EndOfTrial: 5 / 37 2385 GOAL-11
+EndOfTrial: 5 / 38 2426 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 5 / 39 2472 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 5 / 40 2561 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 5 / 41 2629 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 5 / 42 2737 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 5 / 43 2796 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 5 / 44 2835 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 5 / 45 2880 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 5 / 46 2923 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 5 / 47 2967 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 5 / 48 3011 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 6 / 49 3118 GOAL-7
+EndOfTrial: 6 / 50 3231 OUT_OF_BOUNDS
+EndOfTrial: 6 / 51 3281 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 6 / 52 3342 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 6 / 53 3404 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 6 / 54 3433 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 7 / 55 3507 GOAL-7
+EndOfTrial: 8 / 56 3605 GOAL-11
+EndOfTrial: 8 / 57 3729 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 8 / 58 3781 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 9 / 59 3879 GOAL-7
+EndOfTrial: 10 / 60 3997 GOAL-7
+EndOfTrial: 10 / 61 4121 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 10 / 62 4218 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 10 / 63 4275 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 10 / 64 4333 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 10 / 65 4382 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 10 / 66 4486 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 10 / 67 4566 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 10 / 68 4602 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 10 / 69 4669 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 11 / 70 4747 GOAL-7
+EndOfTrial: 11 / 71 4817 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 11 / 72 4887 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 11 / 73 4960 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 12 / 74 5120 GOAL-11
+EndOfTrial: 12 / 75 5174 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 13 / 76 5238 GOAL-7
+EndOfTrial: 13 / 77 5310 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 13 / 78 5349 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 13 / 79 5389 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 13 / 80 5432 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 14 / 81 5545 GOAL-11
+EndOfTrial: 15 / 82 5642 GOAL-7
+EndOfTrial: 15 / 83 5716 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 15 / 84 5778 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 16 / 85 5883 GOAL-11
+EndOfTrial: 16 / 86 5944 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 16 / 87 5986 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 16 / 88 6017 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 16 / 89 6085 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 16 / 90 6139 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 16 / 91 6223 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 16 / 92 6275 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 17 / 93 6363 GOAL-11
+EndOfTrial: 17 / 94 6399 OUT_OF_BOUNDS
+EndOfTrial: 17 / 95 6438 CAPTURED_BY_DEFENSE-2
+Something necessary closed (offense_npc_7), exiting
+TotalFrames = 6439, AvgFramesPerTrial = 67.8, AvgFramesPerGoal = 92.6
+Trials             : 95
+Goals              : 17
+Defense Captured   : 74
+Balls Out of Bounds: 4
+Out of Time        : 0
+[start.py] Cleaning up server and other processes

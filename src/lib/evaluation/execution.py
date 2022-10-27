@@ -1,7 +1,8 @@
 import time
+from typing import Tuple
 
 import hfo
-from hfo import GOAL
+from hfo import GOAL, SERVER_DOWN
 
 from src.hfo_agents.AgentForHFO import AgentForHFO
 from src.hfo_agents.learning.LearningAgentForHFO import LearningAgentForHFO
@@ -11,12 +12,13 @@ from src.lib.evaluation.storage import saveData, saveAgent
 from src.lib.threads import WaitForQuitThread
 
 
-def playTestEpisodes(agent: AgentForHFO, max_episode: int, wait_for_quit_thread: WaitForQuitThread):
-    episode = 0
+def playTestEpisodes(agent: AgentForHFO, max_episode: int, wait_for_quit_thread: WaitForQuitThread,
+                     start_episode: int = 0) -> Tuple[int, bool]:
+    episode = start_episode
     while wait_for_quit_thread.is_running() and episode < max_episode and agent.playEpisode():
         print(f'Test episode {episode} ended with {hfo.STATUS_STRINGS[agent.status]}')
         episode += 1
-
+    return episode, agent.status != SERVER_DOWN
 
 def playEpisodes(agent: LearningAgentForHFO, directory: str, episode: int, num_episodes: dict,
                  wait_for_quit_thread: WaitForQuitThread) -> None:

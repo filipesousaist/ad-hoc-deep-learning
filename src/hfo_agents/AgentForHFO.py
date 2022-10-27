@@ -116,12 +116,12 @@ class AgentForHFO:
 
             self._observation = self._next_observation
 
-        self._atEpisodeEnd()
-
         # Quit if the server goes down
         if self._status == SERVER_DOWN:
             self._hfo.act(QUIT)
             return False
+
+        self._atEpisodeEnd()
 
         return True
 

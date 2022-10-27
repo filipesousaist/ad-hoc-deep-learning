@@ -2,6 +2,7 @@ import os
 import random
 import time
 from argparse import Namespace, ArgumentParser
+from subprocess import Popen
 from typing import cast, Type, Optional
 
 import numpy as np
@@ -65,10 +66,17 @@ def evaluatePlastic(agent_factory: Type[PLASTICAgentForHFO], directory: str, por
 
         agent.reset()
 
-        playTestEpisodes(agent, num_episodes_per_trial + 1, wait_for_quit_thread)
+        episode, server_up = playTestEpisodes(agent, num_episodes_per_trial + 1, wait_for_quit_thread)
+        while not server_up and wait_for_quit_thread.is_alive():
+            shutdownAndWait(agent, hfo_process, args.gnome_terminal, 3)
+            hfo_process = startProcesses(directory, port, args, input_loadout, input_data, wait_for_quit_thread,
+                                         teammates_type)
+            agent.setupHFO()
+            episode, server_up = playTestEpisodes(agent, num_episodes_per_trial + 1, wait_for_quit_thread, episode)
+
+
         if not wait_for_quit_thread.is_alive():
-            agent.deleteHFO()
-            killProcesses(hfo_process, args.gnome_terminal)
+            shutdownAndWait(agent, hfo_process, args.gnome_terminal, 0)
             break
 
         agent.results["correct_team"] = team
@@ -76,14 +84,18 @@ def evaluatePlastic(agent_factory: Type[PLASTICAgentForHFO], directory: str, por
         print(f"[INFO] 'evaluate_plastic.py' finished trial {trial}. Terminating associated processes...")
         saveResults(directory, input_loadout, trial, agent.results)
 
-        agent.deleteHFO()
-        killProcesses(hfo_process, args.gnome_terminal)
-        time.sleep(2)
+        shutdownAndWait(agent, hfo_process, args.gnome_terminal, 3)
 
     print("[INFO] Terminating 'evaluate_plastic.py'...")
 
     if wait_for_quit_thread.is_alive():
         wait_for_quit_thread.stop()
+
+
+def shutdownAndWait(agent: PLASTICAgentForHFO, hfo_process: Popen, gnome_terminal: bool, duration: int):
+    agent.deleteHFO()
+    killProcesses(hfo_process, gnome_terminal)
+    time.sleep(duration)
 
 
 def getNextTrial(directory: str, input_loadout: int) -> int:

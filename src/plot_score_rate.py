@@ -137,7 +137,8 @@ def main():
                  LINE_COLORS[d], AREA_COLORS[d], args.confidence_intervals, label or directories[d])
 
     ax_dict["top"].legend(bbox_to_anchor=(1.05, 1), loc="upper left")
-    ax_dict["top"].set_xlabel(f"Training Episodes (Granularity = {num_train_episodes})")
+    granularity_str = f" (Granularity = {num_train_episodes})" if "bottom" in ax_dict else ""
+    ax_dict["top"].set_xlabel("Training Episodes" + granularity_str)
 
     if granularity > num_train_episodes:
         for d in range(num_directories):

@@ -237,13 +237,15 @@ class PLASTICAgentForHFO(AgentForHFO):
 
             if not self._first_episode:
                 self._updateBeliefs()
-            if is_terminal:
-                if not self._first_episode:
-                    self._results["behavior_distribution"].append([p for p in self._behavior_distribution])
-                    self._results["goals"].append(int(self._status == GOAL))
-                self._first_episode = False
 
         self._updateFeatures()
+
+
+    def _atEpisodeEnd(self) -> None:
+        if not self._first_episode:
+            self._results["behavior_distribution"].append([p for p in self._behavior_distribution])
+            self._results["goals"].append(int(self._status == GOAL))
+        self._first_episode = False
 
 
     def _updateBeliefs(self):
@@ -251,7 +253,6 @@ class PLASTICAgentForHFO(AgentForHFO):
             loss = self._all_knowledge[i].getLoss(self._saved_features, self._next_features)
             self._behavior_distribution[i] *= 1 - self._eta * loss
         self._behavior_distribution = self._behavior_distribution / np.sum(self._behavior_distribution)
-
 
 
     @property
