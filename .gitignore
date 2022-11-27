@@ -5,6 +5,7 @@ old_experiments/
 images/
 typescript
 sync_experiments.sh
+run_seq_ports.json
 .idea/
 __pycache__/
 *.pyc

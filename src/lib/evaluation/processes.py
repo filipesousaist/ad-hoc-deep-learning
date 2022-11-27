@@ -10,14 +10,15 @@ from src.lib.threads import WaitForQuitThread, TeammateThread, OpponentThread
 
 
 def startProcesses(directory: str, port: int, args: argparse.Namespace, input_loadout: int, input_data: dict,
-                   wait_for_quit_thread: WaitForQuitThread, teammates_type: str = None) -> Popen:
-    hfo_process = launchHFO(input_data, port, args.gnome_terminal, args.visualizer, teammates_type)
+                   wait_for_quit_thread: WaitForQuitThread, teammates_type: str = None, trials: int = -1) -> Popen:
+    hfo_process = launchHFO(input_data, port, args.gnome_terminal, args.visualizer, teammates_type, trials)
     time.sleep(2)
     launchOtherAgents(directory, port, input_loadout, input_data, wait_for_quit_thread)
     return hfo_process
 
 
-def launchHFO(input_data: dict, port: int, gnome_terminal: bool, visualizer: bool, teammates_type: str = None) -> Popen:
+def launchHFO(input_data: dict, port: int, gnome_terminal: bool, visualizer: bool, teammates_type: str = None,
+              trials: int = -1) -> Popen:
     gnome_terminal_command = "xterm -e " if gnome_terminal else ""
 
     background_process = "" if gnome_terminal else " &"
@@ -53,7 +54,8 @@ def launchHFO(input_data: dict, port: int, gnome_terminal: bool, visualizer: boo
         " --defense-npcs {}".format(num_defense_npcs),
         " --defense-team {}".format(get_team_name(opponents_type)) if opponents_are_binary else "",
         " --frames-per-trial {}".format(input_data["frames_per_trial"]),
-        " --untouched-time {}".format(input_data["untouched_time"])
+        " --untouched-time {}".format(input_data["untouched_time"]),
+        " --trials {} >> hfo_out.txt".format(trials) if trials > 0 else ""
     ]
 
     unformatted_command = "{}../HFO/bin/HFO " + "{}" * len(hfo_args) + "{}"

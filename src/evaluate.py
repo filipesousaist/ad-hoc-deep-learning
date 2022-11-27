@@ -1,6 +1,7 @@
 import argparse
 from argparse import Namespace
 import sys
+import time
 
 from typing import Type, cast
 
@@ -38,10 +39,14 @@ def main() -> None:
     print(f"[INFO] 'evaluate.py' loaded loadout {input_loadout}, with the following parameters:")
     print(input_data)
 
-    hfo_process = startProcesses(directory, port, args, input_loadout, input_data, wait_for_quit_thread)
-
     agent_type = input_data["agent_type"]
-    if is_custom(agent_type):
+    is_custom_agent = is_custom(agent_type)
+    trials = -1 if is_custom_agent else input_data["num_test_episodes"]
+
+    hfo_process = startProcesses(directory, port, args, input_loadout, input_data, wait_for_quit_thread,
+                                 trials=trials)
+
+    if is_custom_agent:
         teammates_type = input_data["teammates_type"]
         team_name = ("base" if is_custom(teammates_type) else get_team_name(teammates_type)) + "_left"
         agent_factory: Type[AgentForHFO] = getAgentForHFOFactory(agent_type)
@@ -58,8 +63,11 @@ def main() -> None:
             playTestEpisodes(agent, args.max_episode or sys.maxsize, wait_for_quit_thread)
             agent.deleteHFO()
     else:
-        while wait_for_quit_thread.is_alive():
-            pass
+        seconds_left = args.timeout or -1
+        while wait_for_quit_thread.is_alive() and seconds_left != 0:
+            if seconds_left > 0:
+                seconds_left -= 1
+                time.sleep(1)
 
     print("[INFO] Terminating 'evaluate.py' and associated processes...")
 
@@ -94,6 +102,7 @@ def parseArguments() -> Namespace:
     parser.add_argument("-i", "--input-loadout", type=int)
     parser.add_argument("-r", "--reset-parameters", action="store_true",
                         help=f"Use parameters as defined in loadout instead of loading saved ones.")
+    parser.add_argument("-T", "--timeout", type=int)
 
     args = parser.parse_args()
 

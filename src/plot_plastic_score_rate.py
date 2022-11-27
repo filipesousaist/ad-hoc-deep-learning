@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
 import os.path
-from typing import Tuple, List, Type
+from typing import Tuple, List, Type, Optional
 
 from matplotlib import pyplot as plt
 import numpy as np
@@ -64,35 +64,26 @@ def main():
     will_plot = [True] * num_directories
 
     for d in range(num_directories):
-        results_path = getPath(directories[d], "plastic-results")
-        if not os.path.exists(results_path):
+        plastic_results_path = getPath(directories[d], "plastic-results")
+        binary_results_path = findBinaryData(directories[d])
+
+        has_plastic_data = os.path.exists(plastic_results_path)
+        has_binary_data = binary_results_path is not None
+
+        if has_plastic_data and has_binary_data:
+            print(f"Skipping '{directories[d]}': Two distinct data sources - '{plastic_results_path}' and"
+                  f"'{binary_results_path}'.")
+            continue
+
+        if not has_plastic_data and not has_binary_data:
             print(f"Skipping '{directories[d]}': No data.")
             continue
 
-        results = readJSON(results_path)
-        num_trials = len(results)
-        numbers_of_trials.append(num_trials)
-        if num_trials == 0:
-            will_plot[d] = False
-            for l in (episodes, score_rates, stds):
-                l.append(np.array([]))
-            print(f"Skipping '{directories[d]}': No data.")
-            continue
-
-        num_episodes_per_trial = len(list(results.values())[0]["goals"]) - 1
-        episodes.append(np.arange(1, num_episodes_per_trial + 1))
-
-        score_rates.append(np.zeros((num_episodes_per_trial,)))
-
-        for trial in results.values():
-            score_rates[d] += np.array(trial["goals"][1:])
-
-        stds.append(np.array([
-            np.std(np.array([1] * int(score_rates[d][i]) + [0] * (num_trials - int(score_rates[d][i]))))
-            for i in range(num_episodes_per_trial)
-        ]))
-
-        score_rates[d] /= num_trials
+        if has_plastic_data:
+            addPlasticData(plastic_results_path, directories, d, episodes, score_rates, stds, numbers_of_trials,
+                           will_plot)
+        else:
+            addBinaryData(directories, d, episodes, score_rates, stds, numbers_of_trials, will_plot)
 
     fig, ax_dict = plt.subplot_mosaic(
         [["top"] * l_w + ["BLANK"] * r_w] * 4,
@@ -114,8 +105,73 @@ def main():
 
     ax_dict["top"].legend(bbox_to_anchor=(1.05, 1), loc="upper left")
     ax_dict["top"].set_xlabel(f"Episode")
+    ax_dict["top"].set_xlim((0, 26))
 
     plt.show()
+
+
+def addPlasticData(path: str, directories: List[str], d: int, episodes: List[np.ndarray], score_rates: List[np.ndarray], stds: List[np.ndarray],
+                   numbers_of_trials: List[int], will_plot: List[bool]) -> None:
+    results = readJSON(path)
+    num_trials = len(results)
+    numbers_of_trials.append(num_trials)
+    if num_trials == 0:
+        will_plot[d] = False
+        for l in (episodes, score_rates, stds):
+            l.append(np.array([]))
+        print(f"Skipping '{directories[d]}': No data.")
+        return
+
+    num_episodes_per_trial = len(list(results.values())[0]["goals"]) - 1
+    episodes.append(np.arange(1, num_episodes_per_trial + 1))
+
+    score_rates.append(np.zeros((num_episodes_per_trial,)))
+
+    for trial in results.values():
+        score_rates[d] += np.array(trial["goals"][1:])
+
+    stds.append(np.array([
+        np.std(np.array([100] * int(score_rates[d][i]) + [0] * (num_trials - int(score_rates[d][i]))))
+        for i in range(num_episodes_per_trial)
+    ]))
+
+    score_rates[d] /= num_trials
+    score_rates[d] *= 100
+
+
+def findBinaryData(directory: str) -> Optional[str]:
+    path_to_find = getPath(directory, "test-output")
+    if os.path.exists(path_to_find):
+        return path_to_find
+
+    for file in os.listdir(directory):
+        file_path = os.path.join(directory, file)
+        if os.path.isdir(file_path):
+            path = findBinaryData(file_path)
+            if path is not None:
+                return path
+    return None
+
+def addBinaryData(directories: List[str], d: int, episodes: List[np.ndarray], score_rates: List[np.ndarray],
+                  stds: List[np.ndarray], numbers_of_trials: List[int], will_plot: List[bool]) -> None:
+    x, ys = readScoreRate(directories[d], True, True)
+
+    num_plots = len(ys)
+    numbers_of_trials.append(num_plots)
+    if len(x) == 0 or num_plots == 0:
+        will_plot[d] = False
+        for l in (episodes, score_rates, stds):
+            l.append(np.array([]))
+        print(f"Skipping '{directories[d]}': No data.")
+        return
+
+    episodes.append(x)
+
+    Y = np.array(ys)
+
+    y = np.nanmean(Y, axis=0).reshape((-1,))
+    score_rates.append(y)
+    stds.append(np.nanstd(Y, axis=0).reshape((-1,)))
 
 
 def plot(ax: plt.Axes, x: np.ndarray, y: np.ndarray, y_std: np.ndarray, n: int,

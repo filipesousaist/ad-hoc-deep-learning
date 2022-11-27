@@ -86,8 +86,6 @@ class DRQN(TorchModel):
             return model_tuple if isinstance(self._input_layer, LSTM) else torch.stack(model_tuple)
         return self.data_to_model(tensors, dtype)
 
-
-
     def accuracy(self, X, y):
         """
         y = y.argmax(dim=-1)

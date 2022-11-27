@@ -157,7 +157,7 @@ def reshape(array: np.ndarray, granularity: int) -> np.ndarray:
 
 def plot(ax: plt.Axes, x: np.ndarray, y: np.ndarray, y_std: np.ndarray, n: int,
          color: Color, area_color: Color, use_confidence_intervals: bool, label: str = None) -> None:
-    ax.plot(x, y, color=color, label=label)
+    ax.plot(x, y, color=color, label=label, linewidth=2)
     if use_confidence_intervals:
         ax.fill_between(x, *confidenceInterval(y, y_std, n), color=area_color + (AREA_ALPHA,))
 

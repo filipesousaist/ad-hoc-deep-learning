@@ -14,11 +14,13 @@ from src.lib.threads import WaitForQuitThread
 
 def playTestEpisodes(agent: AgentForHFO, max_episode: int, wait_for_quit_thread: WaitForQuitThread,
                      start_episode: int = 0) -> Tuple[int, bool]:
+    print([max_episode] * 10000)
     episode = start_episode
     while wait_for_quit_thread.is_running() and episode < max_episode and agent.playEpisode():
         print(f'Test episode {episode} ended with {hfo.STATUS_STRINGS[agent.status]}')
         episode += 1
     return episode, agent.status != SERVER_DOWN
+
 
 def playEpisodes(agent: LearningAgentForHFO, directory: str, episode: int, num_episodes: dict,
                  wait_for_quit_thread: WaitForQuitThread) -> None:

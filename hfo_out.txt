@@ -1,0 +1,1850 @@
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+Something necessary closed (offense_npc_7), exiting
+TotalFrames = 0, AvgFramesPerTrial = nan, AvgFramesPerGoal = nan
+Trials             : 0
+Goals              : 0
+Defense Captured   : 0
+Balls Out of Bounds: 0
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 71 GOAL-7
+EndOfTrial: 2 / 2 160 GOAL-7
+EndOfTrial: 3 / 3 235 GOAL-11
+EndOfTrial: 4 / 4 332 GOAL-11
+EndOfTrial: 4 / 5 411 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 4 / 6 459 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 5 / 7 539 GOAL-7
+EndOfTrial: 6 / 8 630 GOAL-7
+EndOfTrial: 7 / 9 735 GOAL-11
+EndOfTrial: 8 / 10 832 GOAL-7
+EndOfTrial: 9 / 11 951 GOAL-11
+EndOfTrial: 10 / 12 1035 GOAL-11
+EndOfTrial: 10 / 13 1085 CAPTURED_BY_DEFENSE-1
+Something necessary closed (offense_npc_11), exiting
+TotalFrames = 1086, AvgFramesPerTrial = 83.5, AvgFramesPerGoal = 90.9
+Trials             : 13
+Goals              : 10
+Defense Captured   : 3
+Balls Out of Bounds: 0
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 99 GOAL-11
+EndOfTrial: 2 / 2 189 GOAL-11
+EndOfTrial: 3 / 3 274 GOAL-7
+EndOfTrial: 3 / 4 370 CAPTURED_BY_DEFENSE-2
+Something necessary closed (offense_npc_11), exiting
+TotalFrames = 371, AvgFramesPerTrial = 92.8, AvgFramesPerGoal = 91.7
+Trials             : 4
+Goals              : 3
+Defense Captured   : 1
+Balls Out of Bounds: 0
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 79 GOAL-7
+EndOfTrial: 2 / 2 149 GOAL-11
+EndOfTrial: 3 / 3 233 GOAL-7
+EndOfTrial: 4 / 4 309 GOAL-11
+EndOfTrial: 5 / 5 389 GOAL-7
+EndOfTrial: 5 / 6 459 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 6 / 7 527 GOAL-7
+EndOfTrial: 6 / 8 610 OUT_OF_BOUNDS
+EndOfTrial: 6 / 9 695 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 7 / 10 796 GOAL-11
+EndOfTrial: 8 / 11 864 GOAL-7
+EndOfTrial: 9 / 12 962 GOAL-11
+EndOfTrial: 10 / 13 1054 GOAL-11
+EndOfTrial: 11 / 14 1122 GOAL-7
+EndOfTrial: 12 / 15 1208 GOAL-7
+Something necessary closed (offense_npc_7), exiting
+TotalFrames = 1209, AvgFramesPerTrial = 80.6, AvgFramesPerGoal = 80.9
+Trials             : 15
+Goals              : 12
+Defense Captured   : 2
+Balls Out of Bounds: 1
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 0 / 1 92 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 0 / 2 189 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 1 / 3 265 GOAL-11
+EndOfTrial: 2 / 4 400 GOAL-11
+EndOfTrial: 2 / 5 482 OUT_OF_BOUNDS
+EndOfTrial: 3 / 6 566 GOAL-11
+EndOfTrial: 3 / 7 680 OUT_OF_BOUNDS
+EndOfTrial: 4 / 8 782 GOAL-7
+EndOfTrial: 5 / 9 854 GOAL-11
+EndOfTrial: 6 / 10 966 GOAL-7
+EndOfTrial: 7 / 11 1065 GOAL-11
+EndOfTrial: 8 / 12 1143 GOAL-11
+Something necessary closed (offense_npc_11), exiting
+TotalFrames = 1144, AvgFramesPerTrial = 95.3, AvgFramesPerGoal = 94.8
+Trials             : 12
+Goals              : 8
+Defense Captured   : 2
+Balls Out of Bounds: 2
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 99 GOAL-7
+EndOfTrial: 2 / 2 166 GOAL-11
+EndOfTrial: 3 / 3 242 GOAL-11
+EndOfTrial: 4 / 4 330 GOAL-7
+EndOfTrial: 5 / 5 404 GOAL-7
+EndOfTrial: 6 / 6 513 GOAL-7
+EndOfTrial: 6 / 7 586 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 7 / 8 701 GOAL-7
+EndOfTrial: 8 / 9 806 GOAL-11
+EndOfTrial: 9 / 10 890 GOAL-11
+EndOfTrial: 10 / 11 985 GOAL-7
+EndOfTrial: 10 / 12 1064 OUT_OF_BOUNDS
+EndOfTrial: 11 / 13 1169 GOAL-11
+EndOfTrial: 12 / 14 1258 GOAL-11
+EndOfTrial: 13 / 15 1333 GOAL-11
+EndOfTrial: 14 / 16 1418 GOAL-11
+EndOfTrial: 15 / 17 1520 GOAL-11
+EndOfTrial: 15 / 18 1602 OUT_OF_BOUNDS
+EndOfTrial: 16 / 19 1680 GOAL-7
+EndOfTrial: 17 / 20 1776 GOAL-11
+EndOfTrial: 18 / 21 1876 GOAL-11
+EndOfTrial: 19 / 22 2015 GOAL-7
+EndOfTrial: 20 / 23 2095 GOAL-11
+EndOfTrial: 21 / 24 2181 GOAL-7
+EndOfTrial: 22 / 25 2260 GOAL-11
+EndOfTrial: 23 / 26 2350 GOAL-7
+EndOfTrial: 23 / 27 2472 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 24 / 28 2551 GOAL-11
+EndOfTrial: 25 / 29 2660 GOAL-7
+EndOfTrial: 26 / 30 2757 GOAL-11
+EndOfTrial: 26 / 31 2837 OUT_OF_BOUNDS
+EndOfTrial: 27 / 32 2948 GOAL-7
+EndOfTrial: 28 / 33 3045 GOAL-7
+Something necessary closed (offense_npc_11), exiting
+TotalFrames = 3046, AvgFramesPerTrial = 92.3, AvgFramesPerGoal = 93.2
+Trials             : 33
+Goals              : 28
+Defense Captured   : 2
+Balls Out of Bounds: 3
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 99 GOAL-11
+EndOfTrial: 1 / 2 172 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 1 / 3 261 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 2 / 4 342 GOAL-7
+EndOfTrial: 3 / 5 446 GOAL-7
+EndOfTrial: 3 / 6 524 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 4 / 7 642 GOAL-11
+EndOfTrial: 5 / 8 749 GOAL-11
+EndOfTrial: 6 / 9 836 GOAL-11
+EndOfTrial: 7 / 10 935 GOAL-7
+EndOfTrial: 8 / 11 1037 GOAL-11
+EndOfTrial: 9 / 12 1145 GOAL-7
+EndOfTrial: 10 / 13 1220 GOAL-11
+EndOfTrial: 11 / 14 1316 GOAL-11
+Something necessary closed (offense_npc_11), exiting
+TotalFrames = 1317, AvgFramesPerTrial = 94.1, AvgFramesPerGoal = 97.9
+Trials             : 14
+Goals              : 11
+Defense Captured   : 3
+Balls Out of Bounds: 0
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 87 GOAL-7
+EndOfTrial: 1 / 2 164 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 2 / 3 254 GOAL-11
+EndOfTrial: 3 / 4 344 GOAL-11
+EndOfTrial: 4 / 5 458 GOAL-7
+EndOfTrial: 5 / 6 566 GOAL-11
+EndOfTrial: 6 / 7 662 GOAL-11
+EndOfTrial: 7 / 8 766 GOAL-7
+EndOfTrial: 7 / 9 852 OUT_OF_BOUNDS
+EndOfTrial: 8 / 10 914 GOAL-7
+EndOfTrial: 9 / 11 994 GOAL-7
+EndOfTrial: 10 / 12 1080 GOAL-7
+EndOfTrial: 11 / 13 1180 GOAL-11
+EndOfTrial: 12 / 14 1269 GOAL-7
+EndOfTrial: 12 / 15 1354 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 13 / 16 1428 GOAL-7
+EndOfTrial: 14 / 17 1540 GOAL-7
+EndOfTrial: 15 / 18 1628 GOAL-7
+EndOfTrial: 16 / 19 1730 GOAL-11
+EndOfTrial: 17 / 20 1814 GOAL-7
+EndOfTrial: 18 / 21 1897 GOAL-7
+EndOfTrial: 19 / 22 2013 GOAL-11
+EndOfTrial: 20 / 23 2089 GOAL-11
+EndOfTrial: 21 / 24 2190 GOAL-7
+EndOfTrial: 22 / 25 2269 GOAL-11
+EndOfTrial: 23 / 26 2371 GOAL-7
+EndOfTrial: 24 / 27 2442 GOAL-7
+EndOfTrial: 25 / 28 2545 GOAL-7
+EndOfTrial: 25 / 29 2603 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 26 / 30 2700 GOAL-11
+EndOfTrial: 26 / 31 2790 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 27 / 32 2890 GOAL-11
+EndOfTrial: 28 / 33 2961 GOAL-11
+EndOfTrial: 29 / 34 3059 GOAL-7
+EndOfTrial: 30 / 35 3197 GOAL-11
+EndOfTrial: 31 / 36 3287 GOAL-7
+EndOfTrial: 31 / 37 3368 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 32 / 38 3447 GOAL-11
+EndOfTrial: 33 / 39 3518 GOAL-7
+EndOfTrial: 33 / 40 3658 OUT_OF_BOUNDS
+EndOfTrial: 34 / 41 3713 GOAL-11
+EndOfTrial: 35 / 42 3816 GOAL-7
+EndOfTrial: 36 / 43 3969 GOAL-7
+EndOfTrial: 37 / 44 4082 GOAL-11
+EndOfTrial: 38 / 45 4162 GOAL-11
+EndOfTrial: 39 / 46 4268 GOAL-11
+EndOfTrial: 39 / 47 4374 OUT_OF_BOUNDS
+EndOfTrial: 40 / 48 4457 GOAL-11
+EndOfTrial: 41 / 49 4537 GOAL-7
+EndOfTrial: 42 / 50 4614 GOAL-11
+EndOfTrial: 42 / 51 4677 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 43 / 52 4791 GOAL-7
+EndOfTrial: 44 / 53 4876 GOAL-11
+EndOfTrial: 45 / 54 4937 GOAL-11
+EndOfTrial: 46 / 55 5013 GOAL-11
+EndOfTrial: 47 / 56 5118 GOAL-7
+EndOfTrial: 48 / 57 5227 GOAL-11
+EndOfTrial: 48 / 58 5331 OUT_OF_BOUNDS
+EndOfTrial: 49 / 59 5448 GOAL-11
+EndOfTrial: 50 / 60 5511 GOAL-7
+EndOfTrial: 51 / 61 5613 GOAL-7
+EndOfTrial: 52 / 62 5679 GOAL-11
+EndOfTrial: 53 / 63 5758 GOAL-7
+EndOfTrial: 54 / 64 5840 GOAL-7
+EndOfTrial: 55 / 65 5907 GOAL-7
+EndOfTrial: 55 / 66 6023 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 56 / 67 6108 GOAL-11
+EndOfTrial: 57 / 68 6187 GOAL-7
+EndOfTrial: 58 / 69 6259 GOAL-7
+EndOfTrial: 58 / 70 6329 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 59 / 71 6424 GOAL-7
+EndOfTrial: 59 / 72 6536 OUT_OF_BOUNDS
+EndOfTrial: 60 / 73 6617 GOAL-11
+EndOfTrial: 61 / 74 6704 GOAL-7
+EndOfTrial: 62 / 75 6800 GOAL-11
+EndOfTrial: 63 / 76 6879 GOAL-11
+EndOfTrial: 64 / 77 6971 GOAL-11
+EndOfTrial: 65 / 78 7072 GOAL-7
+EndOfTrial: 66 / 79 7153 GOAL-11
+EndOfTrial: 67 / 80 7248 GOAL-11
+Something necessary closed (offense_npc_11), exiting
+TotalFrames = 7249, AvgFramesPerTrial = 90.6, AvgFramesPerGoal = 90.5
+Trials             : 80
+Goals              : 67
+Defense Captured   : 8
+Balls Out of Bounds: 5
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 91 GOAL-7
+EndOfTrial: 2 / 2 203 GOAL-7
+EndOfTrial: 3 / 3 311 GOAL-11
+EndOfTrial: 4 / 4 370 GOAL-11
+EndOfTrial: 4 / 5 442 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 5 / 6 581 GOAL-7
+EndOfTrial: 5 / 7 684 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 5 / 8 781 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 6 / 9 888 GOAL-11
+EndOfTrial: 7 / 10 961 GOAL-11
+EndOfTrial: 8 / 11 1044 GOAL-7
+EndOfTrial: 9 / 12 1111 GOAL-11
+EndOfTrial: 10 / 13 1224 GOAL-11
+EndOfTrial: 11 / 14 1328 GOAL-11
+EndOfTrial: 12 / 15 1436 GOAL-11
+EndOfTrial: 13 / 16 1538 GOAL-7
+EndOfTrial: 14 / 17 1642 GOAL-7
+EndOfTrial: 15 / 18 1729 GOAL-11
+EndOfTrial: 16 / 19 1830 GOAL-7
+EndOfTrial: 17 / 20 1908 GOAL-11
+EndOfTrial: 18 / 21 2007 GOAL-11
+EndOfTrial: 19 / 22 2108 GOAL-11
+EndOfTrial: 20 / 23 2195 GOAL-11
+EndOfTrial: 20 / 24 2345 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 21 / 25 2466 GOAL-11
+EndOfTrial: 22 / 26 2567 GOAL-7
+EndOfTrial: 23 / 27 2638 GOAL-11
+EndOfTrial: 23 / 28 2792 OUT_OF_BOUNDS
+EndOfTrial: 24 / 29 2880 GOAL-11
+EndOfTrial: 25 / 30 2986 GOAL-7
+EndOfTrial: 26 / 31 3104 GOAL-11
+EndOfTrial: 27 / 32 3254 GOAL-11
+EndOfTrial: 27 / 33 3360 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 27 / 34 3487 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 28 / 35 3571 GOAL-11
+EndOfTrial: 29 / 36 3641 GOAL-7
+EndOfTrial: 30 / 37 3715 GOAL-11
+EndOfTrial: 31 / 38 3811 GOAL-11
+EndOfTrial: 32 / 39 3912 GOAL-7
+EndOfTrial: 33 / 40 4016 GOAL-7
+EndOfTrial: 34 / 41 4098 GOAL-11
+Something necessary closed (offense_npc_11), exiting
+TotalFrames = 4099, AvgFramesPerTrial = 100.0, AvgFramesPerGoal = 96.8
+Trials             : 41
+Goals              : 34
+Defense Captured   : 6
+Balls Out of Bounds: 1
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 94 GOAL-11
+EndOfTrial: 2 / 2 185 GOAL-11
+EndOfTrial: 3 / 3 255 GOAL-11
+EndOfTrial: 3 / 4 337 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 4 / 5 406 GOAL-11
+EndOfTrial: 5 / 6 499 GOAL-11
+EndOfTrial: 6 / 7 616 GOAL-11
+EndOfTrial: 7 / 8 715 GOAL-11
+Something necessary closed (offense_npc_11), exiting
+TotalFrames = 716, AvgFramesPerTrial = 89.5, AvgFramesPerGoal = 90.6
+Trials             : 8
+Goals              : 7
+Defense Captured   : 1
+Balls Out of Bounds: 0
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 72 GOAL-7
+EndOfTrial: 2 / 2 182 GOAL-7
+EndOfTrial: 3 / 3 284 GOAL-7
+EndOfTrial: 4 / 4 379 GOAL-11
+EndOfTrial: 5 / 5 453 GOAL-7
+EndOfTrial: 6 / 6 538 GOAL-7
+EndOfTrial: 7 / 7 621 GOAL-11
+EndOfTrial: 8 / 8 710 GOAL-7
+EndOfTrial: 9 / 9 810 GOAL-11
+EndOfTrial: 9 / 10 877 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 9 / 11 960 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 10 / 12 1045 GOAL-7
+EndOfTrial: 11 / 13 1143 GOAL-11
+EndOfTrial: 12 / 14 1252 GOAL-7
+EndOfTrial: 13 / 15 1350 GOAL-7
+EndOfTrial: 14 / 16 1455 GOAL-11
+EndOfTrial: 15 / 17 1548 GOAL-7
+EndOfTrial: 15 / 18 1678 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 16 / 19 1767 GOAL-7
+EndOfTrial: 17 / 20 1860 GOAL-11
+EndOfTrial: 18 / 21 1961 GOAL-7
+EndOfTrial: 19 / 22 2047 GOAL-11
+EndOfTrial: 20 / 23 2147 GOAL-11
+EndOfTrial: 21 / 24 2272 GOAL-11
+EndOfTrial: 22 / 25 2364 GOAL-7
+EndOfTrial: 22 / 26 2477 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 23 / 27 2575 GOAL-2
+EndOfTrial: 24 / 28 2652 GOAL-11
+EndOfTrial: 25 / 29 2730 GOAL-7
+EndOfTrial: 26 / 30 2828 GOAL-11
+EndOfTrial: 27 / 31 2913 GOAL-7
+EndOfTrial: 28 / 32 3005 GOAL-7
+EndOfTrial: 29 / 33 3076 GOAL-11
+EndOfTrial: 30 / 34 3172 GOAL-7
+EndOfTrial: 31 / 35 3269 GOAL-11
+EndOfTrial: 32 / 36 3335 GOAL-7
+EndOfTrial: 33 / 37 3440 GOAL-7
+EndOfTrial: 34 / 38 3550 GOAL-11
+EndOfTrial: 35 / 39 3625 GOAL-11
+EndOfTrial: 36 / 40 3710 GOAL-11
+EndOfTrial: 37 / 41 3863 GOAL-7
+EndOfTrial: 38 / 42 3930 GOAL-11
+EndOfTrial: 39 / 43 4011 GOAL-7
+EndOfTrial: 40 / 44 4092 GOAL-11
+EndOfTrial: 41 / 45 4191 GOAL-7
+EndOfTrial: 42 / 46 4313 GOAL-11
+EndOfTrial: 42 / 47 4422 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 43 / 48 4507 GOAL-11
+EndOfTrial: 44 / 49 4613 GOAL-7
+EndOfTrial: 45 / 50 4678 GOAL-7
+EndOfTrial: 46 / 51 4884 GOAL-11
+EndOfTrial: 46 / 52 4988 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 47 / 53 5094 GOAL-11
+EndOfTrial: 48 / 54 5171 GOAL-7
+EndOfTrial: 49 / 55 5259 GOAL-11
+EndOfTrial: 50 / 56 5349 GOAL-7
+EndOfTrial: 51 / 57 5438 GOAL-11
+EndOfTrial: 51 / 58 5496 OUT_OF_BOUNDS
+EndOfTrial: 52 / 59 5581 GOAL-7
+EndOfTrial: 52 / 60 5672 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 53 / 61 5761 GOAL-7
+Something necessary closed (offense_npc_11), exiting
+TotalFrames = 5762, AvgFramesPerTrial = 94.5, AvgFramesPerGoal = 94.5
+Trials             : 61
+Goals              : 53
+Defense Captured   : 7
+Balls Out of Bounds: 1
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 84 GOAL-11
+Something necessary closed (offense_npc_11), exiting
+TotalFrames = 85, AvgFramesPerTrial = 85.0, AvgFramesPerGoal = 85.0
+Trials             : 1
+Goals              : 1
+Defense Captured   : 0
+Balls Out of Bounds: 0
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 108 GOAL-7
+EndOfTrial: 2 / 2 221 GOAL-11
+EndOfTrial: 3 / 3 327 GOAL-7
+EndOfTrial: 4 / 4 434 GOAL-11
+EndOfTrial: 5 / 5 531 GOAL-11
+EndOfTrial: 6 / 6 633 GOAL-11
+EndOfTrial: 7 / 7 750 GOAL-7
+EndOfTrial: 8 / 8 839 GOAL-11
+EndOfTrial: 9 / 9 926 GOAL-7
+EndOfTrial: 10 / 10 1021 GOAL-11
+EndOfTrial: 11 / 11 1109 GOAL-11
+EndOfTrial: 12 / 12 1215 GOAL-11
+EndOfTrial: 12 / 13 1315 OUT_OF_BOUNDS
+EndOfTrial: 13 / 14 1412 GOAL-7
+EndOfTrial: 14 / 15 1527 GOAL-11
+EndOfTrial: 15 / 16 1600 GOAL-11
+EndOfTrial: 15 / 17 1688 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 16 / 18 1781 GOAL-11
+EndOfTrial: 17 / 19 1866 GOAL-11
+EndOfTrial: 17 / 20 1946 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 18 / 21 2035 GOAL-11
+EndOfTrial: 19 / 22 2128 GOAL-7
+EndOfTrial: 20 / 23 2219 GOAL-7
+EndOfTrial: 20 / 24 2302 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 21 / 25 2371 GOAL-7
+EndOfTrial: 22 / 26 2502 GOAL-11
+EndOfTrial: 23 / 27 2605 GOAL-11
+EndOfTrial: 24 / 28 2698 GOAL-7
+EndOfTrial: 25 / 29 2786 GOAL-7
+EndOfTrial: 26 / 30 2865 GOAL-7
+EndOfTrial: 27 / 31 2957 GOAL-7
+EndOfTrial: 28 / 32 3059 GOAL-11
+EndOfTrial: 29 / 33 3141 GOAL-7
+EndOfTrial: 30 / 34 3210 GOAL-7
+EndOfTrial: 31 / 35 3290 GOAL-11
+EndOfTrial: 32 / 36 3378 GOAL-7
+EndOfTrial: 33 / 37 3479 GOAL-7
+EndOfTrial: 34 / 38 3574 GOAL-7
+EndOfTrial: 35 / 39 3665 GOAL-7
+EndOfTrial: 36 / 40 3787 GOAL-7
+EndOfTrial: 37 / 41 3878 GOAL-7
+EndOfTrial: 38 / 42 3975 GOAL-11
+EndOfTrial: 39 / 43 4049 GOAL-7
+EndOfTrial: 40 / 44 4146 GOAL-11
+EndOfTrial: 41 / 45 4281 GOAL-7
+EndOfTrial: 42 / 46 4414 GOAL-11
+EndOfTrial: 43 / 47 4519 GOAL-11
+EndOfTrial: 44 / 48 4686 GOAL-11
+EndOfTrial: 44 / 49 4765 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 44 / 50 4838 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 45 / 51 4917 GOAL-11
+EndOfTrial: 45 / 52 4992 OUT_OF_BOUNDS
+EndOfTrial: 45 / 53 5064 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 46 / 54 5150 GOAL-11
+EndOfTrial: 46 / 55 5286 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 47 / 56 5358 GOAL-7
+EndOfTrial: 48 / 57 5416 GOAL-11
+EndOfTrial: 48 / 58 5512 OUT_OF_BOUNDS
+EndOfTrial: 49 / 59 5588 GOAL-11
+EndOfTrial: 50 / 60 5665 GOAL-7
+EndOfTrial: 51 / 61 5763 GOAL-11
+EndOfTrial: 52 / 62 5856 GOAL-11
+EndOfTrial: 53 / 63 5944 GOAL-7
+EndOfTrial: 54 / 64 6031 GOAL-11
+EndOfTrial: 55 / 65 6124 GOAL-11
+EndOfTrial: 56 / 66 6205 GOAL-11
+EndOfTrial: 57 / 67 6284 GOAL-11
+EndOfTrial: 58 / 68 6395 GOAL-11
+EndOfTrial: 59 / 69 6485 GOAL-11
+EndOfTrial: 59 / 70 6558 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 60 / 71 6639 GOAL-11
+EndOfTrial: 61 / 72 6733 GOAL-7
+EndOfTrial: 62 / 73 6822 GOAL-11
+EndOfTrial: 63 / 74 6921 GOAL-7
+EndOfTrial: 64 / 75 7014 GOAL-7
+EndOfTrial: 65 / 76 7116 GOAL-11
+EndOfTrial: 66 / 77 7217 GOAL-11
+EndOfTrial: 67 / 78 7313 GOAL-11
+EndOfTrial: 68 / 79 7428 GOAL-11
+EndOfTrial: 69 / 80 7531 GOAL-11
+EndOfTrial: 69 / 81 7601 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 70 / 82 7674 GOAL-11
+EndOfTrial: 70 / 83 7765 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 71 / 84 7833 GOAL-7
+EndOfTrial: 72 / 85 7907 GOAL-7
+EndOfTrial: 73 / 86 7976 GOAL-11
+EndOfTrial: 73 / 87 8079 OUT_OF_BOUNDS
+EndOfTrial: 74 / 88 8182 GOAL-7
+EndOfTrial: 75 / 89 8260 GOAL-11
+EndOfTrial: 76 / 90 8350 GOAL-7
+EndOfTrial: 77 / 91 8428 GOAL-11
+EndOfTrial: 77 / 92 8520 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 78 / 93 8599 GOAL-11
+EndOfTrial: 78 / 94 8692 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 78 / 95 8772 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 79 / 96 8864 GOAL-11
+EndOfTrial: 80 / 97 8942 GOAL-7
+EndOfTrial: 81 / 98 9025 GOAL-7
+EndOfTrial: 82 / 99 9130 GOAL-11
+EndOfTrial: 83 / 100 9221 GOAL-11
+EndOfTrial: 84 / 101 9355 GOAL-11
+EndOfTrial: 85 / 102 9424 GOAL-7
+EndOfTrial: 86 / 103 9491 GOAL-7
+EndOfTrial: 87 / 104 9632 GOAL-11
+EndOfTrial: 88 / 105 9742 GOAL-7
+EndOfTrial: 88 / 106 9831 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 89 / 107 9962 GOAL-11
+EndOfTrial: 90 / 108 10062 GOAL-11
+EndOfTrial: 90 / 109 10163 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 91 / 110 10259 GOAL-7
+EndOfTrial: 92 / 111 10347 GOAL-11
+EndOfTrial: 93 / 112 10430 GOAL-11
+EndOfTrial: 93 / 113 10547 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 94 / 114 10644 GOAL-7
+EndOfTrial: 94 / 115 10740 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 95 / 116 10840 GOAL-7
+EndOfTrial: 96 / 117 10929 GOAL-11
+EndOfTrial: 96 / 118 11001 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 97 / 119 11074 GOAL-11
+EndOfTrial: 98 / 120 11156 GOAL-7
+EndOfTrial: 99 / 121 11234 GOAL-11
+EndOfTrial: 100 / 122 11333 GOAL-11
+EndOfTrial: 101 / 123 11431 GOAL-7
+EndOfTrial: 102 / 124 11544 GOAL-11
+EndOfTrial: 103 / 125 11619 GOAL-7
+EndOfTrial: 104 / 126 11703 GOAL-7
+EndOfTrial: 105 / 127 11794 GOAL-11
+EndOfTrial: 105 / 128 11837 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 105 / 129 11903 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 106 / 130 11991 GOAL-11
+EndOfTrial: 107 / 131 12078 GOAL-11
+EndOfTrial: 107 / 132 12176 OUT_OF_BOUNDS
+EndOfTrial: 108 / 133 12249 GOAL-11
+EndOfTrial: 109 / 134 12323 GOAL-7
+EndOfTrial: 110 / 135 12417 GOAL-7
+EndOfTrial: 111 / 136 12483 GOAL-11
+EndOfTrial: 112 / 137 12593 GOAL-7
+EndOfTrial: 113 / 138 12697 GOAL-11
+EndOfTrial: 114 / 139 12812 GOAL-11
+EndOfTrial: 115 / 140 12920 GOAL-7
+Something necessary closed (offense_npc_7), exiting
+TotalFrames = 12921, AvgFramesPerTrial = 92.3, AvgFramesPerGoal = 93.5
+Trials             : 140
+Goals              : 115
+Defense Captured   : 20
+Balls Out of Bounds: 5
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 145 GOAL-11
+EndOfTrial: 2 / 2 242 GOAL-11
+EndOfTrial: 3 / 3 354 GOAL-7
+EndOfTrial: 4 / 4 460 GOAL-11
+EndOfTrial: 5 / 5 559 GOAL-11
+EndOfTrial: 6 / 6 652 GOAL-7
+EndOfTrial: 7 / 7 737 GOAL-11
+EndOfTrial: 8 / 8 840 GOAL-11
+EndOfTrial: 8 / 9 916 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 9 / 10 1010 GOAL-7
+EndOfTrial: 10 / 11 1125 GOAL-11
+EndOfTrial: 11 / 12 1219 GOAL-11
+EndOfTrial: 11 / 13 1262 CAPTURED_BY_DEFENSE-2
+Something necessary closed (offense_npc_7), exiting
+TotalFrames = 1263, AvgFramesPerTrial = 97.2, AvgFramesPerGoal = 104.0
+Trials             : 13
+Goals              : 11
+Defense Captured   : 2
+Balls Out of Bounds: 0
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 104 GOAL-11
+EndOfTrial: 2 / 2 221 GOAL-7
+EndOfTrial: 2 / 3 342 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 3 / 4 423 GOAL-7
+EndOfTrial: 4 / 5 523 GOAL-7
+EndOfTrial: 5 / 6 606 GOAL-11
+EndOfTrial: 6 / 7 651 GOAL-7
+EndOfTrial: 7 / 8 765 GOAL-11
+EndOfTrial: 7 / 9 904 OUT_OF_BOUNDS
+EndOfTrial: 8 / 10 1004 GOAL-11
+EndOfTrial: 9 / 11 1097 GOAL-11
+EndOfTrial: 9 / 12 1277 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 10 / 13 1375 GOAL-11
+EndOfTrial: 11 / 14 1453 GOAL-7
+EndOfTrial: 12 / 15 1563 GOAL-7
+EndOfTrial: 13 / 16 1642 GOAL-11
+EndOfTrial: 13 / 17 1724 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 14 / 18 1834 GOAL-11
+EndOfTrial: 15 / 19 1887 GOAL-7
+EndOfTrial: 16 / 20 1990 GOAL-7
+EndOfTrial: 17 / 21 2088 GOAL-11
+EndOfTrial: 18 / 22 2169 GOAL-7
+EndOfTrial: 19 / 23 2275 GOAL-7
+EndOfTrial: 20 / 24 2377 GOAL-11
+EndOfTrial: 20 / 25 2476 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 21 / 26 2560 GOAL-11
+EndOfTrial: 22 / 27 2666 GOAL-7
+EndOfTrial: 23 / 28 2726 GOAL-11
+EndOfTrial: 24 / 29 2828 GOAL-11
+EndOfTrial: 25 / 30 2922 GOAL-11
+EndOfTrial: 26 / 31 3016 GOAL-11
+EndOfTrial: 27 / 32 3111 GOAL-11
+EndOfTrial: 27 / 33 3201 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 28 / 34 3274 GOAL-11
+EndOfTrial: 28 / 35 3332 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 29 / 36 3405 GOAL-11
+Something necessary closed (offense_npc_7), exiting
+TotalFrames = 3406, AvgFramesPerTrial = 94.6, AvgFramesPerGoal = 90.9
+Trials             : 36
+Goals              : 29
+Defense Captured   : 6
+Balls Out of Bounds: 1
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 91 GOAL-11
+EndOfTrial: 2 / 2 171 GOAL-11
+EndOfTrial: 3 / 3 279 GOAL-11
+EndOfTrial: 4 / 4 342 GOAL-11
+EndOfTrial: 4 / 5 472 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 5 / 6 560 GOAL-11
+EndOfTrial: 6 / 7 663 GOAL-7
+EndOfTrial: 6 / 8 675 OUT_OF_BOUNDS
+EndOfTrial: 7 / 9 779 GOAL-11
+EndOfTrial: 7 / 10 845 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 8 / 11 909 GOAL-11
+EndOfTrial: 9 / 12 976 GOAL-11
+EndOfTrial: 9 / 13 1049 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 10 / 14 1149 GOAL-11
+EndOfTrial: 11 / 15 1260 GOAL-11
+EndOfTrial: 11 / 16 1366 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 12 / 17 1462 GOAL-7
+EndOfTrial: 13 / 18 1564 GOAL-7
+EndOfTrial: 14 / 19 1670 GOAL-7
+EndOfTrial: 14 / 20 1711 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 15 / 21 1828 GOAL-11
+EndOfTrial: 16 / 22 1929 GOAL-7
+EndOfTrial: 17 / 23 2060 GOAL-11
+EndOfTrial: 18 / 24 2141 GOAL-7
+EndOfTrial: 19 / 25 2221 GOAL-7
+EndOfTrial: 20 / 26 2330 GOAL-11
+EndOfTrial: 21 / 27 2400 GOAL-7
+EndOfTrial: 21 / 28 2469 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 22 / 29 2556 GOAL-7
+EndOfTrial: 23 / 30 2669 GOAL-7
+EndOfTrial: 24 / 31 2772 GOAL-7
+EndOfTrial: 25 / 32 2871 GOAL-11
+EndOfTrial: 26 / 33 2987 GOAL-7
+EndOfTrial: 26 / 34 3063 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 26 / 35 3196 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 27 / 36 3267 GOAL-7
+EndOfTrial: 28 / 37 3356 GOAL-11
+EndOfTrial: 28 / 38 3430 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 29 / 39 3486 GOAL-7
+EndOfTrial: 30 / 40 3576 GOAL-7
+EndOfTrial: 31 / 41 3677 GOAL-11
+EndOfTrial: 32 / 42 3761 GOAL-11
+EndOfTrial: 33 / 43 3840 GOAL-7
+EndOfTrial: 34 / 44 3940 GOAL-7
+EndOfTrial: 35 / 45 4027 GOAL-11
+EndOfTrial: 36 / 46 4162 GOAL-7
+EndOfTrial: 37 / 47 4262 GOAL-7
+EndOfTrial: 38 / 48 4360 GOAL-11
+EndOfTrial: 38 / 49 4439 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 39 / 50 4524 GOAL-7
+EndOfTrial: 40 / 51 4630 GOAL-7
+EndOfTrial: 41 / 52 4707 GOAL-11
+EndOfTrial: 42 / 53 4778 GOAL-7
+EndOfTrial: 43 / 54 4863 GOAL-7
+EndOfTrial: 44 / 55 4939 GOAL-11
+EndOfTrial: 45 / 56 5061 GOAL-11
+EndOfTrial: 45 / 57 5208 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 45 / 58 5304 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 45 / 59 5368 CAPTURED_BY_DEFENSE-1
+Something necessary closed (offense_npc_7), exiting
+TotalFrames = 5369, AvgFramesPerTrial = 91.0, AvgFramesPerGoal = 93.4
+Trials             : 59
+Goals              : 45
+Defense Captured   : 13
+Balls Out of Bounds: 1
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 74 GOAL-7
+EndOfTrial: 2 / 2 163 GOAL-7
+EndOfTrial: 3 / 3 260 GOAL-7
+EndOfTrial: 4 / 4 332 GOAL-11
+EndOfTrial: 4 / 5 411 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 5 / 6 464 GOAL-7
+EndOfTrial: 6 / 7 576 GOAL-11
+EndOfTrial: 7 / 8 664 GOAL-11
+EndOfTrial: 8 / 9 775 GOAL-7
+EndOfTrial: 9 / 10 869 GOAL-7
+EndOfTrial: 10 / 11 970 GOAL-7
+EndOfTrial: 11 / 12 1067 GOAL-11
+EndOfTrial: 11 / 13 1142 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 12 / 14 1235 GOAL-7
+EndOfTrial: 13 / 15 1344 GOAL-7
+EndOfTrial: 14 / 16 1431 GOAL-7
+EndOfTrial: 15 / 17 1525 GOAL-7
+EndOfTrial: 16 / 18 1598 GOAL-11
+EndOfTrial: 17 / 19 1674 GOAL-7
+EndOfTrial: 18 / 20 1776 GOAL-11
+EndOfTrial: 18 / 21 1851 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 19 / 22 1956 GOAL-11
+EndOfTrial: 20 / 23 2044 GOAL-7
+EndOfTrial: 20 / 24 2086 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 20 / 25 2102 OUT_OF_BOUNDS
+EndOfTrial: 21 / 26 2197 GOAL-7
+EndOfTrial: 22 / 27 2301 GOAL-11
+EndOfTrial: 23 / 28 2426 GOAL-11
+EndOfTrial: 23 / 29 2486 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 23 / 30 2519 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 24 / 31 2630 GOAL-7
+EndOfTrial: 25 / 32 2720 GOAL-7
+EndOfTrial: 26 / 33 2829 GOAL-11
+EndOfTrial: 27 / 34 2913 GOAL-11
+EndOfTrial: 28 / 35 3024 GOAL-7
+EndOfTrial: 29 / 36 3135 GOAL-7
+EndOfTrial: 30 / 37 3231 GOAL-11
+EndOfTrial: 31 / 38 3310 GOAL-11
+EndOfTrial: 31 / 39 3385 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 32 / 40 3478 GOAL-7
+EndOfTrial: 33 / 41 3631 GOAL-7
+EndOfTrial: 34 / 42 3740 GOAL-11
+EndOfTrial: 35 / 43 3817 GOAL-11
+EndOfTrial: 36 / 44 3911 GOAL-11
+EndOfTrial: 37 / 45 4033 GOAL-7
+EndOfTrial: 37 / 46 4148 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 38 / 47 4253 GOAL-11
+Something necessary closed (offense_npc_11), exiting
+TotalFrames = 4254, AvgFramesPerTrial = 90.5, AvgFramesPerGoal = 96.9
+Trials             : 47
+Goals              : 38
+Defense Captured   : 8
+Balls Out of Bounds: 1
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 116 GOAL-7
+EndOfTrial: 2 / 2 203 GOAL-11
+EndOfTrial: 3 / 3 302 GOAL-7
+EndOfTrial: 4 / 4 405 GOAL-7
+EndOfTrial: 5 / 5 491 GOAL-7
+EndOfTrial: 6 / 6 590 GOAL-11
+EndOfTrial: 7 / 7 697 GOAL-11
+EndOfTrial: 8 / 8 779 GOAL-7
+EndOfTrial: 9 / 9 878 GOAL-11
+EndOfTrial: 10 / 10 953 GOAL-11
+EndOfTrial: 11 / 11 1061 GOAL-7
+EndOfTrial: 12 / 12 1175 GOAL-11
+EndOfTrial: 12 / 13 1266 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 13 / 14 1358 GOAL-7
+EndOfTrial: 13 / 15 1422 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 14 / 16 1555 GOAL-7
+EndOfTrial: 15 / 17 1638 GOAL-11
+EndOfTrial: 15 / 18 1720 OUT_OF_BOUNDS
+EndOfTrial: 16 / 19 1834 GOAL-7
+EndOfTrial: 17 / 20 1930 GOAL-11
+EndOfTrial: 18 / 21 2018 GOAL-7
+EndOfTrial: 18 / 22 2064 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 19 / 23 2164 GOAL-7
+EndOfTrial: 20 / 24 2236 GOAL-11
+EndOfTrial: 21 / 25 2317 GOAL-11
+EndOfTrial: 22 / 26 2479 GOAL-11
+EndOfTrial: 23 / 27 2574 GOAL-11
+Something necessary closed (offense_npc_7), exiting
+TotalFrames = 2575, AvgFramesPerTrial = 95.4, AvgFramesPerGoal = 99.7
+Trials             : 27
+Goals              : 23
+Defense Captured   : 3
+Balls Out of Bounds: 1
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 98 GOAL-7
+EndOfTrial: 2 / 2 242 GOAL-11
+EndOfTrial: 3 / 3 318 GOAL-11
+EndOfTrial: 4 / 4 389 GOAL-11
+EndOfTrial: 5 / 5 513 GOAL-7
+EndOfTrial: 6 / 6 627 GOAL-11
+EndOfTrial: 7 / 7 700 GOAL-11
+EndOfTrial: 8 / 8 771 GOAL-7
+EndOfTrial: 9 / 9 867 GOAL-11
+EndOfTrial: 9 / 10 931 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 10 / 11 1026 GOAL-7
+EndOfTrial: 11 / 12 1116 GOAL-11
+EndOfTrial: 12 / 13 1219 GOAL-11
+EndOfTrial: 13 / 14 1328 GOAL-11
+EndOfTrial: 14 / 15 1414 GOAL-11
+EndOfTrial: 15 / 16 1508 GOAL-7
+EndOfTrial: 15 / 17 1644 OUT_OF_BOUNDS
+EndOfTrial: 16 / 18 1731 GOAL-7
+EndOfTrial: 17 / 19 1831 GOAL-7
+EndOfTrial: 17 / 20 1902 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 18 / 21 1973 GOAL-7
+EndOfTrial: 19 / 22 2059 GOAL-11
+EndOfTrial: 20 / 23 2156 GOAL-7
+EndOfTrial: 21 / 24 2212 GOAL-11
+EndOfTrial: 22 / 25 2322 GOAL-7
+EndOfTrial: 23 / 26 2407 GOAL-11
+EndOfTrial: 24 / 27 2501 GOAL-11
+EndOfTrial: 24 / 28 2602 OUT_OF_BOUNDS
+EndOfTrial: 25 / 29 2694 GOAL-7
+EndOfTrial: 26 / 30 2786 GOAL-7
+EndOfTrial: 27 / 31 2838 GOAL-11
+EndOfTrial: 28 / 32 2921 GOAL-11
+EndOfTrial: 29 / 33 3050 GOAL-7
+EndOfTrial: 30 / 34 3147 GOAL-11
+EndOfTrial: 31 / 35 3247 GOAL-7
+EndOfTrial: 32 / 36 3328 GOAL-11
+EndOfTrial: 32 / 37 3406 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 33 / 38 3487 GOAL-7
+EndOfTrial: 34 / 39 3561 GOAL-11
+EndOfTrial: 35 / 40 3676 GOAL-11
+EndOfTrial: 36 / 41 3746 GOAL-7
+EndOfTrial: 36 / 42 3793 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 37 / 43 3904 GOAL-11
+EndOfTrial: 38 / 44 3977 GOAL-7
+EndOfTrial: 39 / 45 4040 GOAL-11
+EndOfTrial: 40 / 46 4165 GOAL-11
+EndOfTrial: 40 / 47 4268 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 41 / 48 4352 GOAL-11
+EndOfTrial: 42 / 49 4430 GOAL-11
+EndOfTrial: 43 / 50 4506 GOAL-7
+EndOfTrial: 44 / 51 4608 GOAL-7
+EndOfTrial: 45 / 52 4667 GOAL-11
+EndOfTrial: 46 / 53 4743 GOAL-11
+EndOfTrial: 47 / 54 4824 GOAL-7
+EndOfTrial: 48 / 55 4933 GOAL-7
+EndOfTrial: 49 / 56 5152 GOAL-7
+EndOfTrial: 50 / 57 5226 GOAL-11
+EndOfTrial: 51 / 58 5340 GOAL-11
+EndOfTrial: 52 / 59 5423 GOAL-7
+EndOfTrial: 53 / 60 5509 GOAL-11
+EndOfTrial: 53 / 61 5593 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 54 / 62 5716 GOAL-11
+EndOfTrial: 55 / 63 5804 GOAL-11
+EndOfTrial: 56 / 64 5942 GOAL-11
+EndOfTrial: 57 / 65 6024 GOAL-11
+EndOfTrial: 58 / 66 6126 GOAL-11
+EndOfTrial: 59 / 67 6228 GOAL-11
+EndOfTrial: 60 / 68 6317 GOAL-7
+EndOfTrial: 60 / 69 6404 OUT_OF_BOUNDS
+EndOfTrial: 61 / 70 6469 GOAL-11
+EndOfTrial: 62 / 71 6560 GOAL-7
+EndOfTrial: 63 / 72 6656 GOAL-7
+EndOfTrial: 63 / 73 6773 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 64 / 74 6860 GOAL-11
+EndOfTrial: 65 / 75 6963 GOAL-11
+EndOfTrial: 66 / 76 7091 GOAL-7
+EndOfTrial: 67 / 77 7174 GOAL-11
+EndOfTrial: 68 / 78 7270 GOAL-11
+EndOfTrial: 69 / 79 7372 GOAL-7
+EndOfTrial: 70 / 80 7470 GOAL-11
+EndOfTrial: 71 / 81 7585 GOAL-7
+EndOfTrial: 72 / 82 7679 GOAL-11
+EndOfTrial: 73 / 83 7745 GOAL-7
+EndOfTrial: 73 / 84 7825 OUT_OF_BOUNDS
+EndOfTrial: 74 / 85 7902 GOAL-7
+EndOfTrial: 75 / 86 7982 GOAL-11
+EndOfTrial: 76 / 87 8053 GOAL-7
+EndOfTrial: 77 / 88 8119 GOAL-11
+EndOfTrial: 78 / 89 8216 GOAL-7
+EndOfTrial: 79 / 90 8319 GOAL-11
+EndOfTrial: 80 / 91 8432 GOAL-11
+EndOfTrial: 81 / 92 8536 GOAL-7
+EndOfTrial: 82 / 93 8622 GOAL-7
+EndOfTrial: 83 / 94 8713 GOAL-11
+EndOfTrial: 84 / 95 8811 GOAL-7
+EndOfTrial: 85 / 96 8902 GOAL-7
+EndOfTrial: 85 / 97 9035 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 86 / 98 9150 GOAL-11
+EndOfTrial: 86 / 99 9262 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 87 / 100 9379 GOAL-11
+EndOfTrial: 87 / 101 9445 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 88 / 102 9553 GOAL-7
+EndOfTrial: 89 / 103 9631 GOAL-7
+EndOfTrial: 90 / 104 9725 GOAL-11
+EndOfTrial: 91 / 105 9803 GOAL-11
+EndOfTrial: 92 / 106 9912 GOAL-7
+EndOfTrial: 93 / 107 10015 GOAL-11
+EndOfTrial: 94 / 108 10128 GOAL-7
+EndOfTrial: 95 / 109 10218 GOAL-7
+EndOfTrial: 96 / 110 10308 GOAL-11
+EndOfTrial: 97 / 111 10382 GOAL-7
+EndOfTrial: 98 / 112 10480 GOAL-11
+EndOfTrial: 99 / 113 10570 GOAL-11
+Something necessary closed (offense_npc_7), exiting
+TotalFrames = 10571, AvgFramesPerTrial = 93.5, AvgFramesPerGoal = 93.9
+Trials             : 113
+Goals              : 99
+Defense Captured   : 10
+Balls Out of Bounds: 4
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 123 GOAL-7
+EndOfTrial: 2 / 2 201 GOAL-7
+EndOfTrial: 2 / 3 335 OUT_OF_BOUNDS
+EndOfTrial: 3 / 4 414 GOAL-7
+EndOfTrial: 4 / 5 489 GOAL-11
+EndOfTrial: 5 / 6 593 GOAL-7
+EndOfTrial: 6 / 7 683 GOAL-11
+EndOfTrial: 7 / 8 740 GOAL-11
+EndOfTrial: 8 / 9 821 GOAL-7
+EndOfTrial: 9 / 10 926 GOAL-7
+EndOfTrial: 9 / 11 1025 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 10 / 12 1104 GOAL-11
+EndOfTrial: 11 / 13 1217 GOAL-11
+EndOfTrial: 12 / 14 1311 GOAL-11
+EndOfTrial: 13 / 15 1426 GOAL-7
+EndOfTrial: 14 / 16 1502 GOAL-7
+EndOfTrial: 15 / 17 1580 GOAL-7
+EndOfTrial: 16 / 18 1673 GOAL-11
+EndOfTrial: 17 / 19 1767 GOAL-11
+EndOfTrial: 17 / 20 1815 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 18 / 21 1902 GOAL-11
+EndOfTrial: 18 / 22 1991 OUT_OF_BOUNDS
+EndOfTrial: 19 / 23 2102 GOAL-11
+EndOfTrial: 20 / 24 2167 GOAL-11
+EndOfTrial: 20 / 25 2249 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 21 / 26 2368 GOAL-11
+EndOfTrial: 22 / 27 2461 GOAL-7
+EndOfTrial: 23 / 28 2532 GOAL-7
+EndOfTrial: 24 / 29 2647 GOAL-11
+EndOfTrial: 25 / 30 2746 GOAL-11
+EndOfTrial: 25 / 31 2847 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 26 / 32 2950 GOAL-7
+EndOfTrial: 27 / 33 3067 GOAL-11
+EndOfTrial: 28 / 34 3219 GOAL-11
+EndOfTrial: 29 / 35 3293 GOAL-11
+EndOfTrial: 30 / 36 3390 GOAL-7
+EndOfTrial: 31 / 37 3500 GOAL-11
+EndOfTrial: 32 / 38 3589 GOAL-11
+EndOfTrial: 33 / 39 3697 GOAL-11
+EndOfTrial: 34 / 40 3801 GOAL-11
+EndOfTrial: 35 / 41 3890 GOAL-11
+EndOfTrial: 36 / 42 3983 GOAL-7
+EndOfTrial: 37 / 43 4060 GOAL-11
+EndOfTrial: 38 / 44 4134 GOAL-11
+EndOfTrial: 39 / 45 4238 GOAL-11
+EndOfTrial: 40 / 46 4334 GOAL-7
+EndOfTrial: 41 / 47 4453 GOAL-11
+EndOfTrial: 41 / 48 4547 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 42 / 49 4659 GOAL-11
+EndOfTrial: 42 / 50 4717 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 42 / 51 4772 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 43 / 52 4866 GOAL-11
+EndOfTrial: 44 / 53 4974 GOAL-11
+EndOfTrial: 45 / 54 5051 GOAL-7
+EndOfTrial: 46 / 55 5135 GOAL-11
+EndOfTrial: 47 / 56 5210 GOAL-11
+EndOfTrial: 48 / 57 5324 GOAL-11
+EndOfTrial: 48 / 58 5382 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 49 / 59 5525 GOAL-7
+EndOfTrial: 50 / 60 5634 GOAL-11
+EndOfTrial: 51 / 61 5725 GOAL-7
+EndOfTrial: 52 / 62 5810 GOAL-11
+EndOfTrial: 53 / 63 5898 GOAL-11
+EndOfTrial: 54 / 64 5974 GOAL-11
+EndOfTrial: 55 / 65 6035 GOAL-11
+EndOfTrial: 56 / 66 6126 GOAL-11
+EndOfTrial: 57 / 67 6215 GOAL-7
+EndOfTrial: 58 / 68 6288 GOAL-11
+EndOfTrial: 59 / 69 6366 GOAL-11
+EndOfTrial: 60 / 70 6430 GOAL-7
+EndOfTrial: 61 / 71 6502 GOAL-7
+EndOfTrial: 62 / 72 6601 GOAL-7
+EndOfTrial: 63 / 73 6695 GOAL-7
+EndOfTrial: 64 / 74 6757 GOAL-11
+EndOfTrial: 65 / 75 6861 GOAL-7
+EndOfTrial: 66 / 76 6963 GOAL-11
+EndOfTrial: 67 / 77 7048 GOAL-7
+EndOfTrial: 68 / 78 7137 GOAL-11
+EndOfTrial: 69 / 79 7235 GOAL-11
+EndOfTrial: 70 / 80 7328 GOAL-7
+EndOfTrial: 71 / 81 7425 GOAL-11
+EndOfTrial: 72 / 82 7531 GOAL-11
+EndOfTrial: 72 / 83 7635 OUT_OF_BOUNDS
+EndOfTrial: 73 / 84 7740 GOAL-11
+EndOfTrial: 73 / 85 7862 OUT_OF_BOUNDS
+EndOfTrial: 74 / 86 7938 GOAL-7
+EndOfTrial: 74 / 87 8028 OUT_OF_BOUNDS
+EndOfTrial: 75 / 88 8141 GOAL-7
+EndOfTrial: 76 / 89 8225 GOAL-11
+EndOfTrial: 77 / 90 8310 GOAL-11
+EndOfTrial: 78 / 91 8409 GOAL-11
+EndOfTrial: 79 / 92 8506 GOAL-7
+EndOfTrial: 80 / 93 8731 GOAL-11
+EndOfTrial: 81 / 94 8838 GOAL-11
+EndOfTrial: 82 / 95 8934 GOAL-11
+EndOfTrial: 83 / 96 9028 GOAL-11
+EndOfTrial: 84 / 97 9119 GOAL-7
+EndOfTrial: 85 / 98 9195 GOAL-7
+EndOfTrial: 86 / 99 9278 GOAL-7
+EndOfTrial: 87 / 100 9369 GOAL-7
+EndOfTrial: 87 / 101 9443 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 87 / 102 9533 OUT_OF_BOUNDS
+EndOfTrial: 88 / 103 9650 GOAL-7
+EndOfTrial: 89 / 104 9743 GOAL-11
+EndOfTrial: 90 / 105 9848 GOAL-11
+EndOfTrial: 91 / 106 9984 GOAL-11
+EndOfTrial: 92 / 107 10066 GOAL-11
+EndOfTrial: 93 / 108 10179 GOAL-7
+EndOfTrial: 94 / 109 10287 GOAL-11
+EndOfTrial: 95 / 110 10374 GOAL-7
+EndOfTrial: 96 / 111 10461 GOAL-11
+EndOfTrial: 97 / 112 10537 GOAL-7
+EndOfTrial: 98 / 113 10640 GOAL-11
+EndOfTrial: 98 / 114 10699 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 99 / 115 10789 GOAL-7
+EndOfTrial: 100 / 116 10885 GOAL-7
+EndOfTrial: 101 / 117 10946 GOAL-11
+EndOfTrial: 102 / 118 11058 GOAL-11
+EndOfTrial: 103 / 119 11158 GOAL-11
+EndOfTrial: 104 / 120 11253 GOAL-7
+EndOfTrial: 105 / 121 11323 GOAL-7
+EndOfTrial: 106 / 122 11417 GOAL-7
+EndOfTrial: 107 / 123 11489 GOAL-11
+EndOfTrial: 108 / 124 11553 GOAL-7
+Something necessary closed (offense_npc_11), exiting
+TotalFrames = 11554, AvgFramesPerTrial = 93.2, AvgFramesPerGoal = 94.4
+Trials             : 124
+Goals              : 108
+Defense Captured   : 10
+Balls Out of Bounds: 6
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 94 GOAL-11
+EndOfTrial: 2 / 2 189 GOAL-11
+EndOfTrial: 2 / 3 272 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 3 / 4 343 GOAL-11
+EndOfTrial: 4 / 5 447 GOAL-7
+EndOfTrial: 5 / 6 553 GOAL-11
+EndOfTrial: 6 / 7 645 GOAL-11
+EndOfTrial: 7 / 8 728 GOAL-7
+EndOfTrial: 8 / 9 819 GOAL-11
+EndOfTrial: 9 / 10 919 GOAL-11
+EndOfTrial: 10 / 11 1016 GOAL-11
+EndOfTrial: 11 / 12 1115 GOAL-11
+EndOfTrial: 12 / 13 1230 GOAL-11
+EndOfTrial: 13 / 14 1304 GOAL-11
+EndOfTrial: 13 / 15 1335 OUT_OF_BOUNDS
+EndOfTrial: 14 / 16 1434 GOAL-11
+EndOfTrial: 14 / 17 1524 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 14 / 18 1642 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 15 / 19 1776 GOAL-11
+EndOfTrial: 16 / 20 1863 GOAL-11
+EndOfTrial: 17 / 21 1954 GOAL-7
+EndOfTrial: 18 / 22 2046 GOAL-11
+Something necessary closed (offense_npc_7), exiting
+TotalFrames = 2047, AvgFramesPerTrial = 93.0, AvgFramesPerGoal = 95.8
+Trials             : 22
+Goals              : 18
+Defense Captured   : 3
+Balls Out of Bounds: 1
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+Something necessary closed (offense_npc_7), exiting
+TotalFrames = 0, AvgFramesPerTrial = nan, AvgFramesPerGoal = nan
+Trials             : 0
+Goals              : 0
+Defense Captured   : 0
+Balls Out of Bounds: 0
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 113 GOAL-11
+EndOfTrial: 2 / 2 187 GOAL-11
+EndOfTrial: 3 / 3 263 GOAL-7
+EndOfTrial: 4 / 4 356 GOAL-11
+EndOfTrial: 4 / 5 458 OUT_OF_BOUNDS
+EndOfTrial: 5 / 6 567 GOAL-11
+EndOfTrial: 5 / 7 615 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 6 / 8 702 GOAL-7
+EndOfTrial: 7 / 9 787 GOAL-11
+EndOfTrial: 8 / 10 912 GOAL-11
+EndOfTrial: 9 / 11 1013 GOAL-11
+EndOfTrial: 10 / 12 1119 GOAL-7
+EndOfTrial: 11 / 13 1228 GOAL-7
+EndOfTrial: 12 / 14 1314 GOAL-11
+EndOfTrial: 13 / 15 1436 GOAL-11
+EndOfTrial: 14 / 16 1546 GOAL-7
+EndOfTrial: 15 / 17 1650 GOAL-7
+EndOfTrial: 16 / 18 1753 GOAL-7
+EndOfTrial: 16 / 19 1806 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 17 / 20 1911 GOAL-11
+EndOfTrial: 17 / 21 2069 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 17 / 22 2075 OUT_OF_BOUNDS
+EndOfTrial: 18 / 23 2188 GOAL-11
+EndOfTrial: 19 / 24 2260 GOAL-11
+EndOfTrial: 20 / 25 2351 GOAL-7
+EndOfTrial: 21 / 26 2421 GOAL-11
+EndOfTrial: 22 / 27 2521 GOAL-11
+EndOfTrial: 23 / 28 2635 GOAL-7
+EndOfTrial: 24 / 29 2708 GOAL-11
+EndOfTrial: 25 / 30 2776 GOAL-7
+EndOfTrial: 26 / 31 2873 GOAL-7
+EndOfTrial: 27 / 32 2954 GOAL-11
+EndOfTrial: 28 / 33 3048 GOAL-11
+EndOfTrial: 29 / 34 3148 GOAL-11
+EndOfTrial: 30 / 35 3242 GOAL-7
+EndOfTrial: 31 / 36 3347 GOAL-11
+EndOfTrial: 32 / 37 3444 GOAL-11
+EndOfTrial: 32 / 38 3568 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 33 / 39 3673 GOAL-11
+EndOfTrial: 34 / 40 3760 GOAL-11
+EndOfTrial: 35 / 41 3843 GOAL-11
+EndOfTrial: 36 / 42 3934 GOAL-7
+EndOfTrial: 37 / 43 4051 GOAL-11
+EndOfTrial: 38 / 44 4155 GOAL-11
+EndOfTrial: 39 / 45 4279 GOAL-7
+EndOfTrial: 39 / 46 4350 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 40 / 47 4446 GOAL-7
+EndOfTrial: 40 / 48 4520 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 41 / 49 4612 GOAL-11
+EndOfTrial: 42 / 50 4713 GOAL-11
+EndOfTrial: 43 / 51 4867 GOAL-11
+EndOfTrial: 43 / 52 4952 OUT_OF_BOUNDS
+EndOfTrial: 43 / 53 5049 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 44 / 54 5127 GOAL-11
+EndOfTrial: 45 / 55 5222 GOAL-11
+EndOfTrial: 46 / 56 5307 GOAL-11
+EndOfTrial: 47 / 57 5380 GOAL-7
+EndOfTrial: 47 / 58 5452 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 48 / 59 5528 GOAL-7
+EndOfTrial: 49 / 60 5625 GOAL-11
+EndOfTrial: 50 / 61 5688 GOAL-11
+EndOfTrial: 51 / 62 5804 GOAL-11
+EndOfTrial: 52 / 63 5894 GOAL-11
+EndOfTrial: 53 / 64 5998 GOAL-11
+EndOfTrial: 54 / 65 6085 GOAL-11
+EndOfTrial: 54 / 66 6124 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 55 / 67 6221 GOAL-11
+EndOfTrial: 56 / 68 6316 GOAL-7
+Something necessary closed (offense_npc_11), exiting
+TotalFrames = 6317, AvgFramesPerTrial = 92.9, AvgFramesPerGoal = 96.2
+Trials             : 68
+Goals              : 56
+Defense Captured   : 9
+Balls Out of Bounds: 3
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 68 GOAL-7
+EndOfTrial: 1 / 2 144 OUT_OF_BOUNDS
+Something necessary closed (offense_npc_7), exiting
+TotalFrames = 145, AvgFramesPerTrial = 72.5, AvgFramesPerGoal = 69.0
+Trials             : 2
+Goals              : 1
+Defense Captured   : 0
+Balls Out of Bounds: 1
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
+Creating team Cyrus
+Creating team Agent2d (base)
+Launch npc CYRUS_left-1
+Launch npc CYRUS_left-2
+Launch npc CYRUS_left-3
+Launch npc CYRUS_left-4
+Launch npc CYRUS_left-5
+Launch npc CYRUS_left-6
+Launch npc CYRUS_left-7
+Launch npc CYRUS_left-8
+Launch npc CYRUS_left-9
+Launch npc CYRUS_left-10
+Launch npc CYRUS_left-11
+Launch npc base_right-1
+Launch npc base_right-2
+Launch npc base_right-3
+Launch npc base_right-4
+Launch npc base_right-5
+Launch npc base_right-6
+Launch npc base_right-7
+Launch npc base_right-8
+Launch npc base_right-9
+Launch npc base_right-10
+Launch npc base_right-11
+Checking all players connected
+Starting game
+EndOfTrial: 1 / 1 88 GOAL-7
+EndOfTrial: 1 / 2 188 OUT_OF_BOUNDS
+EndOfTrial: 2 / 3 264 GOAL-11
+EndOfTrial: 3 / 4 341 GOAL-11
+EndOfTrial: 4 / 5 427 GOAL-11
+EndOfTrial: 5 / 6 527 GOAL-7
+EndOfTrial: 6 / 7 608 GOAL-7
+EndOfTrial: 7 / 8 708 GOAL-7
+EndOfTrial: 8 / 9 790 GOAL-11
+EndOfTrial: 9 / 10 897 GOAL-11
+EndOfTrial: 10 / 11 964 GOAL-7
+EndOfTrial: 11 / 12 1115 GOAL-11
+EndOfTrial: 12 / 13 1215 GOAL-11
+EndOfTrial: 12 / 14 1283 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 13 / 15 1353 GOAL-11
+EndOfTrial: 14 / 16 1445 GOAL-11
+EndOfTrial: 15 / 17 1552 GOAL-11
+EndOfTrial: 15 / 18 1650 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 16 / 19 1749 GOAL-11
+EndOfTrial: 17 / 20 1835 GOAL-11
+EndOfTrial: 18 / 21 1931 GOAL-7
+EndOfTrial: 19 / 22 2020 GOAL-7
+EndOfTrial: 20 / 23 2112 GOAL-7
+EndOfTrial: 20 / 24 2200 OUT_OF_BOUNDS
+EndOfTrial: 21 / 25 2271 GOAL-7
+EndOfTrial: 22 / 26 2349 GOAL-7
+EndOfTrial: 22 / 27 2391 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 23 / 28 2474 GOAL-7
+EndOfTrial: 24 / 29 2576 GOAL-7
+EndOfTrial: 25 / 30 2657 GOAL-7
+EndOfTrial: 25 / 31 2729 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 25 / 32 2842 OUT_OF_BOUNDS
+EndOfTrial: 26 / 33 2963 GOAL-7
+EndOfTrial: 26 / 34 3044 CAPTURED_BY_DEFENSE-1
+EndOfTrial: 27 / 35 3134 GOAL-7
+EndOfTrial: 28 / 36 3208 GOAL-11
+EndOfTrial: 28 / 37 3313 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 29 / 38 3398 GOAL-7
+EndOfTrial: 30 / 39 3477 GOAL-7
+EndOfTrial: 30 / 40 3600 OUT_OF_BOUNDS
+EndOfTrial: 31 / 41 3705 GOAL-7
+EndOfTrial: 32 / 42 3808 GOAL-11
+EndOfTrial: 33 / 43 3881 GOAL-7
+EndOfTrial: 34 / 44 3964 GOAL-11
+EndOfTrial: 35 / 45 4059 GOAL-11
+EndOfTrial: 36 / 46 4151 GOAL-11
+EndOfTrial: 37 / 47 4260 GOAL-11
+EndOfTrial: 38 / 48 4348 GOAL-11
+EndOfTrial: 39 / 49 4415 GOAL-7
+EndOfTrial: 40 / 50 4520 GOAL-7
+EndOfTrial: 41 / 51 4594 GOAL-11
+EndOfTrial: 42 / 52 4678 GOAL-11
+EndOfTrial: 43 / 53 4751 GOAL-11
+EndOfTrial: 44 / 54 4846 GOAL-7
+EndOfTrial: 45 / 55 4947 GOAL-11
+EndOfTrial: 45 / 56 5006 CAPTURED_BY_DEFENSE-2
+EndOfTrial: 46 / 57 5083 GOAL-11
+EndOfTrial: 47 / 58 5149 GOAL-11
+EndOfTrial: 48 / 59 5218 GOAL-7
+EndOfTrial: 49 / 60 5301 GOAL-11
+EndOfTrial: 50 / 61 5445 GOAL-11
+EndOfTrial: 51 / 62 5551 GOAL-11
+EndOfTrial: 52 / 63 5650 GOAL-11
+EndOfTrial: 53 / 64 5754 GOAL-11
+EndOfTrial: 54 / 65 5839 GOAL-11
+EndOfTrial: 55 / 66 5917 GOAL-11
+EndOfTrial: 56 / 67 6012 GOAL-11
+Something necessary closed (offense_npc_7), exiting
+TotalFrames = 11241, AvgFramesPerTrial = 92.9, AvgFramesPerGoal = 94.1
+Trials             : 121
+Goals              : 100
+Defense Captured   : 13
+Balls Out of Bounds: 8
+Out of Time        : 0
+[start.py] Cleaning up server and other processes
