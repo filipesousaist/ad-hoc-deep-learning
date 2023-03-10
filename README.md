@@ -6,3 +6,5 @@ The mass production of technological systems around the world is both an economi
 
 ## Links
 - [Dissertation Website](https://fenix.tecnico.ulisboa.pt/cursos/meic-t/dissertacao/846778572213921)
+- [Thesis](Documents/90714-filipe-sousa-dissertacao.pdf)
+- [Extended Abstract](Documents/90714-filipe-sousa-resumo.pdf)
